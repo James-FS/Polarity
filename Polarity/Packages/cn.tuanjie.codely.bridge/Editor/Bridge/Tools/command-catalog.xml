@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The Bridge command catalog, hand-authored in this data file and parsed by
+  ListTools.cs once per domain. This is the single source for tool
+  descriptions, actions, parameter schemas and client timeout budgets — the
+  CLI renders its live `tuanjie command` listing from it, so adding a command
+  means editing this file, not C# code.
+
+  Contract (guarded by Tests/Editor/ListToolsCatalogTests.cs — the suite turns
+  red the moment this file and the wire surface drift apart):
+    · one <tool> per tool type; `type` must match a dispatch case in
+      UnityTcpBridge.ExecuteCommand (add the case and the tool entry in the
+      same change)
+    · tools with a `handler` attribute: the action list is reflected from that
+      handler's ActionHandlers dictionary at runtime; <action> elements below
+      only carry the schemas and MUST cover every reflected action
+    · tools without `handler` (inline-switch / build-method dispatch):
+      the <action> elements are the authoritative action list — keep them in
+      sync with the handler's dispatch
+    · action-less commands declare their parameters as tool-level <param>
+      elements instead
+    · every tool and action carries a description (tests enforce non-empty)
+    · param schemas are hand-authored metadata: the generic guards enforce the
+      reflected action surface and XML self-consistency, but param-level accuracy
+      for inline-switch tools needs explicit contract tests (see
+      ScreenshotSchemasMatchTheProductionContract in ListToolsCatalogTests)
+    · `aliases` (optional, comma-separated) are alternative names the Bridge
+      dispatch accepts for this tool (e.g. "eval" for execute_csharp_script);
+      every type and alias must be unique across the whole catalog — a
+      collision would silently shadow one tool behind another (tests enforce)
+
+  <param> attributes: name, type (string|int|float|bool|enum|json|vec3|path),
+  required (default false), default, note; the element text is the parameter
+  description. timeoutMs and <actionTimeouts> are CLIENT timeout budgets —
+  the client should hold its socket open at least that long; see ListTools.cs.
+  Budgets document the default request: actions that take a request-level
+  timeoutSeconds scale the server-side budget, and the client deadline must
+  scale with it (0 = no deadline).
+-->
+<catalog>
+  <!-- Build-method dispatch (BuildActionHandlers) — no static table to
+       reflect; the <action> list below is authoritative. Keep it in sync with
+       ManageScene.BuildActionHandlers. -->
+  <tool type="manage_scene" aliases="scene" timeoutMs="30000" description="Scene management: load, save, create, hierarchy.">
+    <action name="load">
+      <description>Load a scene by name/path or build index.</description>
+      <param name="name" type="string">Scene name (extension optional)</param>
+      <param name="path" type="path">Directory relative to Assets/</param>
+      <param name="buildIndex" type="int" note="alias: build_index">Build-settings index (alternative to name/path)</param>
+    </action>
+    <action name="save">
+      <description>Save the active scene, or a named scene as save-as.</description>
+      <param name="name" type="string">Scene name for save-as</param>
+      <param name="path" type="path">Directory relative to Assets/</param>
+    </action>
+    <action name="create">
+      <description>Create a new scene file.</description>
+      <param name="name" type="string" required="true">Scene name</param>
+      <param name="path" type="path" default="Scenes">Directory relative to Assets/</param>
+    </action>
+    <action name="get_hierarchy">
+      <description>Get the hierarchy tree of loaded scenes (large scenes return roots only).</description>
+    </action>
+  </tool>
+  <tool type="manage_editor" handler="ManageEditor" aliases="editor" timeoutMs="310000" description="Editor control: play-mode transitions (run-to-completion, cover domain reloads), compilation, refresh, wait-for-idle, tags/layers, windows, focus, selection, editor state.">
+    <actionTimeouts>
+      <timeout action="play" ms="130000"/>
+      <timeout action="stop" ms="130000"/>
+      <timeout action="pause" ms="130000"/>
+      <timeout action="resume" ms="130000"/>
+      <timeout action="step" ms="130000"/>
+      <timeout action="refresh" ms="310000"/>
+      <timeout action="request_compile" ms="310000"/>
+      <timeout action="start_compilation_pipeline" ms="310000"/>
+      <timeout action="wait_for_idle" ms="610000"/>
+    </actionTimeouts>
+    <action name="play">
+      <description>Enter play mode (run-to-completion; returns after the switch, incl. domain reload).</description>
+      <param name="timeoutSeconds" type="int" default="120">Server-side budget for the transition</param>
+    </action>
+    <action name="stop">
+      <description>Exit play mode (run-to-completion).</description>
+      <param name="timeoutSeconds" type="int" default="120"/>
+    </action>
+    <action name="pause">
+      <description>Pause or unpause play mode.</description>
+      <param name="targetPaused" type="bool" note="omit = toggle">Desired state; omit to toggle</param>
+      <param name="timeoutSeconds" type="int" default="120"/>
+    </action>
+    <action name="resume">
+      <description>Resume play mode, or step exactly one frame.</description>
+      <param name="singleFrame" type="bool" required="true">true = step one frame; false = resume</param>
+      <param name="timeoutSeconds" type="int" default="120"/>
+    </action>
+    <action name="step">
+      <description>Step one frame in play mode.</description>
+    </action>
+    <action name="get_state">
+      <description>Get the full editor state snapshot: play mode, compiling, active scene, console errors, policy flags.</description>
+    </action>
+    <action name="get_current_state">
+      <description>Alias of get_state.</description>
+    </action>
+    <action name="refresh">
+      <description>Refresh the asset database and wait for imports + compilation (blocked in Play Mode).</description>
+      <param name="timeoutSeconds" type="int" default="300"/>
+    </action>
+    <action name="request_compile">
+      <description>Compile scripts and return console diagnostics (run-to-completion).</description>
+      <param name="clearCache" type="bool" default="false">Recompile everything (clean build)</param>
+      <param name="include_console" type="bool" default="true" note="alias: includeConsole">Include console diagnostics in the response</param>
+      <param name="timeoutSeconds" type="int" default="300"/>
+    </action>
+    <action name="start_compilation_pipeline">
+      <description>Alias of request_compile.</description>
+      <param name="clearCache" type="bool" default="false"/>
+      <param name="include_console" type="bool" default="true" note="alias: includeConsole"/>
+      <param name="timeoutSeconds" type="int" default="300"/>
+    </action>
+    <action name="get_compilation_summary">
+      <description>Error/warning counts of the most recent compilation.</description>
+    </action>
+    <action name="wait_for_idle">
+      <description>Wait until every Bridge job has finished and the editor is idle.</description>
+      <param name="timeoutSeconds" type="int" default="600">Give up after this many seconds</param>
+    </action>
+    <action name="get_tags">
+      <description>List all project tags.</description>
+    </action>
+    <action name="ensure_tag">
+      <description>Create a tag if it does not exist (idempotent).</description>
+      <param name="tagName" type="string" required="true"/>
+    </action>
+    <action name="add_tag">
+      <description>Create a tag (errors if it already exists).</description>
+      <param name="tagName" type="string" required="true"/>
+    </action>
+    <action name="remove_tag">
+      <description>Delete a tag.</description>
+      <param name="tagName" type="string" required="true"/>
+    </action>
+    <action name="get_layers">
+      <description>List all named layers.</description>
+    </action>
+    <action name="ensure_layer">
+      <description>Create a layer if it does not exist (idempotent).</description>
+      <param name="layerName" type="string" required="true"/>
+    </action>
+    <action name="add_layer">
+      <description>Create a layer (errors if it already exists).</description>
+      <param name="layerName" type="string" required="true"/>
+    </action>
+    <action name="remove_layer">
+      <description>Delete a layer.</description>
+      <param name="layerName" type="string" required="true"/>
+    </action>
+    <action name="get_windows">
+      <description>List open editor windows.</description>
+    </action>
+    <action name="focus_window">
+      <description>Focus an editor window by type name.</description>
+      <param name="windowType" type="string" required="true">e.g. SceneView, GameView, InspectorWindow</param>
+    </action>
+    <action name="get_selection">
+      <description>Current selection (objects/assets + hierarchy paths).</description>
+    </action>
+    <action name="get_active_tool">
+      <description>Get the active editor tool (Move/Rotate/Scale/...).</description>
+    </action>
+    <action name="set_active_tool">
+      <description>Set the active editor tool.</description>
+      <param name="toolName" type="string" required="true">Tool name, e.g. Move, Rotate, Scale</param>
+    </action>
+    <action name="get_project_root">
+      <description>Get the Tuanjie project root path.</description>
+    </action>
+    <action name="drain_agent_input">
+      <description>Drain pending editor→agent input messages.</description>
+    </action>
+    <action name="publish_dirty_state_if_needed">
+      <description>Deprecated: use get_state.</description>
+    </action>
+    <action name="wait_for_compile">
+      <description>Deprecated: every command returns only after its work completes.</description>
+    </action>
+    <action name="wait_for_stop">
+      <description>Deprecated: every command returns only after its work completes.</description>
+    </action>
+  </tool>
+  <tool type="manage_gameobject" handler="ManageGameObject" aliases="gameobject,go" timeoutMs="30000" description="GameObject operations: create, find, modify, delete, components, children.">
+    <action name="find">
+      <description>Find GameObjects by target (name, hierarchy path, or instanceID) or by a fuzzy searchTerm.</description>
+      <param name="target" type="string" note="one of target/searchTerm is required">Name, path, or instanceID</param>
+      <param name="searchTerm" type="string">Fuzzy case-insensitive name filter (contains); overrides target when both are sent</param>
+      <param name="searchMethod" type="enum" note="by_name | by_path | by_id"/>
+      <param name="searchInactive" type="bool" default="true">Include inactive GameObjects in the search</param>
+      <param name="findAll" type="bool">Return every match instead of the first</param>
+    </action>
+    <action name="create">
+      <description>Create a GameObject, optionally a primitive, at a transform, under a parent.</description>
+      <param name="name" type="string" required="true"/>
+      <param name="primitiveType" type="enum" note="cube | sphere | capsule | cylinder | plane | quad"/>
+      <param name="parent" type="string">Parent name/path/instanceID</param>
+      <param name="position" type="vec3">[x,y,z]</param>
+      <param name="rotation" type="vec3">Euler degrees</param>
+      <param name="scale" type="vec3">[x,y,z]</param>
+      <param name="tag" type="string"/>
+      <param name="layer" type="int"/>
+      <param name="componentsToAdd" type="json">Array of {type, properties}</param>
+      <param name="saveAsPrefab" type="bool" default="false"/>
+      <param name="prefabPath" type="path">Prefab save path (with saveAsPrefab)</param>
+    </action>
+    <action name="modify">
+      <description>Modify a GameObject&apos;s transform, identity, or components. Write guard: denied in Play Mode.</description>
+      <param name="target" type="string" required="true"/>
+      <param name="searchMethod" type="enum" note="by_name | by_path | by_id"/>
+      <param name="name" type="string">Rename</param>
+      <param name="tag" type="string"/>
+      <param name="layer" type="int"/>
+      <param name="setActive" type="bool"/>
+      <param name="parent" type="string">Re-parent</param>
+      <param name="position" type="vec3"/>
+      <param name="rotation" type="vec3"/>
+      <param name="scale" type="vec3"/>
+      <param name="componentsToAdd" type="json"/>
+      <param name="componentsToRemove" type="json"/>
+      <param name="componentProperties" type="json">Component property overrides</param>
+    </action>
+    <action name="delete">
+      <description>Delete a GameObject.</description>
+      <param name="target" type="string" required="true"/>
+      <param name="searchMethod" type="enum" note="by_name | by_path | by_id"/>
+    </action>
+    <action name="get_components">
+      <description>List components on a GameObject.</description>
+      <param name="target" type="string" required="true"/>
+      <param name="searchMethod" type="enum" note="by_name | by_path | by_id"/>
+      <param name="includeNonPublicSerialized" type="bool" default="true"/>
+    </action>
+    <action name="remove_component">
+      <description>Remove a component from a GameObject.</description>
+      <param name="target" type="string" required="true"/>
+      <param name="searchMethod" type="enum" note="by_name | by_path | by_id"/>
+      <param name="componentName" type="string" required="true"/>
+      <param name="componentsToRemove" type="json">Alternative: remove several at once</param>
+    </action>
+    <action name="set_component_property">
+      <description>Set one property on a component.</description>
+      <param name="target" type="string" required="true"/>
+      <param name="searchMethod" type="enum" note="by_name | by_path | by_id"/>
+      <param name="componentName" type="string" required="true"/>
+      <param name="propertyName" type="string">Property to set (with propertyValue)</param>
+      <param name="propertyValue" type="json"/>
+      <param name="componentProperties" type="json">Alternative: several properties at once</param>
+    </action>
+    <action name="list_children">
+      <description>List the children of a GameObject.</description>
+      <param name="target" type="string" required="true"/>
+      <param name="searchMethod" type="enum" note="by_name | by_path | by_id"/>
+    </action>
+    <action name="create_batch">
+      <description>Create several GameObjects in one call.</description>
+      <param name="mode" type="string" required="true">Batch execution mode</param>
+      <param name="ops" type="json" required="true">Array of create operations</param>
+    </action>
+    <action name="edit_batch">
+      <description>Edit several GameObjects in one call.</description>
+      <param name="mode" type="string" required="true">Batch execution mode</param>
+      <param name="ops" type="json" required="true">Array of edit operations</param>
+    </action>
+    <action name="ensure_component">
+      <description>Ensure a GameObject has a component (idempotent).</description>
+      <param name="target" type="string" required="true"/>
+      <param name="searchMethod" type="enum" note="by_name | by_path | by_id"/>
+      <param name="component_type" type="string" required="true"/>
+    </action>
+    <action name="ensure_renderer_material">
+      <description>Ensure a renderer&apos;s material slot is assigned.</description>
+      <param name="target" type="string" required="true"/>
+      <param name="searchMethod" type="enum" note="by_name | by_path | by_id"/>
+      <param name="material" type="string" required="true">Material name/path</param>
+    </action>
+    <action name="ensure_mesh_collider_mesh">
+      <description>Ensure a MeshCollider references the mesh of its MeshFilter.</description>
+      <param name="target" type="string" required="true"/>
+      <param name="searchMethod" type="enum" note="by_name | by_path | by_id"/>
+      <param name="mesh" type="string">Mesh name/path (optional override)</param>
+    </action>
+    <action name="ensure_prefab_default_sprite">
+      <description>Ensure a prefab has a default sprite.</description>
+      <param name="prefab" type="string" required="true">Prefab path</param>
+      <param name="sprite" type="string">Sprite name/path (optional)</param>
+    </action>
+  </tool>
+  <tool type="manage_asset" handler="ManageAsset" timeoutMs="30000" description="Asset database operations: create, modify, search, asset info, prefab variants.">
+    <action name="create">
+      <description>Create an asset (material, scriptable object, ...).</description>
+      <param name="path" type="path" required="true">Asset path relative to Assets/</param>
+      <param name="assetType" type="string" required="true">Asset type name</param>
+      <param name="properties" type="json">Initial property values</param>
+    </action>
+    <action name="modify">
+      <description>Modify an asset&apos;s serialized properties.</description>
+      <param name="path" type="path" required="true"/>
+      <param name="properties" type="json" required="true">Property values to set</param>
+    </action>
+    <action name="search">
+      <description>Search the asset database.</description>
+      <param name="searchPattern" type="string">Filter pattern</param>
+      <param name="path" type="path">Restrict to folder</param>
+      <param name="filterType" type="string">Type name filter</param>
+      <param name="filterDateAfter" type="string">ISO date filter</param>
+      <param name="pageSize" type="int"/>
+      <param name="pageNumber" type="int"/>
+      <param name="generatePreview" type="bool" default="false"/>
+    </action>
+    <action name="get_info">
+      <description>Get an asset&apos;s metadata.</description>
+      <param name="path" type="path" required="true"/>
+      <param name="generatePreview" type="bool" default="false"/>
+    </action>
+    <action name="ensure_prefab_variant">
+      <description>Ensure a prefab variant exists (created from the source prefab if missing).</description>
+      <param name="path" type="path" required="true">Variant path, must end with .prefab</param>
+      <param name="sourcePrefab" type="path" required="true">Source prefab path</param>
+    </action>
+  </tool>
+  <tool type="manage_guid" handler="ManageGuid" timeoutMs="30000" description="Resolve the real 32-character YAML guid of an asset. Tuanjie stores an encrypted guid in .meta files; AssetDatabase.AssetPathToGUID inside the editor is the only authoritative source.">
+    <action name="path_to_guid">
+      <description>Get the YAML guid for an asset path, optionally verifying it against an expected guid.</description>
+      <param name="asset_path" type="path" required="true">Asset path under Assets/ (file or folder)</param>
+      <param name="guid" type="string">Expected guid to verify: a 32-hex value is compared against the YAML guid, anything else against the asset&apos;s .meta verbatim</param>
+    </action>
+  </tool>
+  <tool type="manage_shader" handler="ManageShader" timeoutMs="30000" description="Shader operations: compile (run-to-completion), preview, render-pipeline detection, SRP material fixes.">
+    <actionTimeouts>
+      <timeout action="compile" ms="61000"/>
+    </actionTimeouts>
+    <action name="compile">
+      <description>Compile shaders and return structured error/warning messages (run-to-completion). Requires at least one of paths/shader_names.</description>
+      <param name="paths" type="json">Shader file paths relative to Assets/ (.shader/.hlsl/.cginc/.glsl/.compute)</param>
+      <param name="shader_names" type="json">Shader Name/Path declarations (Shader.Find)</param>
+      <param name="material_paths" type="json">Materials whose shaders should be compiled</param>
+      <param name="keywords" type="json">Variant keywords to warm up</param>
+      <param name="include_passes" type="json">Passes to include in the warmup</param>
+      <param name="variant_mode" type="enum" default="common"/>
+      <param name="timeout_seconds" type="int" default="60" note="the client budget scales with it"/>
+    </action>
+    <action name="preview">
+      <description>Render a shader preview on a mesh.</description>
+      <param name="shader_names" type="json">Shader Name/Path (first entry is used)</param>
+      <param name="material_path" type="path">Material to preview (alternative to shader_names)</param>
+      <param name="mesh" type="string" default="sphere">Preview mesh type</param>
+      <param name="resolution" type="int" default="256">Image resolution 64-1024</param>
+      <param name="frames" type="json">Animated frames: [{t, props}]</param>
+    </action>
+  </tool>
+  <tool type="read_console" handler="ReadConsole" aliases="console" timeoutMs="30000" description="Read or clear the editor console log (filter by type, format, count); toggle console collapse mode.">
+    <action name="get">
+      <description>Read captured console entries.</description>
+      <param name="types" type="json" default="[&quot;error&quot;,&quot;warning&quot;,&quot;log&quot;]">Severity filter array</param>
+      <param name="count" type="int">Max entries to return</param>
+      <param name="filterText" type="string">Substring filter</param>
+      <param name="sinceTimestamp" type="string">ISO timestamp; return only newer entries</param>
+      <param name="format" type="enum" default="detailed" note="plain | json | detailed"/>
+      <param name="includeStacktrace" type="bool" default="true"/>
+    </action>
+    <action name="clear">
+      <description>Clear the console.</description>
+      <param name="scope" type="enum" default="all" note="all | errors_only">"all" clears everything; "errors_only" is accepted but currently also clears all (Unity API limitation)</param>
+    </action>
+    <action name="set_collapse">
+      <description>Enable or disable the console Collapse mode (persisted; `get` results respect it — collapsed entries are groups with occurrence counts).</description>
+      <param name="collapse" type="bool" required="true">true = enable collapse, false = disable</param>
+    </action>
+  </tool>
+  <tool type="execute_menu_item" handler="ExecuteMenuItem" timeoutMs="30000" description="Execute an editor menu item by path, or list available menus.">
+    <action name="execute">
+      <description>Execute an editor menu item by path. Default action when none is given.</description>
+      <param name="menu_path" type="string" required="true" note="alias: menuPath">Menu path, e.g. File/Save Project</param>
+    </action>
+    <action name="get_available_menus">
+      <description>List available menu paths (reflection + [MenuItem] scan).</description>
+      <param name="menu_path" type="string" note="alias: menuPath">Root path to list from (optional)</param>
+      <param name="filter" type="string" note="alias: search">Substring filter</param>
+      <param name="include_separators" type="bool" default="false" note="alias: includeSeparators">Include separator entries</param>
+    </action>
+  </tool>
+  <!-- Action-less tool: schema at tool level. -->
+  <tool type="execute_csharp_script" aliases="eval" timeoutMs="310000" description="Execute C# code with Roslyn (legacy command): inline code or a .cs file path, optional REPL session. No mode-switch budget.">
+    <param name="script" type="string">Inline C# code (one of script/script_path required)</param>
+    <param name="script_path" type="path">Path to a .cs file</param>
+    <param name="timeoutSeconds" type="int" default="300" note="cap 3600; 0 = no deadline; the client budget scales with it">Script timeout in seconds</param>
+    <param name="imports" type="json">Extra using directives</param>
+    <param name="summary" type="string">Description recorded with the execution</param>
+    <param name="enable_repl" type="bool">Start a stateful REPL session</param>
+    <param name="script_session_id" type="string">Existing session id to continue</param>
+    <param name="unlock_domain_reload" type="bool">Allow scripts that trigger a domain reload</param>
+    <param name="record_game_view" type="json">Record Game View MP4 while the script runs: {durationSeconds}</param>
+    <param name="capture_logs" type="bool">Capture Debug.Log output from the script</param>
+  </tool>
+  <!-- Action-less tool: schema at tool level. -->
+  <tool type="exec_editor_script" timeoutMs="430000" description="Execute C# in edit-mode context (Roslyn). May trigger a mode switch or domain reload; the budget covers the default 300 s script timeout plus the 120 s mode-switch window.">
+    <param name="script" type="string">Inline C# code (one of script/script_path required)</param>
+    <param name="script_path" type="path">Path to a .cs file</param>
+    <param name="timeoutSeconds" type="int" default="300" note="cap 3600; 0 = no deadline; the client budget scales with it">Script timeout in seconds</param>
+    <param name="imports" type="json">Extra using directives</param>
+    <param name="summary" type="string">Description recorded with the execution</param>
+    <param name="enable_repl" type="bool">Start a stateful REPL session</param>
+    <param name="script_session_id" type="string">Existing session id to continue</param>
+    <param name="unlock_domain_reload" type="bool">Allow scripts that trigger a domain reload</param>
+    <param name="capture_logs" type="bool" default="true">Capture Debug.Log output from the script</param>
+  </tool>
+  <!-- Action-less tool: schema at tool level. -->
+  <tool type="exec_runtime_script" timeoutMs="430000" description="Execute C# in play-mode context (Roslyn). Enters Play Mode first when needed; the budget covers the default 300 s script timeout plus the 120 s mode-switch window.">
+    <param name="script" type="string">Inline C# code (one of script/script_path required)</param>
+    <param name="script_path" type="path">Path to a .cs file</param>
+    <param name="timeoutSeconds" type="int" default="300" note="cap 3600; 0 = no deadline; the client budget scales with it">Script timeout in seconds</param>
+    <param name="imports" type="json">Extra using directives</param>
+    <param name="summary" type="string">Description recorded with the execution</param>
+    <param name="record_game_view" type="json">Record Game View MP4: {durationSeconds}</param>
+    <param name="capture_logs" type="bool" default="true">Capture Debug.Log output from the script</param>
+  </tool>
+  <tool type="manage_package" handler="ManagePackage" timeoutMs="310000" description="UPM package management: install/remove/list (run-to-completion; install/remove return after the package resolves and the editor reloaded).">
+    <action name="install_package">
+      <description>Install a package by id or git URL (run-to-completion; returns after install and resolve).</description>
+      <param name="id_or_url" type="string" required="true">Package id, name, or git URL</param>
+      <param name="version" type="string">Version to pin</param>
+      <param name="timeoutSeconds" type="int" default="300">Server-side budget; the client deadline scales with it</param>
+    </action>
+    <action name="remove_package">
+      <description>Remove a package (run-to-completion).</description>
+      <param name="package_name" type="string" required="true"/>
+      <param name="timeoutSeconds" type="int" default="300">Server-side budget; the client deadline scales with it</param>
+    </action>
+    <action name="list_packages">
+      <description>List installed/resolvable packages.</description>
+      <param name="timeoutSeconds" type="int" default="300">Server-side budget; the client deadline scales with it</param>
+    </action>
+  </tool>
+  <tool type="manage_bake" handler="ManageBake" timeoutMs="610000" description="Baking: lighting/navmesh bake (run-to-completion), clear baked data, wait for bake.">
+    <action name="bake_lighting">
+      <description>Bake lighting (run-to-completion; budget covers the full bake).</description>
+      <param name="timeoutSeconds" type="int" default="600">Server-side budget</param>
+    </action>
+    <action name="bake_navmesh">
+      <description>Bake the NavMesh.</description>
+      <param name="async" type="bool">Return immediately instead of waiting</param>
+      <param name="timeoutSeconds" type="int" default="600">Server-side budget for the waiting path; the client deadline scales with it</param>
+    </action>
+    <action name="wait_for_bake">
+      <description>Deprecated: bakes are run-to-completion and return when finished.</description>
+    </action>
+    <action name="clear_navmesh">
+      <description>Clear the baked NavMesh data.</description>
+    </action>
+    <action name="clear_baked_data">
+      <description>Clear baked lighting data.</description>
+    </action>
+  </tool>
+  <!-- Action-less tool: schema at tool level. -->
+  <tool type="execute_custom_tool" timeoutMs="30000" description="Run a [CustomTool]-registered custom tool (tool_name + parameters).">
+    <param name="tool_name" type="string" required="true">Registered tool name (see get_custom_tools)</param>
+    <param name="parameters" type="json">Tool parameters as an object</param>
+  </tool>
+  <tool type="get_custom_tools" timeoutMs="30000" description="List [CustomTool]-registered custom tools with their sources."/>
+  <tool type="_internal_state_dirty" handler="_InternalStateDirtyNotifier" timeoutMs="30000" description="Internal descriptor state-dirty flag management.">
+    <action name="notify_file_changed">
+      <description>Flag a file change in the descriptor state.</description>
+      <param name="file_path" type="path" required="true"/>
+      <param name="tool_name" type="string">Reporting tool</param>
+    </action>
+    <action name="notify_batch_changes">
+      <description>Flag several file changes at once.</description>
+      <param name="files" type="json" required="true">Array of file paths</param>
+      <param name="tool_name" type="string">Reporting tool</param>
+    </action>
+    <action name="get_statistics">
+      <description>State-dirty notification statistics.</description>
+    </action>
+  </tool>
+  <tool type="_internal_asset_listening" handler="_InternalAssetListening" timeoutMs="30000" description="Internal per-project asset-listening toggle: pause/resume asset refresh broadcasts (the state is broadcast to clients).">
+    <action name="set">
+      <description>Pause or resume asset listening; the new state is broadcast to every connected client.</description>
+      <param name="paused" type="bool" default="false">true = pause asset listening, false = resume</param>
+    </action>
+    <action name="status">
+      <description>Read the asset-listening state.</description>
+    </action>
+  </tool>
+  <tool type="manage_window_bridge" handler="ManageWindowBridge" timeoutMs="30000" description="Editor window management: focus/list, native window resolve, stream server control, window input.">
+    <action name="list_windows">
+      <description>List editor windows with their types and titles.</description>
+    </action>
+    <action name="focus_window">
+      <description>Focus an editor window.</description>
+      <param name="windowType" type="string">Window type (one of windowType/title/instanceID/windowId)</param>
+      <param name="title" type="string">Window title</param>
+      <param name="instanceID" type="int"/>
+      <param name="windowId" type="string"/>
+    </action>
+    <action name="resolve_native_window">
+      <description>Resolve the native (OS) window handle info.</description>
+      <param name="windowType" type="string">One of windowType/title/instanceID/windowId</param>
+      <param name="title" type="string"/>
+      <param name="instanceID" type="int"/>
+      <param name="windowId" type="string"/>
+    </action>
+    <action name="input">
+      <description>Send an input event to an editor window.</description>
+      <param name="eventType" type="string" required="true" note="focus | mousemove | mousedown | mouseup | wheel | keydown | keyup | textinput">Event type</param>
+      <param name="x" type="float">Mouse position</param>
+      <param name="y" type="float">Mouse position</param>
+      <param name="deltaX" type="float">Scroll delta</param>
+      <param name="deltaY" type="float">Scroll delta</param>
+      <param name="button" type="int">Mouse button</param>
+      <param name="key" type="string">Key name</param>
+      <param name="code" type="string">Key code</param>
+      <param name="text" type="string">Text for char events</param>
+      <param name="ctrl" type="bool"/>
+      <param name="alt" type="bool"/>
+      <param name="shift" type="bool"/>
+      <param name="meta" type="bool"/>
+      <param name="windowType" type="string">Target: one of windowType/title/instanceID/windowId</param>
+      <param name="title" type="string"/>
+      <param name="instanceID" type="int"/>
+      <param name="windowId" type="string"/>
+    </action>
+    <action name="start_stream_server">
+      <description>Start the window stream server.</description>
+      <param name="port" type="int">Port to bind (0 = auto)</param>
+      <param name="allowPortFallback" type="bool"/>
+      <param name="fps" type="int">Stream frame rate</param>
+      <param name="width" type="int">Stream width</param>
+      <param name="height" type="int">Stream height</param>
+    </action>
+    <action name="stop_stream_server">
+      <description>Stop the window stream server.</description>
+    </action>
+    <action name="get_stream_server_status">
+      <description>Query the stream server status.</description>
+    </action>
+    <action name="start_offscreen_stream">
+      <description>Start an offscreen window stream.</description>
+      <param name="windowType" type="string">Target: one of windowType/title/instanceID/windowId</param>
+      <param name="title" type="string"/>
+      <param name="instanceID" type="int"/>
+      <param name="windowId" type="string"/>
+      <param name="fps" type="int"/>
+      <param name="width" type="int"/>
+      <param name="height" type="int"/>
+    </action>
+    <action name="stop_offscreen_stream">
+      <description>Stop an offscreen stream.</description>
+    </action>
+  </tool>
+  <tool type="manage_gameview" handler="ManageGameView" aliases="gameview,gv" timeoutMs="30000" description="Game View resolution control: get/list/set.">
+    <action name="get_resolution">
+      <description>Get the currently selected Game View resolution.</description>
+    </action>
+    <action name="list_resolutions">
+      <description>List all resolutions in the current size group.</description>
+    </action>
+    <action name="set_resolution">
+      <description>Select (or create) a fixed Game View resolution.</description>
+      <param name="width" type="int" required="true">1-8192</param>
+      <param name="height" type="int" required="true">1-8192</param>
+    </action>
+  </tool>
+  <!-- Inline-switch dispatch (no ActionHandlers); the <action> list below is
+       authoritative. Keep it in sync with ManageScreenshot.HandleCommand. The
+       disabled capture_game_view / capture stubs are deliberately not listed. -->
+  <tool type="manage_screenshot" aliases="screenshot" timeoutMs="120000" description="Screenshots (scene view, cameras, assets, UI Toolkit; PNG or animated GIF) and Game View MP4 recording (start/finish).">
+    <action name="capture_scene_view">
+      <description>Capture the Scene view (default action).</description>
+      <param name="path" type="path">Output file (the actual path is returned)</param>
+      <param name="filename" type="string">Output file name</param>
+      <param name="width" type="int" default="960"/>
+      <param name="height" type="int" default="540"/>
+      <param name="view" type="enum" note="current | all | cardinal | iso | top | front | right | back | left | bottom">Scene view direction</param>
+      <param name="render_mode" type="enum" default="shaded" note="shaded | wireframe | shadedwireframe"/>
+      <param name="orthographic" type="bool"/>
+      <param name="focus_object" type="json" note="{focusobject, index}">Frame one GameObject: {focusobject: hierarchy path, index: 0-based sibling index}</param>
+      <param name="as_gif" type="json">Animated GIF instead of PNG: {frameCount, fps, colorCount, startDelay}</param>
+      <param name="over_time" type="string" note="&quot;N&quot; or &quot;NxS&quot;, e.g. &quot;4x1&quot;">Capture N frames, stepping S simulation frames between each</param>
+    </action>
+    <action name="capture_scene_camera">
+      <description>Capture the scene camera (same renderer and parameters as capture_scene_view).</description>
+      <param name="path" type="path"/>
+      <param name="filename" type="string"/>
+      <param name="width" type="int" default="960"/>
+      <param name="height" type="int" default="540"/>
+      <param name="view" type="enum" note="current | all | cardinal | iso | top | front | right | back | left | bottom"/>
+      <param name="render_mode" type="enum" default="shaded" note="shaded | wireframe | shadedwireframe"/>
+      <param name="orthographic" type="bool"/>
+      <param name="focus_object" type="json" note="{focusobject, index}">Frame one GameObject: {focusobject: hierarchy path, index: 0-based sibling index}</param>
+      <param name="as_gif" type="json">Animated GIF instead of PNG: {frameCount, fps, colorCount, startDelay}</param>
+      <param name="over_time" type="string" note="&quot;N&quot; or &quot;NxS&quot;, e.g. &quot;4x1&quot;">Capture N frames, stepping S simulation frames between each</param>
+    </action>
+    <action name="capture_main_camera">
+      <description>Capture Camera.main.</description>
+      <param name="path" type="path"/>
+      <param name="filename" type="string"/>
+      <param name="width" type="int" note="default: the camera's pixel width (960 if unavailable)"/>
+      <param name="height" type="int" note="default: the camera's pixel height (540 if unavailable)"/>
+      <param name="as_gif" type="json">Animated GIF instead of PNG: {frameCount, fps, colorCount, startDelay}</param>
+      <param name="over_time" type="string" note="&quot;N&quot; or &quot;NxS&quot;, e.g. &quot;4x1&quot;">Capture N frames, stepping S simulation frames between each</param>
+      <param name="allow_static_in_play_mode" type="bool" note="alias: allowStaticInPlayMode">Allow a static capture in Play Mode (requires static_reason)</param>
+      <param name="static_reason" type="string" note="alias: staticReason">Why a genuinely static Play Mode capture is acceptable</param>
+    </action>
+    <action name="capture_specific_camera">
+      <description>Capture a named camera.</description>
+      <param name="camera_name" type="string" required="true">Camera GameObject name</param>
+      <param name="path" type="path"/>
+      <param name="filename" type="string"/>
+      <param name="width" type="int" note="default: the camera's pixel width (960 if unavailable)"/>
+      <param name="height" type="int" note="default: the camera's pixel height (540 if unavailable)"/>
+      <param name="as_gif" type="json">Animated GIF instead of PNG: {frameCount, fps, colorCount, startDelay}</param>
+      <param name="over_time" type="string" note="&quot;N&quot; or &quot;NxS&quot;, e.g. &quot;4x1&quot;">Capture N frames, stepping S simulation frames between each</param>
+      <param name="allow_static_in_play_mode" type="bool" note="alias: allowStaticInPlayMode">Allow a static capture in Play Mode (requires static_reason)</param>
+      <param name="static_reason" type="string" note="alias: staticReason">Why a genuinely static Play Mode capture is acceptable</param>
+    </action>
+    <action name="capture_asset">
+      <description>Capture asset previews (GameObject/Prefab, Mesh, Material, Texture2D, Sprite). Edit Mode only; as_gif is not supported.</description>
+      <param name="assets" type="json" required="true">Asset paths</param>
+      <param name="scene" type="path">.unity scene to stage the assets in (opened additively, closed when the capture finishes)</param>
+      <param name="view" type="enum" default="cardinal" note="all | cardinal | iso | top | front | right | back | left | bottom">Direction(s) to render</param>
+      <param name="orthographic" type="bool"/>
+      <param name="width" type="int" note="default: the Scene view camera's pixel width (960 if unavailable)"/>
+      <param name="height" type="int" note="default: the Scene view camera's pixel height (540 if unavailable)"/>
+      <param name="path" type="path"/>
+      <param name="filename" type="string"/>
+    </action>
+    <action name="capture_ui_toolkit">
+      <description>Capture a UI Toolkit panel (.uxml). Edit Mode only.</description>
+      <param name="document_path" type="path" required="true">Path to the .uxml asset (e.g. Assets/UI/HUD.uxml)</param>
+      <param name="path" type="path">Output file</param>
+      <param name="filename" type="string"/>
+      <param name="width" type="int" note="default: the main Game View width capped at 960"/>
+      <param name="height" type="int" note="default: the main Game View height capped at 540"/>
+    </action>
+    <action name="start_game_view_recording">
+      <description>Start a Game View MP4 recording (requires ffmpeg; Play Mode).</description>
+      <param name="durationSeconds" type="int" default="5" note="clamped 1-8; alias: duration_seconds">Recording length in seconds</param>
+      <param name="fps" type="int" default="15" note="clamped 5-30">Capture frame rate</param>
+      <param name="encodeFps" type="int" default="15" note="clamped 1-30; defaults to fps; alias: encode_fps">MP4 metadata frame rate — how fast a model samples the video</param>
+      <param name="scale" type="float" default="0.5" note="clamped 0.25-1.0">Resolution scale</param>
+      <param name="startDelay" type="float" default="0" note="clamped 0-5; alias: start_delay">Seconds to wait before the recording starts</param>
+      <param name="filename" type="string">Output file name</param>
+    </action>
+    <action name="finish_game_view_recording">
+      <description>Finish a Game View MP4 recording and get the file.</description>
+      <param name="recording_id" type="string" required="true">Id returned by start_game_view_recording</param>
+    </action>
+  </tool>
+  <!-- Inline-switch dispatch (no ActionHandlers); the <action> list below is
+       authoritative. Keep it in sync with ManageInput.DispatchStepCoroutine. -->
+  <tool type="manage_input" aliases="input" timeoutMs="60000" description="Input simulation in Play Mode: virtual device lifecycle, mouse, keyboard, text entry, step sequences (coroutines across frames).">
+    <actionTimeouts>
+      <timeout action="sequence" ms="120000"/>
+    </actionTimeouts>
+    <action name="create_virtual_devices">
+      <description>Create the virtual mouse/keyboard (disables real devices while active). Required before keyboard input and non-UI mouse actions.</description>
+    </action>
+    <action name="destroy_virtual_devices">
+      <description>Destroy the virtual devices and restore the real ones.</description>
+    </action>
+    <action name="mouse_click">
+      <description>Click at a screen position (origin bottom-left, Y up).</description>
+      <param name="x" type="float" required="true"/>
+      <param name="y" type="float" required="true"/>
+      <param name="button" type="int" default="0" note="0=left, 1=right, 2=middle"/>
+      <param name="target" type="enum" default="auto" note="auto | ui | world">Hit-test routing</param>
+    </action>
+    <action name="mouse_move">
+      <description>Move the mouse to a screen position.</description>
+      <param name="x" type="float" required="true"/>
+      <param name="y" type="float" required="true"/>
+    </action>
+    <action name="mouse_drag">
+      <description>Drag from one position to another.</description>
+      <param name="from_x" type="float" required="true"/>
+      <param name="from_y" type="float" required="true"/>
+      <param name="x" type="float" required="true">End position</param>
+      <param name="y" type="float" required="true"/>
+      <param name="button" type="int" default="0"/>
+      <param name="drag_speed" type="float" default="500">px/s; 0 = instant</param>
+    </action>
+    <action name="mouse_scroll">
+      <description>Scroll at a screen position.</description>
+      <param name="x" type="float" required="true"/>
+      <param name="y" type="float" required="true"/>
+      <param name="scroll_x" type="float" default="0"/>
+      <param name="scroll_y" type="float" default="0"/>
+    </action>
+    <action name="mouse_down">
+      <description>Press and hold a mouse button (pair with mouse_up).</description>
+      <param name="x" type="float" required="true"/>
+      <param name="y" type="float" required="true"/>
+      <param name="button" type="int" default="0"/>
+    </action>
+    <action name="mouse_up">
+      <description>Release a held mouse button.</description>
+      <param name="button" type="int" default="0"/>
+    </action>
+    <action name="key_press">
+      <description>Tap a key for one frame (requires input init).</description>
+      <param name="key" type="string" required="true">e.g. W, Space, LeftShift, Enter</param>
+    </action>
+    <action name="key_down">
+      <description>Hold a key down (pair with key_up).</description>
+      <param name="key" type="string" required="true"/>
+    </action>
+    <action name="key_up">
+      <description>Release a held key.</description>
+      <param name="key" type="string" required="true"/>
+    </action>
+    <action name="type_text">
+      <description>Type text into the focused uGUI/TMP input field (no Input System required).</description>
+      <param name="text" type="string" required="true"/>
+    </action>
+    <action name="sequence">
+      <description>Run an ordered list of input steps (JSON array).</description>
+      <param name="steps" type="json" required="true">Array of steps, e.g. [{&quot;action&quot;:&quot;mouse_click&quot;,&quot;x&quot;:100,&quot;y&quot;:200}]</param>
+      <param name="start_delay" type="int" default="0">Frames to wait before the first step</param>
+      <param name="step_delay" type="int" default="1">Frames between steps</param>
+      <param name="stop_on_error" type="bool" default="true">Abort on a failed step</param>
+    </action>
+  </tool>
+  <tool type="manage_dialog" handler="ManageDialog" aliases="dialog" timeoutMs="30000" description="Click buttons on native modal dialogs blocking the editor main thread (runs on the background command pump).">
+    <action name="click">
+      <description>Click a button on an open modal dialog (Save Scene, compile errors, ...).</description>
+      <param name="button" type="string" required="true">Button label (regex)</param>
+      <param name="title" type="string">Only click dialogs whose title matches (regex)</param>
+    </action>
+  </tool>
+  <tool type="manage_job" handler="ManageJob" aliases="job,j" timeoutMs="30000" description="Inspect or cancel Bridge jobs (thread-safe; works while the main thread is blocked by a dialog).">
+    <action name="list">
+      <description>List tracked jobs (attached + detached).</description>
+    </action>
+    <action name="status">
+      <description>Get the status of one job (action alias: check).</description>
+      <param name="job_id" type="string" required="true" note="alias: id"/>
+    </action>
+    <action name="cancel">
+      <description>Request cancellation of a running job.</description>
+      <param name="job_id" type="string" required="true" note="alias: id"/>
+      <param name="reason" type="string" default="client aborted">Reason recorded for the cancellation</param>
+    </action>
+  </tool>
+  <tool type="list_tools" timeoutMs="30000" description="List the live catalog of Bridge tool types, actions and client timeout budgets (this command)."/>
+</catalog>

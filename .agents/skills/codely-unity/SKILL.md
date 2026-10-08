@@ -229,6 +229,8 @@ bridge_status → get_state
 
 ## Troubleshooting
 
+遇到 `SendDataChannelMessage REJECTED` / `dataChannel=null`，先读 [原生串流排障](references/native-streaming.md)：区分浏览器串流与 MCP/TCP，按实际日志和是否需要浏览器预览选择处理方式。Polarity 的项目修复记录见 `docs/桥接串流修复.md`。
+
 | 症状 | 处理 |
 |---|---|
 | `unity_port` 为 0 / 连不上 | 团结编辑器需打开并加载 bridge；查 `Temp/.com-unity-codely.json` |

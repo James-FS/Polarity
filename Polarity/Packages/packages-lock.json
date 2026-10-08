@@ -1,14 +1,13 @@
 {
   "dependencies": {
     "cn.tuanjie.codely.bridge": {
-      "version": "1.0.86",
+      "version": "file:cn.tuanjie.codely.bridge",
       "depth": 0,
-      "source": "registry",
+      "source": "embedded",
       "dependencies": {
         "com.unity.ext.nunit": "1.0.6",
         "com.unity.ugui": "1.0.0"
-      },
-      "url": "https://packages.tuanjie.cn"
+      }
     },
     "com.unity.2d.animation": {
       "version": "9.2.0",
