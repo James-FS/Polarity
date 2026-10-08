@@ -1,0 +1,48 @@
+# Unity / Tuanjie generated state (the editor project is under Polarity/).
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+**/[Bb]uild/
+**/[Bb]uilds/
+**/[Mm]emoryCaptures/
+**/[Rr]ecordings/
+
+# Generated IDE project files and local IDE state.
+**/.vs/
+**/.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.tmp
+*.bak
+
+# Local credentials and machine-specific files.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Archives and exported application packages.
+*.apk
+*.aab
+*.unitypackage
+crashlytics-build.properties
