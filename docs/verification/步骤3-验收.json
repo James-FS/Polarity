@@ -1,0 +1,664 @@
+{
+  "step": 3,
+  "date": "2026-10-09",
+  "engine": "Tuanjie 1.10.1 / 2022.3.62t13",
+  "bridge": "Codely Unity Bridge 1.0.86",
+  "project": "D:/Code/Polarity/Polarity",
+  "verificationMode": "Play Mode using the existing World.FixedUpdate entry for directed single-step measurements, followed by real engine FixedUpdate sequences; temporary fixtures use cloned configs/prefabs only",
+  "runtime": {
+    "passed": 38,
+    "checks": [
+      {
+        "name": "demo uses existing two bodies and copied config",
+        "passed": true,
+        "evidence": {
+          "ids": [
+            1,
+            2
+          ],
+          "RuntimeSettings": {
+            "MagneticStrength": 20.0,
+            "MagneticRadius": 7.0,
+            "MarkingDistance": 7.0,
+            "MaxMagneticAcceleration": 30.0,
+            "MaxBodySpeed": 12.0,
+            "MagneticBlockingLayers": 4096
+          }
+        }
+      },
+      {
+        "name": "like charges repel 1",
+        "passed": true,
+        "evidence": {
+          "a": {
+            "x": -14.2857141,
+            "y": 0.0
+          },
+          "b": {
+            "x": 14.2857141,
+            "y": 0.0
+          },
+          "velocities": [
+            {
+              "x": -0.285714269,
+              "y": 0.0
+            },
+            {
+              "x": 0.07142857,
+              "y": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "name": "one pair / equal opposite force 11",
+        "passed": true,
+        "evidence": {
+          "LastPairEvaluationCount": 1,
+          "LastMagneticPairCount": 1,
+          "sum": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        }
+      },
+      {
+        "name": "like charges repel 2",
+        "passed": true,
+        "evidence": {
+          "a": {
+            "x": -14.2857141,
+            "y": 0.0
+          },
+          "b": {
+            "x": 14.2857141,
+            "y": 0.0
+          },
+          "velocities": [
+            {
+              "x": -0.285714269,
+              "y": 0.0
+            },
+            {
+              "x": 0.07142857,
+              "y": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "name": "one pair / equal opposite force 22",
+        "passed": true,
+        "evidence": {
+          "LastPairEvaluationCount": 1,
+          "LastMagneticPairCount": 1,
+          "sum": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        }
+      },
+      {
+        "name": "opposites attract",
+        "passed": true,
+        "evidence": {
+          "a": {
+            "x": 14.2857141,
+            "y": 0.0
+          },
+          "b": {
+            "x": -14.2857141,
+            "y": 0.0
+          },
+          "velocities": [
+            {
+              "x": 0.285714269,
+              "y": 0.0
+            },
+            {
+              "x": -0.07142857,
+              "y": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "name": "one pair / equal opposite force 12",
+        "passed": true,
+        "evidence": {
+          "LastPairEvaluationCount": 1,
+          "LastMagneticPairCount": 1,
+          "sum": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        }
+      },
+      {
+        "name": "linear falloff and no extra deltaTime",
+        "passed": true,
+        "evidence": {
+          "force": 14.2857141,
+          "expected": 14.2857151,
+          "lightSpeed": 0.285714269,
+          "expectedSpeed": 0.2857143
+        }
+      },
+      {
+        "name": "mass controls acceleration",
+        "passed": true,
+        "evidence": {
+          "massLight": 1.0,
+          "massHeavy": 4.0,
+          "lightSpeed": 0.285714269,
+          "heavySpeed": 0.07142857,
+          "ratio": 4.0
+        }
+      },
+      {
+        "name": "Neutral does not exert magnetism 00",
+        "passed": true,
+        "evidence": {
+          "LastMagneticPairCount": 0,
+          "velocities": [
+            {
+              "x": 0.0,
+              "y": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "name": "Neutral does not exert magnetism 10",
+        "passed": true,
+        "evidence": {
+          "LastMagneticPairCount": 0,
+          "velocities": [
+            {
+              "x": 0.0,
+              "y": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "name": "Neutral does not exert magnetism 02",
+        "passed": true,
+        "evidence": {
+          "LastMagneticPairCount": 0,
+          "velocities": [
+            {
+              "x": 0.0,
+              "y": 0.0
+            },
+            {
+              "x": 0.0,
+              "y": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "name": "radius excludes distance 7",
+        "passed": true,
+        "evidence": {
+          "distance": 7.0,
+          "radius": 7.0
+        }
+      },
+      {
+        "name": "radius excludes distance 8",
+        "passed": true,
+        "evidence": {
+          "distance": 8.0,
+          "radius": 7.0
+        }
+      },
+      {
+        "name": "half radius gives half strength",
+        "passed": true,
+        "evidence": {
+          "force": {
+            "x": 10.0,
+            "y": 0.0
+          }
+        }
+      },
+      {
+        "name": "solid wall blocks forces and debug relation",
+        "passed": true,
+        "evidence": {
+          "LastBlockedPairCount": 1,
+          "LastMagneticPairCount": 0
+        }
+      },
+      {
+        "name": "removing wall restores magnetism",
+        "passed": true,
+        "evidence": {
+          "force": {
+            "x": 14.2857141,
+            "y": 0.0
+          }
+        }
+      },
+      {
+        "name": "neutral crate does not block magnetic line",
+        "passed": true,
+        "evidence": {
+          "LastPairEvaluationCount": 3,
+          "LastMagneticPairCount": 1,
+          "LastBlockedPairCount": 0,
+          "force": {
+            "x": 11.4285717,
+            "y": 0.0
+          }
+        }
+      },
+      {
+        "name": "four bodies produce exactly six pairs",
+        "passed": true,
+        "evidence": {
+          "LastPairEvaluationCount": 6,
+          "LastMagneticPairCount": 6,
+          "ids": [
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      },
+      {
+        "name": "summed multi-body force is balanced",
+        "passed": true,
+        "evidence": {
+          "sum": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "forces": [
+            {
+              "x": 5.85786438,
+              "y": 5.85786438
+            },
+            {
+              "x": 5.85786438,
+              "y": -5.85786438
+            },
+            {
+              "x": -5.85786438,
+              "y": 5.85786438
+            },
+            {
+              "x": -5.85786438,
+              "y": -5.85786438
+            }
+          ]
+        }
+      },
+      {
+        "name": "disabled body leaves the magnetic snapshot",
+        "passed": true,
+        "evidence": {
+          "registered": 3,
+          "LastPairEvaluationCount": 3
+        }
+      },
+      {
+        "name": "acceleration cap applies after accumulation",
+        "passed": true,
+        "evidence": {
+          "LastAccelerationClampCount": 2,
+          "applied": [
+            {
+              "x": 5.0,
+              "y": 0.0
+            },
+            {
+              "x": -20.0,
+              "y": 0.0
+            }
+          ],
+          "speeds": [
+            0.099999994,
+            0.099999994
+          ]
+        }
+      },
+      {
+        "name": "global safety speed limits oversized momentum",
+        "passed": true,
+        "evidence": {
+          "LastSpeedClampCount": 1,
+          "speed": 11.999999
+        }
+      },
+      {
+        "name": "ordinary magnetic deflection survives safety limit",
+        "passed": true,
+        "evidence": {
+          "velocity": {
+            "x": 0.285714269,
+            "y": 6.0
+          },
+          "LastSpeedClampCount": 0
+        }
+      },
+      {
+        "name": "ordinary launch is not reduced to walking speed",
+        "passed": true,
+        "evidence": {
+          "velocity": {
+            "x": 8.0,
+            "y": 0.0
+          },
+          "LastSpeedClampCount": 0
+        }
+      },
+      {
+        "name": "coincident/near centers use stable bounded direction 0",
+        "passed": true,
+        "evidence": {
+          "epsilon": 0.0,
+          "force": {
+            "x": 14.1421356,
+            "y": -14.1421356
+          },
+          "sameAsPrevious": true,
+          "speed": 0.399999976
+        }
+      },
+      {
+        "name": "coincident/near centers use stable bounded direction 0",
+        "passed": true,
+        "evidence": {
+          "epsilon": 0.0,
+          "force": {
+            "x": 14.1421356,
+            "y": -14.1421356
+          },
+          "sameAsPrevious": true,
+          "speed": 0.399999976
+        }
+      },
+      {
+        "name": "coincident/near centers use stable bounded direction 1E-05",
+        "passed": true,
+        "evidence": {
+          "epsilon": 1e-05,
+          "force": {
+            "x": 14.1421156,
+            "y": -14.1421156
+          },
+          "sameAsPrevious": true,
+          "speed": 0.39999944
+        }
+      },
+      {
+        "name": "runtime settings are a copy",
+        "passed": true,
+        "evidence": {
+          "runtimeStrength": 20.0
+        }
+      },
+      {
+        "name": "opposite contact stays stable without violent jitter",
+        "passed": true,
+        "evidence": {
+          "finite": true,
+          "contact": true,
+          "maxSpeed": 0.0,
+          "endSpeed": 0.0,
+          "gapRange": 0.0,
+          "steps": 133,
+          "FailedStepCount": 0
+        }
+      },
+      {
+        "name": "overlapped physical bodies settle without NaN/explosion",
+        "passed": true,
+        "evidence": {
+          "finite": true,
+          "contact": true,
+          "maxSpeed": 0.0668163,
+          "endSpeed": 0.0,
+          "gapRange": 0.0,
+          "steps": 116,
+          "FailedStepCount": 0
+        }
+      },
+      {
+        "name": "eight-body stress stays finite and capped",
+        "passed": true,
+        "evidence": {
+          "finite": true,
+          "maxSpeed": 1.950504,
+          "maxAcceleration": 30.0000038,
+          "LastPairEvaluationCount": 28,
+          "FailedStepCount": 0
+        }
+      },
+      {
+        "name": "actual Running FixedUpdate still simulates exactly once",
+        "passed": true,
+        "evidence": {
+          "steps": 11,
+          "updates": 11,
+          "attempts": 11
+        }
+      },
+      {
+        "name": "magnetism does not advance in Ready",
+        "passed": true,
+        "evidence": {
+          "stepDelta": 0,
+          "fixedUpdates": 5
+        }
+      },
+      {
+        "name": "magnetism does not advance in Paused",
+        "passed": true,
+        "evidence": {
+          "stepDelta": 0,
+          "fixedUpdates": 5
+        }
+      },
+      {
+        "name": "magnetism does not advance in Won",
+        "passed": true,
+        "evidence": {
+          "stepDelta": 0,
+          "fixedUpdates": 5
+        }
+      },
+      {
+        "name": "magnetism does not advance in Lost",
+        "passed": true,
+        "evidence": {
+          "stepDelta": 0,
+          "fixedUpdates": 5
+        }
+      },
+      {
+        "name": "original mode restored when World stops",
+        "passed": true,
+        "evidence": {
+          "FailedStepCount": 0
+        }
+      }
+    ]
+  },
+  "wallRegression": {
+    "passed": 8,
+    "checks": [
+      {
+        "body": "Enemy",
+        "wall": "Wall_Right",
+        "passed": true,
+        "touched": true,
+        "escaped": false,
+        "maxExtent": 7.99532,
+        "endSpeed": 0.0
+      },
+      {
+        "body": "Enemy",
+        "wall": "Wall_Left",
+        "passed": true,
+        "touched": true,
+        "escaped": false,
+        "maxExtent": 7.995625,
+        "endSpeed": 0.0
+      },
+      {
+        "body": "Enemy",
+        "wall": "Wall_Top",
+        "passed": true,
+        "touched": true,
+        "escaped": false,
+        "maxExtent": 4.495625,
+        "endSpeed": 0.0
+      },
+      {
+        "body": "Enemy",
+        "wall": "Wall_Bottom",
+        "passed": true,
+        "touched": true,
+        "escaped": false,
+        "maxExtent": 4.4955,
+        "endSpeed": 0.0
+      },
+      {
+        "body": "Crate",
+        "wall": "Wall_Right",
+        "passed": true,
+        "touched": true,
+        "escaped": false,
+        "maxExtent": 7.985039,
+        "endSpeed": 0.0
+      },
+      {
+        "body": "Crate",
+        "wall": "Wall_Left",
+        "passed": true,
+        "touched": true,
+        "escaped": false,
+        "maxExtent": 7.98502541,
+        "endSpeed": 0.0
+      },
+      {
+        "body": "Crate",
+        "wall": "Wall_Top",
+        "passed": true,
+        "touched": true,
+        "escaped": false,
+        "maxExtent": 4.485039,
+        "endSpeed": 0.0
+      },
+      {
+        "body": "Crate",
+        "wall": "Wall_Bottom",
+        "passed": true,
+        "touched": true,
+        "escaped": false,
+        "maxExtent": 4.485039,
+        "endSpeed": 0.0
+      }
+    ],
+    "FailedStepCount": 0
+  },
+  "reload": {
+    "passed": true,
+    "mode": "FixedUpdate",
+    "isDirty": false,
+    "missingScripts": 0,
+    "worlds": 1,
+    "bodies": [
+      {
+        "name": "Enemy",
+        "initial": "Positive"
+      },
+      {
+        "name": "Crate",
+        "initial": "Negative"
+      }
+    ],
+    "config": "Assets/Polarity/Configs/GameplayConfig.asset",
+    "configSettings": {
+      "MagneticStrength": 20.0,
+      "MagneticRadius": 7.0,
+      "MarkingDistance": 7.0,
+      "MaxMagneticAcceleration": 30.0,
+      "MaxBodySpeed": 12.0,
+      "MagneticBlockingLayers": 4096
+    },
+    "temporaryObjects": 0,
+    "drawGizmos": true,
+    "prefabInitials": [
+      {
+        "name": "Enemy",
+        "polarity": "Neutral"
+      },
+      {
+        "name": "Crate",
+        "polarity": "Neutral"
+      }
+    ]
+  },
+  "restart": {
+    "passed": true,
+    "startGap": 5.699769,
+    "endGap": 3.841095,
+    "steps": 34,
+    "updates": 34,
+    "attempts": 34,
+    "forceOnEnemy": "(8.773151, 0)",
+    "forceOnCrate": "(-8.773151, 0)",
+    "enemyColor": "RGBA(0.660, 0.324, 0.092, 1.000)",
+    "crateColor": "RGBA(0.095, 0.325, 0.640, 1.000)",
+    "ids": [
+      1,
+      2
+    ],
+    "FailedStepCount": 0
+  },
+  "preservation": {
+    "physicsPreserved": true,
+    "checkedRigidbodies": 6,
+    "restoredMode": "FixedUpdate",
+    "sceneDirty": false,
+    "unchangedHashes": {
+      "Polarity/Assets/Polarity/Prefabs/Actors/Enemy.prefab": "8467F7694C321FE97F34B16453B12C0BADADA55E47AA6F3A5FA87FC86AE16333",
+      "Polarity/Assets/Polarity/Prefabs/Actors/Crate.prefab": "E02720AEF8132CBA58BD969758237FA0ACF1231994F6CA1AC9F334503DE1AA3C",
+      "Polarity/ProjectSettings/Physics2DSettings.asset": "337D121D7AE1D92F8B455DBA8F2D2175CDB0291EB0A137EFED6CDAEE9AAA4A78",
+      "Polarity/Assets/Scenes/SampleScene.scene": "120D00BE434B5573219B19E566EB41A3D0EFC88F0D1C78DBB5A20E4D9419BDF2",
+      "Polarity/Assets/Polarity/Scripts/Entities/PolarityBody.cs": "61E84D586CB4B37FB8FE500CF72B1DA88C9C833F073AEF025F64BD4EFC8BFA88",
+      "Polarity/Assets/Polarity/Scripts/Views/PolarityView.cs": "BC23A3749291206B1CF19D775BD658D07077FEF45D14E1075835AA3066061751",
+      "Polarity/Assets/Polarity/Scripts/Views/YSortView.cs": "9969B4A315DF54696682B0417A27F918595CBF417B8DF40E93BA16E569E51E2C"
+    },
+    "configHash": "1A1C254D7AD9C52ECBC4A7878239DE5D5868E07D24D5501017B06174535D0173"
+  },
+  "finalCompilation": {
+    "success": true,
+    "errors": 0,
+    "warnings": 0
+  },
+  "finalConsole": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "limitations": [
+    "No standalone build or cross-device determinism checks.",
+    "Wall collision regression uses speed 6, not the global safety ceiling 12.",
+    "Gizmos range/force drawing is implemented and enabled; no screenshot-based visual acceptance was performed.",
+    "Per-body acceleration/speed caps are gameplay limits and do not promise strict momentum conservation."
+  ]
+}

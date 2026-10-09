@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f163301469d6de45bccb3c3b1e72285, type: 3}
+  m_Name: GameplayConfig
+  m_EditorClassIdentifier: 
+  magneticStrength: 20
+  magneticRadius: 7
+  markingDistance: 7
+  maxMagneticAcceleration: 30
+  maxBodySpeed: 12
+  magneticBlockingLayers:
+    serializedVersion: 2
+    m_Bits: 4096
