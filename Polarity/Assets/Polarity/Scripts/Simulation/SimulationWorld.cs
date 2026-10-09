@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Polarity.Config;
+using Polarity.Controllers;
 using Polarity.Entities;
 using Polarity.Model;
 using UnityEngine;
@@ -18,6 +19,18 @@ namespace Polarity.Simulation
         [SerializeField] private bool startRunning = true;
         [SerializeField] private GameplayConfig gameplayConfig;
         [SerializeField] private bool drawMagnetismGizmos = true;
+
+        [SerializeField] private PlayerController player;
+        private readonly Queue<MarkRequest> markRequests = new Queue<MarkRequest>();
+        private long nextMarkSequence;
+        private int enemyLayer, crateLayer;
+        private readonly RaycastHit2D[] markingWallHits = new RaycastHit2D[1];
+        private ContactFilter2D markingWallFilter;
+        public PlayerController Player => player;
+        public int PendingMarkCount => markRequests.Count;
+        public long ProcessedMarkCount { get; private set; }
+        public MarkResult? LastMarkResult { get; private set; }
+        public event Action<MarkResult> MarkResolved;
 
         private static SimulationWorld physicsOwner;
         private readonly List<PolarityBody> bodies = new List<PolarityBody>();
@@ -71,6 +84,12 @@ namespace Polarity.Simulation
                 return;
 
             settings = gameplayConfig.CreateRuntimeSettings();
+            enemyLayer = LayerMask.NameToLayer("Enemy");
+            crateLayer = LayerMask.NameToLayer("Crate");
+            markingWallFilter = new ContactFilter2D();
+            markingWallFilter.SetLayerMask(1 << LayerMask.NameToLayer("Wall"));
+            markingWallFilter.useTriggers = false;
+            State.PhaseChanged += OnPhaseChanged;
             wallFilter = new ContactFilter2D();
             wallFilter.SetLayerMask(settings.MagneticBlockingLayers);
             wallFilter.useTriggers = false;
@@ -151,7 +170,80 @@ namespace Polarity.Simulation
             State.SetPhase(phase);
         }
 
-        // Rule-layer entry only. Player request validation and propagation arrive in later steps.
+        private void OnPhaseChanged(LevelPhase phase)
+        {
+            if (phase != LevelPhase.Running)
+            {
+                markRequests.Clear();
+                player?.ClearIntent();
+            }
+        }
+
+        public long SubmitMark(int targetId, Pole polarity)
+        {
+            var request = new MarkRequest(targetId, polarity, ++nextMarkSequence);
+            if (!ownsPhysics || State == null || State.Phase != LevelPhase.Running)
+            {
+                PublishMarkResult(request, MarkOutcome.NotRunning);
+                return request.Sequence;
+            }
+            markRequests.Enqueue(request);
+            return request.Sequence;
+        }
+
+        private void ConsumeMarkRequests()
+        {
+            while (markRequests.Count > 0)
+            {
+                var request = markRequests.Dequeue();
+                var outcome = ValidateMark(request, out PolarityBody target);
+                if (outcome == MarkOutcome.Applied)
+                {
+                    // Commit both facts before notifying views. Same-color requests never reach here.
+                    State.TrySpendMark();
+                    ApplyPolarity(target, request.Polarity);
+                }
+                PublishMarkResult(request, outcome);
+            }
+        }
+
+        private MarkOutcome ValidateMark(MarkRequest request, out PolarityBody target)
+        {
+            target = bodies.Find(body => body != null && body.BodyId == request.TargetId);
+            if (State.Phase != LevelPhase.Running) return MarkOutcome.NotRunning;
+            if (target == null || !target.IsValid || !target.Rigidbody.simulated) return MarkOutcome.InvalidTarget;
+            if (!target.CanMark || (target.gameObject.layer != enemyLayer && target.gameObject.layer != crateLayer))
+                return MarkOutcome.NotMarkable;
+            if (request.Polarity != Pole.Positive && request.Polarity != Pole.Negative) return MarkOutcome.InvalidPolarity;
+            if (player == null || !player.isActiveAndEnabled || !player.Rigidbody.simulated) return MarkOutcome.PlayerUnavailable;
+            Vector2 from = player.Rigidbody.position, to = target.Rigidbody.position;
+            if (!IsFinite(from) || !IsFinite(to) || (to - from).sqrMagnitude > settings.MarkingDistance * settings.MarkingDistance)
+                return MarkOutcome.TooFar;
+            if (Physics2D.Linecast(from, to, markingWallFilter, markingWallHits) > 0) return MarkOutcome.WallBlocked;
+            if (target.CurrentPolarity == request.Polarity) return MarkOutcome.Unchanged;
+            return State.RemainingMarks > 0 ? MarkOutcome.Applied : MarkOutcome.BudgetEmpty;
+        }
+
+        private void PublishMarkResult(MarkRequest request, MarkOutcome outcome)
+        {
+            var result = new MarkResult(request, outcome, State?.RemainingMarks ?? 0);
+            LastMarkResult = result;
+            ProcessedMarkCount++;
+            MarkResolved?.Invoke(result);
+        }
+
+        private void ApplyPlayerMovement(float step)
+        {
+            if (player == null || !player.isActiveAndEnabled || !player.Rigidbody.simulated)
+                return;
+            Rigidbody2D rigidBody = player.Rigidbody;
+            Vector2 velocity = IsFinite(rigidBody.velocity) ? rigidBody.velocity : Vector2.zero;
+            Vector2 desired = player.MoveIntent * Mathf.Min(player.MoveSpeed, settings.MaxBodySpeed);
+            Vector2 acceleration = Vector2.ClampMagnitude((desired - velocity) / step, player.MoveAcceleration);
+            rigidBody.AddForce(acceleration * rigidBody.mass, ForceMode2D.Force);
+        }
+
+        // Internal rule-layer entry shared with future propagation.
         internal bool ApplyPolarity(PolarityBody body, Pole polarity)
         {
             return ownsPhysics && body != null && body.World == this && body.IsValid && body.SetPolarity(polarity);
@@ -170,8 +262,10 @@ namespace Polarity.Simulation
             stepping = true;
             try
             {
-                // Future requests/spawns precede this snapshot; movement joins this force stage.
+                ConsumeMarkRequests();
+                // Future turret/spawn phase precedes this snapshot.
                 CaptureMagneticSnapshot();
+                ApplyPlayerMovement(Time.fixedDeltaTime);
                 CalculateMagneticForces();
                 ApplyMagneticForces();
                 LastSpeedClampCount = 0;
@@ -388,7 +482,7 @@ namespace Polarity.Simulation
         private void FailStep(string message)
         {
             FailedStepCount++;
-            State.SetPhase(LevelPhase.Paused);
+            SetPhase(LevelPhase.Paused);
             Debug.LogError(message, this);
         }
 
@@ -399,6 +493,9 @@ namespace Polarity.Simulation
         {
             if (!ownsPhysics)
                 return;
+            State.PhaseChanged -= OnPhaseChanged;
+            markRequests.Clear();
+            player?.ClearIntent();
             foreach (var body in initialBodies)
                 if (body != null)
                     body.Unbind(this);

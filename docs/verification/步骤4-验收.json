@@ -1,0 +1,609 @@
+{
+  "date": "2026-10-09",
+  "engine": "Tuanjie 1.10.1 / 2022.3.62t13",
+  "project": "D:/Code/Polarity/Polarity",
+  "acceptancePassed": true,
+  "methods": {
+    "precise": "Play Mode paused; input sampling and pointer frame APIs; invoke original SimulationWorld.FixedUpdate with real Physics2D.Simulate. No second physics entry.",
+    "continuous": "Unpaused Game scene; Application.onBeforeRender samples game movement API; actual engine FixedUpdate consumes requests and integrates physics.",
+    "input": "Legacy Input API; activeInputHandler=0. Game API acceptance, no virtual input devices, OS key injection or new input framework.",
+    "visual": "Final ScreenCapture after WaitForEndOfFrame; reviewed PNG at 1280x720."
+  },
+  "suite": {
+    "mode": "Play paused; original FixedUpdate invoked",
+    "checks": [
+      {
+        "name": "runtime_initialization",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "player_not_magnetic",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "player_structure",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "WASD_0",
+        "pass": true,
+        "detail": {
+          "delta": [
+            0,
+            1.95546842
+          ],
+          "speed": 4.41176462
+        }
+      },
+      {
+        "name": "release_stops_0",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "WASD_1",
+        "pass": true,
+        "detail": {
+          "delta": [
+            -1.95546842,
+            0
+          ],
+          "speed": 4.41176462
+        }
+      },
+      {
+        "name": "release_stops_1",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "WASD_2",
+        "pass": true,
+        "detail": {
+          "delta": [
+            0,
+            -1.95546842
+          ],
+          "speed": 4.41176462
+        }
+      },
+      {
+        "name": "release_stops_2",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "WASD_3",
+        "pass": true,
+        "detail": {
+          "delta": [
+            1.82959259,
+            0
+          ],
+          "speed": 1.00230682
+        }
+      },
+      {
+        "name": "release_stops_3",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "diagonal_normalized",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "opposite_keys_cancel",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "magnetism_leaves_player_stationary",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "head_outside_foot_collider",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "head_selects_enemy",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "overlap_crate_in_front",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "overlap_enemy_in_front",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "equal_y_crate_order_offset",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "shadow_does_not_select",
+        "pass": true,
+        "detail": {
+          "x": 424.599976,
+          "y": 358.2
+        }
+      },
+      {
+        "name": "blank_does_not_select",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "wall_visual_occludes_body",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "UI_click_ignored",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "blank_click_free",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "neutral_request_rejected",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "unknown_id_rejected",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "projectile_not_selectable",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "projectile_not_markable",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "permission_rejected",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "too_far_free",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "physical_wall_free",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "inactive_at_consumption_free",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "distance_rechecked_at_consumption",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "phase_clears_pending",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "paused_no_physics",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "phase_rejects_new_intent",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "resume_no_stale_click",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "controller_only_enqueues",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "first_mark_costs_one",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "one_press_not_reconsumed",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "same_color_free",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "positive_negative_attract_before_recolor",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "right_recolor_costs_one_and_reverses_force",
+        "pass": true,
+        "detail": {
+          "attract": 8.571428,
+          "repel": -8.583433
+        }
+      },
+      {
+        "name": "rapid_40_requests_exact_once",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "rapid_budget_never_negative",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "rapid_order_preserved",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "budget_empty_blocks_recolor",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "same_color_at_zero_free",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "zero_budget_still_moves",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "no_budget_regeneration_or_reconsume",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "unique_simulation_counts",
+        "pass": true,
+        "detail": {
+          "FixedUpdateCount": 303,
+          "SimulationAttemptCount": 297,
+          "CompletedStepCount": 297,
+          "FailedStepCount": 0
+        }
+      }
+    ],
+    "passed": 51,
+    "total": 51
+  },
+  "regression": {
+    "checks": [
+      {
+        "name": "player_wall_Wall_Top",
+        "pass": true,
+        "detail": {
+          "contact": true,
+          "position": [
+            0,
+            3.9950006
+          ],
+          "speed": 0
+        }
+      },
+      {
+        "name": "player_wall_Wall_Left",
+        "pass": true,
+        "detail": {
+          "contact": true,
+          "position": [
+            -7.495001,
+            0
+          ],
+          "speed": 0
+        }
+      },
+      {
+        "name": "player_wall_Wall_Bottom",
+        "pass": true,
+        "detail": {
+          "contact": true,
+          "position": [
+            0,
+            -3.9950006
+          ],
+          "speed": 0
+        }
+      },
+      {
+        "name": "player_wall_Wall_Right",
+        "pass": true,
+        "detail": {
+          "contact": true,
+          "position": [
+            7.495001,
+            0
+          ],
+          "speed": 0
+        }
+      },
+      {
+        "name": "player_pushes_crate",
+        "pass": true,
+        "detail": {
+          "playerX": 4.96272,
+          "crateX": 6.16772
+        }
+      },
+      {
+        "name": "phase_stops_and_clears_Ready",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "phase_stops_and_clears_Paused",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "phase_stops_and_clears_Won",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "phase_stops_and_clears_Lost",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "single_phase_subscription",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "disable_world_restores_mode",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "reenable_world_single_subscription",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "reenable_no_old_request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "stationary_no_player_drift",
+        "pass": true,
+        "detail": null
+      }
+    ],
+    "passed": 14,
+    "total": 14
+  },
+  "continuous": {
+    "checks": [
+      {
+        "name": "reopen_budget_three",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "real_fixedupdate_moves_player",
+        "pass": true,
+        "detail": {
+          "samples": 112,
+          "steps": 48,
+          "delta": [
+            2.573116,
+            0
+          ]
+        }
+      },
+      {
+        "name": "real_fixedupdate_single_physics",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "free_body_no_double_simulation",
+        "pass": true,
+        "detail": {
+          "measured": 1.91999817,
+          "expected": 1.92
+        }
+      },
+      {
+        "name": "real_release_stops",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "auto_step_mark_1",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "auto_step_mark_2",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "auto_step_mark_3",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "auto_step_no_fourth_mark",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "real_zero_budget_moves",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "continuous_no_failed_steps",
+        "pass": true,
+        "detail": null
+      }
+    ],
+    "passed": 11,
+    "total": 11
+  },
+  "reload": {
+    "saved": true,
+    "players": 1,
+    "worlds": 1,
+    "enemyInitial": "Positive",
+    "crateInitial": "Negative",
+    "prefabEnemy": "Neutral",
+    "prefabCrate": "Neutral",
+    "missing": 0
+  },
+  "preservation": {
+    "originalPhysics": [
+      {
+        "name": "Crate",
+        "unchanged": true
+      },
+      {
+        "name": "Enemy",
+        "unchanged": true
+      },
+      {
+        "name": "Wall_Bottom",
+        "unchanged": true
+      },
+      {
+        "name": "Wall_Left",
+        "unchanged": true
+      },
+      {
+        "name": "Wall_Right",
+        "unchanged": true
+      },
+      {
+        "name": "Wall_Top",
+        "unchanged": true
+      }
+    ],
+    "hashesBefore": {
+      "Polarity/Assets/Polarity/Prefabs/Actors/Enemy.prefab": "8467f7694c321fe97f34b16453b12c0badada55e47aa6f3a5fa87fc86ae16333",
+      "Polarity/Assets/Polarity/Prefabs/Actors/Crate.prefab": "e02720aef8132cba58bd969758237fa0acf1231994f6ca1ac9f334503de1aa3c",
+      "Polarity/ProjectSettings/Physics2DSettings.asset": "337d121d7ae1d92f8b455dba8f2d2175cdb0291eb0a137efed6cdaee9aaa4a78",
+      "Polarity/Assets/Scenes/SampleScene.scene": "120d00be434b5573219b19e566eb41a3d0efc88f0d1c78dbb5a20e4d9419bdf2",
+      "Polarity/Assets/Polarity/Scripts/Views/YSortView.cs": "9969b4a315df54696682b0417a27f918595cbf417b8df40e93ba16e569e51e2c"
+    },
+    "hashesAfter": {
+      "Polarity/Assets/Polarity/Prefabs/Actors/Enemy.prefab": "8467f7694c321fe97f34b16453b12c0badada55e47aa6f3a5fa87fc86ae16333",
+      "Polarity/Assets/Polarity/Prefabs/Actors/Crate.prefab": "e02720aef8132cba58bd969758237fa0acf1231994f6ca1ac9f334503de1aa3c",
+      "Polarity/ProjectSettings/Physics2DSettings.asset": "337d121d7ae1d92f8b455dba8f2d2175cdb0291eb0a137efed6cdaee9aaa4a78",
+      "Polarity/Assets/Scenes/SampleScene.scene": "120d00be434b5573219b19e566eb41a3d0efc88f0d1c78dbb5a20e4d9419bdf2",
+      "Polarity/Assets/Polarity/Scripts/Views/YSortView.cs": "9969b4a315df54696682b0417a27f918595cbf417b8df40e93ba16e569e51e2c"
+    }
+  },
+  "final": {
+    "console": {
+      "success": true,
+      "message": "Command executed successfully",
+      "data": {
+        "success": true,
+        "message": "Retrieved 0 log entries.",
+        "data": [],
+        "collapse": false
+      }
+    },
+    "state": {
+      "success": true,
+      "message": "Command executed successfully",
+      "data": {
+        "success": true,
+        "message": "Retrieved editor state.",
+        "data": {
+          "isPlaying": false,
+          "isPaused": false,
+          "isCompiling": false,
+          "isUpdating": false,
+          "applicationPath": "C:/Program Files/Tuanjie/Hub/Editor/2022.3.62t13/Editor/Tuanjie.exe",
+          "applicationContentsPath": "C:/Program Files/Tuanjie/Hub/Editor/2022.3.62t13/Editor/Data",
+          "timeSinceStartup": 11773.0531729
+        },
+        "state": {
+          "editor": {
+            "playMode": "stopped",
+            "focusedWindow": "GameView",
+            "requiresFocusForOperations": false,
+            "isCompiling": false,
+            "isUpdating": false,
+            "lastCompilation": {
+              "status": "idle"
+            },
+            "timeSinceStartup": 11773.0459
+          },
+          "project": {
+            "srp": "builtin",
+            "defineSymbols": [],
+            "packages": [],
+            "dirty": false
+          },
+          "scene": {
+            "activeScenePath": "Assets/Polarity/Scenes/Game.scene",
+            "dirty": false,
+            "hasNavMeshData": false,
+            "hasLightingData": false
+          },
+          "selection": {
+            "activeObject": null
+          },
+          "console": {
+            "unreadCount": 0,
+            "lastErrors": []
+          },
+          "assets": {
+            "touched": []
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Per-body sprite screen bounding rectangles, not alpha/pixel tests; transparent corners may select.",
+    "Temporary English debug panel and rectangular candidate outline; final HUD and polished outline remain for later steps.",
+    "Physical keyboard/mouse injection and standalone builds were not tested; legacy Update mapping was inspected and the same sampling/request APIs were exercised in Play.",
+    "No chase, propagation, damage, slow motion, pause UI, R retry or later-step content. Reopen Play to reset."
+  ]
+}

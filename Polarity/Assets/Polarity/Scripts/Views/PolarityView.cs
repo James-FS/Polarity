@@ -16,6 +16,8 @@ namespace Polarity.Views
         [SerializeField] private Color positiveColor = new Color(1f, 0.45f, 0.12f);
         [SerializeField] private Color negativeColor = new Color(0.18f, 0.55f, 1f);
 
+        public System.Collections.Generic.IReadOnlyList<SpriteRenderer> BodySprites => bodySprites;
+
         private Color[] faceTints;
         private PolarityBody subscribedBody;
 

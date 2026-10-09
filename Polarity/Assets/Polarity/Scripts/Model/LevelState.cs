@@ -30,6 +30,14 @@ namespace Polarity.Model
             PhaseChanged?.Invoke(phase);
         }
 
+        internal bool TrySpendMark()
+        {
+            if (RemainingMarks <= 0)
+                return false;
+            RemainingMarks--;
+            return true;
+        }
+
         internal void SetActiveEnemyCount(int count)
         {
             ActiveEnemyCount = Math.Max(0, count);
