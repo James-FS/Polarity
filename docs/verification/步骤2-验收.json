@@ -1,0 +1,430 @@
+{
+  "step": 2,
+  "date": "2026-10-09",
+  "engine": "Tuanjie 1.10.1 / 2022.3.62t13",
+  "bridge": "Codely Unity Bridge 1.0.86",
+  "project": "D:/Code/Polarity/Polarity",
+  "verificationMode": "Play Mode via exec_runtime_script; engine-owned FixedUpdate; temporary fixtures only",
+  "runtime": {
+    "passed": 35,
+    "checks": [
+      {
+        "name": "initialized before Running",
+        "passed": true,
+        "evidence": {
+          "mode": "Script",
+          "ids": [
+            1,
+            2
+          ],
+          "ActiveEnemyCount": 1,
+          "RemainingMarks": 3
+        }
+      },
+      {
+        "name": "Script is sole simulation entry",
+        "passed": true,
+        "evidence": {
+          "FixedUpdateCount": 496,
+          "SimulationAttemptCount": 496,
+          "CompletedStepCount": 496
+        }
+      },
+      {
+        "name": "one physical step per Running FixedUpdate",
+        "passed": true,
+        "evidence": {
+          "stepDelta": 29,
+          "fixedUpdateDelta": 29,
+          "distance": 1.15999889,
+          "expected": 1.16
+        }
+      },
+      {
+        "name": "no physics in Ready",
+        "passed": true,
+        "evidence": {
+          "attemptsDelta": 0,
+          "fixedUpdateDelta": 8,
+          "position": "(-1.84, 0.00)"
+        }
+      },
+      {
+        "name": "no physics in Paused",
+        "passed": true,
+        "evidence": {
+          "attemptsDelta": 0,
+          "fixedUpdateDelta": 7,
+          "position": "(-1.84, 0.00)"
+        }
+      },
+      {
+        "name": "no physics in Won",
+        "passed": true,
+        "evidence": {
+          "attemptsDelta": 0,
+          "fixedUpdateDelta": 8,
+          "position": "(-1.84, 0.00)"
+        }
+      },
+      {
+        "name": "no physics in Lost",
+        "passed": true,
+        "evidence": {
+          "attemptsDelta": 0,
+          "fixedUpdateDelta": 7,
+          "position": "(-1.84, 0.00)"
+        }
+      },
+      {
+        "name": "Enemy initial Neutral",
+        "passed": true,
+        "evidence": {
+          "polarity": "Neutral",
+          "color": "RGBA(0.363, 0.418, 0.477, 1.000)",
+          "shadowAlpha": 0.32
+        }
+      },
+      {
+        "name": "Enemy initial Positive",
+        "passed": true,
+        "evidence": {
+          "polarity": "Positive",
+          "color": "RGBA(0.660, 0.324, 0.092, 1.000)",
+          "shadowAlpha": 0.32
+        }
+      },
+      {
+        "name": "Enemy initial Negative",
+        "passed": true,
+        "evidence": {
+          "polarity": "Negative",
+          "color": "RGBA(0.119, 0.396, 0.770, 1.000)",
+          "shadowAlpha": 0.32
+        }
+      },
+      {
+        "name": "Crate initial Neutral",
+        "passed": true,
+        "evidence": {
+          "polarity": "Neutral",
+          "color": "RGBA(0.292, 0.342, 0.397, 1.000)",
+          "shadowAlpha": 0.32
+        }
+      },
+      {
+        "name": "Crate initial Positive",
+        "passed": true,
+        "evidence": {
+          "polarity": "Positive",
+          "color": "RGBA(0.530, 0.266, 0.077, 1.000)",
+          "shadowAlpha": 0.32
+        }
+      },
+      {
+        "name": "Crate initial Negative",
+        "passed": true,
+        "evidence": {
+          "polarity": "Negative",
+          "color": "RGBA(0.095, 0.325, 0.640, 1.000)",
+          "shadowAlpha": 0.32
+        }
+      },
+      {
+        "name": "Enemy single view subscription",
+        "passed": true,
+        "evidence": {
+          "subscribers": 1
+        }
+      },
+      {
+        "name": "Enemy state events update only visuals",
+        "passed": true,
+        "evidence": {
+          "positive": "RGBA(0.660, 0.324, 0.092, 1.000)",
+          "negative": "RGBA(0.119, 0.396, 0.770, 1.000)",
+          "shadow": "RGBA(0.025, 0.030, 0.040, 0.320)"
+        }
+      },
+      {
+        "name": "Enemy disabled view unsubscribes",
+        "passed": true,
+        "evidence": {
+          "subscribers": 0
+        }
+      },
+      {
+        "name": "Enemy unregister on disable",
+        "passed": true,
+        "evidence": {
+          "count": 1
+        }
+      },
+      {
+        "name": "Enemy stable re-registration",
+        "passed": true,
+        "evidence": {
+          "BodyId": 1,
+          "count": 2
+        }
+      },
+      {
+        "name": "Crate single view subscription",
+        "passed": true,
+        "evidence": {
+          "subscribers": 1
+        }
+      },
+      {
+        "name": "Crate state events update only visuals",
+        "passed": true,
+        "evidence": {
+          "positive": "RGBA(0.530, 0.266, 0.077, 1.000)",
+          "negative": "RGBA(0.095, 0.325, 0.640, 1.000)",
+          "shadow": "RGBA(0.025, 0.030, 0.040, 0.320)"
+        }
+      },
+      {
+        "name": "Crate disabled view unsubscribes",
+        "passed": true,
+        "evidence": {
+          "subscribers": 0
+        }
+      },
+      {
+        "name": "Crate unregister on disable",
+        "passed": true,
+        "evidence": {
+          "count": 1
+        }
+      },
+      {
+        "name": "Crate stable re-registration",
+        "passed": true,
+        "evidence": {
+          "BodyId": 2,
+          "count": 2
+        }
+      },
+      {
+        "name": "World releases original mode",
+        "passed": true,
+        "evidence": {
+          "mode": "FixedUpdate"
+        }
+      },
+      {
+        "name": "World reacquires once",
+        "passed": true,
+        "evidence": {
+          "mode": "Script",
+          "ids": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "name": "Enemy hits Wall_Top",
+        "passed": true,
+        "evidence": {
+          "touched": true,
+          "escaped": false,
+          "position": "(0.00, 4.00)",
+          "speed": 0.0
+        }
+      },
+      {
+        "name": "Enemy hits Wall_Bottom",
+        "passed": true,
+        "evidence": {
+          "touched": true,
+          "escaped": false,
+          "position": "(0.00, -4.00)",
+          "speed": 0.0
+        }
+      },
+      {
+        "name": "Enemy hits Wall_Left",
+        "passed": true,
+        "evidence": {
+          "touched": true,
+          "escaped": false,
+          "position": "(-7.50, 0.00)",
+          "speed": 0.0
+        }
+      },
+      {
+        "name": "Enemy hits Wall_Right",
+        "passed": true,
+        "evidence": {
+          "touched": true,
+          "escaped": false,
+          "position": "(7.50, 0.00)",
+          "speed": 0.0
+        }
+      },
+      {
+        "name": "Crate hits Wall_Top",
+        "passed": true,
+        "evidence": {
+          "touched": true,
+          "escaped": false,
+          "position": "(0.00, 3.79)",
+          "speed": 0.0
+        }
+      },
+      {
+        "name": "Crate hits Wall_Bottom",
+        "passed": true,
+        "evidence": {
+          "touched": true,
+          "escaped": false,
+          "position": "(0.00, -3.79)",
+          "speed": 0.0
+        }
+      },
+      {
+        "name": "Crate hits Wall_Left",
+        "passed": true,
+        "evidence": {
+          "touched": true,
+          "escaped": false,
+          "position": "(-7.29, 0.00)",
+          "speed": 0.0
+        }
+      },
+      {
+        "name": "Crate hits Wall_Right",
+        "passed": true,
+        "evidence": {
+          "touched": true,
+          "escaped": false,
+          "position": "(7.29, 0.00)",
+          "speed": 0.0
+        }
+      },
+      {
+        "name": "two second static stability",
+        "passed": true,
+        "evidence": {
+          "steps": 105,
+          "positions": [
+            "(-3.00, 0.00)",
+            "(3.00, 0.00)"
+          ]
+        }
+      },
+      {
+        "name": "no failed simulation steps",
+        "passed": true,
+        "evidence": {
+          "SimulationAttemptCount": 963,
+          "CompletedStepCount": 963,
+          "FailedStepCount": 0
+        }
+      }
+    ]
+  },
+  "guards": {
+    "passed": 5,
+    "checks": [
+      {
+        "name": "second World rejected",
+        "passed": true,
+        "evidence": {
+          "secondOwner": false,
+          "primaryOwner": true
+        }
+      },
+      {
+        "name": "duplicate list rejected before takeover",
+        "passed": true,
+        "evidence": {
+          "invalidOwner": false,
+          "phase": "Ready",
+          "mode": "FixedUpdate"
+        }
+      },
+      {
+        "name": "external ownership violation stops commit",
+        "passed": true,
+        "evidence": {
+          "FailedStepCount": 1,
+          "phase": "Paused"
+        }
+      },
+      {
+        "name": "takeover supports prior Update mode",
+        "passed": true,
+        "evidence": {
+          "mode": "Script"
+        }
+      },
+      {
+        "name": "restores actual prior mode",
+        "passed": true,
+        "evidence": {
+          "mode": "Update"
+        }
+      }
+    ],
+    "expectedErrorCount": 3
+  },
+  "restart": {
+    "passed": true,
+    "ids": [
+      {
+        "name": "Enemy",
+        "BodyId": 1,
+        "polarity": "Neutral"
+      },
+      {
+        "name": "Crate",
+        "BodyId": 2,
+        "polarity": "Neutral"
+      }
+    ],
+    "FixedUpdateCount": 51,
+    "CompletedStepCount": 51,
+    "SimulationAttemptCount": 51,
+    "FailedStepCount": 0,
+    "mode": "Script",
+    "phase": "Running"
+  },
+  "preservation": {
+    "physicsPreserved": true,
+    "checkedRigidbodies": 6,
+    "sceneDirty": false,
+    "restoredMode": "FixedUpdate",
+    "fixedStep": 0.02,
+    "unchangedHashes": {
+      "Polarity/ProjectSettings/Physics2DSettings.asset": "337D121D7AE1D92F8B455DBA8F2D2175CDB0291EB0A137EFED6CDAEE9AAA4A78",
+      "Polarity/Assets/Scenes/SampleScene.scene": "120D00BE434B5573219B19E566EB41A3D0EFC88F0D1C78DBB5A20E4D9419BDF2",
+      "Polarity/Assets/Polarity/Scripts/Views/YSortView.cs": "9969B4A315DF54696682B0417A27F918595CBF417B8DF40E93BA16E569E51E2C"
+    }
+  },
+  "finalCompilation": {
+    "success": true,
+    "errors": 0,
+    "warnings": 0
+  },
+  "finalConsole": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "finalEditor": {
+    "playMode": "stopped",
+    "scene": "Assets/Polarity/Scenes/Game.scene",
+    "sceneDirty": false,
+    "missingScripts": 0,
+    "temporaryObjects": 0,
+    "worlds": 1,
+    "polarityBodies": 2
+  },
+  "limitations": [
+    "No independent build, maximum designed speed or cross-device determinism checks.",
+    "Domain/scene reload disabled options were not tested.",
+    "Physics2D.Simulate false-return path is implemented but not forcibly injected; external ownership violation was tested."
+  ]
+}
