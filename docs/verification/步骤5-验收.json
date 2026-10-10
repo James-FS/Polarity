@@ -1,0 +1,725 @@
+{
+  "date": "2026-10-10",
+  "engine": "Tuanjie 1.10.1 / 2022.3.62t13",
+  "project": "D:/Code/Polarity/Polarity",
+  "allAcceptancePassed": true,
+  "totalChecks": 44,
+  "methods": {
+    "precise": "Paused Play: invokes original World.FixedUpdate; real Rigidbody2D forces, CircleCast, contacts and one Physics2D.Simulate. Fixtures only in runtime.",
+    "continuous": "Unpaused Game: actual engine FixedUpdate; mark requests through World; player input sampling API at onBeforeRender.",
+    "visual": "1280x720 final static layout captured at WaitForEndOfFrame after resuming Play; reviewed PNG. Dynamic claims use numerical evidence."
+  },
+  "openRoom": {
+    "checks": [
+      {
+        "name": "single_drive_per_step",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "force_mass_time_integration",
+        "pass": true,
+        "detail": {
+          "actual": 0.117647059
+        }
+      },
+      {
+        "name": "neutral_chases_player",
+        "pass": true,
+        "detail": {
+          "distance": 2.83625317,
+          "speed": 3.19028473
+        }
+      },
+      {
+        "name": "chase_speed_separate_from_safety",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "player_position_changes_chase_direction",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "throw_not_clamped_to_chase_speed",
+        "pass": true,
+        "detail": {
+          "velocity": [
+            0.06052891,
+            7.74225569
+          ],
+          "drive": 6
+        }
+      },
+      {
+        "name": "drive_acceleration_bounded",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "local_crate_avoidance",
+        "pass": true,
+        "detail": {
+          "avoided": true,
+          "maxGap": 2.18185735,
+          "x": 2.40540361,
+          "minSeparation": 0.339087
+        }
+      },
+      {
+        "name": "no_crate_tunneling_or_teleport",
+        "pass": true,
+        "detail": {
+          "minSeparation": 0.339087,
+          "maxStep": 0.06264577
+        }
+      },
+      {
+        "name": "marking_deflects_chasing_route",
+        "pass": true,
+        "detail": {
+          "neutralY": 0,
+          "chargedY": 0.913921058,
+          "magneticY": 12.8571424
+        }
+      },
+      {
+        "name": "motor_called_exactly_once_for_running_steps",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "phase_stops_drive_Ready",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "phase_stops_drive_Paused",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "phase_stops_drive_Won",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "phase_stops_drive_Lost",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "disabled_motor_skipped",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "reenabled_motor_drives_once",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "inactive_enemy_unregistered",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "reenabled_enemy_keeps_id",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "unique_physics_and_no_failures",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "no_independent_motor_loops",
+        "pass": true,
+        "detail": null
+      }
+    ],
+    "passed": 21,
+    "total": 21
+  },
+  "corridor": {
+    "checks": [
+      {
+        "name": "six_enemies_and_one_crate",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "stable_ids",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "all_initial_enemies_neutral",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "six_motors_once_per_step",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "corridor_no_wall_or_box_tunneling",
+        "pass": true,
+        "detail": {
+          "minWall": -0.00560736656,
+          "minCrate": 0.127624631,
+          "maxStep": 0.0656256
+        }
+      },
+      {
+        "name": "corridor_no_teleport_or_nonfinite_velocity",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "corridor_chase_progress_and_avoidance",
+        "pass": true,
+        "detail": {
+          "positions": [
+            [
+              5.84042072,
+              0.470618457
+            ],
+            [
+              3.94941688,
+              -1.523
+            ],
+            [
+              4.37962532,
+              1.56856835
+            ],
+            [
+              4.895084,
+              -1.21179533
+            ],
+            [
+              4.86401272,
+              0.6994594
+            ],
+            [
+              5.85785,
+              -0.960259
+            ]
+          ],
+          "avoidSamples": 645,
+          "enemyContacts": 1028,
+          "crateContacts": 0
+        }
+      },
+      {
+        "name": "real_enemy_contact_opportunities",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "no_early_propagation_or_budget_change",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "walking_changes_contact_pairs",
+        "pass": true,
+        "detail": {
+          "routeDifference": 4.157317,
+          "routes": [
+            {
+              "route": 0,
+              "firstContactStep": 98,
+              "totalContacts": 977,
+              "pairs": [
+                "1-4",
+                "1-5",
+                "1-6",
+                "1-7",
+                "2-3",
+                "3-5",
+                "4-5",
+                "4-6"
+              ],
+              "player": [
+                6.2952013,
+                -2.7430346
+              ],
+              "positions": [
+                [
+                  5.46009159,
+                  -2.20198917
+                ],
+                [
+                  2.62041688,
+                  -1.60983336
+                ],
+                [
+                  3.6087923,
+                  -1.47211778
+                ],
+                [
+                  4.84679,
+                  -2.98736477
+                ],
+                [
+                  4.53265047,
+                  -1.8415941
+                ],
+                [
+                  5.684217,
+                  -3.52982545
+                ]
+              ]
+            },
+            {
+              "route": 1,
+              "firstContactStep": 39,
+              "totalContacts": 975,
+              "pairs": [
+                "1-3",
+                "1-5",
+                "1-7",
+                "2-3",
+                "2-5",
+                "3-4",
+                "3-5",
+                "5-7"
+              ],
+              "player": [
+                5.243569,
+                3.99503326
+              ],
+              "positions": [
+                [
+                  5.01346636,
+                  2.4136827
+                ],
+                [
+                  3.643755,
+                  2.85423946
+                ],
+                [
+                  4.11977148,
+                  1.97667718
+                ],
+                [
+                  3.30337119,
+                  1.40782177
+                ],
+                [
+                  4.53800154,
+                  3.293581
+                ],
+                [
+                  6.586301,
+                  -1.255298
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "six_body_marking_still_costs_one",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "added_enemy_visible_body_pick",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "all_pairs_unique",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "unique_physics_no_failed_steps",
+        "pass": true,
+        "detail": null
+      }
+    ],
+    "passed": 14,
+    "total": 14
+  },
+  "continuous": {
+    "checks": [
+      {
+        "name": "fresh_play_budget_and_neutral",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "real_engine_chases",
+        "pass": true,
+        "detail": {
+          "steps": 82,
+          "progress": [
+            3.87272215,
+            3.85128021,
+            4.12374973,
+            3.58131361,
+            3.099104,
+            2.81758976
+          ]
+        }
+      },
+      {
+        "name": "real_one_drive_per_enemy_per_step",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "real_unique_simulation",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "reachable_mark_target",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "real_mark_and_magnetic_steering",
+        "pass": true,
+        "detail": {
+          "force": [
+            14.5945673,
+            -3.21934175
+          ],
+          "target": "Enemy"
+        }
+      },
+      {
+        "name": "real_player_still_moves",
+        "pass": true,
+        "detail": {
+          "delta": 1.07311583
+        }
+      },
+      {
+        "name": "real_no_spread_or_damage",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "real_finite_and_no_failed_steps",
+        "pass": true,
+        "detail": null
+      }
+    ],
+    "passed": 9,
+    "total": 9
+  },
+  "layout": {
+    "saved": true,
+    "enemies": 6,
+    "neutral": true,
+    "minInitialDistance": 0.799999952,
+    "newOcclusionFaces": 6,
+    "crateInitial": "Negative"
+  },
+  "reload": {
+    "saved": true,
+    "enemies": 6,
+    "bodies": 7,
+    "order": [
+      "Enemy",
+      "Enemy_02",
+      "Enemy_03",
+      "Enemy_04",
+      "Enemy_05",
+      "Enemy_06",
+      "Crate"
+    ],
+    "neutral": true,
+    "crateInitial": "Negative",
+    "enemyPrefabInitial": "Neutral",
+    "cratePrefabInitial": "Neutral",
+    "corridor": 2,
+    "missing": 0,
+    "mode": "FixedUpdate"
+  },
+  "preservation": {
+    "physicsCheck": [
+      {
+        "name": "Crate",
+        "parametersPreserved": true,
+        "originalPosition": [
+          3,
+          0
+        ],
+        "finalPosition": [
+          3,
+          0
+        ]
+      },
+      {
+        "name": "Enemy",
+        "parametersPreserved": true,
+        "originalPosition": [
+          -3,
+          0
+        ],
+        "finalPosition": [
+          -3,
+          0
+        ]
+      },
+      {
+        "name": "Player",
+        "parametersPreserved": true,
+        "originalPosition": [
+          0,
+          -2.5
+        ],
+        "finalPosition": [
+          5,
+          -2.5
+        ]
+      },
+      {
+        "name": "Wall_Bottom",
+        "parametersPreserved": true,
+        "originalPosition": [
+          0,
+          -4.75
+        ],
+        "finalPosition": [
+          0,
+          -4.75
+        ]
+      },
+      {
+        "name": "Wall_Left",
+        "parametersPreserved": true,
+        "originalPosition": [
+          -8.25,
+          0
+        ],
+        "finalPosition": [
+          -8.25,
+          0
+        ]
+      },
+      {
+        "name": "Wall_Right",
+        "parametersPreserved": true,
+        "originalPosition": [
+          8.25,
+          0
+        ],
+        "finalPosition": [
+          8.25,
+          0
+        ]
+      },
+      {
+        "name": "Wall_Top",
+        "parametersPreserved": true,
+        "originalPosition": [
+          0,
+          4.75
+        ],
+        "finalPosition": [
+          0,
+          4.75
+        ]
+      }
+    ],
+    "hashCheck": [
+      {
+        "path": "Assets/Polarity/Scenes/Game.scene",
+        "unchanged": false,
+        "expectedChanged": true
+      },
+      {
+        "path": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+        "unchanged": false,
+        "expectedChanged": true
+      },
+      {
+        "path": "Assets/Polarity/Prefabs/Actors/Crate.prefab",
+        "unchanged": true,
+        "expectedChanged": false
+      },
+      {
+        "path": "Assets/Polarity/Prefabs/Actors/Player.prefab",
+        "unchanged": true,
+        "expectedChanged": false
+      },
+      {
+        "path": "ProjectSettings/Physics2DSettings.asset",
+        "unchanged": true,
+        "expectedChanged": false
+      },
+      {
+        "path": "ProjectSettings/ProjectSettings.asset",
+        "unchanged": true,
+        "expectedChanged": false
+      },
+      {
+        "path": "Assets/Polarity/Configs/GameplayConfig.asset",
+        "unchanged": true,
+        "expectedChanged": false
+      },
+      {
+        "path": "Assets/Scenes/SampleScene.scene",
+        "unchanged": true,
+        "expectedChanged": false
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Controllers/PlayerController.cs",
+        "unchanged": true,
+        "expectedChanged": false
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Controllers/MarkingController.cs",
+        "unchanged": true,
+        "expectedChanged": false
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Views/YSortView.cs",
+        "unchanged": true,
+        "expectedChanged": false
+      }
+    ],
+    "hashesBefore": {
+      "Assets/Polarity/Scenes/Game.scene": "af28531c9e9e05552b204d9b44410b1001c1e52c76ac9e3ddbac82551f843548",
+      "Assets/Polarity/Prefabs/Actors/Enemy.prefab": "8467f7694c321fe97f34b16453b12c0badada55e47aa6f3a5fa87fc86ae16333",
+      "Assets/Polarity/Prefabs/Actors/Crate.prefab": "e02720aef8132cba58bd969758237fa0acf1231994f6ca1ac9f334503de1aa3c",
+      "Assets/Polarity/Prefabs/Actors/Player.prefab": "036e16f6aa3bbebe3d606e1374260f096890f6b207033706b03c5ae03a283ce4",
+      "ProjectSettings/Physics2DSettings.asset": "337d121d7ae1d92f8b455dba8f2d2175cdb0291eb0a137efed6cdaee9aaa4a78",
+      "ProjectSettings/ProjectSettings.asset": "5ec62493a9112bd7001f848bc50406aae3d7d40b0fc2024ddbb9341de5f848fe",
+      "Assets/Polarity/Configs/GameplayConfig.asset": "1a1c254d7ad9c52ecbc4a7878239de5d5868e07d24d5501017b06174535d0173",
+      "Assets/Scenes/SampleScene.scene": "120d00be434b5573219b19e566eb41a3d0efc88f0d1c78dbb5a20e4d9419bdf2",
+      "Assets/Polarity/Scripts/Controllers/PlayerController.cs": "1d8e9208cfb3b8002458127775e05fd1d4870513647ab4cf640e4cf1fbe21441",
+      "Assets/Polarity/Scripts/Controllers/MarkingController.cs": "9e3392670aa5305f6b8f59a5d28d6deb10a4e35e7c9658730de2f53a4a8ab11f",
+      "Assets/Polarity/Scripts/Views/YSortView.cs": "9969b4a315df54696682b0417a27f918595cbf417b8df40e93ba16e569e51e2c"
+    },
+    "hashesAfter": {
+      "Assets/Polarity/Scenes/Game.scene": "41782036e9b73d9e308e512a80424f15442bbf422602de0030079eed28831b24",
+      "Assets/Polarity/Prefabs/Actors/Enemy.prefab": "4384f664a7ba3210b56e5f72324d97598db863075ab25ba5f555058fcfff86dc",
+      "Assets/Polarity/Prefabs/Actors/Crate.prefab": "e02720aef8132cba58bd969758237fa0acf1231994f6ca1ac9f334503de1aa3c",
+      "Assets/Polarity/Prefabs/Actors/Player.prefab": "036e16f6aa3bbebe3d606e1374260f096890f6b207033706b03c5ae03a283ce4",
+      "ProjectSettings/Physics2DSettings.asset": "337d121d7ae1d92f8b455dba8f2d2175cdb0291eb0a137efed6cdaee9aaa4a78",
+      "ProjectSettings/ProjectSettings.asset": "5ec62493a9112bd7001f848bc50406aae3d7d40b0fc2024ddbb9341de5f848fe",
+      "Assets/Polarity/Configs/GameplayConfig.asset": "1a1c254d7ad9c52ecbc4a7878239de5d5868e07d24d5501017b06174535d0173",
+      "Assets/Scenes/SampleScene.scene": "120d00be434b5573219b19e566eb41a3d0efc88f0d1c78dbb5a20e4d9419bdf2",
+      "Assets/Polarity/Scripts/Controllers/PlayerController.cs": "1d8e9208cfb3b8002458127775e05fd1d4870513647ab4cf640e4cf1fbe21441",
+      "Assets/Polarity/Scripts/Controllers/MarkingController.cs": "9e3392670aa5305f6b8f59a5d28d6deb10a4e35e7c9658730de2f53a4a8ab11f",
+      "Assets/Polarity/Scripts/Views/YSortView.cs": "9969b4a315df54696682b0417a27f918595cbf417b8df40e93ba16e569e51e2c"
+    },
+    "sceneSerializedBlocks": {
+      "removedExistingBlocks": 0,
+      "modifiedExistingBlockIds": [
+        "358723995",
+        "1191437418",
+        "1264407387",
+        "1264407390",
+        "841890797857607997"
+      ],
+      "intendedChanges": [
+        "player spawn X from 0 to 5",
+        "LevelRoot additional children",
+        "World initial body order",
+        "MarkingController corridor visual occluders",
+        "original Enemy initial polarity to Neutral"
+      ],
+      "allOtherExistingBlocksUnchanged": true
+    }
+  },
+  "final": {
+    "runtime": {
+      "budget": 3,
+      "enemies": 6,
+      "ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "driveCount": 6,
+      "attempts": 35,
+      "steps": 35,
+      "failed": 0,
+      "mode": "Script"
+    },
+    "console": {
+      "success": true,
+      "message": "Command executed successfully",
+      "data": {
+        "success": true,
+        "message": "Retrieved 0 log entries.",
+        "data": [],
+        "collapse": false
+      }
+    },
+    "state": {
+      "success": true,
+      "message": "Command executed successfully",
+      "data": {
+        "success": true,
+        "message": "Retrieved editor state.",
+        "data": {
+          "isPlaying": false,
+          "isPaused": false,
+          "isCompiling": false,
+          "isUpdating": false,
+          "applicationPath": "C:/Program Files/Tuanjie/Hub/Editor/2022.3.62t13/Editor/Tuanjie.exe",
+          "applicationContentsPath": "C:/Program Files/Tuanjie/Hub/Editor/2022.3.62t13/Editor/Data",
+          "timeSinceStartup": 640.6350342
+        },
+        "state": {
+          "editor": {
+            "playMode": "stopped",
+            "focusedWindow": "GameView",
+            "requiresFocusForOperations": false,
+            "isCompiling": false,
+            "isUpdating": false,
+            "lastCompilation": {
+              "status": "idle"
+            },
+            "timeSinceStartup": 640.626648
+          },
+          "project": {
+            "srp": "builtin",
+            "defineSymbols": [],
+            "packages": [],
+            "dirty": false
+          },
+          "scene": {
+            "activeScenePath": "Assets/Polarity/Scenes/Game.scene",
+            "dirty": false,
+            "hasNavMeshData": false,
+            "hasLightingData": false
+          },
+          "selection": {
+            "activeObject": null
+          },
+          "console": {
+            "unreadCount": 0,
+            "lastErrors": []
+          },
+          "assets": {
+            "touched": []
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Lightweight local CircleCast steering, no global pathfinding. Concave/U-shaped traps and complicated mazes are not supported or tested.",
+    "Collider penetration up to about 0.0056 observed at wall contact is solver tolerance, not tunneling.",
+    "No pursuit animations, propagation, damage, victory/retry, slow mode or later-step HUD.",
+    "Input acceptance uses game APIs; physical key/mouse injection, standalone builds, other window ratios and cross-device determinism were not tested."
+  ]
+}

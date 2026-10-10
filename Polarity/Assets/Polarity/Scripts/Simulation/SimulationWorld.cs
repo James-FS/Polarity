@@ -34,6 +34,8 @@ namespace Polarity.Simulation
 
         private static SimulationWorld physicsOwner;
         private readonly List<PolarityBody> bodies = new List<PolarityBody>();
+        private readonly Dictionary<PolarityBody, EnemyMotor> enemyMotors = new Dictionary<PolarityBody, EnemyMotor>();
+        public int LastEnemyDriveCount { get; private set; }
         private IReadOnlyList<PolarityBody> readOnlyBodies;
         private SimulationMode2D previousSimulationMode;
         private bool ownsPhysics;
@@ -145,6 +147,8 @@ namespace Polarity.Simulation
             bodies.Add(body);
             bodies.Sort((a, b) => a.BodyId.CompareTo(b.BodyId));
             body.SetRegistered(true);
+            if (body.gameObject.layer == enemyLayer && body.TryGetComponent<EnemyMotor>(out var motor))
+                enemyMotors[body] = motor;
             UpdateEnemyCount();
         }
 
@@ -153,6 +157,7 @@ namespace Polarity.Simulation
             if (body == null || body.World != this)
                 return;
             bodies.Remove(body);
+            enemyMotors.Remove(body);
             body.SetRegistered(false);
             UpdateEnemyCount();
         }
@@ -243,6 +248,21 @@ namespace Polarity.Simulation
             rigidBody.AddForce(acceleration * rigidBody.mass, ForceMode2D.Force);
         }
 
+        private void ApplyEnemyMovement()
+        {
+            LastEnemyDriveCount = 0;
+            if (player == null || !player.isActiveAndEnabled || !player.Rigidbody.simulated) return;
+            Vector2 targetPosition = player.Rigidbody.position;
+            foreach (var snapshot in magneticSnapshots)
+            {
+                if (!enemyMotors.TryGetValue(snapshot.Body, out var motor) || motor == null || !motor.isActiveAndEnabled)
+                    continue;
+                Vector2 acceleration = motor.CalculateDrive(snapshot.Body, targetPosition);
+                snapshot.Body.Rigidbody.AddForce(acceleration * snapshot.Body.Rigidbody.mass, ForceMode2D.Force);
+                LastEnemyDriveCount++;
+            }
+        }
+
         // Internal rule-layer entry shared with future propagation.
         internal bool ApplyPolarity(PolarityBody body, Pole polarity)
         {
@@ -266,6 +286,7 @@ namespace Polarity.Simulation
                 // Future turret/spawn phase precedes this snapshot.
                 CaptureMagneticSnapshot();
                 ApplyPlayerMovement(Time.fixedDeltaTime);
+                ApplyEnemyMovement();
                 CalculateMagneticForces();
                 ApplyMagneticForces();
                 LastSpeedClampCount = 0;
@@ -500,6 +521,7 @@ namespace Polarity.Simulation
                 if (body != null)
                     body.Unbind(this);
             bodies.Clear();
+            enemyMotors.Clear();
             magneticSnapshots.Clear();
             magneticLinks.Clear();
             State?.SetActiveEnemyCount(0);

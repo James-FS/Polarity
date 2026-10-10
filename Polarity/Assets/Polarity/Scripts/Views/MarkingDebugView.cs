@@ -18,7 +18,7 @@ namespace Polarity.Views
         private void OnGUI()
         {
             if (world == null || world.State == null) return;
-            GUI.Box(Panel, "Step 4 - movement and limited marking");
+            GUI.Box(Panel, "Prototype - movement and limited marking");
             GUI.Label(new Rect(24, 38, 436, 22), $"Marks: {world.State.RemainingMarks}/{world.State.MarkBudget}   WASD: move   LMB: +   RMB: -");
             string result = world.LastMarkResult.HasValue ? Describe(world.LastMarkResult.Value.Outcome) : "Ready";
             GUI.Label(new Rect(24, 62, 436, 22), result);

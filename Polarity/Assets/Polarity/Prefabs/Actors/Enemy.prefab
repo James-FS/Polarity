@@ -1526,6 +1526,7 @@ GameObject:
   - component: {fileID: 5799183923130207426}
   - component: {fileID: 5588334760121835998}
   - component: {fileID: 8285572921672445486}
+  - component: {fileID: 1503386179870437602}
   m_Layer: 9
   m_HasEditorInfo: 1
   m_Name: Enemy
@@ -1662,6 +1663,23 @@ MonoBehaviour:
   neutralColor: {r: 0.55, g: 0.58, b: 0.62, a: 1}
   positiveColor: {r: 1, g: 0.45, b: 0.12, a: 1}
   negativeColor: {r: 0.18, g: 0.55, b: 1, a: 1}
+--- !u!114 &1503386179870437602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125763912434043023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cdd052602e465b49a48a5a0c9bd2951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseSpeed: 3.2
+  maxDriveAcceleration: 6
+  steeringResponse: 2
+  lookAhead: 1.5
+  obstacleSkin: 0.06
 --- !u!1 &7686703150804020323
 GameObject:
   m_ObjectHideFlags: 0
