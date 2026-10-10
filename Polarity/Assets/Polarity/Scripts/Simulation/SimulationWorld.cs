@@ -36,6 +36,26 @@ namespace Polarity.Simulation
         private readonly List<PolarityBody> bodies = new List<PolarityBody>();
         private readonly Dictionary<PolarityBody, EnemyMotor> enemyMotors = new Dictionary<PolarityBody, EnemyMotor>();
         public int LastEnemyDriveCount { get; private set; }
+        private readonly Dictionary<Rigidbody2D, PolarityBody> bodiesByRigidbody = new Dictionary<Rigidbody2D, PolarityBody>();
+        private readonly ContactCollection contacts = new ContactCollection();
+        private readonly PropagationSystem propagation = new PropagationSystem();
+        private readonly List<BodySnapshot> propagationSnapshot = new List<BodySnapshot>();
+        private readonly List<PropagationResult> propagationPlan = new List<PropagationResult>();
+        private readonly List<PropagationResult> propagationResults = new List<PropagationResult>();
+        private IReadOnlyList<PropagationResult> readOnlyPropagationResults;
+        private bool collectingContacts;
+        public IReadOnlyList<BodyContactPair> LastContactPairs => contacts.Pairs;
+        public IReadOnlyList<PropagationResult> LastPropagationResults => readOnlyPropagationResults ??
+            (readOnlyPropagationResults = propagationResults.AsReadOnly());
+        public PropagationResult? LastPropagation { get; private set; }
+        public int LastPropagationCandidateCount => propagation.CandidateCount;
+        public IReadOnlyList<PropagationCandidate> LastPropagationCandidates => propagation.Candidates;
+        public int ContactBufferCapacity => contacts.BufferCapacity;
+        public int ContactBufferExpansionCount => contacts.BufferExpansionCount;
+        public int LastContactCallbackCount => contacts.CallbackBatchCount;
+        public int LastPersistentContactPointCount => contacts.PersistentPointCount;
+        public int LastColliderContactPairCount => contacts.UniqueColliderPairCount;
+        public event Action<PropagationResult> PropagationCommitted;
         private IReadOnlyList<PolarityBody> readOnlyBodies;
         private SimulationMode2D previousSimulationMode;
         private bool ownsPhysics;
@@ -147,6 +167,7 @@ namespace Polarity.Simulation
             bodies.Add(body);
             bodies.Sort((a, b) => a.BodyId.CompareTo(b.BodyId));
             body.SetRegistered(true);
+            bodiesByRigidbody[body.Rigidbody] = body;
             if (body.gameObject.layer == enemyLayer && body.TryGetComponent<EnemyMotor>(out var motor))
                 enemyMotors[body] = motor;
             UpdateEnemyCount();
@@ -158,6 +179,7 @@ namespace Polarity.Simulation
                 return;
             bodies.Remove(body);
             enemyMotors.Remove(body);
+            bodiesByRigidbody.Remove(body.Rigidbody);
             body.SetRegistered(false);
             UpdateEnemyCount();
         }
@@ -180,6 +202,7 @@ namespace Polarity.Simulation
             if (phase != LevelPhase.Running)
             {
                 markRequests.Clear();
+                ClearContactState();
                 player?.ClearIntent();
             }
         }
@@ -282,6 +305,7 @@ namespace Polarity.Simulation
             stepping = true;
             try
             {
+                ClearStepContacts();
                 ConsumeMarkRequests();
                 // Future turret/spawn phase precedes this snapshot.
                 CaptureMagneticSnapshot();
@@ -292,14 +316,23 @@ namespace Polarity.Simulation
                 LastSpeedClampCount = 0;
                 ClampBodySpeeds();
                 SimulationAttemptCount++;
-                if (!Physics2D.Simulate(Time.fixedDeltaTime))
+                bool simulated;
+                collectingContacts = true;
+                try { simulated = Physics2D.Simulate(Time.fixedDeltaTime); }
+                finally { collectingContacts = false; }
+                if (!simulated)
                 {
                     FailStep("Physics2D.Simulate failed; no results were committed.");
                     return;
                 }
                 ClampBodySpeeds();
-                // Future stages: contacts -> damage -> propagation -> removals -> outcome/events.
+                contacts.CapturePersistent(bodies, bodiesByRigidbody);
+                // Future damage stage must invalidate participants before planning propagation.
+                propagation.BuildPlan(CompletedStepCount + 1, propagationSnapshot, contacts.Pairs, propagationPlan);
+                CommitPropagation();
                 CompletedStepCount++;
+                PublishPropagation();
+                // Future stages: removals -> outcome/events.
             }
             catch (Exception exception)
             {
@@ -311,14 +344,57 @@ namespace Polarity.Simulation
             }
         }
 
+        internal void RecordCollision(Collision2D collision)
+        {
+            if (collectingContacts && ownsPhysics) contacts.CaptureCollision(collision, bodiesByRigidbody);
+        }
+
+        private void CommitPropagation()
+        {
+            foreach (var result in propagationPlan)
+            {
+                var source = bodies.Find(body => body != null && body.BodyId == result.SourceId);
+                var target = bodies.Find(body => body != null && body.BodyId == result.TargetId);
+                if (source == null || !source.IsValid || !source.Rigidbody.simulated || target == null || !target.IsValid ||
+                    !target.Rigidbody.simulated || target.CurrentPolarity != Pole.Neutral) continue;
+                if (target.SetPolarity(result.Polarity, false)) propagationResults.Add(result);
+            }
+        }
+
+        private void PublishPropagation()
+        {
+            // All target states are committed before any polarity or propagation view notification.
+            foreach (var result in propagationResults)
+            {
+                LastPropagation = result;
+                var target = bodies.Find(body => body != null && body.BodyId == result.TargetId);
+                if (target != null && target.IsValid) target.NotifyPolarityChanged();
+                PropagationCommitted?.Invoke(result);
+            }
+        }
+
+        private void ClearStepContacts()
+        {
+            contacts.Clear(); propagation.Clear(); propagationPlan.Clear(); propagationResults.Clear();
+        }
+
+        private void ClearContactState()
+        {
+            collectingContacts = false;
+            ClearStepContacts(); propagationSnapshot.Clear(); LastPropagation = null;
+        }
+
         private void CaptureMagneticSnapshot()
         {
             magneticSnapshots.Clear();
+            propagationSnapshot.Clear();
             foreach (var body in bodies)
             {
                 if (body == null || !body.IsValid)
                     continue;
                 Rigidbody2D rigidBody = body.Rigidbody;
+                if (rigidBody.simulated)
+                    propagationSnapshot.Add(new BodySnapshot(body, body.gameObject.layer == enemyLayer || body.gameObject.layer == crateLayer));
                 if (!rigidBody.simulated || rigidBody.bodyType != RigidbodyType2D.Dynamic)
                     continue;
                 magneticSnapshots.Add(new MagneticSnapshot(body, rigidBody.position, body.CurrentPolarity));
@@ -522,6 +598,8 @@ namespace Polarity.Simulation
                     body.Unbind(this);
             bodies.Clear();
             enemyMotors.Clear();
+            bodiesByRigidbody.Clear();
+            ClearContactState();
             magneticSnapshots.Clear();
             magneticLinks.Clear();
             State?.SetActiveEnemyCount(0);

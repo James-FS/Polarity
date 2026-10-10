@@ -81,7 +81,9 @@ namespace Polarity.Entities
             World = null;
         }
 
-        internal bool SetPolarity(Pole polarity)
+        internal void NotifyPolarityChanged() => PolarityChanged?.Invoke(currentPolarity);
+
+        internal bool SetPolarity(Pole polarity, bool notify = true)
         {
             if (!Enum.IsDefined(typeof(Pole), polarity))
                 throw new ArgumentOutOfRangeException(nameof(polarity));
@@ -89,7 +91,7 @@ namespace Polarity.Entities
             if (currentPolarity == polarity)
                 return false;
             currentPolarity = polarity;
-            PolarityChanged?.Invoke(polarity);
+            if (notify) NotifyPolarityChanged();
             return true;
         }
     }

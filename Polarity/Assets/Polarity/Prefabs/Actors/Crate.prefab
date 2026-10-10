@@ -972,6 +972,7 @@ GameObject:
   - component: {fileID: 5888981511106892063}
   - component: {fileID: 7528459166508235361}
   - component: {fileID: 6771116977906306723}
+  - component: {fileID: 8157191927194360692}
   m_Layer: 10
   m_HasEditorInfo: 1
   m_Name: Crate
@@ -1113,6 +1114,18 @@ MonoBehaviour:
   neutralColor: {r: 0.55, g: 0.58, b: 0.62, a: 1}
   positiveColor: {r: 1, g: 0.45, b: 0.12, a: 1}
   negativeColor: {r: 0.18, g: 0.55, b: 1, a: 1}
+--- !u!114 &8157191927194360692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271855868496794112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a90aee12334de74baacf4cd3aedf98e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5559946388481976117
 GameObject:
   m_ObjectHideFlags: 0

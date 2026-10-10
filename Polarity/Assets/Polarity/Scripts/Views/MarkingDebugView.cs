@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace Polarity.Views
 {
-    /// <summary>Temporary read-only budget/result text and candidate outline for step 4.</summary>
+    /// <summary>Temporary read-only budget/result text and candidate outline for the prototype.</summary>
     [DisallowMultipleComponent]
     public sealed class MarkingDebugView : MonoBehaviour
     {
         [SerializeField] private SimulationWorld world;
         [SerializeField] private MarkingController marking;
-        private static Rect Panel => new Rect(12, 12, 460, 112);
+        private static Rect Panel => new Rect(12, 12, 460, 234);
         public bool ContainsScreenPoint(Vector2 screenPoint) => isActiveAndEnabled &&
             Panel.Contains(new Vector2(screenPoint.x, Screen.height - screenPoint.y));
 
@@ -20,10 +20,33 @@ namespace Polarity.Views
             if (world == null || world.State == null) return;
             GUI.Box(Panel, "Prototype - movement and limited marking");
             GUI.Label(new Rect(24, 38, 436, 22), $"Marks: {world.State.RemainingMarks}/{world.State.MarkBudget}   WASD: move   LMB: +   RMB: -");
-            string result = world.LastMarkResult.HasValue ? Describe(world.LastMarkResult.Value.Outcome) : "Ready";
-            GUI.Label(new Rect(24, 62, 436, 22), result);
+            string markText = world.LastMarkResult.HasValue ? Describe(world.LastMarkResult.Value.Outcome) : "Ready";
+            GUI.Label(new Rect(24, 62, 436, 22), markText);
             GUI.Label(new Rect(24, 86, 436, 22), world.State.RemainingMarks == 0 ?
                 "No marks left. Movement remains available. Reopen Play to reset." : marking != null ? marking.PointerFeedback : "");
+            GUI.Label(new Rect(24, 110, 436, 22), $"Step {world.CompletedStepCount} | contacts {world.LastContactPairs.Count} | candidates {world.LastPropagationCandidateCount} | transfers {world.LastPropagationResults.Count}");
+            string contactText = "Physical pairs:";
+            for (int i = 0; i < Mathf.Min(4, world.LastContactPairs.Count); i++)
+            {
+                var pair = world.LastContactPairs[i];
+                contactText += $" {pair.AId}-{pair.BId}({pair.NormalImpulse:0.###})";
+            }
+            GUI.Label(new Rect(24, 134, 436, 22), contactText);
+            string transfer = "Propagation: none yet (free, one hop per step).";
+            if (world.LastPropagation.HasValue)
+            {
+                var result = world.LastPropagation.Value;
+                transfer = $"Propagation step {result.Step}: {result.SourceId} -> {result.TargetId} {result.Polarity} (free)";
+                GUI.Label(new Rect(24, 206, 436, 22), $"Chosen impulse {result.NormalImpulse:0.####} | source candidates {result.CandidateCount}");
+            }
+            GUI.Label(new Rect(24, 158, 436, 22), transfer);
+            string candidateText = "Candidates:";
+            for (int i = 0; i < Mathf.Min(4, world.LastPropagationCandidates.Count); i++)
+            {
+                var candidate = world.LastPropagationCandidates[i];
+                candidateText += $" {candidate.SourceId}>{candidate.TargetId} {(candidate.Polarity == Polarity.Model.Polarity.Positive ? "+" : "-")}({candidate.NormalImpulse:0.###})";
+            }
+            GUI.Label(new Rect(24, 182, 436, 22), candidateText);
             if (marking == null || marking.Candidate == null || world.State.Phase != LevelPhase.Running) return;
             var view = marking.Candidate.GetComponent<PolarityView>();
             if (view == null) return;
