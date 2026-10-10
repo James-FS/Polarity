@@ -2479,6 +2479,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6641205724824247524, guid: e9498e578c90c4b46ae5c382025ceba1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 7451901268895223861, guid: e9498e578c90c4b46ae5c382025ceba1, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6100,6 +6104,7 @@ GameObject:
   - component: {fileID: 1264407387}
   - component: {fileID: 1264407390}
   - component: {fileID: 1264407389}
+  - component: {fileID: 1264407391}
   m_Layer: 0
   m_HasEditorInfo: 1
   m_Name: SimulationWorld
@@ -6257,6 +6262,18 @@ MonoBehaviour:
   - {fileID: 2033954933}
   - {fileID: 1029115184}
   debugView: {fileID: 1264407389}
+--- !u!114 &1264407391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264407386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff5d3049c2520048be198b68ae652f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1267354789
 GameObject:
   m_ObjectHideFlags: 0

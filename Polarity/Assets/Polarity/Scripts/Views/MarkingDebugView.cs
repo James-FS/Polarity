@@ -11,19 +11,19 @@ namespace Polarity.Views
     {
         [SerializeField] private SimulationWorld world;
         [SerializeField] private MarkingController marking;
-        private static Rect Panel => new Rect(12, 12, 460, 234);
+        private static Rect Panel => new Rect(12, 12, 460, 306);
         public bool ContainsScreenPoint(Vector2 screenPoint) => isActiveAndEnabled &&
             Panel.Contains(new Vector2(screenPoint.x, Screen.height - screenPoint.y));
 
         private void OnGUI()
         {
             if (world == null || world.State == null) return;
-            GUI.Box(Panel, "Prototype - movement and limited marking");
+            GUI.Box(Panel, "Prototype - collision combat and retry");
             GUI.Label(new Rect(24, 38, 436, 22), $"Marks: {world.State.RemainingMarks}/{world.State.MarkBudget}   WASD: move   LMB: +   RMB: -");
             string markText = world.LastMarkResult.HasValue ? Describe(world.LastMarkResult.Value.Outcome) : "Ready";
             GUI.Label(new Rect(24, 62, 436, 22), markText);
             GUI.Label(new Rect(24, 86, 436, 22), world.State.RemainingMarks == 0 ?
-                "No marks left. Movement remains available. Reopen Play to reset." : marking != null ? marking.PointerFeedback : "");
+                "No marks left. Movement remains available. R: retry." : marking != null ? marking.PointerFeedback : "");
             GUI.Label(new Rect(24, 110, 436, 22), $"Step {world.CompletedStepCount} | contacts {world.LastContactPairs.Count} | candidates {world.LastPropagationCandidateCount} | transfers {world.LastPropagationResults.Count}");
             string contactText = "Physical pairs:";
             for (int i = 0; i < Mathf.Min(4, world.LastContactPairs.Count); i++)
@@ -47,6 +47,10 @@ namespace Polarity.Views
                 candidateText += $" {candidate.SourceId}>{candidate.TargetId} {(candidate.Polarity == Polarity.Model.Polarity.Positive ? "+" : "-")}({candidate.NormalImpulse:0.###})";
             }
             GUI.Label(new Rect(24, 182, 436, 22), candidateText);
+            GUI.Label(new Rect(24,230,436,22), $"HP: {world.PlayerHealth?.CurrentHealth}/{world.PlayerHealth?.MaxHealth} | enemies: {world.State.ActiveEnemyCount} | {world.State.Phase} | R: retry");
+            string hit = world.LastDamageResults.Count>0 ? $"Hit: {world.LastDamageResults[0].Kind} -> {world.LastDamageResults[0].TargetId} (HP {world.LastDamageResults[0].RemainingHealth})" : "Low-speed enemy contacts do not damage enemies.";
+            GUI.Label(new Rect(24,254,436,22),hit);
+            GUI.Label(new Rect(24,278,436,22),world.State.Phase==LevelPhase.Won ? "ROOM CLEARED - R: play again" : world.State.Phase==LevelPhase.Lost ? "PLAYER DOWN - R: retry" : "Enemy touch hurts player; fast impacts hurt enemies.");
             if (marking == null || marking.Candidate == null || world.State.Phase != LevelPhase.Running) return;
             var view = marking.Candidate.GetComponent<PolarityView>();
             if (view == null) return;

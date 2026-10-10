@@ -38,6 +38,24 @@ namespace Polarity.Simulation
         public int LastEnemyDriveCount { get; private set; }
         private readonly Dictionary<Rigidbody2D, PolarityBody> bodiesByRigidbody = new Dictionary<Rigidbody2D, PolarityBody>();
         private readonly ContactCollection contacts = new ContactCollection();
+        private readonly DamageCollection damageContacts = new DamageCollection();
+        private readonly DamageSystem damage = new DamageSystem();
+        private readonly List<SpikeHazard> touchedSpikes = new List<SpikeHazard>();
+        private readonly Dictionary<Rigidbody2D,Health> healthByRigidbody = new Dictionary<Rigidbody2D,Health>();
+        private readonly List<DamageContact> damagePlan = new List<DamageContact>();
+        private readonly List<DamageResult> damageResults = new List<DamageResult>();
+        private IReadOnlyList<DamageResult> readOnlyDamageResults;
+        private LevelController levelController;
+        private float previousTimeScale;
+        private bool restarting;
+        public Health PlayerHealth { get; private set; }
+        public LevelController Level => levelController;
+        public double SimulationTime { get; private set; }
+        public IReadOnlyList<DamageContact> LastDamageContacts => damageContacts.Contacts;
+        public IReadOnlyList<DamageResult> LastDamageResults => readOnlyDamageResults ?? (readOnlyDamageResults = damageResults.AsReadOnly());
+        public int DamageBufferCapacity => damageContacts.BufferCapacity;
+        public int DamageBufferExpansionCount => damageContacts.BufferExpansionCount;
+        public event Action<DamageResult> DamageCommitted;
         private readonly PropagationSystem propagation = new PropagationSystem();
         private readonly List<BodySnapshot> propagationSnapshot = new List<BodySnapshot>();
         private readonly List<PropagationResult> propagationPlan = new List<PropagationResult>();
@@ -102,12 +120,16 @@ namespace Polarity.Simulation
                 Debug.LogError("SimulationWorld requires a GameplayConfig before starting.", this);
                 return;
             }
+            if (player == null || (PlayerHealth = player.GetComponent<Health>()) == null ||
+                (levelController = GetComponent<LevelController>()) == null)
+            { Debug.LogError("World requires player Health and LevelController before starting.",this); return; }
             if (!ValidateInitialBodies())
                 return;
 
             settings = gameplayConfig.CreateRuntimeSettings();
             enemyLayer = LayerMask.NameToLayer("Enemy");
             crateLayer = LayerMask.NameToLayer("Crate");
+            damageContacts.ConfigureLayers();
             markingWallFilter = new ContactFilter2D();
             markingWallFilter.SetLayerMask(1 << LayerMask.NameToLayer("Wall"));
             markingWallFilter.useTriggers = false;
@@ -116,11 +138,16 @@ namespace Polarity.Simulation
             wallFilter.SetLayerMask(settings.MagneticBlockingLayers);
             wallFilter.useTriggers = false;
 
+            previousTimeScale = Time.timeScale;
+            Time.timeScale = 1f;
             previousSimulationMode = Physics2D.simulationMode;
             Physics2D.simulationMode = SimulationMode2D.Script;
             physicsOwner = this;
             ownsPhysics = true;
 
+            PlayerHealth.Bind(this,0);
+            healthByRigidbody[player.Rigidbody]=PlayerHealth;
+            levelController.Bind(this);
             for (int i = 0; i < initialBodies.Length; i++)
             {
                 initialBodies[i].Bind(this, i + 1);
@@ -146,6 +173,8 @@ namespace Polarity.Simulation
                     Debug.LogError($"Invalid or duplicate initial body at slot {i}. World remains Ready.", this);
                     return false;
                 }
+                if (body.gameObject.layer == LayerMask.NameToLayer("Enemy") && body.GetComponent<Health>() == null)
+                { Debug.LogError("Every enemy requires Health before registration.",body); return false; }
                 if (body.gameObject.layer == LayerMask.NameToLayer("Player"))
                 {
                     Debug.LogError("Players must not have PolarityBody or enter the polarity registry.", body);
@@ -168,6 +197,7 @@ namespace Polarity.Simulation
             bodies.Sort((a, b) => a.BodyId.CompareTo(b.BodyId));
             body.SetRegistered(true);
             bodiesByRigidbody[body.Rigidbody] = body;
+            if(body.TryGetComponent<Health>(out var health)) { health.Bind(this,body.BodyId); healthByRigidbody[body.Rigidbody]=health; }
             if (body.gameObject.layer == enemyLayer && body.TryGetComponent<EnemyMotor>(out var motor))
                 enemyMotors[body] = motor;
             UpdateEnemyCount();
@@ -180,6 +210,7 @@ namespace Polarity.Simulation
             bodies.Remove(body);
             enemyMotors.Remove(body);
             bodiesByRigidbody.Remove(body.Rigidbody);
+            healthByRigidbody.Remove(body.Rigidbody);
             body.SetRegistered(false);
             UpdateEnemyCount();
         }
@@ -192,7 +223,7 @@ namespace Polarity.Simulation
 
         public void SetPhase(LevelPhase phase)
         {
-            if (!ownsPhysics || State == null)
+            if (!ownsPhysics || State == null || State.Phase == LevelPhase.Won || State.Phase == LevelPhase.Lost)
                 return;
             State.SetPhase(phase);
         }
@@ -202,7 +233,7 @@ namespace Polarity.Simulation
             if (phase != LevelPhase.Running)
             {
                 markRequests.Clear();
-                ClearContactState();
+                if (!stepping) ClearContactState();
                 player?.ClearIntent();
             }
         }
@@ -327,12 +358,18 @@ namespace Polarity.Simulation
                 }
                 ClampBodySpeeds();
                 contacts.CapturePersistent(bodies, bodiesByRigidbody);
-                // Future damage stage must invalidate participants before planning propagation.
+                touchedSpikes.RemoveAll(spike=>spike==null);
+                damageContacts.CapturePersistent(healthByRigidbody,bodiesByRigidbody,touchedSpikes);
+                ResolveDamage();
                 propagation.BuildPlan(CompletedStepCount + 1, propagationSnapshot, contacts.Pairs, propagationPlan);
                 CommitPropagation();
+                FlushDeaths();
                 CompletedStepCount++;
+                SimulationTime += Time.fixedDeltaTime;
+                levelController.ResolveOutcome();
+                PublishDamage();
                 PublishPropagation();
-                // Future stages: removals -> outcome/events.
+                levelController.PublishOutcome();
             }
             catch (Exception exception)
             {
@@ -346,7 +383,64 @@ namespace Polarity.Simulation
 
         internal void RecordCollision(Collision2D collision)
         {
-            if (collectingContacts && ownsPhysics) contacts.CaptureCollision(collision, bodiesByRigidbody);
+            if (!collectingContacts || !ownsPhysics) return;
+            contacts.CaptureCollision(collision,bodiesByRigidbody);
+            damageContacts.CaptureCollision(collision,healthByRigidbody,bodiesByRigidbody);
+        }
+
+        internal void RecordSpike(SpikeHazard spike, Health target)
+        { if (!collectingContacts || !ownsPhysics) return;
+            if(!touchedSpikes.Contains(spike)) touchedSpikes.Add(spike);
+            damageContacts.CaptureSpike(spike,target); }
+
+        private void ResolveDamage()
+        {
+            double time = SimulationTime + Time.fixedDeltaTime;
+            damage.BuildPlan(damageContacts.Contacts,time,settings.ImpactDamageThreshold,damagePlan);
+            foreach(var contact in damagePlan)
+            {
+                float interval = contact.Target == PlayerHealth ? settings.PlayerDamageInterval : settings.EnemyDamageInterval;
+                contact.Target.ApplyDamage(settings.DamagePerHit,time,interval);
+                damageResults.Add(new DamageResult(CompletedStepCount+1,contact,settings.DamagePerHit,contact.Target.CurrentHealth));
+            }
+            // All life states change before propagation, but no collections are modified here.
+        }
+
+        private void FlushDeaths()
+        {
+            foreach(var contact in damagePlan)
+            {
+                var victim=contact.Target;
+                if (victim.IsAlive) continue;
+                victim.Rigidbody.simulated=false;
+                if (victim==PlayerHealth) { player.ClearIntent(); continue; }
+                var body=victim.GetComponent<PolarityBody>();
+                if (body!=null) UnregisterBody(body);
+                victim.gameObject.SetActive(false);
+                Destroy(victim.gameObject);
+            }
+        }
+
+        private void PublishDamage()
+        {
+            for(int i=0;i<damageResults.Count;i++)
+            {
+                var target=damagePlan[i].Target;
+                if(target!=null) target.NotifyHealthChanged();
+                DamageCommitted?.Invoke(damageResults[i]);
+            }
+        }
+
+        internal void PrepareForRestart()
+        {
+            restarting=true;
+            touchedSpikes.Clear();
+            State.SetPhase(LevelPhase.Ready);
+            markRequests.Clear(); ClearContactState(); damageContacts.Clear(); damage.Clear(); damagePlan.Clear(); damageResults.Clear();
+            player.ClearIntent();
+            MarkResolved=null; PropagationCommitted=null; DamageCommitted=null;
+            levelController.Clear();
+            Time.timeScale=1f;
         }
 
         private void CommitPropagation()
@@ -376,6 +470,7 @@ namespace Polarity.Simulation
         private void ClearStepContacts()
         {
             contacts.Clear(); propagation.Clear(); propagationPlan.Clear(); propagationResults.Clear();
+            damageContacts.Clear(); damage.Clear(); damagePlan.Clear(); damageResults.Clear();
         }
 
         private void ClearContactState()
@@ -591,6 +686,11 @@ namespace Polarity.Simulation
             if (!ownsPhysics)
                 return;
             State.PhaseChanged -= OnPhaseChanged;
+            MarkResolved=null; PropagationCommitted=null; DamageCommitted=null;
+            levelController?.Clear();
+            foreach(var health in healthByRigidbody.Values) if(health!=null) health.Unbind(this);
+            healthByRigidbody.Clear();
+            touchedSpikes.Clear();
             markRequests.Clear();
             player?.ClearIntent();
             foreach (var body in initialBodies)
@@ -606,6 +706,7 @@ namespace Polarity.Simulation
             if (physicsOwner == this)
             {
                 Physics2D.simulationMode = previousSimulationMode;
+                Time.timeScale = restarting ? 1f : previousTimeScale;
                 physicsOwner = null;
             }
             ownsPhysics = false;

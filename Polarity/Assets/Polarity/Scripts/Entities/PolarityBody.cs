@@ -18,11 +18,12 @@ namespace Polarity.Entities
         private Rigidbody2D rigidBody;
         private Pole currentPolarity;
         private bool initialized;
+        private Health health;
 
         public int BodyId { get; private set; }
         public SimulationWorld World { get; private set; }
         public bool IsRegistered { get; private set; }
-        public bool IsValid => IsRegistered && isActiveAndEnabled && rigidBody != null;
+        public bool IsValid => IsRegistered && isActiveAndEnabled && rigidBody != null && (health == null || health.IsAlive);
         public Rigidbody2D Rigidbody => rigidBody != null ? rigidBody : (rigidBody = GetComponent<Rigidbody2D>());
         public Pole InitialPolarity => initialPolarity;
         public Pole CurrentPolarity => initialized ? currentPolarity : initialPolarity;
@@ -69,6 +70,7 @@ namespace Polarity.Entities
             EnsureInitialized();
             World = world;
             BodyId = bodyId;
+            health = GetComponent<Health>();
         }
 
         internal void SetRegistered(bool registered) => IsRegistered = registered;

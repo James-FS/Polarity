@@ -20,3 +20,7 @@ MonoBehaviour:
   magneticBlockingLayers:
     serializedVersion: 2
     m_Bits: 4096
+  impactDamageThreshold: 4.5
+  enemyDamageInterval: 0.35
+  playerDamageInterval: 0.8
+  damagePerHit: 1

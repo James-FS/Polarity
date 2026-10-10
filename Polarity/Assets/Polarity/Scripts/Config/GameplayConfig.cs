@@ -15,12 +15,19 @@ namespace Polarity.Config
         [Tooltip("Only solid walls block magnetism; never include the Crate layer.")]
         [SerializeField] private LayerMask magneticBlockingLayers = 1 << 12;
 
+        [SerializeField, Min(0.01f)] private float impactDamageThreshold = 4.5f;
+        [SerializeField, Min(0f)] private float enemyDamageInterval = 0.35f;
+        [SerializeField, Min(0f)] private float playerDamageInterval = 0.8f;
+        [SerializeField, Min(1)] private int damagePerHit = 1;
+
         public Settings CreateRuntimeSettings() => new Settings(
             SafeValue(magneticStrength, 20f, 0f),
             SafeValue(magneticRadius, 7f, 0.01f),
             SafeValue(markingDistance, 7f, 0.01f),
             SafeValue(maxMagneticAcceleration, 30f, 0.01f),
-            SafeValue(maxBodySpeed, 12f, 0.01f), magneticBlockingLayers.value);
+            SafeValue(maxBodySpeed, 12f, 0.01f), magneticBlockingLayers.value,
+            SafeValue(impactDamageThreshold,4.5f,0.01f),SafeValue(enemyDamageInterval,0.35f,0f),
+            SafeValue(playerDamageInterval,0.8f,0f),Mathf.Max(1,damagePerHit));
 
         private static float SafeValue(float value, float fallback, float minimum)
             => float.IsNaN(value) || float.IsInfinity(value) ? fallback : Mathf.Max(minimum, value);
@@ -33,6 +40,8 @@ namespace Polarity.Config
             markingDistance = settings.MarkingDistance;
             maxMagneticAcceleration = settings.MaxMagneticAcceleration;
             maxBodySpeed = settings.MaxBodySpeed;
+            impactDamageThreshold=settings.ImpactDamageThreshold; enemyDamageInterval=settings.EnemyDamageInterval;
+            playerDamageInterval=settings.PlayerDamageInterval; damagePerHit=settings.DamagePerHit;
         }
 
         public readonly struct Settings
@@ -43,9 +52,11 @@ namespace Polarity.Config
             public readonly float MaxMagneticAcceleration;
             public readonly float MaxBodySpeed;
             public readonly int MagneticBlockingLayers;
+            public readonly float ImpactDamageThreshold,EnemyDamageInterval,PlayerDamageInterval;
+            public readonly int DamagePerHit;
 
             internal Settings(float strength, float radius, float markingDistance,
-                float maxAcceleration, float maxSpeed, int blockingLayers)
+                float maxAcceleration, float maxSpeed, int blockingLayers,float threshold,float enemyInterval,float playerInterval,int damage)
             {
                 MagneticStrength = strength;
                 MagneticRadius = radius;
@@ -53,6 +64,7 @@ namespace Polarity.Config
                 MaxMagneticAcceleration = maxAcceleration;
                 MaxBodySpeed = maxSpeed;
                 MagneticBlockingLayers = blockingLayers;
+                ImpactDamageThreshold=threshold;EnemyDamageInterval=enemyInterval;PlayerDamageInterval=playerInterval;DamagePerHit=damage;
             }
         }
     }

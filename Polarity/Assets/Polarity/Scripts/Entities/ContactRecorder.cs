@@ -1,22 +1,20 @@
 using UnityEngine;
-
 namespace Polarity.Entities
 {
-    /// <summary>Copies callback data during the World-owned physics step; never changes gameplay state.</summary>
+    /// <summary>Copies numeric collision records only, for polarity entities or the nonmagnetic player.</summary>
     [DisallowMultipleComponent]
-    [RequireComponent(typeof(PolarityBody))]
     public sealed class ContactRecorder : MonoBehaviour
     {
         private PolarityBody body;
-        private void Awake() => body = GetComponent<PolarityBody>();
+        private Health health;
+        private void Awake() { body=GetComponent<PolarityBody>(); health=GetComponent<Health>(); }
         private void OnCollisionEnter2D(Collision2D collision) => Capture(collision);
         private void OnCollisionStay2D(Collision2D collision) => Capture(collision);
         private void Capture(Collision2D collision)
         {
             if (!isActiveAndEnabled) return;
-            if (body == null) body = GetComponent<PolarityBody>();
-            if (body.IsValid && body.World != null)
-                body.World.RecordCollision(collision);
+            var world=body!=null ? body.World : health!=null ? health.World : null;
+            if (world!=null) world.RecordCollision(collision);
         }
     }
 }

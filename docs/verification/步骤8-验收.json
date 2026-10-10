@@ -1,0 +1,7180 @@
+{
+  "date": "2026-10-10",
+  "baseCommit": "4a0d122",
+  "engine": "Tuanjie 1.10.1 / 2022.3.62t13",
+  "allAcceptancePassed": true,
+  "checks": [
+    {
+      "name": "高速箱子实际撞敌人只扣一次血",
+      "passed": true,
+      "detail": [
+        {
+          "Step": 11,
+          "SourceId": 7,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 6.96448135,
+          "Killed": false,
+          "position": [
+            5.03191471,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "实际低速箱子贴靠120步不磨血",
+      "passed": true,
+      "detail": {
+        "hp": 2,
+        "hits": 0,
+        "contactSteps": 118,
+        "FailedStepCount": 0
+      }
+    },
+    {
+      "name": "高速敌人实际撞墙受伤一次",
+      "passed": true,
+      "detail": [
+        {
+          "Step": 8,
+          "SourceId": 0,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 7.24584627,
+          "Killed": false,
+          "position": [
+            7.495625,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "高速沿墙切向运动不会按总速度误伤",
+      "passed": true,
+      "detail": {
+        "hp": 2,
+        "hits": 0,
+        "speed": 6.54637957,
+        "normalSpeed": 0
+      }
+    },
+    {
+      "name": "敌人高速互撞双方各一次受伤",
+      "passed": true,
+      "detail": [
+        {
+          "Step": 10,
+          "SourceId": 2,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 6.96448135,
+          "Killed": false,
+          "position": [
+            4.50281239,
+            -1
+          ]
+        },
+        {
+          "Step": 10,
+          "SourceId": 1,
+          "TargetId": 2,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 6.96448135,
+          "Killed": false,
+          "position": [
+            5.49718761,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "玩家接触敌人有0.8秒全局无敌间隔",
+      "passed": true,
+      "detail": [
+        {
+          "Step": 5,
+          "SourceId": 1,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 2,
+          "NormalSpeed": 0,
+          "Killed": false,
+          "position": [
+            6,
+            -1
+          ]
+        },
+        {
+          "Step": 45,
+          "SourceId": 1,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 0,
+          "Killed": false,
+          "position": [
+            6,
+            -1
+          ]
+        },
+        {
+          "Step": 85,
+          "SourceId": 1,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "NormalSpeed": 0,
+          "Killed": true,
+          "position": [
+            6,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "玩家普通接触不伤害敌人",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "玩家归零判负且停止危险模拟",
+      "passed": true,
+      "detail": {
+        "hpBefore": 2,
+        "hitsBefore": 1,
+        "hp": 0,
+        "enemyHp": 2,
+        "hits": [
+          {
+            "Step": 5,
+            "SourceId": 1,
+            "TargetId": 0,
+            "kind": "EnemyTouch",
+            "Amount": 1,
+            "RemainingHealth": 2,
+            "NormalSpeed": 0,
+            "Killed": false,
+            "position": [
+              6,
+              -1
+            ]
+          },
+          {
+            "Step": 45,
+            "SourceId": 1,
+            "TargetId": 0,
+            "kind": "EnemyTouch",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "NormalSpeed": 0,
+            "Killed": false,
+            "position": [
+              6,
+              -1
+            ]
+          },
+          {
+            "Step": 85,
+            "SourceId": 1,
+            "TargetId": 0,
+            "kind": "EnemyTouch",
+            "Amount": 1,
+            "RemainingHealth": 0,
+            "NormalSpeed": 0,
+            "Killed": true,
+            "position": [
+              6,
+              -1
+            ]
+          }
+        ],
+        "phase": "Lost",
+        "stopped": true,
+        "playerSimulated": false,
+        "time": 1.6199999637901783,
+        "FailedStepCount": 0
+      }
+    },
+    {
+      "name": "敌人短间隔第二次真实撞击被冷却阻止",
+      "passed": true,
+      "detail": {
+        "blockedHp": 1,
+        "blockedHits": 1,
+        "hits": [
+          {
+            "Step": 5,
+            "SourceId": 7,
+            "TargetId": 1,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "NormalSpeed": 7.84313726,
+            "Killed": false,
+            "position": [
+              5.12099028,
+              -1
+            ]
+          },
+          {
+            "Step": 27,
+            "SourceId": 7,
+            "TargetId": 1,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 0,
+            "NormalSpeed": 7.84313726,
+            "Killed": true,
+            "position": [
+              5.12099028,
+              -1
+            ]
+          }
+        ],
+        "phase": "Won",
+        "enemyCount": 0,
+        "registered": false,
+        "valid": false,
+        "active": false,
+        "stopped": true,
+        "outcome": {
+          "Phase": 3,
+          "Step": 27,
+          "SimulationTime": 0.5399999879300594,
+          "PlayerHealth": 3,
+          "RemainingEnemies": 0,
+          "RemainingMarks": 3
+        },
+        "remaining": 3
+      }
+    },
+    {
+      "name": "冷却后再撞击致死并统一注销",
+      "passed": true,
+      "detail": [
+        {
+          "Step": 5,
+          "SourceId": 7,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 7.84313726,
+          "Killed": false,
+          "position": [
+            5.12099028,
+            -1
+          ]
+        },
+        {
+          "Step": 27,
+          "SourceId": 7,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "NormalSpeed": 7.84313726,
+          "Killed": true,
+          "position": [
+            5.12099028,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "清空敌人判胜且不能用SetPhase继续危险模拟",
+      "passed": true,
+      "detail": {
+        "Phase": 3,
+        "Step": 27,
+        "SimulationTime": 0.5399999879300594,
+        "PlayerHealth": 3,
+        "RemainingEnemies": 0,
+        "RemainingMarks": 3
+      }
+    },
+    {
+      "name": "本步碰撞死亡来源不再传播",
+      "passed": true,
+      "detail": {
+        "hp": [
+          0,
+          1
+        ],
+        "recipient": "Neutral",
+        "transfers": 0,
+        "atomic": true,
+        "hits": [
+          {
+            "Step": 10,
+            "SourceId": 2,
+            "TargetId": 1,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 0,
+            "NormalSpeed": 6.96448135,
+            "Killed": true,
+            "position": [
+              5.020337,
+              -1
+            ]
+          },
+          {
+            "Step": 10,
+            "SourceId": 1,
+            "TargetId": 2,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "NormalSpeed": 6.96448135,
+            "Killed": false,
+            "position": [
+              6.015181,
+              -1
+            ]
+          }
+        ],
+        "budget": 3,
+        "enemyCount": 1
+      }
+    },
+    {
+      "name": "本步碰撞死亡接收者不获得极性",
+      "passed": true,
+      "detail": {
+        "hp": [
+          1,
+          0
+        ],
+        "recipient": "Neutral",
+        "transfers": 0,
+        "atomic": true,
+        "hits": [
+          {
+            "Step": 11,
+            "SourceId": 2,
+            "TargetId": 1,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "NormalSpeed": 6.96448135,
+            "Killed": false,
+            "position": [
+              5.020337,
+              -1
+            ]
+          },
+          {
+            "Step": 11,
+            "SourceId": 1,
+            "TargetId": 2,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 0,
+            "NormalSpeed": 6.96448135,
+            "Killed": true,
+            "position": [
+              6.015181,
+              -1
+            ]
+          }
+        ],
+        "budget": 3,
+        "enemyCount": 1
+      }
+    },
+    {
+      "name": "伤害接入后存活低速链仍然一轮一跳免费传播",
+      "passed": true,
+      "detail": {
+        "first": [
+          "Positive",
+          "Positive",
+          "Neutral"
+        ],
+        "second": [
+          "Positive",
+          "Positive",
+          "Positive"
+        ],
+        "health": [
+          2,
+          2,
+          2
+        ],
+        "hits": 0,
+        "budget": 3
+      }
+    },
+    {
+      "name": "重叠尖刺Trigger伤玩家与敌人且每方每轮只受一次",
+      "passed": true,
+      "detail": [
+        {
+          "Step": 4,
+          "SourceId": -2,
+          "TargetId": 0,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 2,
+          "NormalSpeed": 0,
+          "Killed": false,
+          "position": [
+            6,
+            -1
+          ]
+        },
+        {
+          "Step": 4,
+          "SourceId": -2,
+          "TargetId": 1,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 0,
+          "Killed": false,
+          "position": [
+            4.5,
+            -1
+          ]
+        },
+        {
+          "Step": 22,
+          "SourceId": -2,
+          "TargetId": 1,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "NormalSpeed": 0,
+          "Killed": true,
+          "position": [
+            4.5,
+            -1
+          ]
+        },
+        {
+          "Step": 44,
+          "SourceId": -2,
+          "TargetId": 0,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 0,
+          "Killed": false,
+          "position": [
+            6,
+            -1
+          ]
+        },
+        {
+          "Step": 84,
+          "SourceId": -2,
+          "TargetId": 0,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "NormalSpeed": 0,
+          "Killed": true,
+          "position": [
+            6,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "箱子不可摧毁且尖刺不参与传播",
+      "passed": true,
+      "detail": {
+        "hp": 2,
+        "enemyHp": 0,
+        "hits": [
+          {
+            "Step": 4,
+            "SourceId": -2,
+            "TargetId": 0,
+            "kind": "Spike",
+            "Amount": 1,
+            "RemainingHealth": 2,
+            "NormalSpeed": 0,
+            "Killed": false,
+            "position": [
+              6,
+              -1
+            ]
+          },
+          {
+            "Step": 4,
+            "SourceId": -2,
+            "TargetId": 1,
+            "kind": "Spike",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "NormalSpeed": 0,
+            "Killed": false,
+            "position": [
+              4.5,
+              -1
+            ]
+          },
+          {
+            "Step": 22,
+            "SourceId": -2,
+            "TargetId": 1,
+            "kind": "Spike",
+            "Amount": 1,
+            "RemainingHealth": 0,
+            "NormalSpeed": 0,
+            "Killed": true,
+            "position": [
+              4.5,
+              -1
+            ]
+          }
+        ],
+        "crateHealth": false,
+        "crateRegistered": true,
+        "crateSimulated": true,
+        "propagation": 0,
+        "phase": "Running",
+        "buffer": 8
+      }
+    },
+    {
+      "name": "同一步玩家与最后敌人死亡优先判负",
+      "passed": true,
+      "detail": {
+        "hp": 0,
+        "enemies": 0,
+        "phase": "Lost",
+        "hits": [
+          {
+            "Step": 5,
+            "SourceId": -1,
+            "TargetId": 0,
+            "kind": "Spike",
+            "Amount": 1,
+            "RemainingHealth": 0,
+            "NormalSpeed": 0,
+            "Killed": true,
+            "position": [
+              6.5,
+              -1
+            ]
+          },
+          {
+            "Step": 5,
+            "SourceId": -1,
+            "TargetId": 1,
+            "kind": "Spike",
+            "Amount": 1,
+            "RemainingHealth": 0,
+            "NormalSpeed": 0,
+            "Killed": true,
+            "position": [
+              5,
+              -1
+            ]
+          }
+        ],
+        "stopped": true,
+        "outcome": {
+          "Phase": 4,
+          "Step": 5,
+          "SimulationTime": 0.09999999776482582,
+          "PlayerHealth": 0,
+          "RemainingEnemies": 0,
+          "RemainingMarks": 3
+        }
+      }
+    },
+    {
+      "name": "多碰撞体双边回调不重复扣血，接触缓冲会扩容",
+      "passed": true,
+      "detail": {
+        "hp": 1,
+        "hits": [
+          {
+            "Step": 5,
+            "SourceId": 7,
+            "TargetId": 1,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "NormalSpeed": 7.84313726,
+            "Killed": false,
+            "position": [
+              5.12149,
+              -1
+            ]
+          }
+        ],
+        "buffer": 16,
+        "expansions": 1
+      }
+    },
+    {
+      "name": "E1_early战斗方案重复结果一致",
+      "passed": true
+    },
+    {
+      "name": "E1_late战斗方案重复结果一致",
+      "passed": true
+    },
+    {
+      "name": "相同布局只改首次标记时机带来实际击杀及存活时间差异",
+      "passed": true,
+      "detail": {
+        "earlyKills": 0,
+        "lateKills": 2,
+        "earlySteps": 234,
+        "lateSteps": 363
+      }
+    },
+    {
+      "name": "E1_early真实引擎FixedUpdate重放战斗事件与结果一致",
+      "passed": true,
+      "detail": {
+        "completed": 234,
+        "attempts": 234,
+        "fixedSteps": 234,
+        "FailedStepCount": 0,
+        "phase": "Lost",
+        "hp": 0,
+        "enemies": 6,
+        "budget": 2,
+        "hits": [
+          {
+            "step": 87,
+            "SourceId": 7,
+            "TargetId": 1,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "Killed": false,
+            "NormalSpeed": 6.61147356
+          },
+          {
+            "step": 128,
+            "SourceId": 7,
+            "TargetId": 5,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "Killed": false,
+            "NormalSpeed": 6.20413065
+          },
+          {
+            "step": 134,
+            "SourceId": 0,
+            "TargetId": 2,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "Killed": false,
+            "NormalSpeed": 6.371629
+          },
+          {
+            "step": 154,
+            "SourceId": 6,
+            "TargetId": 0,
+            "kind": "EnemyTouch",
+            "Amount": 1,
+            "RemainingHealth": 2,
+            "Killed": false,
+            "NormalSpeed": 0
+          },
+          {
+            "step": 194,
+            "SourceId": 6,
+            "TargetId": 0,
+            "kind": "EnemyTouch",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "Killed": false,
+            "NormalSpeed": 0
+          },
+          {
+            "step": 234,
+            "SourceId": 6,
+            "TargetId": 0,
+            "kind": "EnemyTouch",
+            "Amount": 1,
+            "RemainingHealth": 0,
+            "Killed": true,
+            "NormalSpeed": 0
+          }
+        ],
+        "transfers": [
+          {
+            "step": 110,
+            "SourceId": 1,
+            "TargetId": 5,
+            "pole": "Positive"
+          },
+          {
+            "step": 111,
+            "SourceId": 5,
+            "TargetId": 2,
+            "pole": "Positive"
+          },
+          {
+            "step": 111,
+            "SourceId": 5,
+            "TargetId": 3,
+            "pole": "Positive"
+          },
+          {
+            "step": 234,
+            "SourceId": 1,
+            "TargetId": 4,
+            "pole": "Positive"
+          }
+        ],
+        "marks": [
+          {
+            "step": 70,
+            "TargetId": 1,
+            "outcome": "Applied",
+            "budget": 2
+          }
+        ]
+      }
+    },
+    {
+      "name": "E1_late真实引擎FixedUpdate重放战斗事件与结果一致",
+      "passed": true,
+      "detail": {
+        "completed": 363,
+        "attempts": 363,
+        "fixedSteps": 363,
+        "FailedStepCount": 0,
+        "phase": "Lost",
+        "hp": 0,
+        "enemies": 4,
+        "budget": 2,
+        "hits": [
+          {
+            "step": 126,
+            "SourceId": 6,
+            "TargetId": 1,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "Killed": false,
+            "NormalSpeed": 4.51705933
+          },
+          {
+            "step": 126,
+            "SourceId": 1,
+            "TargetId": 6,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "Killed": false,
+            "NormalSpeed": 4.51705933
+          },
+          {
+            "step": 148,
+            "SourceId": 1,
+            "TargetId": 0,
+            "kind": "EnemyTouch",
+            "Amount": 1,
+            "RemainingHealth": 2,
+            "Killed": false,
+            "NormalSpeed": 0
+          },
+          {
+            "step": 171,
+            "SourceId": 7,
+            "TargetId": 2,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "Killed": false,
+            "NormalSpeed": 4.58686829
+          },
+          {
+            "step": 175,
+            "SourceId": 0,
+            "TargetId": 1,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 0,
+            "Killed": true,
+            "NormalSpeed": 5.58538342
+          },
+          {
+            "step": 188,
+            "SourceId": 6,
+            "TargetId": 3,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "Killed": false,
+            "NormalSpeed": 5.483214
+          },
+          {
+            "step": 188,
+            "SourceId": 3,
+            "TargetId": 6,
+            "kind": "Impact",
+            "Amount": 1,
+            "RemainingHealth": 0,
+            "Killed": true,
+            "NormalSpeed": 5.483214
+          },
+          {
+            "step": 323,
+            "SourceId": 3,
+            "TargetId": 0,
+            "kind": "EnemyTouch",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "Killed": false,
+            "NormalSpeed": 0
+          },
+          {
+            "step": 363,
+            "SourceId": 3,
+            "TargetId": 0,
+            "kind": "EnemyTouch",
+            "Amount": 1,
+            "RemainingHealth": 0,
+            "Killed": true,
+            "NormalSpeed": 0
+          }
+        ],
+        "transfers": [
+          {
+            "step": 102,
+            "SourceId": 7,
+            "TargetId": 1,
+            "pole": "Negative"
+          },
+          {
+            "step": 126,
+            "SourceId": 1,
+            "TargetId": 6,
+            "pole": "Negative"
+          },
+          {
+            "step": 152,
+            "SourceId": 1,
+            "TargetId": 5,
+            "pole": "Positive"
+          },
+          {
+            "step": 153,
+            "SourceId": 5,
+            "TargetId": 3,
+            "pole": "Positive"
+          },
+          {
+            "step": 154,
+            "SourceId": 3,
+            "TargetId": 2,
+            "pole": "Positive"
+          },
+          {
+            "step": 172,
+            "SourceId": 3,
+            "TargetId": 4,
+            "pole": "Positive"
+          }
+        ],
+        "marks": [
+          {
+            "step": 150,
+            "TargetId": 1,
+            "outcome": "Applied",
+            "budget": 2
+          }
+        ]
+      }
+    },
+    {
+      "name": "running阶段通过R输入路径重载完整初始状态",
+      "passed": true,
+      "detail": {
+        "phase": "Running",
+        "budget": 3,
+        "hp": 3,
+        "enemyHp": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "enemies": 6,
+        "pending": 0,
+        "processed": 0,
+        "completed": 0,
+        "contacts": 0,
+        "damage": 0,
+        "transfers": 0,
+        "outcome": false,
+        "oldOutcome": false,
+        "timeScale": 1,
+        "mode": "Script",
+        "player": [
+          5,
+          -2.5
+        ],
+        "actors": [
+          {
+            "BodyId": 1,
+            "pole": "Neutral",
+            "position": [
+              -3,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 2,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 3,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 4,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              -1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 5,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 6,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              -2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 7,
+            "pole": "Negative",
+            "position": [
+              3,
+              0
+            ],
+            "cooldown": null
+          }
+        ],
+        "playerCooldown": 0
+      }
+    },
+    {
+      "name": "running重试无旧请求接触冷却事件或ID残留",
+      "passed": true,
+      "detail": {
+        "before": {
+          "phase": "Running",
+          "budget": 0,
+          "hp": 2,
+          "pending": 1,
+          "enemies": 6,
+          "timeScale": 0.3
+        },
+        "startup": {
+          "phase": "Running",
+          "budget": 3,
+          "hp": 3,
+          "enemyHp": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "enemies": 6,
+          "pending": 0,
+          "processed": 0,
+          "completed": 0,
+          "contacts": 0,
+          "damage": 0,
+          "transfers": 0,
+          "outcome": false,
+          "oldOutcome": false,
+          "timeScale": 1,
+          "mode": "Script",
+          "player": [
+            5,
+            -2.5
+          ],
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                -3,
+                0
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -5.5,
+                1.8
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -5.5,
+                0
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -5.5,
+                -1.8
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -3.5,
+                2.4
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -3.5,
+                -2.4
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "cooldown": null
+            }
+          ],
+          "playerCooldown": 0
+        },
+        "rejectedDuplicate": true,
+        "firstSequence": 1,
+        "oldOwnerReleased": true,
+        "oldPending": 0,
+        "oldEvents": 0,
+        "newWorldCount": 1,
+        "newControllerCount": 1
+      }
+    },
+    {
+      "name": "paused阶段通过R输入路径重载完整初始状态",
+      "passed": true,
+      "detail": {
+        "phase": "Running",
+        "budget": 3,
+        "hp": 3,
+        "enemyHp": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "enemies": 6,
+        "pending": 0,
+        "processed": 0,
+        "completed": 0,
+        "contacts": 0,
+        "damage": 0,
+        "transfers": 0,
+        "outcome": false,
+        "oldOutcome": false,
+        "timeScale": 1,
+        "mode": "Script",
+        "player": [
+          5,
+          -2.5
+        ],
+        "actors": [
+          {
+            "BodyId": 1,
+            "pole": "Neutral",
+            "position": [
+              -3,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 2,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 3,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 4,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              -1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 5,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 6,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              -2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 7,
+            "pole": "Negative",
+            "position": [
+              3,
+              0
+            ],
+            "cooldown": null
+          }
+        ],
+        "playerCooldown": 0
+      }
+    },
+    {
+      "name": "paused重试无旧请求接触冷却事件或ID残留",
+      "passed": true,
+      "detail": {
+        "before": {
+          "phase": "Paused",
+          "budget": 3,
+          "hp": 3,
+          "pending": 0,
+          "enemies": 6,
+          "timeScale": 0
+        },
+        "startup": {
+          "phase": "Running",
+          "budget": 3,
+          "hp": 3,
+          "enemyHp": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "enemies": 6,
+          "pending": 0,
+          "processed": 0,
+          "completed": 0,
+          "contacts": 0,
+          "damage": 0,
+          "transfers": 0,
+          "outcome": false,
+          "oldOutcome": false,
+          "timeScale": 1,
+          "mode": "Script",
+          "player": [
+            5,
+            -2.5
+          ],
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                -3,
+                0
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -5.5,
+                1.8
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -5.5,
+                0
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -5.5,
+                -1.8
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -3.5,
+                2.4
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -3.5,
+                -2.4
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "cooldown": null
+            }
+          ],
+          "playerCooldown": 0
+        },
+        "rejectedDuplicate": true,
+        "firstSequence": 1,
+        "oldOwnerReleased": true,
+        "oldPending": 0,
+        "oldEvents": 0,
+        "newWorldCount": 1,
+        "newControllerCount": 1
+      }
+    },
+    {
+      "name": "lost阶段通过R输入路径重载完整初始状态",
+      "passed": true,
+      "detail": {
+        "phase": "Running",
+        "budget": 3,
+        "hp": 3,
+        "enemyHp": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "enemies": 6,
+        "pending": 0,
+        "processed": 0,
+        "completed": 0,
+        "contacts": 0,
+        "damage": 0,
+        "transfers": 0,
+        "outcome": false,
+        "oldOutcome": false,
+        "timeScale": 1,
+        "mode": "Script",
+        "player": [
+          5,
+          -2.5
+        ],
+        "actors": [
+          {
+            "BodyId": 1,
+            "pole": "Neutral",
+            "position": [
+              -3,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 2,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 3,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 4,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              -1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 5,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 6,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              -2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 7,
+            "pole": "Negative",
+            "position": [
+              3,
+              0
+            ],
+            "cooldown": null
+          }
+        ],
+        "playerCooldown": 0
+      }
+    },
+    {
+      "name": "lost重试无旧请求接触冷却事件或ID残留",
+      "passed": true,
+      "detail": {
+        "before": {
+          "phase": "Lost",
+          "budget": 3,
+          "hp": 0,
+          "pending": 0,
+          "enemies": 6,
+          "timeScale": 1
+        },
+        "startup": {
+          "phase": "Running",
+          "budget": 3,
+          "hp": 3,
+          "enemyHp": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "enemies": 6,
+          "pending": 0,
+          "processed": 0,
+          "completed": 0,
+          "contacts": 0,
+          "damage": 0,
+          "transfers": 0,
+          "outcome": false,
+          "oldOutcome": false,
+          "timeScale": 1,
+          "mode": "Script",
+          "player": [
+            5,
+            -2.5
+          ],
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                -3,
+                0
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -5.5,
+                1.8
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -5.5,
+                0
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -5.5,
+                -1.8
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -3.5,
+                2.4
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -3.5,
+                -2.4
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "cooldown": null
+            }
+          ],
+          "playerCooldown": 0
+        },
+        "rejectedDuplicate": true,
+        "firstSequence": 1,
+        "oldOwnerReleased": true,
+        "oldPending": 0,
+        "oldEvents": 0,
+        "newWorldCount": 1,
+        "newControllerCount": 1
+      }
+    },
+    {
+      "name": "won阶段通过R输入路径重载完整初始状态",
+      "passed": true,
+      "detail": {
+        "phase": "Running",
+        "budget": 3,
+        "hp": 3,
+        "enemyHp": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "enemies": 6,
+        "pending": 0,
+        "processed": 0,
+        "completed": 0,
+        "contacts": 0,
+        "damage": 0,
+        "transfers": 0,
+        "outcome": false,
+        "oldOutcome": false,
+        "timeScale": 1,
+        "mode": "Script",
+        "player": [
+          5,
+          -2.5
+        ],
+        "actors": [
+          {
+            "BodyId": 1,
+            "pole": "Neutral",
+            "position": [
+              -3,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 2,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 3,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 4,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              -1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 5,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 6,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              -2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 7,
+            "pole": "Negative",
+            "position": [
+              3,
+              0
+            ],
+            "cooldown": null
+          }
+        ],
+        "playerCooldown": 0
+      }
+    },
+    {
+      "name": "won重试无旧请求接触冷却事件或ID残留",
+      "passed": true,
+      "detail": {
+        "before": {
+          "phase": "Won",
+          "budget": 3,
+          "hp": 3,
+          "pending": 0,
+          "enemies": 0,
+          "timeScale": 1
+        },
+        "startup": {
+          "phase": "Running",
+          "budget": 3,
+          "hp": 3,
+          "enemyHp": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "enemies": 6,
+          "pending": 0,
+          "processed": 0,
+          "completed": 0,
+          "contacts": 0,
+          "damage": 0,
+          "transfers": 0,
+          "outcome": false,
+          "oldOutcome": false,
+          "timeScale": 1,
+          "mode": "Script",
+          "player": [
+            5,
+            -2.5
+          ],
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                -3,
+                0
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -5.5,
+                1.8
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -5.5,
+                0
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -5.5,
+                -1.8
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -3.5,
+                2.4
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -3.5,
+                -2.4
+              ],
+              "cooldown": 0
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "cooldown": null
+            }
+          ],
+          "playerCooldown": 0
+        },
+        "rejectedDuplicate": true,
+        "firstSequence": 1,
+        "oldOwnerReleased": true,
+        "oldPending": 0,
+        "oldEvents": 0,
+        "newWorldCount": 1,
+        "newControllerCount": 1
+      }
+    },
+    {
+      "name": "running重试所有实体位置完全恢复",
+      "passed": true
+    },
+    {
+      "name": "paused重试所有实体位置完全恢复",
+      "passed": true
+    },
+    {
+      "name": "lost重试所有实体位置完全恢复",
+      "passed": true
+    },
+    {
+      "name": "won重试所有实体位置完全恢复",
+      "passed": true
+    },
+    {
+      "name": "零标记预算不会判负，仍可申请重试",
+      "passed": true,
+      "detail": {
+        "phase": "Running",
+        "budget": 0,
+        "hp": 2,
+        "pending": 1,
+        "enemies": 6,
+        "timeScale": 0.3
+      }
+    },
+    {
+      "name": "离开尖刺后休眠与旧记录不会继续造成伤害",
+      "passed": true,
+      "detail": {
+        "hpInside": 2,
+        "hpOutside": 2,
+        "hits": [
+          {
+            "Step": 5,
+            "SourceId": -1,
+            "TargetId": 0,
+            "kind": "Spike",
+            "Amount": 1,
+            "RemainingHealth": 2,
+            "NormalSpeed": 0,
+            "Killed": false,
+            "position": [
+              6,
+              -1
+            ]
+          }
+        ],
+        "phase": "Running"
+      }
+    },
+    {
+      "name": "零预算仍可移动，正常阶段保持一次模拟推进",
+      "passed": true,
+      "detail": {
+        "budget": 0,
+        "movement": 1.51429224,
+        "completed": 20,
+        "attempts": 20,
+        "nonrunning": true,
+        "hp": 3,
+        "FailedStepCount": 0
+      }
+    },
+    {
+      "name": "Ready和Paused不推进伤害或物理",
+      "passed": true,
+      "detail": {
+        "budget": 0,
+        "movement": 1.51429224,
+        "completed": 20,
+        "attempts": 20,
+        "nonrunning": true,
+        "hp": 3,
+        "FailedStepCount": 0
+      }
+    },
+    {
+      "name": "保存后全新Play正常运行并恢复初始规则状态",
+      "passed": true,
+      "detail": {
+        "path": "D:\\Code\\Polarity\\docs\\verification\\步骤8-最终画面.png",
+        "width": 1280,
+        "height": 720,
+        "completed": 50,
+        "attempts": 50,
+        "FailedStepCount": 0,
+        "phase": "Running",
+        "hp": 3,
+        "budget": 3,
+        "enemies": 6,
+        "poles": [
+          "Neutral",
+          "Neutral",
+          "Neutral",
+          "Neutral",
+          "Neutral",
+          "Neutral",
+          "Negative"
+        ],
+        "ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "name": "最终退出Play场景已保存，Console无错误警告",
+      "passed": true,
+      "detail": {
+        "console": [],
+        "state": {
+          "editor": {
+            "playMode": "stopped",
+            "focusedWindow": "SceneHierarchyWindow",
+            "requiresFocusForOperations": false,
+            "isCompiling": false,
+            "isUpdating": false,
+            "lastCompilation": {
+              "status": "idle"
+            },
+            "timeSinceStartup": 13797.8711
+          },
+          "project": {
+            "srp": "builtin",
+            "defineSymbols": [],
+            "packages": [],
+            "dirty": false
+          },
+          "scene": {
+            "activeScenePath": "Assets/Polarity/Scenes/Game.scene",
+            "dirty": false,
+            "hasNavMeshData": false,
+            "hasLightingData": false
+          },
+          "selection": {
+            "activeObject": null
+          },
+          "console": {
+            "unreadCount": 0,
+            "lastErrors": []
+          },
+          "assets": {
+            "touched": []
+          }
+        }
+      }
+    },
+    {
+      "name": "保留箱子Prefab、引擎设置和原有移动选中追击表现代码",
+      "passed": true,
+      "detail": {
+        "assets": [
+          {
+            "path": "Assets/Polarity/Prefabs/Actors/Crate.prefab",
+            "before": "1ca273d67d7a3e742b91c7824eac33a6a8d738e3a34aafeb546af173fae806b0",
+            "after": "1ca273d67d7a3e742b91c7824eac33a6a8d738e3a34aafeb546af173fae806b0",
+            "unchanged": true
+          },
+          {
+            "path": "ProjectSettings/Physics2DSettings.asset",
+            "before": "337d121d7ae1d92f8b455dba8f2d2175cdb0291eb0a137efed6cdaee9aaa4a78",
+            "after": "337d121d7ae1d92f8b455dba8f2d2175cdb0291eb0a137efed6cdaee9aaa4a78",
+            "unchanged": true
+          },
+          {
+            "path": "ProjectSettings/ProjectSettings.asset",
+            "before": "5ec62493a9112bd7001f848bc50406aae3d7d40b0fc2024ddbb9341de5f848fe",
+            "after": "5ec62493a9112bd7001f848bc50406aae3d7d40b0fc2024ddbb9341de5f848fe",
+            "unchanged": true
+          },
+          {
+            "path": "ProjectSettings/EditorBuildSettings.asset",
+            "before": "ec0dd5af3de46792e2987c1892447cededf37827892dad75dd6b437bdb62727e",
+            "after": "ec0dd5af3de46792e2987c1892447cededf37827892dad75dd6b437bdb62727e",
+            "unchanged": true
+          }
+        ],
+        "scripts": [
+          {
+            "path": "Assets/Polarity/Scripts/Controllers/MarkingController.cs",
+            "unchanged": true
+          },
+          {
+            "path": "Assets/Polarity/Scripts/Controllers/PlayerController.cs",
+            "unchanged": true
+          },
+          {
+            "path": "Assets/Polarity/Scripts/Entities/EnemyMotor.cs",
+            "unchanged": true
+          },
+          {
+            "path": "Assets/Polarity/Scripts/Model/ContactData.cs",
+            "unchanged": true
+          },
+          {
+            "path": "Assets/Polarity/Scripts/Model/LevelPhase.cs",
+            "unchanged": true
+          },
+          {
+            "path": "Assets/Polarity/Scripts/Model/LevelState.cs",
+            "unchanged": true
+          },
+          {
+            "path": "Assets/Polarity/Scripts/Model/MarkRequest.cs",
+            "unchanged": true
+          },
+          {
+            "path": "Assets/Polarity/Scripts/Model/Polarity.cs",
+            "unchanged": true
+          },
+          {
+            "path": "Assets/Polarity/Scripts/Simulation/ContactCollection.cs",
+            "unchanged": true
+          },
+          {
+            "path": "Assets/Polarity/Scripts/Simulation/PropagationSystem.cs",
+            "unchanged": true
+          },
+          {
+            "path": "Assets/Polarity/Scripts/Views/PolarityView.cs",
+            "unchanged": true
+          },
+          {
+            "path": "Assets/Polarity/Scripts/Views/YSortView.cs",
+            "unchanged": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "保存重载结构正确，无Missing Script，退出恢复物理与时间设置",
+      "passed": true,
+      "detail": {
+        "dirty": false,
+        "missing": 0,
+        "mode": "FixedUpdate",
+        "timeScale": 1,
+        "playerPolarity": false,
+        "controllers": 1,
+        "enemyPrefab": "Neutral",
+        "cratePrefab": "Neutral"
+      }
+    }
+  ],
+  "settings": {
+    "playerHealth": 3,
+    "enemyHealth": 2,
+    "impactThreshold": 4.5,
+    "damagePerHit": 1,
+    "enemyInterval": 0.35,
+    "playerInterval": 0.8
+  },
+  "methods": [
+    "All behavior verified through Codely Unity Bridge in actual Play. Collider fixtures use real Physics2D.Simulate through the original unique World.FixedUpdate. Fixture preparation may position bodies, set initial velocity, disable motors or reduce initial health to exercise death edges; no contacts/propagation are injected.",
+    "Normal fixed-layout battle trials retain all saved physical/motor/magnetic settings and health defaults, with zero player movement input and one marking at logical step 70 or 150. Both scenarios have exact fresh-Play repetitions and real engine FixedUpdate replays.",
+    "R tests call the same SampleRestartInput(true) path used by Update/GetKeyDown(R), and actually LoadSceneAsync(Game,Single). Scene-loaded observation pauses the new World before its first simulation to check exact initial state.",
+    "Trigger Enter/Stay numbers are merged with current overlap queries for already touched spikes, including sleeping rigidbodies. Spikes were temporary Play fixtures; the saved Game corridor was not expanded with hazard content.",
+    "Final Game screenshot shows the read-only debug panel, not proof of dynamics."
+  ],
+  "groups": {
+    "highCrate": {
+      "hp": 1,
+      "hits": [
+        {
+          "Step": 11,
+          "SourceId": 7,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 6.96448135,
+          "Killed": false,
+          "position": [
+            5.03191471,
+            -1
+          ]
+        }
+      ],
+      "contacts": [
+        {
+          "SourceId": 7,
+          "target": 1,
+          "Kind": 0,
+          "NormalSpeed": 0
+        }
+      ],
+      "CompletedStepCount": 24,
+      "FailedStepCount": 0,
+      "phase": 1,
+      "config": 4.5,
+      "enemyCount": 1
+    },
+    "lowContact": {
+      "hp": 2,
+      "hits": 0,
+      "contactSteps": 118,
+      "FailedStepCount": 0
+    },
+    "highWall": {
+      "hp": 1,
+      "hits": [
+        {
+          "Step": 8,
+          "SourceId": 0,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 7.24584627,
+          "Killed": false,
+          "position": [
+            7.495625,
+            0
+          ]
+        }
+      ],
+      "FailedStepCount": 0
+    },
+    "tangentWall": {
+      "hp": 2,
+      "hits": 0,
+      "speed": 6.54637957,
+      "normalSpeed": 0
+    },
+    "mutualEnemies": {
+      "hp": [
+        1,
+        1
+      ],
+      "hits": [
+        {
+          "Step": 10,
+          "SourceId": 2,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 6.96448135,
+          "Killed": false,
+          "position": [
+            4.50281239,
+            -1
+          ]
+        },
+        {
+          "Step": 10,
+          "SourceId": 1,
+          "TargetId": 2,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 6.96448135,
+          "Killed": false,
+          "position": [
+            5.49718761,
+            -1
+          ]
+        }
+      ],
+      "FailedStepCount": 0
+    },
+    "playerTouch": {
+      "hpBefore": 2,
+      "hitsBefore": 1,
+      "hp": 0,
+      "enemyHp": 2,
+      "hits": [
+        {
+          "Step": 5,
+          "SourceId": 1,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 2,
+          "NormalSpeed": 0,
+          "Killed": false,
+          "position": [
+            6,
+            -1
+          ]
+        },
+        {
+          "Step": 45,
+          "SourceId": 1,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 0,
+          "Killed": false,
+          "position": [
+            6,
+            -1
+          ]
+        },
+        {
+          "Step": 85,
+          "SourceId": 1,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "NormalSpeed": 0,
+          "Killed": true,
+          "position": [
+            6,
+            -1
+          ]
+        }
+      ],
+      "phase": "Lost",
+      "stopped": true,
+      "playerSimulated": false,
+      "time": 1.6199999637901783,
+      "FailedStepCount": 0
+    },
+    "enemyCooldown": {
+      "blockedHp": 1,
+      "blockedHits": 1,
+      "hits": [
+        {
+          "Step": 5,
+          "SourceId": 7,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 7.84313726,
+          "Killed": false,
+          "position": [
+            5.12099028,
+            -1
+          ]
+        },
+        {
+          "Step": 27,
+          "SourceId": 7,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "NormalSpeed": 7.84313726,
+          "Killed": true,
+          "position": [
+            5.12099028,
+            -1
+          ]
+        }
+      ],
+      "phase": "Won",
+      "enemyCount": 0,
+      "registered": false,
+      "valid": false,
+      "active": false,
+      "stopped": true,
+      "outcome": {
+        "Phase": 3,
+        "Step": 27,
+        "SimulationTime": 0.5399999879300594,
+        "PlayerHealth": 3,
+        "RemainingEnemies": 0,
+        "RemainingMarks": 3
+      },
+      "remaining": 3
+    },
+    "deadSource": {
+      "hp": [
+        0,
+        1
+      ],
+      "recipient": "Neutral",
+      "transfers": 0,
+      "atomic": true,
+      "hits": [
+        {
+          "Step": 10,
+          "SourceId": 2,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "NormalSpeed": 6.96448135,
+          "Killed": true,
+          "position": [
+            5.020337,
+            -1
+          ]
+        },
+        {
+          "Step": 10,
+          "SourceId": 1,
+          "TargetId": 2,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 6.96448135,
+          "Killed": false,
+          "position": [
+            6.015181,
+            -1
+          ]
+        }
+      ],
+      "budget": 3,
+      "enemyCount": 1
+    },
+    "deadRecipient": {
+      "hp": [
+        1,
+        0
+      ],
+      "recipient": "Neutral",
+      "transfers": 0,
+      "atomic": true,
+      "hits": [
+        {
+          "Step": 11,
+          "SourceId": 2,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 6.96448135,
+          "Killed": false,
+          "position": [
+            5.020337,
+            -1
+          ]
+        },
+        {
+          "Step": 11,
+          "SourceId": 1,
+          "TargetId": 2,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "NormalSpeed": 6.96448135,
+          "Killed": true,
+          "position": [
+            6.015181,
+            -1
+          ]
+        }
+      ],
+      "budget": 3,
+      "enemyCount": 1
+    },
+    "liveChain": {
+      "first": [
+        "Positive",
+        "Positive",
+        "Neutral"
+      ],
+      "second": [
+        "Positive",
+        "Positive",
+        "Positive"
+      ],
+      "health": [
+        2,
+        2,
+        2
+      ],
+      "hits": 0,
+      "budget": 3
+    },
+    "spikes": {
+      "hp": 2,
+      "enemyHp": 0,
+      "hits": [
+        {
+          "Step": 4,
+          "SourceId": -2,
+          "TargetId": 0,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 2,
+          "NormalSpeed": 0,
+          "Killed": false,
+          "position": [
+            6,
+            -1
+          ]
+        },
+        {
+          "Step": 4,
+          "SourceId": -2,
+          "TargetId": 1,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 0,
+          "Killed": false,
+          "position": [
+            4.5,
+            -1
+          ]
+        },
+        {
+          "Step": 22,
+          "SourceId": -2,
+          "TargetId": 1,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "NormalSpeed": 0,
+          "Killed": true,
+          "position": [
+            4.5,
+            -1
+          ]
+        }
+      ],
+      "crateHealth": false,
+      "crateRegistered": true,
+      "crateSimulated": true,
+      "propagation": 0,
+      "phase": "Running",
+      "buffer": 8
+    },
+    "simultaneousLoss": {
+      "hp": 0,
+      "enemies": 0,
+      "phase": "Lost",
+      "hits": [
+        {
+          "Step": 5,
+          "SourceId": -1,
+          "TargetId": 0,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "NormalSpeed": 0,
+          "Killed": true,
+          "position": [
+            6.5,
+            -1
+          ]
+        },
+        {
+          "Step": 5,
+          "SourceId": -1,
+          "TargetId": 1,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "NormalSpeed": 0,
+          "Killed": true,
+          "position": [
+            5,
+            -1
+          ]
+        }
+      ],
+      "stopped": true,
+      "outcome": {
+        "Phase": 4,
+        "Step": 5,
+        "SimulationTime": 0.09999999776482582,
+        "PlayerHealth": 0,
+        "RemainingEnemies": 0,
+        "RemainingMarks": 3
+      }
+    },
+    "manyColliders": {
+      "hp": 1,
+      "hits": [
+        {
+          "Step": 5,
+          "SourceId": 7,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 7.84313726,
+          "Killed": false,
+          "position": [
+            5.12149,
+            -1
+          ]
+        }
+      ],
+      "buffer": 16,
+      "expansions": 1
+    },
+    "spikesFinal": {
+      "hp": 0,
+      "enemyHp": 0,
+      "hits": [
+        {
+          "Step": 4,
+          "SourceId": -2,
+          "TargetId": 0,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 2,
+          "NormalSpeed": 0,
+          "Killed": false,
+          "position": [
+            6,
+            -1
+          ]
+        },
+        {
+          "Step": 4,
+          "SourceId": -2,
+          "TargetId": 1,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 0,
+          "Killed": false,
+          "position": [
+            4.5,
+            -1
+          ]
+        },
+        {
+          "Step": 22,
+          "SourceId": -2,
+          "TargetId": 1,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "NormalSpeed": 0,
+          "Killed": true,
+          "position": [
+            4.5,
+            -1
+          ]
+        },
+        {
+          "Step": 44,
+          "SourceId": -2,
+          "TargetId": 0,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "NormalSpeed": 0,
+          "Killed": false,
+          "position": [
+            6,
+            -1
+          ]
+        },
+        {
+          "Step": 84,
+          "SourceId": -2,
+          "TargetId": 0,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "NormalSpeed": 0,
+          "Killed": true,
+          "position": [
+            6,
+            -1
+          ]
+        }
+      ],
+      "crateHealth": false,
+      "crateRegistered": true,
+      "crateSimulated": true,
+      "propagation": 0,
+      "phase": "Lost"
+    },
+    "exitSleepingSpike": {
+      "hpInside": 2,
+      "hpOutside": 2,
+      "hits": [
+        {
+          "Step": 5,
+          "SourceId": -1,
+          "TargetId": 0,
+          "kind": "Spike",
+          "Amount": 1,
+          "RemainingHealth": 2,
+          "NormalSpeed": 0,
+          "Killed": false,
+          "position": [
+            6,
+            -1
+          ]
+        }
+      ],
+      "phase": "Running"
+    },
+    "movementAndPause": {
+      "budget": 0,
+      "movement": 1.51429224,
+      "completed": 20,
+      "attempts": 20,
+      "nonrunning": true,
+      "hp": 3,
+      "FailedStepCount": 0
+    },
+    "finalSmoke": {
+      "path": "D:\\Code\\Polarity\\docs\\verification\\步骤8-最终画面.png",
+      "width": 1280,
+      "height": 720,
+      "completed": 50,
+      "attempts": 50,
+      "FailedStepCount": 0,
+      "phase": "Running",
+      "hp": 3,
+      "budget": 3,
+      "enemies": 6,
+      "poles": [
+        "Neutral",
+        "Neutral",
+        "Neutral",
+        "Neutral",
+        "Neutral",
+        "Neutral",
+        "Negative"
+      ],
+      "ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "final": {
+      "console": [],
+      "state": {
+        "editor": {
+          "playMode": "stopped",
+          "focusedWindow": "SceneHierarchyWindow",
+          "requiresFocusForOperations": false,
+          "isCompiling": false,
+          "isUpdating": false,
+          "lastCompilation": {
+            "status": "idle"
+          },
+          "timeSinceStartup": 13797.8711
+        },
+        "project": {
+          "srp": "builtin",
+          "defineSymbols": [],
+          "packages": [],
+          "dirty": false
+        },
+        "scene": {
+          "activeScenePath": "Assets/Polarity/Scenes/Game.scene",
+          "dirty": false,
+          "hasNavMeshData": false,
+          "hasLightingData": false
+        },
+        "selection": {
+          "activeObject": null
+        },
+        "console": {
+          "unreadCount": 0,
+          "lastErrors": []
+        },
+        "assets": {
+          "touched": []
+        }
+      }
+    },
+    "savedReadback": {
+      "dirty": false,
+      "missing": 0,
+      "mode": "FixedUpdate",
+      "timeScale": 1,
+      "playerPolarity": false,
+      "controllers": 1,
+      "enemyPrefab": "Neutral",
+      "cratePrefab": "Neutral"
+    }
+  },
+  "battle": {
+    "E1_early": {
+      "initial": [
+        {
+          "BodyId": 1,
+          "pole": "Neutral",
+          "position": [
+            -3,
+            0
+          ]
+        },
+        {
+          "BodyId": 2,
+          "pole": "Neutral",
+          "position": [
+            -5.5,
+            1.8
+          ]
+        },
+        {
+          "BodyId": 3,
+          "pole": "Neutral",
+          "position": [
+            -5.5,
+            0
+          ]
+        },
+        {
+          "BodyId": 4,
+          "pole": "Neutral",
+          "position": [
+            -5.5,
+            -1.8
+          ]
+        },
+        {
+          "BodyId": 5,
+          "pole": "Neutral",
+          "position": [
+            -3.5,
+            2.4
+          ]
+        },
+        {
+          "BodyId": 6,
+          "pole": "Neutral",
+          "position": [
+            -3.5,
+            -2.4
+          ]
+        },
+        {
+          "BodyId": 7,
+          "pole": "Negative",
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "completed": 234,
+      "attempts": 234,
+      "FailedStepCount": 0,
+      "phase": "Lost",
+      "hp": 0,
+      "enemies": 6,
+      "budget": 2,
+      "finite": true,
+      "maxSpeed": 7.60437,
+      "hits": [
+        {
+          "step": 87,
+          "SourceId": 7,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 6.61147356
+        },
+        {
+          "step": 128,
+          "SourceId": 7,
+          "TargetId": 5,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 6.20413065
+        },
+        {
+          "step": 134,
+          "SourceId": 0,
+          "TargetId": 2,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 6.371629
+        },
+        {
+          "step": 154,
+          "SourceId": 6,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 2,
+          "Killed": false,
+          "NormalSpeed": 0
+        },
+        {
+          "step": 194,
+          "SourceId": 6,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 0
+        },
+        {
+          "step": 234,
+          "SourceId": 6,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "Killed": true,
+          "NormalSpeed": 0
+        }
+      ],
+      "transfers": [
+        {
+          "step": 110,
+          "SourceId": 1,
+          "TargetId": 5,
+          "pole": "Positive"
+        },
+        {
+          "step": 111,
+          "SourceId": 5,
+          "TargetId": 2,
+          "pole": "Positive"
+        },
+        {
+          "step": 111,
+          "SourceId": 5,
+          "TargetId": 3,
+          "pole": "Positive"
+        },
+        {
+          "step": 234,
+          "SourceId": 1,
+          "TargetId": 4,
+          "pole": "Positive"
+        }
+      ],
+      "marks": [
+        {
+          "step": 70,
+          "TargetId": 1,
+          "outcome": "Applied",
+          "budget": 2
+        }
+      ],
+      "samples": [
+        {
+          "step": 25,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 3,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                -2.37584734,
+                -0.195047617
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -4.89486,
+                1.55218053
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -4.863865,
+                -0.15146099
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -4.84752941,
+                -1.843498
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -3.39598918,
+                1.82709265
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -3.36339355,
+                -2.999838
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 50,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 3,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                -1.06711709,
+                -0.6040258
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -3.62599349,
+                1.03254962
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -3.53000784,
+                -0.469046265
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -3.60844088,
+                -2.006653
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -2.42300177,
+                1.08317375
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -2.37862325,
+                -3.36727238
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 75,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                0.495599121,
+                -0.9601679
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -2.19186664,
+                0.445240617
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -2.02242374,
+                -0.827994645
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -3.18223977,
+                -2.901835
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -1.08478582,
+                0.3774369
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -0.9285935,
+                -3.304047
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                2.97834659,
+                -0.0073115034
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 100,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                1.71695232,
+                -0.850189865
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -0.7228075,
+                -0.131477192
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -0.476036817,
+                -1.09175956
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -2.25988984,
+                -3.4926672
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                0.3379525,
+                -0.31115523
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                0.6270577,
+                -3.12186718
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                2.921697,
+                -0.1346709
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 125,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                1.87381017,
+                -1.25163651
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                -0.292533219,
+                0.412747264
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                0.218396083,
+                -1.39527714
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -0.8347415,
+                -3.46026587
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                1.558097,
+                -0.156368762
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                2.20483732,
+                -2.90577984
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.078544,
+                -0.564926
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 150,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                1.88112319,
+                -1.3950001
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                -1.86205328,
+                1.39500427
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                0.150707647,
+                -1.39500093
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                0.710126162,
+                -3.249637
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                3.901673,
+                1.063172
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                3.78696632,
+                -2.678686
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.08612132,
+                -0.8882273
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 175,
+          "hp": 2,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                1.94054043,
+                -1.3950001
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                -3.40398145,
+                1.89317179
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                0.493254751,
+                -1.394853
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                2.27936745,
+                -2.98840523
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                6.652175,
+                1.24364972
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                4.13756752,
+                -2.627543
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.145587,
+                -0.883299768
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.121878,
+            -2.48212671
+          ]
+        },
+        {
+          "step": 200,
+          "hp": 1,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                2.2643342,
+                -1.41669619
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                -4.29637,
+                2.491259
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                1.27835941,
+                -1.16910386
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                3.297652,
+                -2.81134987
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                7.101251,
+                0.363842219
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                4.27071,
+                -2.60514927
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.46928883,
+                -0.905382931
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.25477266,
+            -2.46032429
+          ]
+        },
+        {
+          "step": 225,
+          "hp": 1,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                2.71670413,
+                -1.88332951
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                -4.055062,
+                2.43978429
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                1.28186691,
+                -0.561332762
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                3.40983057,
+                -2.79304886
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                6.495095,
+                -0.895390749
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                4.383192,
+                -2.58676338
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.92170358,
+                -1.19454145
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.36756945,
+            -2.44191217
+          ]
+        }
+      ]
+    },
+    "E6_early": {
+      "initial": [
+        {
+          "BodyId": 1,
+          "pole": "Neutral",
+          "position": [
+            -3,
+            0
+          ]
+        },
+        {
+          "BodyId": 2,
+          "pole": "Neutral",
+          "position": [
+            -5.5,
+            1.8
+          ]
+        },
+        {
+          "BodyId": 3,
+          "pole": "Neutral",
+          "position": [
+            -5.5,
+            0
+          ]
+        },
+        {
+          "BodyId": 4,
+          "pole": "Neutral",
+          "position": [
+            -5.5,
+            -1.8
+          ]
+        },
+        {
+          "BodyId": 5,
+          "pole": "Neutral",
+          "position": [
+            -3.5,
+            2.4
+          ]
+        },
+        {
+          "BodyId": 6,
+          "pole": "Neutral",
+          "position": [
+            -3.5,
+            -2.4
+          ]
+        },
+        {
+          "BodyId": 7,
+          "pole": "Negative",
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "completed": 230,
+      "attempts": 230,
+      "FailedStepCount": 0,
+      "phase": "Lost",
+      "hp": 0,
+      "enemies": 5,
+      "budget": 2,
+      "finite": true,
+      "maxSpeed": 6.563131,
+      "hits": [
+        {
+          "step": 123,
+          "SourceId": 6,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 5.771629
+        },
+        {
+          "step": 123,
+          "SourceId": 1,
+          "TargetId": 6,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 5.771629
+        },
+        {
+          "step": 150,
+          "SourceId": 1,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 2,
+          "Killed": false,
+          "NormalSpeed": 0
+        },
+        {
+          "step": 169,
+          "SourceId": 4,
+          "TargetId": 3,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 7.44689846
+        },
+        {
+          "step": 169,
+          "SourceId": 3,
+          "TargetId": 4,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 7.44689846
+        },
+        {
+          "step": 184,
+          "SourceId": 0,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "Killed": true,
+          "NormalSpeed": 4.86687851
+        },
+        {
+          "step": 190,
+          "SourceId": 5,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 0
+        },
+        {
+          "step": 230,
+          "SourceId": 3,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "Killed": true,
+          "NormalSpeed": 0
+        }
+      ],
+      "transfers": [
+        {
+          "step": 102,
+          "SourceId": 7,
+          "TargetId": 1,
+          "pole": "Negative"
+        },
+        {
+          "step": 153,
+          "SourceId": 1,
+          "TargetId": 5,
+          "pole": "Negative"
+        },
+        {
+          "step": 154,
+          "SourceId": 5,
+          "TargetId": 3,
+          "pole": "Negative"
+        },
+        {
+          "step": 155,
+          "SourceId": 3,
+          "TargetId": 2,
+          "pole": "Negative"
+        },
+        {
+          "step": 169,
+          "SourceId": 3,
+          "TargetId": 4,
+          "pole": "Negative"
+        }
+      ],
+      "marks": [
+        {
+          "step": 70,
+          "TargetId": 6,
+          "outcome": "Applied",
+          "budget": 2
+        }
+      ],
+      "samples": [
+        {
+          "step": 25,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 3,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                -2.37584734,
+                -0.195047617
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -4.89486,
+                1.55218053
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -4.863865,
+                -0.15146099
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -4.84752941,
+                -1.843498
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -3.39598918,
+                1.82709265
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -3.36339355,
+                -2.999838
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 50,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 3,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                -1.06711709,
+                -0.6040258
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -3.62599349,
+                1.03254962
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -3.53000784,
+                -0.469046265
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -3.60844088,
+                -2.006653
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -2.42300177,
+                1.08317375
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -2.37862325,
+                -3.36727238
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 75,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                0.414343327,
+                -0.987642646
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -2.19186664,
+                0.445240617
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -2.02242374,
+                -0.827994645
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -3.18223977,
+                -2.901835
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -1.08478582,
+                0.3774369
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Positive",
+              "position": [
+                -0.9285935,
+                -3.304047
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 100,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                1.90590394,
+                -1.03889835
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -0.7228075,
+                -0.131477192
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -0.476036817,
+                -1.09175956
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -2.25988984,
+                -3.4926672
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                0.3379525,
+                -0.31115523
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Positive",
+              "position": [
+                0.6270577,
+                -3.12186718
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 125,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Negative",
+              "position": [
+                2.632826,
+                -1.93398631
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                0.7121758,
+                -0.425175846
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                0.9541866,
+                -1.39198673
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -0.8347415,
+                -3.46026587
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                1.83056664,
+                -0.919476
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Positive",
+              "position": [
+                2.25498033,
+                -2.854023
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.23392439,
+                0.309334785
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 150,
+          "hp": 2,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Negative",
+              "position": [
+                4.048439,
+                -2.382821
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                2.057129,
+                -0.4590147
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                2.35972285,
+                -1.40875113
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                0.710126162,
+                -3.249637
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                3.36289644,
+                -1.53625715
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Positive",
+              "position": [
+                3.687539,
+                -3.310251
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.44461942,
+                0.736043453
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.03497,
+            -2.50304341
+          ]
+        },
+        {
+          "step": 175,
+          "hp": 2,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Negative",
+              "position": [
+                5.149038,
+                -3.156879
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Negative",
+              "position": [
+                1.5809027,
+                -0.113496244
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Negative",
+              "position": [
+                2.88330317,
+                -3.04480577
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 4,
+              "pole": "Negative",
+              "position": [
+                1.789699,
+                -3.50760245
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 5,
+              "pole": "Negative",
+              "position": [
+                4.7613225,
+                -2.2064364
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Positive",
+              "position": [
+                3.948879,
+                -2.943554
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.71161723,
+                1.79961693
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            6.049905,
+            -2.73779845
+          ]
+        },
+        {
+          "step": 200,
+          "hp": 1,
+          "enemies": 5,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 2,
+              "pole": "Negative",
+              "position": [
+                -0.7754172,
+                0.189862654
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Negative",
+              "position": [
+                4.4161253,
+                -3.8017
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 4,
+              "pole": "Negative",
+              "position": [
+                0.257280946,
+                -3.81566739
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 5,
+              "pole": "Negative",
+              "position": [
+                5.72187948,
+                -1.94543731
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Positive",
+              "position": [
+                4.080629,
+                -2.36423159
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                4.2059865,
+                3.434536
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            6.274241,
+            -2.79425478
+          ]
+        },
+        {
+          "step": 225,
+          "hp": 1,
+          "enemies": 5,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 2,
+              "pole": "Negative",
+              "position": [
+                -1.03408623,
+                -0.294567078
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Negative",
+              "position": [
+                5.69785452,
+                -3.591472
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 4,
+              "pole": "Negative",
+              "position": [
+                -0.385485858,
+                -3.400433
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 5,
+              "pole": "Negative",
+              "position": [
+                6.0670476,
+                -1.87218249
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Positive",
+              "position": [
+                5.420602,
+                -2.633065
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                4.3942523,
+                3.78500223
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            6.39930439,
+            -2.81174
+          ]
+        }
+      ]
+    },
+    "E1_late": {
+      "initial": [
+        {
+          "BodyId": 1,
+          "pole": "Neutral",
+          "position": [
+            -3,
+            0
+          ]
+        },
+        {
+          "BodyId": 2,
+          "pole": "Neutral",
+          "position": [
+            -5.5,
+            1.8
+          ]
+        },
+        {
+          "BodyId": 3,
+          "pole": "Neutral",
+          "position": [
+            -5.5,
+            0
+          ]
+        },
+        {
+          "BodyId": 4,
+          "pole": "Neutral",
+          "position": [
+            -5.5,
+            -1.8
+          ]
+        },
+        {
+          "BodyId": 5,
+          "pole": "Neutral",
+          "position": [
+            -3.5,
+            2.4
+          ]
+        },
+        {
+          "BodyId": 6,
+          "pole": "Neutral",
+          "position": [
+            -3.5,
+            -2.4
+          ]
+        },
+        {
+          "BodyId": 7,
+          "pole": "Negative",
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "completed": 363,
+      "attempts": 363,
+      "FailedStepCount": 0,
+      "phase": "Lost",
+      "hp": 0,
+      "enemies": 4,
+      "budget": 2,
+      "finite": true,
+      "maxSpeed": 7.96135,
+      "hits": [
+        {
+          "step": 126,
+          "SourceId": 6,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 4.51705933
+        },
+        {
+          "step": 126,
+          "SourceId": 1,
+          "TargetId": 6,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 4.51705933
+        },
+        {
+          "step": 148,
+          "SourceId": 1,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 2,
+          "Killed": false,
+          "NormalSpeed": 0
+        },
+        {
+          "step": 171,
+          "SourceId": 7,
+          "TargetId": 2,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 4.58686829
+        },
+        {
+          "step": 175,
+          "SourceId": 0,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "Killed": true,
+          "NormalSpeed": 5.58538342
+        },
+        {
+          "step": 188,
+          "SourceId": 6,
+          "TargetId": 3,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 5.483214
+        },
+        {
+          "step": 188,
+          "SourceId": 3,
+          "TargetId": 6,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "Killed": true,
+          "NormalSpeed": 5.483214
+        },
+        {
+          "step": 323,
+          "SourceId": 3,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 0
+        },
+        {
+          "step": 363,
+          "SourceId": 3,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "Killed": true,
+          "NormalSpeed": 0
+        }
+      ],
+      "transfers": [
+        {
+          "step": 102,
+          "SourceId": 7,
+          "TargetId": 1,
+          "pole": "Negative"
+        },
+        {
+          "step": 126,
+          "SourceId": 1,
+          "TargetId": 6,
+          "pole": "Negative"
+        },
+        {
+          "step": 152,
+          "SourceId": 1,
+          "TargetId": 5,
+          "pole": "Positive"
+        },
+        {
+          "step": 153,
+          "SourceId": 5,
+          "TargetId": 3,
+          "pole": "Positive"
+        },
+        {
+          "step": 154,
+          "SourceId": 3,
+          "TargetId": 2,
+          "pole": "Positive"
+        },
+        {
+          "step": 172,
+          "SourceId": 3,
+          "TargetId": 4,
+          "pole": "Positive"
+        }
+      ],
+      "marks": [
+        {
+          "step": 150,
+          "TargetId": 1,
+          "outcome": "Applied",
+          "budget": 2
+        }
+      ],
+      "samples": [
+        {
+          "step": 25,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 3,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                -2.37584734,
+                -0.195047617
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -4.89486,
+                1.55218053
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -4.863865,
+                -0.15146099
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -4.84752941,
+                -1.843498
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -3.39598918,
+                1.82709265
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -3.36339355,
+                -2.999838
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 50,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 3,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                -1.06711709,
+                -0.6040258
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -3.62599349,
+                1.03254962
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -3.53000784,
+                -0.469046265
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -3.60844088,
+                -2.006653
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -2.42300177,
+                1.08317375
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -2.37862325,
+                -3.36727238
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 75,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 3,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                0.414343327,
+                -0.987642646
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -2.19186664,
+                0.445240617
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -2.02242374,
+                -0.827994645
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -3.18223977,
+                -2.901835
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -1.08478582,
+                0.3774369
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -0.9285935,
+                -3.304047
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 100,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 3,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                1.90590394,
+                -1.03889835
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -0.7228075,
+                -0.131477192
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -0.476036817,
+                -1.09175956
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -2.25988984,
+                -3.4926672
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                0.3379525,
+                -0.31115523
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                0.6270577,
+                -3.12186718
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 125,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 3,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Negative",
+              "position": [
+                2.568494,
+                -1.960366
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                0.7121758,
+                -0.425175846
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                0.9541866,
+                -1.39198673
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -0.8347415,
+                -3.46026587
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                1.83056664,
+                -0.919476
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                2.20483732,
+                -2.90577984
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.247403,
+                0.3415572
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 150,
+          "hp": 2,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                4.109176,
+                -2.28947544
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                2.0571475,
+                -0.458988637
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                2.35973144,
+                -1.40872812
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                0.7101288,
+                -3.249652
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                3.36292219,
+                -1.53621221
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Negative",
+              "position": [
+                2.56756377,
+                -3.992325
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.623683,
+                1.35030639
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.079688,
+            -2.50705266
+          ]
+        },
+        {
+          "step": 175,
+          "hp": 2,
+          "enemies": 5,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                2.472417,
+                1.06071591
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                2.64446855,
+                -2.24501085
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Positive",
+              "position": [
+                2.12284565,
+                -3.1764102
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                5.16785431,
+                -1.59145
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Negative",
+              "position": [
+                4.072785,
+                -1.844846
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.77293158,
+                1.587754
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.325071,
+            -2.61203146
+          ]
+        },
+        {
+          "step": 200,
+          "hp": 2,
+          "enemies": 4,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                2.69487953,
+                2.74346447
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                4.221944,
+                -1.54557157
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 4,
+              "pole": "Positive",
+              "position": [
+                2.246059,
+                -3.995084
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                6.969077,
+                -0.4170899
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.77526021,
+                1.08135855
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.325071,
+            -2.61203146
+          ]
+        },
+        {
+          "step": 225,
+          "hp": 2,
+          "enemies": 4,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                3.12661028,
+                3.11060739
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                4.620149,
+                -0.7685196
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 4,
+              "pole": "Positive",
+              "position": [
+                2.189258,
+                -3.99008536
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                7.49501228,
+                0.424192637
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.89654231,
+                0.435933352
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.325071,
+            -2.61203146
+          ]
+        },
+        {
+          "step": 250,
+          "hp": 2,
+          "enemies": 4,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                3.41755652,
+                2.731333
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                4.50127745,
+                -1.04437351
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 4,
+              "pole": "Positive",
+              "position": [
+                2.60819983,
+                -3.9572103
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                7.495001,
+                0.140624732
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                4.339011,
+                0.161000445
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.325071,
+            -2.61203146
+          ]
+        },
+        {
+          "step": 275,
+          "hp": 2,
+          "enemies": 4,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                3.81107736,
+                2.717395
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                4.93279552,
+                -1.229933
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 4,
+              "pole": "Positive",
+              "position": [
+                3.093534,
+                -3.99037027
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                7.495001,
+                -0.577976465
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                4.86279154,
+                -0.0245590173
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.325071,
+            -2.61203146
+          ]
+        },
+        {
+          "step": 300,
+          "hp": 2,
+          "enemies": 4,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                3.71556473,
+                2.41325331
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                5.02141142,
+                -1.42404282
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 4,
+              "pole": "Positive",
+              "position": [
+                3.218908,
+                -3.99037027
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                7.495001,
+                -1.08457327
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                5.3257556,
+                -0.218669
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.325071,
+            -2.61203146
+          ]
+        },
+        {
+          "step": 325,
+          "hp": 1,
+          "enemies": 4,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                3.80009747,
+                1.99184442
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                5.07784,
+                -1.67624927
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 4,
+              "pole": "Positive",
+              "position": [
+                3.183276,
+                -3.99037027
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                7.495001,
+                -1.14970016
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                5.45684958,
+                -0.47172147
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.32654524,
+            -2.637182
+          ]
+        },
+        {
+          "step": 350,
+          "hp": 1,
+          "enemies": 4,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                3.63799953,
+                1.83642507
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                5.09780741,
+                -1.748324
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 4,
+              "pole": "Positive",
+              "position": [
+                3.07309818,
+                -3.99037027
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                7.495001,
+                -1.14970016
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                5.43113327,
+                -0.5434459
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.346641,
+            -2.71151757
+          ]
+        }
+      ]
+    },
+    "Box_flip200": {
+      "initial": [
+        {
+          "BodyId": 1,
+          "pole": "Neutral",
+          "position": [
+            -3,
+            0
+          ]
+        },
+        {
+          "BodyId": 2,
+          "pole": "Neutral",
+          "position": [
+            -5.5,
+            1.8
+          ]
+        },
+        {
+          "BodyId": 3,
+          "pole": "Neutral",
+          "position": [
+            -5.5,
+            0
+          ]
+        },
+        {
+          "BodyId": 4,
+          "pole": "Neutral",
+          "position": [
+            -5.5,
+            -1.8
+          ]
+        },
+        {
+          "BodyId": 5,
+          "pole": "Neutral",
+          "position": [
+            -3.5,
+            2.4
+          ]
+        },
+        {
+          "BodyId": 6,
+          "pole": "Neutral",
+          "position": [
+            -3.5,
+            -2.4
+          ]
+        },
+        {
+          "BodyId": 7,
+          "pole": "Negative",
+          "position": [
+            3,
+            0
+          ]
+        }
+      ],
+      "completed": 234,
+      "attempts": 234,
+      "FailedStepCount": 0,
+      "phase": "Lost",
+      "hp": 0,
+      "enemies": 6,
+      "budget": 1,
+      "finite": true,
+      "maxSpeed": 7.60437,
+      "hits": [
+        {
+          "step": 87,
+          "SourceId": 7,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 6.61147356
+        },
+        {
+          "step": 128,
+          "SourceId": 7,
+          "TargetId": 5,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 6.20413065
+        },
+        {
+          "step": 134,
+          "SourceId": 0,
+          "TargetId": 2,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 6.371629
+        },
+        {
+          "step": 154,
+          "SourceId": 6,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 2,
+          "Killed": false,
+          "NormalSpeed": 0
+        },
+        {
+          "step": 194,
+          "SourceId": 6,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 0
+        },
+        {
+          "step": 231,
+          "SourceId": 0,
+          "TargetId": 4,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 6.89040661
+        },
+        {
+          "step": 234,
+          "SourceId": 6,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "Killed": true,
+          "NormalSpeed": 0
+        }
+      ],
+      "transfers": [
+        {
+          "step": 110,
+          "SourceId": 1,
+          "TargetId": 5,
+          "pole": "Positive"
+        },
+        {
+          "step": 111,
+          "SourceId": 5,
+          "TargetId": 2,
+          "pole": "Positive"
+        },
+        {
+          "step": 111,
+          "SourceId": 5,
+          "TargetId": 3,
+          "pole": "Positive"
+        },
+        {
+          "step": 217,
+          "SourceId": 1,
+          "TargetId": 4,
+          "pole": "Positive"
+        },
+        {
+          "step": 218,
+          "SourceId": 4,
+          "TargetId": 6,
+          "pole": "Positive"
+        }
+      ],
+      "marks": [
+        {
+          "step": 70,
+          "TargetId": 1,
+          "outcome": "Applied",
+          "budget": 2
+        },
+        {
+          "step": 200,
+          "TargetId": 7,
+          "outcome": "Applied",
+          "budget": 1
+        }
+      ],
+      "samples": [
+        {
+          "step": 25,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 3,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                -2.37584734,
+                -0.195047617
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -4.89486,
+                1.55218053
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -4.863865,
+                -0.15146099
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -4.84752941,
+                -1.843498
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -3.39598918,
+                1.82709265
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -3.36339355,
+                -2.999838
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 50,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 3,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Neutral",
+              "position": [
+                -1.06711709,
+                -0.6040258
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -3.62599349,
+                1.03254962
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -3.53000784,
+                -0.469046265
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -3.60844088,
+                -2.006653
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -2.42300177,
+                1.08317375
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -2.37862325,
+                -3.36727238
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3,
+                0
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 75,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                0.495599121,
+                -0.9601679
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -2.19186664,
+                0.445240617
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -2.02242374,
+                -0.827994645
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -3.18223977,
+                -2.901835
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                -1.08478582,
+                0.3774369
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                -0.9285935,
+                -3.304047
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                2.97834659,
+                -0.0073115034
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 100,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                1.71695232,
+                -0.850189865
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Neutral",
+              "position": [
+                -0.7228075,
+                -0.131477192
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Neutral",
+              "position": [
+                -0.476036817,
+                -1.09175956
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -2.25988984,
+                -3.4926672
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Neutral",
+              "position": [
+                0.3379525,
+                -0.31115523
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                0.6270577,
+                -3.12186718
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                2.921697,
+                -0.1346709
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 125,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                1.87381017,
+                -1.25163651
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                -0.292533219,
+                0.412747264
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                0.218396083,
+                -1.39527714
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                -0.8347415,
+                -3.46026587
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                1.558097,
+                -0.156368762
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                2.20483732,
+                -2.90577984
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.078544,
+                -0.564926
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 150,
+          "hp": 3,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                1.88112319,
+                -1.3950001
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                -1.86205328,
+                1.39500427
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                0.150707647,
+                -1.39500093
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                0.710126162,
+                -3.249637
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                3.901673,
+                1.063172
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                3.78696632,
+                -2.678686
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.08612132,
+                -0.8882273
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5,
+            -2.5
+          ]
+        },
+        {
+          "step": 175,
+          "hp": 2,
+          "enemies": 6,
+          "budget": 2,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                1.94054043,
+                -1.3950001
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                -3.40398145,
+                1.89317179
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                0.493254751,
+                -1.394853
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                2.27936745,
+                -2.98840523
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                6.652175,
+                1.24364972
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                4.13756752,
+                -2.627543
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Negative",
+              "position": [
+                3.145587,
+                -0.883299768
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.121878,
+            -2.48212671
+          ]
+        },
+        {
+          "step": 200,
+          "hp": 1,
+          "enemies": 6,
+          "budget": 1,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                2.26444459,
+                -1.42144227
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                -4.29637,
+                2.491259
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                1.26849747,
+                -1.17052615
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Neutral",
+              "position": [
+                3.297652,
+                -2.81134987
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                7.10780573,
+                0.3661878
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 6,
+              "pole": "Neutral",
+              "position": [
+                4.27071,
+                -2.60514927
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Positive",
+              "position": [
+                3.47028279,
+                -0.9044316
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.25477266,
+            -2.46032429
+          ]
+        },
+        {
+          "step": 225,
+          "hp": 1,
+          "enemies": 6,
+          "budget": 1,
+          "actors": [
+            {
+              "BodyId": 1,
+              "pole": "Positive",
+              "position": [
+                2.366339,
+                -2.66430259
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 2,
+              "pole": "Positive",
+              "position": [
+                -4.154741,
+                2.514844
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 3,
+              "pole": "Positive",
+              "position": [
+                -0.6391183,
+                -0.449796647
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 4,
+              "pole": "Positive",
+              "position": [
+                3.464118,
+                -3.346142
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 5,
+              "pole": "Positive",
+              "position": [
+                7.49548531,
+                -0.159880176
+              ],
+              "hp": 1
+            },
+            {
+              "BodyId": 6,
+              "pole": "Positive",
+              "position": [
+                4.46306,
+                -2.72149873
+              ],
+              "hp": 2
+            },
+            {
+              "BodyId": 7,
+              "pole": "Positive",
+              "position": [
+                4.32801151,
+                -0.7277736
+              ],
+              "hp": null
+            }
+          ],
+          "player": [
+            5.420203,
+            -2.44794464
+          ]
+        }
+      ]
+    }
+  },
+  "liveBattle": {
+    "E1_early": {
+      "completed": 234,
+      "attempts": 234,
+      "fixedSteps": 234,
+      "FailedStepCount": 0,
+      "phase": "Lost",
+      "hp": 0,
+      "enemies": 6,
+      "budget": 2,
+      "hits": [
+        {
+          "step": 87,
+          "SourceId": 7,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 6.61147356
+        },
+        {
+          "step": 128,
+          "SourceId": 7,
+          "TargetId": 5,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 6.20413065
+        },
+        {
+          "step": 134,
+          "SourceId": 0,
+          "TargetId": 2,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 6.371629
+        },
+        {
+          "step": 154,
+          "SourceId": 6,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 2,
+          "Killed": false,
+          "NormalSpeed": 0
+        },
+        {
+          "step": 194,
+          "SourceId": 6,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 0
+        },
+        {
+          "step": 234,
+          "SourceId": 6,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "Killed": true,
+          "NormalSpeed": 0
+        }
+      ],
+      "transfers": [
+        {
+          "step": 110,
+          "SourceId": 1,
+          "TargetId": 5,
+          "pole": "Positive"
+        },
+        {
+          "step": 111,
+          "SourceId": 5,
+          "TargetId": 2,
+          "pole": "Positive"
+        },
+        {
+          "step": 111,
+          "SourceId": 5,
+          "TargetId": 3,
+          "pole": "Positive"
+        },
+        {
+          "step": 234,
+          "SourceId": 1,
+          "TargetId": 4,
+          "pole": "Positive"
+        }
+      ],
+      "marks": [
+        {
+          "step": 70,
+          "TargetId": 1,
+          "outcome": "Applied",
+          "budget": 2
+        }
+      ]
+    },
+    "E1_late": {
+      "completed": 363,
+      "attempts": 363,
+      "fixedSteps": 363,
+      "FailedStepCount": 0,
+      "phase": "Lost",
+      "hp": 0,
+      "enemies": 4,
+      "budget": 2,
+      "hits": [
+        {
+          "step": 126,
+          "SourceId": 6,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 4.51705933
+        },
+        {
+          "step": 126,
+          "SourceId": 1,
+          "TargetId": 6,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 4.51705933
+        },
+        {
+          "step": 148,
+          "SourceId": 1,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 2,
+          "Killed": false,
+          "NormalSpeed": 0
+        },
+        {
+          "step": 171,
+          "SourceId": 7,
+          "TargetId": 2,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 4.58686829
+        },
+        {
+          "step": 175,
+          "SourceId": 0,
+          "TargetId": 1,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "Killed": true,
+          "NormalSpeed": 5.58538342
+        },
+        {
+          "step": 188,
+          "SourceId": 6,
+          "TargetId": 3,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 5.483214
+        },
+        {
+          "step": 188,
+          "SourceId": 3,
+          "TargetId": 6,
+          "kind": "Impact",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "Killed": true,
+          "NormalSpeed": 5.483214
+        },
+        {
+          "step": 323,
+          "SourceId": 3,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 1,
+          "Killed": false,
+          "NormalSpeed": 0
+        },
+        {
+          "step": 363,
+          "SourceId": 3,
+          "TargetId": 0,
+          "kind": "EnemyTouch",
+          "Amount": 1,
+          "RemainingHealth": 0,
+          "Killed": true,
+          "NormalSpeed": 0
+        }
+      ],
+      "transfers": [
+        {
+          "step": 102,
+          "SourceId": 7,
+          "TargetId": 1,
+          "pole": "Negative"
+        },
+        {
+          "step": 126,
+          "SourceId": 1,
+          "TargetId": 6,
+          "pole": "Negative"
+        },
+        {
+          "step": 152,
+          "SourceId": 1,
+          "TargetId": 5,
+          "pole": "Positive"
+        },
+        {
+          "step": 153,
+          "SourceId": 5,
+          "TargetId": 3,
+          "pole": "Positive"
+        },
+        {
+          "step": 154,
+          "SourceId": 3,
+          "TargetId": 2,
+          "pole": "Positive"
+        },
+        {
+          "step": 172,
+          "SourceId": 3,
+          "TargetId": 4,
+          "pole": "Positive"
+        }
+      ],
+      "marks": [
+        {
+          "step": 150,
+          "TargetId": 1,
+          "outcome": "Applied",
+          "budget": 2
+        }
+      ]
+    }
+  },
+  "retry": {
+    "running": {
+      "before": {
+        "phase": "Running",
+        "budget": 0,
+        "hp": 2,
+        "pending": 1,
+        "enemies": 6,
+        "timeScale": 0.3
+      },
+      "startup": {
+        "phase": "Running",
+        "budget": 3,
+        "hp": 3,
+        "enemyHp": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "enemies": 6,
+        "pending": 0,
+        "processed": 0,
+        "completed": 0,
+        "contacts": 0,
+        "damage": 0,
+        "transfers": 0,
+        "outcome": false,
+        "oldOutcome": false,
+        "timeScale": 1,
+        "mode": "Script",
+        "player": [
+          5,
+          -2.5
+        ],
+        "actors": [
+          {
+            "BodyId": 1,
+            "pole": "Neutral",
+            "position": [
+              -3,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 2,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 3,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 4,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              -1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 5,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 6,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              -2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 7,
+            "pole": "Negative",
+            "position": [
+              3,
+              0
+            ],
+            "cooldown": null
+          }
+        ],
+        "playerCooldown": 0
+      },
+      "rejectedDuplicate": true,
+      "firstSequence": 1,
+      "oldOwnerReleased": true,
+      "oldPending": 0,
+      "oldEvents": 0,
+      "newWorldCount": 1,
+      "newControllerCount": 1
+    },
+    "paused": {
+      "before": {
+        "phase": "Paused",
+        "budget": 3,
+        "hp": 3,
+        "pending": 0,
+        "enemies": 6,
+        "timeScale": 0
+      },
+      "startup": {
+        "phase": "Running",
+        "budget": 3,
+        "hp": 3,
+        "enemyHp": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "enemies": 6,
+        "pending": 0,
+        "processed": 0,
+        "completed": 0,
+        "contacts": 0,
+        "damage": 0,
+        "transfers": 0,
+        "outcome": false,
+        "oldOutcome": false,
+        "timeScale": 1,
+        "mode": "Script",
+        "player": [
+          5,
+          -2.5
+        ],
+        "actors": [
+          {
+            "BodyId": 1,
+            "pole": "Neutral",
+            "position": [
+              -3,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 2,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 3,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 4,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              -1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 5,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 6,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              -2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 7,
+            "pole": "Negative",
+            "position": [
+              3,
+              0
+            ],
+            "cooldown": null
+          }
+        ],
+        "playerCooldown": 0
+      },
+      "rejectedDuplicate": true,
+      "firstSequence": 1,
+      "oldOwnerReleased": true,
+      "oldPending": 0,
+      "oldEvents": 0,
+      "newWorldCount": 1,
+      "newControllerCount": 1
+    },
+    "lost": {
+      "before": {
+        "phase": "Lost",
+        "budget": 3,
+        "hp": 0,
+        "pending": 0,
+        "enemies": 6,
+        "timeScale": 1
+      },
+      "startup": {
+        "phase": "Running",
+        "budget": 3,
+        "hp": 3,
+        "enemyHp": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "enemies": 6,
+        "pending": 0,
+        "processed": 0,
+        "completed": 0,
+        "contacts": 0,
+        "damage": 0,
+        "transfers": 0,
+        "outcome": false,
+        "oldOutcome": false,
+        "timeScale": 1,
+        "mode": "Script",
+        "player": [
+          5,
+          -2.5
+        ],
+        "actors": [
+          {
+            "BodyId": 1,
+            "pole": "Neutral",
+            "position": [
+              -3,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 2,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 3,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 4,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              -1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 5,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 6,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              -2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 7,
+            "pole": "Negative",
+            "position": [
+              3,
+              0
+            ],
+            "cooldown": null
+          }
+        ],
+        "playerCooldown": 0
+      },
+      "rejectedDuplicate": true,
+      "firstSequence": 1,
+      "oldOwnerReleased": true,
+      "oldPending": 0,
+      "oldEvents": 0,
+      "newWorldCount": 1,
+      "newControllerCount": 1
+    },
+    "won": {
+      "before": {
+        "phase": "Won",
+        "budget": 3,
+        "hp": 3,
+        "pending": 0,
+        "enemies": 0,
+        "timeScale": 1
+      },
+      "startup": {
+        "phase": "Running",
+        "budget": 3,
+        "hp": 3,
+        "enemyHp": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "enemies": 6,
+        "pending": 0,
+        "processed": 0,
+        "completed": 0,
+        "contacts": 0,
+        "damage": 0,
+        "transfers": 0,
+        "outcome": false,
+        "oldOutcome": false,
+        "timeScale": 1,
+        "mode": "Script",
+        "player": [
+          5,
+          -2.5
+        ],
+        "actors": [
+          {
+            "BodyId": 1,
+            "pole": "Neutral",
+            "position": [
+              -3,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 2,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 3,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              0
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 4,
+            "pole": "Neutral",
+            "position": [
+              -5.5,
+              -1.8
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 5,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 6,
+            "pole": "Neutral",
+            "position": [
+              -3.5,
+              -2.4
+            ],
+            "cooldown": 0
+          },
+          {
+            "BodyId": 7,
+            "pole": "Negative",
+            "position": [
+              3,
+              0
+            ],
+            "cooldown": null
+          }
+        ],
+        "playerCooldown": 0
+      },
+      "rejectedDuplicate": true,
+      "firstSequence": 1,
+      "oldOwnerReleased": true,
+      "oldPending": 0,
+      "oldEvents": 0,
+      "newWorldCount": 1,
+      "newControllerCount": 1
+    }
+  },
+  "preservation": {
+    "assets": [
+      {
+        "path": "Assets/Polarity/Prefabs/Actors/Crate.prefab",
+        "before": "1ca273d67d7a3e742b91c7824eac33a6a8d738e3a34aafeb546af173fae806b0",
+        "after": "1ca273d67d7a3e742b91c7824eac33a6a8d738e3a34aafeb546af173fae806b0",
+        "unchanged": true
+      },
+      {
+        "path": "ProjectSettings/Physics2DSettings.asset",
+        "before": "337d121d7ae1d92f8b455dba8f2d2175cdb0291eb0a137efed6cdaee9aaa4a78",
+        "after": "337d121d7ae1d92f8b455dba8f2d2175cdb0291eb0a137efed6cdaee9aaa4a78",
+        "unchanged": true
+      },
+      {
+        "path": "ProjectSettings/ProjectSettings.asset",
+        "before": "5ec62493a9112bd7001f848bc50406aae3d7d40b0fc2024ddbb9341de5f848fe",
+        "after": "5ec62493a9112bd7001f848bc50406aae3d7d40b0fc2024ddbb9341de5f848fe",
+        "unchanged": true
+      },
+      {
+        "path": "ProjectSettings/EditorBuildSettings.asset",
+        "before": "ec0dd5af3de46792e2987c1892447cededf37827892dad75dd6b437bdb62727e",
+        "after": "ec0dd5af3de46792e2987c1892447cededf37827892dad75dd6b437bdb62727e",
+        "unchanged": true
+      }
+    ],
+    "scripts": [
+      {
+        "path": "Assets/Polarity/Scripts/Controllers/MarkingController.cs",
+        "unchanged": true
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Controllers/PlayerController.cs",
+        "unchanged": true
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Entities/EnemyMotor.cs",
+        "unchanged": true
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Model/ContactData.cs",
+        "unchanged": true
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Model/LevelPhase.cs",
+        "unchanged": true
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Model/LevelState.cs",
+        "unchanged": true
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Model/MarkRequest.cs",
+        "unchanged": true
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Model/Polarity.cs",
+        "unchanged": true
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Simulation/ContactCollection.cs",
+        "unchanged": true
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Simulation/PropagationSystem.cs",
+        "unchanged": true
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Views/PolarityView.cs",
+        "unchanged": true
+      },
+      {
+        "path": "Assets/Polarity/Scripts/Views/YSortView.cs",
+        "unchanged": true
+      }
+    ]
+  },
+  "corrections": [
+    {
+      "issue": "Sleeping player stopped receiving Trigger Stay callbacks",
+      "initial": {
+        "hp": 2,
+        "enemyHp": 0,
+        "hits": [
+          {
+            "Step": 4,
+            "SourceId": -2,
+            "TargetId": 0,
+            "kind": "Spike",
+            "Amount": 1,
+            "RemainingHealth": 2,
+            "NormalSpeed": 0,
+            "Killed": false,
+            "position": [
+              6,
+              -1
+            ]
+          },
+          {
+            "Step": 4,
+            "SourceId": -2,
+            "TargetId": 1,
+            "kind": "Spike",
+            "Amount": 1,
+            "RemainingHealth": 1,
+            "NormalSpeed": 0,
+            "Killed": false,
+            "position": [
+              4.5,
+              -1
+            ]
+          },
+          {
+            "Step": 22,
+            "SourceId": -2,
+            "TargetId": 1,
+            "kind": "Spike",
+            "Amount": 1,
+            "RemainingHealth": 0,
+            "NormalSpeed": 0,
+            "Killed": true,
+            "position": [
+              4.5,
+              -1
+            ]
+          }
+        ],
+        "crateHealth": false,
+        "crateRegistered": true,
+        "crateSimulated": true,
+        "propagation": 0,
+        "phase": "Running",
+        "buffer": 8
+      },
+      "fix": "World queries current overlaps for known spikes after its one physics step; final spikes and exit tests passed."
+    },
+    {
+      "issue": "Temporary verification script JSON serialization of Vector2 and MarkResult field projection",
+      "fix": "Flattened vectors and used Request.TargetId, then reran affected scenarios in fresh Play; not project compile failures."
+    }
+  ],
+  "limitations": [
+    "No physical keyboard injection, standalone build, cross-device determinism, blind playtest or complex concave navigation tested.",
+    "Saved Game has no spike layout yet. Spike adapter and genuine trigger behavior verified using temporary fixtures; room design belongs to step 11.",
+    "Fixed-layout stationary-player battle comparisons demonstrate two kills and longer survival, but both end Lost. A stable budget-limited solution for all six enemies remains level-design validation; victory flow is verified with genuine physical hazard fixtures, including six enemies removed in one step.",
+    "Damage and life indicators use the existing temporary debug panel; formal HUD, hit flashes, audio and pause/slow controls remain later steps.",
+    "No turret/projectile implementation yet, so no remaining projectile danger can be tested; terminal phase prevents all subsequent World physics."
+  ]
+}
