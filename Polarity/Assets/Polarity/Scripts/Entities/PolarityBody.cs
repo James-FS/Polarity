@@ -19,11 +19,12 @@ namespace Polarity.Entities
         private Pole currentPolarity;
         private bool initialized;
         private Health health;
+        private Projectile projectile;
 
         public int BodyId { get; private set; }
         public SimulationWorld World { get; private set; }
         public bool IsRegistered { get; private set; }
-        public bool IsValid => IsRegistered && isActiveAndEnabled && rigidBody != null && (health == null || health.IsAlive);
+        public bool IsValid => IsRegistered && isActiveAndEnabled && rigidBody != null && (health == null || health.IsAlive) && (projectile == null || !projectile.Consumed);
         public Rigidbody2D Rigidbody => rigidBody != null ? rigidBody : (rigidBody = GetComponent<Rigidbody2D>());
         public Pole InitialPolarity => initialPolarity;
         public Pole CurrentPolarity => initialized ? currentPolarity : initialPolarity;
@@ -71,6 +72,14 @@ namespace Polarity.Entities
             World = world;
             BodyId = bodyId;
             health = GetComponent<Health>();
+            projectile = GetComponent<Projectile>();
+        }
+
+        internal void InitializeProjectile()
+        {
+            EnsureInitialized();
+            initialPolarity = currentPolarity = Pole.Negative;
+            canMark = canSpread = canReceive = false;
         }
 
         internal void SetRegistered(bool registered) => IsRegistered = registered;
@@ -90,6 +99,7 @@ namespace Polarity.Entities
             if (!Enum.IsDefined(typeof(Pole), polarity))
                 throw new ArgumentOutOfRangeException(nameof(polarity));
             EnsureInitialized();
+            if (projectile != null && polarity != Pole.Negative) return false;
             if (currentPolarity == polarity)
                 return false;
             currentPolarity = polarity;

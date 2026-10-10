@@ -2,7 +2,7 @@ using Polarity.Entities;
 using UnityEngine;
 namespace Polarity.Model
 {
-    public enum DamageKind { Impact, EnemyTouch, Spike }
+    public enum DamageKind { Impact, EnemyTouch, Spike, Projectile }
     public readonly struct DamageContact
     {
         public readonly Health Target, SourceHealth;

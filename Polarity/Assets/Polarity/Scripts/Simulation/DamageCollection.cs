@@ -68,6 +68,11 @@ namespace Polarity.Simulation
             else if (targetLayer==enemyLayer && (sourceLayer==enemyLayer || sourceLayer==crateLayer || sourceLayer==wallLayer))
                 Add(new DamageContact(victim,sourceHealth,sourceId,DamageKind.Impact,speed,point));
         }
+        public void CaptureProjectile(Projectile projectile, Health target, Vector2 point)
+        {
+            if (projectile == null || !projectile.IsActive || target == null || !target.IsValid) return;
+            Add(new DamageContact(target,null,projectile.Body.BodyId,DamageKind.Projectile,0f,point));
+        }
         public void CaptureSpike(SpikeHazard spike,Health target)
         {
             if (spike==null || !spike.isActiveAndEnabled || target==null || !target.IsValid) return;

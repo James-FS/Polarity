@@ -11,14 +11,14 @@ namespace Polarity.Views
     {
         [SerializeField] private SimulationWorld world;
         [SerializeField] private MarkingController marking;
-        private static Rect Panel => new Rect(12, 12, 460, 306);
+        private static Rect Panel => new Rect(12, 12, 460, 330);
         public bool ContainsScreenPoint(Vector2 screenPoint) => isActiveAndEnabled &&
             Panel.Contains(new Vector2(screenPoint.x, Screen.height - screenPoint.y));
 
         private void OnGUI()
         {
             if (world == null || world.State == null) return;
-            GUI.Box(Panel, "Prototype - collision combat and retry");
+            GUI.Box(Panel, "Prototype - turret fire and polarity");
             GUI.Label(new Rect(24, 38, 436, 22), $"Marks: {world.State.RemainingMarks}/{world.State.MarkBudget}   WASD: move   LMB: +   RMB: -");
             string markText = world.LastMarkResult.HasValue ? Describe(world.LastMarkResult.Value.Outcome) : "Ready";
             GUI.Label(new Rect(24, 62, 436, 22), markText);
@@ -51,6 +51,7 @@ namespace Polarity.Views
             string hit = world.LastDamageResults.Count>0 ? $"Hit: {world.LastDamageResults[0].Kind} -> {world.LastDamageResults[0].TargetId} (HP {world.LastDamageResults[0].RemainingHealth})" : "Low-speed enemy contacts do not damage enemies.";
             GUI.Label(new Rect(24,254,436,22),hit);
             GUI.Label(new Rect(24,278,436,22),world.State.Phase==LevelPhase.Won ? "ROOM CLEARED - R: play again" : world.State.Phase==LevelPhase.Lost ? "PLAYER DOWN - R: retry" : "Enemy touch hurts player; fast impacts hurt enemies.");
+            GUI.Label(new Rect(24,302,436,22),$"Shots: {world.ActiveProjectileCount} | negative, cannot mark or spread.");
             if (marking == null || marking.Candidate == null || world.State.Phase != LevelPhase.Running) return;
             var view = marking.Candidate.GetComponent<PolarityView>();
             if (view == null) return;

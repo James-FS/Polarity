@@ -23,6 +23,17 @@ namespace Polarity.Simulation
         [SerializeField] private PlayerController player;
         private readonly Queue<MarkRequest> markRequests = new Queue<MarkRequest>();
         private long nextMarkSequence;
+        [SerializeField] private Turret[] turrets = Array.Empty<Turret>();
+        private readonly Dictionary<Rigidbody2D, Projectile> projectiles = new Dictionary<Rigidbody2D, Projectile>();
+        private readonly ProjectileCollection projectileContacts = new ProjectileCollection();
+        private readonly List<Projectile> consumedProjectiles = new List<Projectile>();
+        private readonly Collider2D[] spawnOverlaps = new Collider2D[1];
+        private int nextDynamicId;
+        public int ActiveProjectileCount => projectiles.Count;
+        public int SpawnedProjectileCount { get; private set; }
+        public int ConsumedProjectileCount { get; private set; }
+        public int ProjectileContactBufferCapacity => projectileContacts.BufferCapacity;
+        public IReadOnlyList<Turret> Turrets => Array.AsReadOnly(turrets);
         private int enemyLayer, crateLayer;
         private readonly RaycastHit2D[] markingWallHits = new RaycastHit2D[1];
         private ContactFilter2D markingWallFilter;
@@ -123,7 +134,7 @@ namespace Polarity.Simulation
             if (player == null || (PlayerHealth = player.GetComponent<Health>()) == null ||
                 (levelController = GetComponent<LevelController>()) == null)
             { Debug.LogError("World requires player Health and LevelController before starting.",this); return; }
-            if (!ValidateInitialBodies())
+            if (!ValidateInitialBodies() || !ValidateTurrets())
                 return;
 
             settings = gameplayConfig.CreateRuntimeSettings();
@@ -153,12 +164,30 @@ namespace Polarity.Simulation
                 initialBodies[i].Bind(this, i + 1);
                 RegisterBody(initialBodies[i]);
             }
+            nextDynamicId = initialBodies.Length + 1;
+            foreach (var turret in turrets) if(turret!=null) turret.Initialize();
             // No Start-order dependency: all bodies are initialized and bound before Running.
             if (!initialized)
             {
                 initialized = true;
                 State.SetPhase(startRunning ? LevelPhase.Running : LevelPhase.Ready);
             }
+        }
+
+        private bool ValidateTurrets()
+        {
+            var unique = new HashSet<Turret>();
+            foreach (var turret in turrets)
+            {
+                if (turret == null || !unique.Add(turret) || turret.ProjectilePrefab == null ||
+                    turret.GetComponent<Rigidbody2D>().bodyType != RigidbodyType2D.Static ||
+                    turret.GetComponent<Health>() != null || turret.GetComponent<PolarityBody>() != null)
+                {
+                    Debug.LogError("Turrets require unique bindings, a projectile prefab and an indestructible static footprint.", this);
+                    return false;
+                }
+            }
+            return true;
         }
 
         private bool ValidateInitialBodies()
@@ -193,6 +222,7 @@ namespace Polarity.Simulation
                 Debug.LogError("Duplicate or unassigned BodyId; registration rejected.", body);
                 return;
             }
+            if(body.TryGetComponent<Projectile>(out var projectile)) projectiles[body.Rigidbody]=projectile;
             bodies.Add(body);
             bodies.Sort((a, b) => a.BodyId.CompareTo(b.BodyId));
             body.SetRegistered(true);
@@ -207,6 +237,7 @@ namespace Polarity.Simulation
         {
             if (body == null || body.World != this)
                 return;
+            projectiles.Remove(body.Rigidbody);
             bodies.Remove(body);
             enemyMotors.Remove(body);
             bodiesByRigidbody.Remove(body.Rigidbody);
@@ -338,7 +369,7 @@ namespace Polarity.Simulation
             {
                 ClearStepContacts();
                 ConsumeMarkRequests();
-                // Future turret/spawn phase precedes this snapshot.
+                TickTurretsAndRegisterSpawns();
                 CaptureMagneticSnapshot();
                 ApplyPlayerMovement(Time.fixedDeltaTime);
                 ApplyEnemyMovement();
@@ -358,12 +389,17 @@ namespace Polarity.Simulation
                 }
                 ClampBodySpeeds();
                 contacts.CapturePersistent(bodies, bodiesByRigidbody);
+                projectileContacts.CapturePersistent(projectiles,healthByRigidbody);
+                foreach(var hit in projectileContacts.Hits)
+                    if(hit.Target!=null) damageContacts.CaptureProjectile(hit.Projectile,hit.Target,hit.Point);
                 touchedSpikes.RemoveAll(spike=>spike==null);
                 damageContacts.CapturePersistent(healthByRigidbody,bodiesByRigidbody,touchedSpikes);
                 ResolveDamage();
+                ConsumeProjectiles();
                 propagation.BuildPlan(CompletedStepCount + 1, propagationSnapshot, contacts.Pairs, propagationPlan);
                 CommitPropagation();
                 FlushDeaths();
+                FlushProjectiles();
                 CompletedStepCount++;
                 SimulationTime += Time.fixedDeltaTime;
                 levelController.ResolveOutcome();
@@ -385,6 +421,7 @@ namespace Polarity.Simulation
         {
             if (!collectingContacts || !ownsPhysics) return;
             contacts.CaptureCollision(collision,bodiesByRigidbody);
+            projectileContacts.CaptureCollision(collision,projectiles,healthByRigidbody);
             damageContacts.CaptureCollision(collision,healthByRigidbody,bodiesByRigidbody);
         }
 
@@ -392,6 +429,57 @@ namespace Polarity.Simulation
         { if (!collectingContacts || !ownsPhysics) return;
             if(!touchedSpikes.Contains(spike)) touchedSpikes.Add(spike);
             damageContacts.CaptureSpike(spike,target); }
+
+        private void TickTurretsAndRegisterSpawns()
+        {
+            foreach(var turret in turrets)
+                if(turret!=null && turret.Tick(Time.fixedDeltaTime,player.Rigidbody.position))
+                    turret.ReportShot(SpawnProjectile(turret.ProjectilePrefab,turret.MuzzlePosition,turret.AimDirection,turret.ProjectileSpeed)!=null);
+            foreach(var projectile in projectiles.Values) if(projectile.IsActive) projectile.BeginStep();
+        }
+
+        internal Projectile SpawnProjectile(Projectile prefab,Vector2 position,Vector2 direction,float speed)
+        {
+            if(!ownsPhysics || State.Phase!=LevelPhase.Running || prefab==null || !IsFinite(position) || !IsFinite(direction) ||
+                direction.sqrMagnitude<0.000001f || float.IsNaN(speed) || float.IsInfinity(speed)) return null;
+            var collider=prefab.GetComponent<CircleCollider2D>();
+            if(collider==null) return null;
+            float radius=collider.radius*Mathf.Max(Mathf.Abs(prefab.transform.lossyScale.x),Mathf.Abs(prefab.transform.lossyScale.y));
+            var filter=new ContactFilter2D {useTriggers=false};
+            filter.SetLayerMask((1<<LayerMask.NameToLayer("Player"))|(1<<enemyLayer)|(1<<crateLayer)|(1<<LayerMask.NameToLayer("Wall"))|(1<<LayerMask.NameToLayer("Turret")));
+            // Reject blocked muzzles rather than spawn overlapping or teleport through cover.
+            if(Physics2D.OverlapCircle(position,radius+0.03f,filter,spawnOverlaps)>0) return null;
+            var shot=Instantiate(prefab,position,Quaternion.identity);
+            shot.Initialize(this,nextDynamicId++,position,direction.normalized*Mathf.Clamp(speed,0f,settings.MaxBodySpeed));
+            RegisterBody(shot.Body);
+            SpawnedProjectileCount++;
+            return shot;
+        }
+
+        private void ConsumeProjectiles()
+        {
+            foreach(var hit in projectileContacts.Hits) MarkConsumed(hit.Projectile);
+            foreach(var shot in projectiles.Values)
+                if(shot.IsActive && SimulationTime+Time.fixedDeltaTime>=shot.ExpiresAt) MarkConsumed(shot);
+        }
+        private void MarkConsumed(Projectile shot)
+        {
+            if(shot==null || shot.Consumed) return;
+            shot.Consume(); consumedProjectiles.Add(shot); ConsumedProjectileCount++;
+        }
+        private void FlushProjectiles()
+        {
+            foreach(var shot in consumedProjectiles)
+            {
+                if(shot==null) continue;
+                shot.Body.Rigidbody.simulated=false;
+                UnregisterBody(shot.Body);
+                shot.Body.Unbind(this);
+                shot.gameObject.SetActive(false);
+                Destroy(shot.gameObject);
+            }
+            consumedProjectiles.Clear();
+        }
 
         private void ResolveDamage()
         {
@@ -469,6 +557,7 @@ namespace Polarity.Simulation
 
         private void ClearStepContacts()
         {
+            projectileContacts.Clear(); consumedProjectiles.Clear();
             contacts.Clear(); propagation.Clear(); propagationPlan.Clear(); propagationResults.Clear();
             damageContacts.Clear(); damage.Clear(); damagePlan.Clear(); damageResults.Clear();
         }
@@ -693,10 +782,11 @@ namespace Polarity.Simulation
             touchedSpikes.Clear();
             markRequests.Clear();
             player?.ClearIntent();
-            foreach (var body in initialBodies)
+            foreach (var body in bodies)
                 if (body != null)
                     body.Unbind(this);
             bodies.Clear();
+            projectiles.Clear();
             enemyMotors.Clear();
             bodiesByRigidbody.Clear();
             ClearContactState();
