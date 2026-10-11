@@ -5,15 +5,33 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 namespace Polarity.Controllers
 {
-    [DisallowMultipleComponent, RequireComponent(typeof(SimulationWorld))]
+    [DisallowMultipleComponent, RequireComponent(typeof(SimulationWorld)), DefaultExecutionOrder(-100)]
     public sealed class LevelController : MonoBehaviour
     {
         private SimulationWorld world;
+        private bool slowInputArmed;
         public bool IsRestarting { get; private set; }
         public LevelOutcome? LastOutcome { get; private set; }
         public event Action<LevelOutcome> OutcomeResolved;
         internal void Bind(SimulationWorld owner) => world=owner;
-        private void Update() => SampleRestartInput(Input.GetKeyDown(KeyCode.R));
+        private void Update() => SampleControlInput(Input.GetKey(KeyCode.Space), Input.GetKeyDown(KeyCode.Escape), Input.GetKeyDown(KeyCode.R));
+        public void SampleControlInput(bool slowHeld, bool pausePressed, bool restartPressed)
+        {
+            if (world == null || IsRestarting) return;
+            if (restartPressed) { RequestRestart(); return; }
+            if (!slowHeld) slowInputArmed = true;
+            world.SetSlowMotion(slowInputArmed && slowHeld);
+            if (pausePressed) TogglePause();
+        }
+        public bool TogglePause()
+        {
+            if (world == null || IsRestarting || !world.OwnsPhysics) return false;
+            if (world.State.Phase == LevelPhase.Running) world.SetPhase(LevelPhase.Paused);
+            else if (world.State.Phase == LevelPhase.Paused) world.SetPhase(LevelPhase.Running);
+            else return false;
+            return true;
+        }
+        private void OnApplicationFocus(bool focused) { if (!focused) { slowInputArmed=false; world?.SetSlowMotion(false); } }
         public void SampleRestartInput(bool pressed) { if(pressed) RequestRestart(); }
         public bool RequestRestart()
         {

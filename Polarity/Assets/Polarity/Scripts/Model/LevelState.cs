@@ -11,6 +11,8 @@ namespace Polarity.Model
         public int ActiveEnemyCount { get; private set; }
 
         public event Action<LevelPhase> PhaseChanged;
+        public event Action<int> MarksChanged;
+        public event Action<int> EnemyCountChanged;
 
         public LevelState(int markBudget, int activeEnemyCount)
         {
@@ -35,12 +37,16 @@ namespace Polarity.Model
             if (RemainingMarks <= 0)
                 return false;
             RemainingMarks--;
+            MarksChanged?.Invoke(RemainingMarks);
             return true;
         }
 
         internal void SetActiveEnemyCount(int count)
         {
-            ActiveEnemyCount = Math.Max(0, count);
+            int next = Math.Max(0, count);
+            if (next == ActiveEnemyCount) return;
+            ActiveEnemyCount = next;
+            EnemyCountChanged?.Invoke(next);
         }
     }
 }

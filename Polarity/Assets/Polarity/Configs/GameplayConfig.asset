@@ -24,3 +24,4 @@ MonoBehaviour:
   enemyDamageInterval: 0.35
   playerDamageInterval: 0.8
   damagePerHit: 1
+  slowMotionScale: 0.3

@@ -59,6 +59,9 @@ namespace Polarity.Simulation
         private LevelController levelController;
         private float previousTimeScale;
         private bool restarting;
+        public bool SlowMotionRequested { get; private set; }
+        public float CurrentTimeScale { get; private set; } = 1f;
+        public event Action<float> TimeScaleChanged;
         public Health PlayerHealth { get; private set; }
         public LevelController Level => levelController;
         public double SimulationTime { get; private set; }
@@ -150,7 +153,8 @@ namespace Polarity.Simulation
             wallFilter.useTriggers = false;
 
             previousTimeScale = Time.timeScale;
-            Time.timeScale = 1f;
+            SlowMotionRequested = false;
+            ApplyTimeScale();
             previousSimulationMode = Physics2D.simulationMode;
             Physics2D.simulationMode = SimulationMode2D.Script;
             physicsOwner = this;
@@ -254,13 +258,29 @@ namespace Polarity.Simulation
 
         public void SetPhase(LevelPhase phase)
         {
-            if (!ownsPhysics || State == null || State.Phase == LevelPhase.Won || State.Phase == LevelPhase.Lost)
+            if (!ownsPhysics || restarting || State == null || State.Phase == LevelPhase.Won || State.Phase == LevelPhase.Lost)
                 return;
             State.SetPhase(phase);
         }
 
+        public void SetSlowMotion(bool held)
+        {
+            if (!ownsPhysics || restarting) return;
+            SlowMotionRequested = held;
+            ApplyTimeScale();
+        }
+        private void ApplyTimeScale()
+        {
+            float value = !restarting && State?.Phase == LevelPhase.Paused ? 0f :
+                !restarting && State?.Phase == LevelPhase.Running && SlowMotionRequested ? settings.SlowMotionScale : 1f;
+            bool changed = !Mathf.Approximately(CurrentTimeScale,value);
+            CurrentTimeScale = value;
+            Time.timeScale = value;
+            if (changed) TimeScaleChanged?.Invoke(value);
+        }
         private void OnPhaseChanged(LevelPhase phase)
         {
+            ApplyTimeScale();
             if (phase != LevelPhase.Running)
             {
                 markRequests.Clear();
@@ -528,7 +548,9 @@ namespace Polarity.Simulation
             player.ClearIntent();
             MarkResolved=null; PropagationCommitted=null; DamageCommitted=null;
             levelController.Clear();
-            Time.timeScale=1f;
+            SlowMotionRequested=false;
+            ApplyTimeScale();
+            TimeScaleChanged=null;
         }
 
         private void CommitPropagation()
@@ -775,6 +797,7 @@ namespace Polarity.Simulation
             if (!ownsPhysics)
                 return;
             State.PhaseChanged -= OnPhaseChanged;
+            TimeScaleChanged=null;
             MarkResolved=null; PropagationCommitted=null; DamageCommitted=null;
             levelController?.Clear();
             foreach(var health in healthByRigidbody.Values) if(health!=null) health.Unbind(this);

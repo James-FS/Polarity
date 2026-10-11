@@ -1,0 +1,1836 @@
+{
+  "date": "2026-10-11",
+  "engine": "Tuanjie 1.10.1 / 2022.3.62t13",
+  "bridge": "1.0.86 native TCP",
+  "baselineCommit": "4d0ce0c",
+  "project": "D:\\Code\\Polarity\\Polarity",
+  "step10": {
+    "hud_controls": {
+      "checks": [
+        {
+          "name": "initial HUD bound and correct",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "current-frame UI blocks pointer 600,680",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "current-frame UI blocks pointer 600,65",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "current-frame UI blocks pointer 1168,667",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Space enters 0.3 without changing fixed step",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "manual mark and real contact propagation distinguished",
+          "pass": true,
+          "evidence": {
+            "manual": "MANUAL MARK  1  +  /  Used 1 mark",
+            "spread": "CONTACT SPREAD  1 -> 2  +  /  FREE"
+          }
+        },
+        {
+          "name": "pause discards pending request and movement",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "pause freezes physics turret and cooldown",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "release while paused remains zero",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "resume after release uses 1 and never consumes old request",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "resume with held Space returns 0.3",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "press Space while paused stays zero",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "pause records current slow intent",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "slow still advances exactly 0.02 per step",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Space release restores normal",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 0",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 1",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 2",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 3",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 4",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 5",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 6",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 7",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 8",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 9",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 10",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 11",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 12",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 13",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 14",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 15",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 16",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 17",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 18",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD unbind cycle 19",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "HUD re-enable has one subscription each",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "same polarity gets one feedback and spends zero",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "empty budget shows movement and retry guidance",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "zero budget still drives player",
+          "pass": true,
+          "evidence": {
+            "vx": 3.29942179,
+            "phase": "Running"
+          }
+        },
+        {
+          "name": "modal blocks world and corners",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 20,
+            "attempts": 20
+          }
+        }
+      ],
+      "passed": 41,
+      "count": 41
+    },
+    "six_retries": {
+      "checks": [
+        {
+          "name": "RunningSlow initial room state restored at sceneLoaded",
+          "pass": true,
+          "evidence": {
+            "positions": true,
+            "CompletedStepCount": 0
+          }
+        },
+        {
+          "name": "RunningSlow clean queues timers and dynamic IDs at sceneLoaded",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "RunningSlow reload and old references released",
+          "pass": true,
+          "evidence": {
+            "requested": true,
+            "duplicate": true,
+            "oldDestroyed": true
+          }
+        },
+        {
+          "name": "RunningSlow one World HUD and paired subscriptions",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "RunningSlow held Space after retry stays normal",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "RunningSlow release then press rearms slow",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "RunningSlow new mark delivers one event",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "PausedHeld initial room state restored at sceneLoaded",
+          "pass": true,
+          "evidence": {
+            "positions": true,
+            "CompletedStepCount": 0
+          }
+        },
+        {
+          "name": "PausedHeld clean queues timers and dynamic IDs at sceneLoaded",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "PausedHeld reload and old references released",
+          "pass": true,
+          "evidence": {
+            "requested": true,
+            "duplicate": true,
+            "oldDestroyed": true
+          }
+        },
+        {
+          "name": "PausedHeld one World HUD and paired subscriptions",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "PausedHeld held Space after retry stays normal",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "PausedHeld release then press rearms slow",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "PausedHeld new mark delivers one event",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "PausedReleased initial room state restored at sceneLoaded",
+          "pass": true,
+          "evidence": {
+            "positions": true,
+            "CompletedStepCount": 0
+          }
+        },
+        {
+          "name": "PausedReleased clean queues timers and dynamic IDs at sceneLoaded",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "PausedReleased reload and old references released",
+          "pass": true,
+          "evidence": {
+            "requested": true,
+            "duplicate": true,
+            "oldDestroyed": true
+          }
+        },
+        {
+          "name": "PausedReleased one World HUD and paired subscriptions",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "PausedReleased held Space after retry stays normal",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "PausedReleased release then press rearms slow",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "PausedReleased new mark delivers one event",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Won initial room state restored at sceneLoaded",
+          "pass": true,
+          "evidence": {
+            "positions": true,
+            "CompletedStepCount": 0
+          }
+        },
+        {
+          "name": "Won clean queues timers and dynamic IDs at sceneLoaded",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Won reload and old references released",
+          "pass": true,
+          "evidence": {
+            "requested": true,
+            "duplicate": true,
+            "oldDestroyed": true
+          }
+        },
+        {
+          "name": "Won one World HUD and paired subscriptions",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Won held Space after retry stays normal",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Won release then press rearms slow",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Won new mark delivers one event",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Lost initial room state restored at sceneLoaded",
+          "pass": true,
+          "evidence": {
+            "positions": true,
+            "CompletedStepCount": 0
+          }
+        },
+        {
+          "name": "Lost clean queues timers and dynamic IDs at sceneLoaded",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Lost reload and old references released",
+          "pass": true,
+          "evidence": {
+            "requested": true,
+            "duplicate": true,
+            "oldDestroyed": true
+          }
+        },
+        {
+          "name": "Lost one World HUD and paired subscriptions",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Lost held Space after retry stays normal",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Lost release then press rearms slow",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Lost new mark delivers one event",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "RunningAgain initial room state restored at sceneLoaded",
+          "pass": true,
+          "evidence": {
+            "positions": true,
+            "CompletedStepCount": 0
+          }
+        },
+        {
+          "name": "RunningAgain clean queues timers and dynamic IDs at sceneLoaded",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "RunningAgain reload and old references released",
+          "pass": true,
+          "evidence": {
+            "requested": true,
+            "duplicate": true,
+            "oldDestroyed": true
+          }
+        },
+        {
+          "name": "RunningAgain one World HUD and paired subscriptions",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "RunningAgain held Space after retry stays normal",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "RunningAgain release then press rearms slow",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "RunningAgain new mark delivers one event",
+          "pass": true,
+          "evidence": null
+        }
+      ],
+      "count": 42,
+      "passed": 42
+    },
+    "realtime": {
+      "checks": [
+        {
+          "name": "real FixedUpdate rate is about 0.3",
+          "pass": true,
+          "evidence": {
+            "normal": 80,
+            "slow": 24,
+            "ratio": 0.3
+          }
+        },
+        {
+          "name": "fixed duration and single simulate remain unchanged",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "paused Update clock continues while world freezes",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "resume release restores real normal rate",
+          "pass": true,
+          "evidence": null
+        }
+      ],
+      "samples": [
+        {
+          "ms": 1600,
+          "steps": 80,
+          "elapsed": 1.603971,
+          "simulated": 1.5999999642372131,
+          "scale": 1.0
+        },
+        {
+          "ms": 1600,
+          "steps": 24,
+          "elapsed": 1.60301018,
+          "simulated": 0.47999998927116394,
+          "scale": 0.3
+        },
+        {
+          "ms": 450,
+          "steps": 0,
+          "elapsed": 0.453390121,
+          "simulated": 0.0,
+          "scale": 0.0
+        },
+        {
+          "ms": 500,
+          "steps": 25,
+          "elapsed": 0.503984451,
+          "simulated": 0.4999999888241291,
+          "scale": 1.0
+        }
+      ],
+      "count": 4,
+      "passed": 4,
+      "SpawnedProjectileCount": 1,
+      "ConsumedProjectileCount": 1,
+      "CompletedStepCount": 174
+    },
+    "terminal_won": {
+      "checks": [
+        {
+          "name": "actual enemy deaths produce Won with a live residual projectile",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Won freezes residual projectile and turret",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "terminal HUD modal and counters",
+          "pass": true,
+          "evidence": {
+            "life": "LIFE  3 / 3",
+            "enemies": "ENEMIES  0"
+          }
+        },
+        {
+          "name": "terminal resume hidden and retry available",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "terminal cannot resume or enter slow",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "terminal normal menu clock and empty request queue",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 1,
+            "attempts": 1
+          }
+        }
+      ],
+      "count": 7,
+      "passed": 7
+    },
+    "terminal_lost": {
+      "checks": [
+        {
+          "name": "actual player death produces Lost with a live residual projectile",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Lost freezes residual projectile",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "terminal HUD modal and counters",
+          "pass": true,
+          "evidence": {
+            "life": "LIFE  0 / 3",
+            "enemies": "ENEMIES  6"
+          }
+        },
+        {
+          "name": "terminal resume hidden and retry available",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "terminal cannot resume or enter slow",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "terminal normal menu clock and empty request queue",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 1,
+            "attempts": 1
+          }
+        }
+      ],
+      "count": 7,
+      "passed": 7
+    },
+    "real_ui": {
+      "checks": [
+        {
+          "name": "real Resume UI click changes phase",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "real Pause UI click changes phase",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "UI clicks do not submit marks or spend budget",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "real Retry UI click reaches controller",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "UI retry restores one valid HUD and World",
+          "pass": true,
+          "evidence": null
+        }
+      ],
+      "count": 5,
+      "passed": 5,
+      "evidence": {
+        "resume": {
+          "success": true,
+          "message": "Clicked UI element 'ResumeButton' at (504.0, 199.0)",
+          "data": {
+            "x": 504.0,
+            "y": 199.0,
+            "button": 0,
+            "hitGameObject": "ResumeButton",
+            "method": "EventSystem"
+          }
+        },
+        "pause": {
+          "success": true,
+          "message": "Clicked UI element 'PauseButton' at (1168.0, 667.0)",
+          "data": {
+            "x": 1168.0,
+            "y": 667.0,
+            "button": 0,
+            "hitGameObject": "PauseButton",
+            "method": "EventSystem"
+          }
+        },
+        "retry": {
+          "success": true,
+          "message": "Clicked UI element 'RetryButton' at (777.0, 199.0)",
+          "data": {
+            "x": 777.0,
+            "y": 199.0,
+            "button": 0,
+            "hitGameObject": "RetryButton",
+            "method": "EventSystem"
+          }
+        },
+        "resume_state": {
+          "phase": "Running",
+          "hp": 3,
+          "marks": 3,
+          "PendingMarkCount": 0,
+          "ProcessedMarkCount": 0,
+          "scale": 1.0,
+          "move": "(0.00, 0.00)",
+          "vel": "(0.00, 0.00)",
+          "pos": "(5.00, -2.50)",
+          "modal": false,
+          "screen": {
+            "width": 1280,
+            "height": 720
+          },
+          "r": "(x:-640.00, y:-360.00, width:1280.00, height:720.00)",
+          "blockCenter": false,
+          "blockCorner": false,
+          "radius": 0.5
+        },
+        "pause_state": {
+          "phase": "Paused",
+          "hp": 3,
+          "marks": 3,
+          "PendingMarkCount": 0,
+          "ProcessedMarkCount": 0,
+          "scale": 0.0,
+          "move": "(0.00, 0.00)",
+          "vel": "(0.00, 0.00)",
+          "pos": "(5.00, -2.50)",
+          "modal": true,
+          "screen": {
+            "width": 1280,
+            "height": 720
+          },
+          "r": "(x:-640.00, y:-360.00, width:1280.00, height:720.00)",
+          "blockCenter": true,
+          "blockCorner": true,
+          "radius": 0.5
+        },
+        "retry_state": {
+          "phase": "Running",
+          "life": 3,
+          "marks": 3,
+          "PendingMarkCount": 0,
+          "ProcessedMarkCount": 0,
+          "CompletedStepCount": 1,
+          "scale": 1.0,
+          "IsBound": true,
+          "MarkNotificationCount": 0,
+          "PropagationNotificationCount": 0,
+          "worlds": 1,
+          "huds": 1,
+          "cameraRect": "(x:0.00, y:136.00, width:1280.00, height:488.00)",
+          "passed": true
+        }
+      }
+    },
+    "normal_game": {
+      "checks": [
+        {
+          "name": "normal Game HUD follows actual player death",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "normal Game warning visible",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "normal Game fires and consumes projectiles",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "normal Game single successful physical step",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "normal Game Lost stops residual danger",
+          "pass": true,
+          "evidence": null
+        }
+      ],
+      "count": 5,
+      "passed": 5,
+      "evidence": {
+        "hudBound": true,
+        "modal": true,
+        "hudLife": "LIFE  0 / 3",
+        "warning": {
+          "phase": "Aiming",
+          "progress": 0.6799996,
+          "line": true
+        },
+        "steps": 234,
+        "attempts": 234,
+        "FailedStepCount": 0,
+        "SpawnedProjectileCount": 1,
+        "ConsumedProjectileCount": 1,
+        "ActiveProjectileCount": 0,
+        "shots": 1,
+        "phase": "Lost",
+        "hp": 0,
+        "terminalSafe": true
+      }
+    }
+  },
+  "regressionStep9": {
+    "timing": {
+      "checks": [
+        {
+          "name": "warning and lock use World steps",
+          "pass": true,
+          "evidence": {
+            "aim": 82,
+            "locked": 20,
+            "firstFire": 127,
+            "shots": 2,
+            "blocked": 0
+          }
+        },
+        {
+          "name": "locked aim ignores changed player position",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "spawn registered and included in same step magnetic snapshot",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "fixed indestructible turret excluded from bodies and enemies",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Paused freezes turret and physics",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 350,
+            "attempts": 350
+          }
+        }
+      ],
+      "passed": 6,
+      "count": 6
+    },
+    "hit": {
+      "checks": [
+        {
+          "name": "default Negative and all permissions disabled",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "live valid projectile excluded from visible marking query",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "projectile polarity invariant rejects positive assignment",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "mark request rejected without spending",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "multiple contacts yield exactly one direct hit",
+          "pass": true,
+          "evidence": {
+            "damageCount": 1,
+            "CurrentHealth": 1,
+            "consumedStep": 22,
+            "buffer": 16
+          }
+        },
+        {
+          "name": "consumed object invalid and unregistered before result event",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "projectile never spreads into Neutral enemy",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "projectile contact buffer expands",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 141,
+            "attempts": 141
+          }
+        }
+      ],
+      "passed": 9,
+      "count": 9
+    },
+    "cover": {
+      "checks": [
+        {
+          "name": "crate blocks and consumes shot without enemy damage",
+          "pass": true,
+          "evidence": {
+            "hits": 0,
+            "CurrentHealth": 2,
+            "crateX": 2.72387648
+          }
+        },
+        {
+          "name": "crate remains indestructible and Neutral",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "blocked spawn rejects overlapping turret and crate",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 100,
+            "attempts": 100
+          }
+        }
+      ],
+      "passed": 4,
+      "count": 4
+    },
+    "player": {
+      "checks": [
+        {
+          "name": "two simultaneous shots consume once each and player global immunity takes one hit",
+          "pass": true,
+          "evidence": {
+            "hits": 1,
+            "CurrentHealth": 2,
+            "px": 4.895905,
+            "py": -2.99360967,
+            "ax": 2.27183151,
+            "ay": -3.26455021,
+            "Consumed": true,
+            "active": 0
+          }
+        },
+        {
+          "name": "later shot damages after immunity expires",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 105,
+            "attempts": 105
+          }
+        }
+      ],
+      "passed": 3,
+      "count": 3
+    },
+    "walls": {
+      "checks": [
+        {
+          "name": "highest design speed 12: forty wall shots consumed with zero escape",
+          "pass": true,
+          "evidence": {
+            "consumed": 40,
+            "escaped": 0,
+            "trials": [
+              {
+                "side": 0,
+                "n": 8,
+                "max": 12.0,
+                "x": 7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 1,
+                "n": 8,
+                "max": 12.0,
+                "x": -7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 2,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.0,
+                "y": 4.199
+              },
+              {
+                "side": 3,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.0,
+                "y": -4.199
+              },
+              {
+                "side": 0,
+                "n": 8,
+                "max": 12.0,
+                "x": 7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 1,
+                "n": 8,
+                "max": 12.0,
+                "x": -7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 2,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.01,
+                "y": 4.199
+              },
+              {
+                "side": 3,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.01,
+                "y": -4.199
+              },
+              {
+                "side": 0,
+                "n": 8,
+                "max": 12.0,
+                "x": 7.698999,
+                "y": 0.0
+              },
+              {
+                "side": 1,
+                "n": 8,
+                "max": 12.0,
+                "x": -7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 2,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.02,
+                "y": 4.199
+              },
+              {
+                "side": 3,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.02,
+                "y": -4.199
+              },
+              {
+                "side": 0,
+                "n": 7,
+                "max": 12.0,
+                "x": 7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 1,
+                "n": 8,
+                "max": 12.0,
+                "x": -7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 2,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.03,
+                "y": 4.199
+              },
+              {
+                "side": 3,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.03,
+                "y": -4.199
+              },
+              {
+                "side": 0,
+                "n": 7,
+                "max": 12.0,
+                "x": 7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 1,
+                "n": 8,
+                "max": 12.0,
+                "x": -7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 2,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.04,
+                "y": 4.199
+              },
+              {
+                "side": 3,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.04,
+                "y": -4.199
+              },
+              {
+                "side": 0,
+                "n": 7,
+                "max": 12.0,
+                "x": 7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 1,
+                "n": 8,
+                "max": 12.0,
+                "x": -7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 2,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.05,
+                "y": 4.199
+              },
+              {
+                "side": 3,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.05,
+                "y": -4.199
+              },
+              {
+                "side": 0,
+                "n": 7,
+                "max": 12.0,
+                "x": 7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 1,
+                "n": 8,
+                "max": 12.0,
+                "x": -7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 2,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.06,
+                "y": 4.199
+              },
+              {
+                "side": 3,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.06,
+                "y": -4.199
+              },
+              {
+                "side": 0,
+                "n": 7,
+                "max": 12.0,
+                "x": 7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 1,
+                "n": 8,
+                "max": 12.0,
+                "x": -7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 2,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.07,
+                "y": 4.199
+              },
+              {
+                "side": 3,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.07,
+                "y": -4.199
+              },
+              {
+                "side": 0,
+                "n": 7,
+                "max": 12.0,
+                "x": 7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 1,
+                "n": 8,
+                "max": 12.0,
+                "x": -7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 2,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.08,
+                "y": 4.199
+              },
+              {
+                "side": 3,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.08,
+                "y": -4.199
+              },
+              {
+                "side": 0,
+                "n": 7,
+                "max": 12.0,
+                "x": 7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 1,
+                "n": 8,
+                "max": 12.0,
+                "x": -7.695625,
+                "y": 0.0
+              },
+              {
+                "side": 2,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.09,
+                "y": 4.199
+              },
+              {
+                "side": 3,
+                "n": 6,
+                "max": 12.0,
+                "x": 4.09,
+                "y": -4.199
+              }
+            ]
+          }
+        },
+        {
+          "name": "Continuous shots stop at 0.02-thick fixed obstacle",
+          "pass": true,
+          "evidence": {
+            "thin": 10
+          }
+        },
+        {
+          "name": "static turret itself blocks shots",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 598,
+            "attempts": 598
+          }
+        }
+      ],
+      "passed": 4,
+      "count": 4
+    },
+    "lifecycle": {
+      "checks": [
+        {
+          "name": "80 new bodies receive unique monotonic IDs",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "mass consumption flush leaves original seven bodies without exceptions",
+          "pass": true,
+          "evidence": {
+            "spawned": 80,
+            "consumed": 80,
+            "bodies": 7
+          }
+        },
+        {
+          "name": "stationary projectile expires in simulation time",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "external disable unregisters safely",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "re-enable retains same unique registration",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "external destroy unregisters safely",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 620,
+            "attempts": 620
+          }
+        }
+      ],
+      "passed": 7,
+      "count": 7
+    },
+    "death": {
+      "checks": [
+        {
+          "name": "projectile kill marks invalid before propagation and flushes before notification",
+          "pass": true,
+          "evidence": {
+            "CurrentHealth": 0,
+            "CurrentPolarity": 0,
+            "transfers": 0
+          }
+        },
+        {
+          "name": "dead positive source cannot propagate to touching Neutral receiver",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "turret not counted after kill",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 1,
+            "attempts": 1
+          }
+        }
+      ],
+      "passed": 4,
+      "count": 4
+    },
+    "guidance": {
+      "checks": [
+        {
+          "name": "normal positive mark bends shot upward and directly damages enemy",
+          "pass": true,
+          "evidence": {
+            "hits": 1,
+            "CurrentHealth": 1,
+            "maxY": -2.657569,
+            "maxSpeed": 11.9200163,
+            "trajectory": [
+              {
+                "i": 0,
+                "x": 0.1113842,
+                "y": -2.99620533,
+                "ex": 2.99592066,
+                "ey": -2.0013597
+              },
+              {
+                "i": 1,
+                "x": 0.23411265,
+                "y": -2.988498,
+                "ex": 2.98773885,
+                "ey": -2.00413537
+              },
+              {
+                "i": 2,
+                "x": 0.368140817,
+                "y": -2.97675133,
+                "ex": 2.97541714,
+                "ey": -2.00839376
+              },
+              {
+                "i": 3,
+                "x": 0.5134182,
+                "y": -2.96082664,
+                "ex": 2.958906,
+                "ey": -2.01421452
+              },
+              {
+                "i": 4,
+                "x": 0.6698864,
+                "y": -2.94057,
+                "ex": 2.93814445,
+                "ey": -2.02169156
+              },
+              {
+                "i": 5,
+                "x": 0.8374767,
+                "y": -2.915808,
+                "ex": 2.913062,
+                "ey": -2.03093743
+              },
+              {
+                "i": 6,
+                "x": 1.01610565,
+                "y": -2.88634,
+                "ex": 2.88358235,
+                "ey": -2.04208636
+              },
+              {
+                "i": 7,
+                "x": 1.20566916,
+                "y": -2.85192847,
+                "ex": 2.8496263,
+                "ey": -2.05530167
+              },
+              {
+                "i": 8,
+                "x": 1.40603161,
+                "y": -2.81228423,
+                "ex": 2.81111979,
+                "ey": -2.07078552
+              },
+              {
+                "i": 9,
+                "x": 1.6170069,
+                "y": -2.7670393,
+                "ex": 2.76800632,
+                "ey": -2.08879542
+              },
+              {
+                "i": 10,
+                "x": 1.83832073,
+                "y": -2.715702,
+                "ex": 2.72027063,
+                "ey": -2.109674
+              },
+              {
+                "i": 11,
+                "x": 2.06952477,
+                "y": -2.657569,
+                "ex": 2.667995,
+                "ey": -2.13390613
+              },
+              {
+                "i": 12,
+                "x": 2.11559582,
+                "y": -2.70307517,
+                "ex": 2.66976142,
+                "ey": -2.1287787
+              }
+            ]
+          }
+        },
+        {
+          "name": "after firing shot has no motor or player tracking",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 14,
+            "attempts": 14
+          }
+        }
+      ],
+      "passed": 3,
+      "count": 3
+    },
+    "firedguidance": {
+      "checks": [
+        {
+          "name": "actual World turret shot guided by normal positive mark damages enemy",
+          "pass": true,
+          "evidence": {
+            "ShotsFired": 1,
+            "hits": 1,
+            "CurrentHealth": 1,
+            "maxY": -2.68103623,
+            "budget": 2
+          }
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 14,
+            "attempts": 14
+          }
+        }
+      ],
+      "passed": 2,
+      "count": 2
+    },
+    "firedneutral": {
+      "checks": [
+        {
+          "name": "Neutral control shot stays ballistic, ignores moved player and misses enemy",
+          "pass": true,
+          "evidence": {
+            "hits": 0,
+            "CurrentHealth": 2,
+            "maxY": -3.0,
+            "budget": 3
+          }
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 78,
+            "attempts": 78
+          }
+        }
+      ],
+      "passed": 2,
+      "count": 2
+    },
+    "multitarget": {
+      "checks": [
+        {
+          "name": "one projectile touching two real actors damages only one",
+          "pass": true,
+          "evidence": {
+            "hit": 1,
+            "CurrentHealth": 1,
+            "otherHP": 2
+          }
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 20,
+            "attempts": 20
+          }
+        }
+      ],
+      "passed": 2,
+      "count": 2
+    },
+    "terminalwon": {
+      "checks": [
+        {
+          "name": "actual enemy deaths produce Won with a live residual projectile",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Won freezes residual projectile and turret",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 1,
+            "attempts": 1
+          }
+        }
+      ],
+      "passed": 3,
+      "count": 3
+    },
+    "terminallost": {
+      "checks": [
+        {
+          "name": "actual player death produces Lost with a live residual projectile",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "Lost freezes residual projectile",
+          "pass": true,
+          "evidence": null
+        },
+        {
+          "name": "single physical entry: attempts equal completed steps and zero failures",
+          "pass": true,
+          "evidence": {
+            "steps": 1,
+            "attempts": 1
+          }
+        }
+      ],
+      "passed": 3,
+      "count": 3
+    }
+  },
+  "summary": {
+    "step10Checks": 111,
+    "regressionChecks": 52,
+    "allPassed": true
+  },
+  "editorFinal": {
+    "scene": "Assets/Polarity/Scenes/Game.scene",
+    "dirty": false,
+    "playing": false,
+    "paused": false,
+    "compiling": false,
+    "missing": 0,
+    "worlds": 1,
+    "huds": 1,
+    "canvases": 1,
+    "eventSystems": 1,
+    "uiReferencesValid": true,
+    "timeScale": 1.0,
+    "fixedStep": 0.02,
+    "physics": "FixedUpdate",
+    "cameraRect": "(x:0.00, y:0.00, width:1.00, height:1.00)",
+    "bodies": 7,
+    "turrets": 1
+  },
+  "consoleFinal": {
+    "success": true,
+    "message": "Command executed successfully",
+    "data": {
+      "success": true,
+      "message": "Retrieved 0 log entries.",
+      "data": [],
+      "collapse": false
+    }
+  },
+  "bridgeStateFinal": {
+    "success": true,
+    "message": "Command executed successfully",
+    "data": {
+      "success": true,
+      "message": "Retrieved editor state.",
+      "data": {
+        "isPlaying": false,
+        "isPaused": false,
+        "isCompiling": false,
+        "isUpdating": false,
+        "applicationPath": "C:/Program Files/Tuanjie/Hub/Editor/2022.3.62t13/Editor/Tuanjie.exe",
+        "applicationContentsPath": "C:/Program Files/Tuanjie/Hub/Editor/2022.3.62t13/Editor/Data",
+        "timeSinceStartup": 1025.6461746
+      },
+      "state": {
+        "editor": {
+          "playMode": "stopped",
+          "focusedWindow": "GameView",
+          "requiresFocusForOperations": false,
+          "isCompiling": false,
+          "isUpdating": false,
+          "lastCompilation": {
+            "status": "idle"
+          },
+          "timeSinceStartup": 1025.63843
+        },
+        "project": {
+          "srp": "builtin",
+          "defineSymbols": [],
+          "packages": [],
+          "dirty": false
+        },
+        "scene": {
+          "activeScenePath": "Assets/Polarity/Scenes/Game.scene",
+          "dirty": false,
+          "hasNavMeshData": false,
+          "hasLightingData": false
+        },
+        "selection": {
+          "activeObject": null
+        },
+        "console": {
+          "unreadCount": 0,
+          "lastErrors": []
+        },
+        "assets": {
+          "touched": []
+        }
+      }
+    }
+  },
+  "preservedAssets": [
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Player.prefab",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "155ed71770269cc649c30af39cd1627f6234e939228499338186d8f12ff22f14"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "fc7fa8ebfe553b603c7224b34d8c5432997d95360a8b641c3aca7b57c59fdb79"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Crate.prefab",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "1ca273d67d7a3e742b91c7824eac33a6a8d738e3a34aafeb546af173fae806b0"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Turret.prefab",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "54ed5ef8ac518fa706e8ccc70d0a0db2bcc29af2759571704a84140bab92d97d"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Projectile.prefab",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "f1fc121f0c65ab269d869a6fd744fddc4c247869d56b4dd933b1f3c5cb137c17"
+    },
+    {
+      "path": "Polarity/ProjectSettings/Physics2DSettings.asset",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "337d121d7ae1d92f8b455dba8f2d2175cdb0291eb0a137efed6cdaee9aaa4a78"
+    },
+    {
+      "path": "Polarity/ProjectSettings/ProjectSettings.asset",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "5ec62493a9112bd7001f848bc50406aae3d7d40b0fc2024ddbb9341de5f848fe"
+    },
+    {
+      "path": "Polarity/ProjectSettings/EditorBuildSettings.asset",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "ec0dd5af3de46792e2987c1892447cededf37827892dad75dd6b437bdb62727e"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/WhiteboxPhysics.physicsMaterial2D",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "96c7da54dd2870757f588e979d06d18f746f4d98673a0932ad546bc1cbba6922"
+    },
+    {
+      "path": "Polarity/Assets/Scenes/SampleScene.scene",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "120d00be434b5573219b19e566eb41a3d0efc88f0d1c78dbb5a20e4d9419bdf2"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/EnemyMotor.cs",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "15c9bac57da7d8dc341b400948f0d1b5ea27441c96e0ff7b1be7d507cd00f578"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/Health.cs",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "71bc37a837f89fef75b5e39bcd160c8e5d104bec1de42ef26bb1d66a8bb620d1"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/Turret.cs",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "4567bc69e10cf0584646c0bbf010904b3318aa9ebf3264371ee7bda0ab032d94"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/Projectile.cs",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "3e92846f2e15666d7c62b25ff7223b63b98303aa675fc51352ed4adbfd9f29e5"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/PolarityBody.cs",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "fa9a7a1d60aebb58e2e65f28bd60eb47a5209e2cad4d7377e324886259d82c50"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/ContactRecorder.cs",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "6e8dfa6948f9bf97e953312d6aa1030500471ae5050bd0338f4da3f47edb40da"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/PropagationSystem.cs",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "6554c91cdb9d5401981af6ead4ef15a6e492ea3b4065e5b67586abf05e69b50f"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/DamageSystem.cs",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "1b3387187707362bb6770943010463674a8fb1c618019dc256601ebd397a27b8"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Views/PolarityView.cs",
+      "unchanged": true,
+      "comparison": "bytes",
+      "sha256": "e8c193e717196a6893741550e1b6b085e6097480a587380e0344796bad038970"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Views/YSortView.cs",
+      "unchanged": true,
+      "comparison": "normalized line endings and empty Git diff",
+      "sha256": "9969b4a315df54696682b0417a27f918595cbf417b8df40e93ba16e569e51e2c"
+    }
+  ]
+}

@@ -10,7 +10,7 @@ using Pole = Polarity.Model.Polarity;
 namespace Polarity.Controllers
 {
     /// <summary>Chooses visible body faces and submits intent; never changes polarity or budget.</summary>
-    [DisallowMultipleComponent]
+    [DisallowMultipleComponent, DefaultExecutionOrder(-50)]
     public sealed class MarkingController : MonoBehaviour
     {
         [SerializeField] private SimulationWorld world;
@@ -18,6 +18,7 @@ namespace Polarity.Controllers
         [Tooltip("Explicit wall/player body faces, excluding footprints, shadows and decoration.")]
         [SerializeField] private SpriteRenderer[] occludingSprites = new SpriteRenderer[0];
         [SerializeField] private MarkingDebugView debugView;
+        [SerializeField] private HUDView hud;
         public PolarityBody Candidate { get; private set; }
         public string PointerFeedback { get; private set; } = "Point at an enemy or crate";
         public Camera WorldCamera => worldCamera;
@@ -34,6 +35,7 @@ namespace Polarity.Controllers
         public void ProcessPointerFrame(Vector2 point, bool positivePressed, bool negativePressed, bool overUI = false)
         {
             Candidate = null;
+            overUI = overUI || (hud != null && hud.ContainsScreenPoint(point));
             if (world == null || world.State == null || world.State.Phase != LevelPhase.Running || overUI)
             {
                 PointerFeedback = overUI ? "UI" : "Not running";
