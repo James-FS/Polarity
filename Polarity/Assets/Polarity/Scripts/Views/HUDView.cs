@@ -24,6 +24,7 @@ namespace Polarity.Views
         [SerializeField] private GraphicRaycaster raycaster;
         [SerializeField] private Camera worldCamera;
         [SerializeField] private RectTransform statusPanel, controlsPanel;
+        [SerializeField] private Polarity.Debugging.GMView gmView;
         private Rect originalCameraRect;
         private readonly Vector3[] panelCorners = new Vector3[4];
         private readonly List<RaycastResult> uiHits = new List<RaycastResult>();
@@ -107,13 +108,13 @@ namespace Polarity.Views
         {
             healthText.text = $"生命  {health.CurrentHealth} / {health.MaxHealth}";
             enemiesText.text = $"剩余敌人  {state.ActiveEnemyCount}";
-            marksText.text = $"标记次数  {state.RemainingMarks} / {state.MarkBudget}";
-            budgetHintText.text = state.RemainingMarks == 0 ? "标记次数已用尽。仍可移动、利用接触传播，或按 R 重试。" : "首次赋极与改色均消耗 1 次标记；接触传播免费。";
+            marksText.text = state.UnlimitedMarks ? "标记次数  ∞（GM）" : $"标记次数  {state.RemainingMarks} / {state.MarkBudget}";
+            budgetHintText.text = state.UnlimitedMarks ? "GM 无限标记已开启；范围、墙体与目标权限规则仍有效。" : state.RemainingMarks == 0 ? "标记次数已用尽。仍可移动、利用接触传播，或按 R 重试。" : "首次赋极与改色均消耗 1 次标记；接触传播免费。";
         }
         private void OnMark(MarkResult result)
         {
             MarkNotificationCount++;
-            markFeedbackText.text = Describe(result);
+            markFeedbackText.text = state.UnlimitedMarks && result.Outcome == MarkOutcome.Applied ? $"主动标记  {result.Request.TargetId}  {(result.Request.Polarity == Polarity.Model.Polarity.Positive ? "+" : "-")}  /  GM 不消耗次数" : Describe(result);
             markFeedbackText.color = result.Request.Polarity == Polarity.Model.Polarity.Positive ? new Color(1f, .65f, .25f) : new Color(.35f, .75f, 1f);
             RefreshCounters();
         }
@@ -144,6 +145,7 @@ namespace Polarity.Views
         {
             if (!isActiveAndEnabled) return false;
             // Modal covers the screen immediately, even before the next Canvas rebuild.
+            if (gmView != null && gmView.BlocksPointer) return true;
             if (ModalVisible) return new Rect(0,0,Screen.width,Screen.height).Contains(point);
             if (raycaster == null || EventSystem.current == null) return false;
             uiHits.Clear();

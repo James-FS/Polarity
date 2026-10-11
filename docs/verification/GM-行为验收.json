@@ -1,0 +1,174 @@
+[
+  {
+    "name": "normal Unity Start binds GM",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "default cheats off",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "real enemy contact invincible",
+    "passed": true,
+    "data": {
+      "CompletedStepCount": 700,
+      "health": 3,
+      "contacts": 1
+    }
+  },
+  {
+    "name": "switch off restores real damage",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "add wounded health and cap",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "invalid health amount rejected",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "paused add marks",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "paused commands do not simulate",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "20 manager/view cycles paired subscriptions",
+    "passed": true,
+    "data": {
+      "gmListeners": 1,
+      "marksListeners": 2
+    }
+  },
+  {
+    "name": "retry persists switches resets bonuses",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "finite budget baseline",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "unlimited mark 0",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "unlimited mark 1",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "unlimited mark 2",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "unlimited mark 3",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "unlimited mark 4",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "unlimited mark 5",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "unlimited invalid target still rejected",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "unlimited off restores empty budget",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "add finite marks after empty",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "added marks spend normally",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "invalid marks amount rejected",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "direct next from Running clears pending",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "direct next from Paused restores normal speed",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "real Lost remains terminal",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "direct next from Lost",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "last level cannot skip beyond array",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "repeat last retry 0",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "repeat last retry 1",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "repeat last retry 2",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "repeat last retry 3",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "repeat last retry 4",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "reset switches",
+    "passed": true,
+    "data": null
+  }
+]

@@ -6,7 +6,8 @@ namespace Polarity.Model
     public sealed class LevelState
     {
         public LevelPhase Phase { get; private set; } = LevelPhase.Ready;
-        public int MarkBudget { get; }
+        public int MarkBudget { get; private set; }
+        public bool UnlimitedMarks { get; private set; }
         public int RemainingMarks { get; private set; }
         public int ActiveEnemyCount { get; private set; }
 
@@ -34,11 +35,29 @@ namespace Polarity.Model
 
         internal bool TrySpendMark()
         {
+            if (UnlimitedMarks) return true;
             if (RemainingMarks <= 0)
                 return false;
             RemainingMarks--;
             MarksChanged?.Invoke(RemainingMarks);
             return true;
+        }
+
+        internal bool AddRuntimeMarks(int amount)
+        {
+            if (amount <= 0 || MarkBudget == int.MaxValue) return false;
+            int added = Math.Min(amount, int.MaxValue - MarkBudget);
+            MarkBudget += added;
+            RemainingMarks += added;
+            MarksChanged?.Invoke(RemainingMarks);
+            return true;
+        }
+
+        internal void SetUnlimitedMarks(bool value)
+        {
+            if (UnlimitedMarks == value) return;
+            UnlimitedMarks = value;
+            MarksChanged?.Invoke(RemainingMarks);
         }
 
         internal void SetActiveEnemyCount(int count)

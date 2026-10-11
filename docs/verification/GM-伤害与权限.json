@@ -1,0 +1,42 @@
+[
+  {
+    "name": "invincible consumes real projectile without damage",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "normal projectile damage after off",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "real spike invincible",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "normal spike damage after off",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "unlimited does not mark projectiles",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "unlimited keeps range restriction",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "slow paused clears queued request",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "GM commands preserve held slow and discard old queue",
+    "passed": true,
+    "data": null
+  }
+]

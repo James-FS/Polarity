@@ -1,0 +1,306 @@
+[
+  {
+    "name": "打开 GM",
+    "x": 1168,
+    "y": 703,
+    "transport": {
+      "x": 1168,
+      "y": 703,
+      "button": 0,
+      "hitGameObject": "GMOpenButton",
+      "method": "EventSystem"
+    },
+    "state": {
+      "IsBound": true,
+      "PanelOpen": true,
+      "Invincible": false,
+      "UnlimitedMarks": false,
+      "Status": "作弊开关已关闭；重试可还原本关生命与次数。",
+      "index": 0,
+      "phase": "Paused",
+      "scale": 0,
+      "health": 3,
+      "maxHealth": 3,
+      "budget": 3,
+      "remaining": 3,
+      "pending": 0,
+      "processed": 0,
+      "gmViews": 1
+    },
+    "passed": true
+  },
+  {
+    "name": "开启无敌",
+    "x": 512,
+    "y": 407,
+    "transport": {
+      "x": 512,
+      "y": 407,
+      "button": 0,
+      "hitGameObject": "GMInvincibleButton",
+      "method": "EventSystem"
+    },
+    "state": {
+      "IsBound": true,
+      "PanelOpen": true,
+      "Invincible": true,
+      "UnlimitedMarks": false,
+      "Status": "无敌已开启；碰撞仍正常，玩家不受伤。",
+      "index": 0,
+      "phase": "Paused",
+      "scale": 0,
+      "health": 3,
+      "maxHealth": 3,
+      "budget": 3,
+      "remaining": 3,
+      "pending": 0,
+      "processed": 0,
+      "gmViews": 1
+    },
+    "passed": true
+  },
+  {
+    "name": "生命 +5",
+    "x": 768,
+    "y": 407,
+    "transport": {
+      "x": 768,
+      "y": 407,
+      "button": 0,
+      "hitGameObject": "GMHealthButton",
+      "method": "EventSystem"
+    },
+    "state": {
+      "IsBound": true,
+      "PanelOpen": true,
+      "Invincible": true,
+      "UnlimitedMarks": false,
+      "Status": "已增加生命与生命上限；仅当前关有效。",
+      "index": 0,
+      "phase": "Paused",
+      "scale": 0,
+      "health": 8,
+      "maxHealth": 8,
+      "budget": 3,
+      "remaining": 3,
+      "pending": 0,
+      "processed": 0,
+      "gmViews": 1
+    },
+    "passed": true
+  },
+  {
+    "name": "标记 +5",
+    "x": 768,
+    "y": 349,
+    "transport": {
+      "x": 768,
+      "y": 349,
+      "button": 0,
+      "hitGameObject": "GMMarksButton",
+      "method": "EventSystem"
+    },
+    "state": {
+      "IsBound": true,
+      "PanelOpen": true,
+      "Invincible": true,
+      "UnlimitedMarks": false,
+      "Status": "已增加标记次数；仅当前关有效。",
+      "index": 0,
+      "phase": "Paused",
+      "scale": 0,
+      "health": 8,
+      "maxHealth": 8,
+      "budget": 8,
+      "remaining": 8,
+      "pending": 0,
+      "processed": 0,
+      "gmViews": 1
+    },
+    "passed": true
+  },
+  {
+    "name": "无限标记",
+    "x": 512,
+    "y": 349,
+    "transport": {
+      "x": 512,
+      "y": 349,
+      "button": 0,
+      "hitGameObject": "GMUnlimitedButton",
+      "method": "EventSystem"
+    },
+    "state": {
+      "IsBound": true,
+      "PanelOpen": true,
+      "Invincible": true,
+      "UnlimitedMarks": true,
+      "Status": "无限标记已开启；原有次数保留。",
+      "index": 0,
+      "phase": "Paused",
+      "scale": 0,
+      "health": 8,
+      "maxHealth": 8,
+      "budget": 8,
+      "remaining": 8,
+      "pending": 0,
+      "processed": 0,
+      "gmViews": 1
+    },
+    "passed": true
+  },
+  {
+    "name": "关闭面板",
+    "x": 768,
+    "y": 233,
+    "transport": {
+      "x": 768,
+      "y": 233,
+      "button": 0,
+      "hitGameObject": "GMCloseButton",
+      "method": "EventSystem"
+    },
+    "state": {
+      "IsBound": true,
+      "PanelOpen": false,
+      "Invincible": true,
+      "UnlimitedMarks": true,
+      "Status": "无限标记已开启；原有次数保留。",
+      "index": 0,
+      "phase": "Paused",
+      "scale": 0,
+      "health": 8,
+      "maxHealth": 8,
+      "budget": 8,
+      "remaining": 8,
+      "pending": 0,
+      "processed": 0,
+      "gmViews": 1
+    },
+    "passed": true
+  },
+  {
+    "name": "再次打开 GM",
+    "x": 1168,
+    "y": 703,
+    "transport": {
+      "x": 1168,
+      "y": 703,
+      "button": 0,
+      "hitGameObject": "GMOpenButton",
+      "method": "EventSystem"
+    },
+    "state": {
+      "IsBound": true,
+      "PanelOpen": true,
+      "Invincible": true,
+      "UnlimitedMarks": true,
+      "Status": "无限标记已开启；原有次数保留。",
+      "index": 0,
+      "phase": "Paused",
+      "scale": 0,
+      "health": 8,
+      "maxHealth": 8,
+      "budget": 8,
+      "remaining": 8,
+      "pending": 0,
+      "processed": 0,
+      "gmViews": 1
+    },
+    "passed": true
+  },
+  {
+    "name": "暂停时直接下一关",
+    "x": 512,
+    "y": 291,
+    "transport": {
+      "x": 512,
+      "y": 291,
+      "button": 0,
+      "hitGameObject": "GMNextButton",
+      "method": "EventSystem"
+    },
+    "state": {
+      "index": 1,
+      "health": 3,
+      "maxHealth": 3,
+      "budget": 2,
+      "remaining": 2,
+      "invincible": true,
+      "unlimited": true,
+      "IsBound": true,
+      "PanelOpen": true,
+      "scale": 1,
+      "pending": 0,
+      "processed": 0,
+      "steps": 0,
+      "oldDestroyed": true,
+      "worlds": 1,
+      "managers": 1,
+      "views": 1
+    },
+    "passed": true
+  },
+  {
+    "name": "GM 重试当前关",
+    "x": 768,
+    "y": 291,
+    "transport": {
+      "x": 768,
+      "y": 291,
+      "button": 0,
+      "hitGameObject": "GMRetryButton",
+      "method": "EventSystem"
+    },
+    "state": {
+      "index": 1,
+      "health": 3,
+      "maxHealth": 3,
+      "budget": 2,
+      "remaining": 2,
+      "invincible": true,
+      "unlimited": true,
+      "IsBound": true,
+      "PanelOpen": true,
+      "scale": 1,
+      "pending": 0,
+      "processed": 0,
+      "steps": 0,
+      "oldDestroyed": true,
+      "worlds": 1,
+      "managers": 1,
+      "views": 1
+    },
+    "passed": true
+  },
+  {
+    "name": "关闭全部作弊",
+    "x": 512,
+    "y": 233,
+    "transport": {
+      "x": 512,
+      "y": 233,
+      "button": 0,
+      "hitGameObject": "GMResetButton",
+      "method": "EventSystem"
+    },
+    "state": {
+      "IsBound": true,
+      "PanelOpen": true,
+      "Invincible": false,
+      "UnlimitedMarks": false,
+      "Status": "作弊开关已关闭；重试可还原本关生命与次数。",
+      "index": 1,
+      "phase": "Paused",
+      "scale": 0,
+      "health": 3,
+      "maxHealth": 3,
+      "budget": 2,
+      "remaining": 2,
+      "pending": 0,
+      "processed": 0,
+      "gmViews": 1
+    },
+    "passed": true
+  }
+]

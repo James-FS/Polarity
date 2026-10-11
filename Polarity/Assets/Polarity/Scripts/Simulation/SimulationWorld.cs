@@ -295,6 +295,27 @@ namespace Polarity.Simulation
             }
         }
 
+        // GM changes runtime facts here; it never creates another simulation entry.
+        internal bool ApplyGM(Polarity.Debugging.GMCommand command, int value)
+        {
+            if (!Polarity.Debugging.GMManager.IsAvailable || !ownsPhysics || stepping || restarting ||
+                levelController.IsRestarting || State == null || PlayerHealth == null) return false;
+            switch (command)
+            {
+                case Polarity.Debugging.GMCommand.Invincible:
+                    PlayerHealth.IsInvincible = value != 0;
+                    return true;
+                case Polarity.Debugging.GMCommand.UnlimitedMarks:
+                    State.SetUnlimitedMarks(value != 0);
+                    return true;
+                case Polarity.Debugging.GMCommand.AddHealth:
+                    return (State.Phase == LevelPhase.Running || State.Phase == LevelPhase.Paused) && PlayerHealth.AddRuntimeHealth(value);
+                case Polarity.Debugging.GMCommand.AddMarks:
+                    return (State.Phase == LevelPhase.Running || State.Phase == LevelPhase.Paused) && State.AddRuntimeMarks(value);
+                default: return false;
+            }
+        }
+
         public long SubmitMark(int targetId, Pole polarity)
         {
             var request = new MarkRequest(targetId, polarity, ++nextMarkSequence);
@@ -337,7 +358,7 @@ namespace Polarity.Simulation
                 return MarkOutcome.TooFar;
             if (Physics2D.Linecast(from, to, markingWallFilter, markingWallHits) > 0) return MarkOutcome.WallBlocked;
             if (target.CurrentPolarity == request.Polarity) return MarkOutcome.Unchanged;
-            return State.RemainingMarks > 0 ? MarkOutcome.Applied : MarkOutcome.BudgetEmpty;
+            return State.UnlimitedMarks || State.RemainingMarks > 0 ? MarkOutcome.Applied : MarkOutcome.BudgetEmpty;
         }
 
         private void PublishMarkResult(MarkRequest request, MarkOutcome outcome)

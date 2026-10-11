@@ -71,6 +71,8 @@ namespace Polarity.Controllers
             if (world==null || world.State?.Phase!=LevelPhase.Won || !HasNextLevel) return false;
             return RequestLoad(CurrentLevelIndex+1);
         }
+        internal bool RequestGMNextLevel()
+            => Polarity.Debugging.GMManager.IsAvailable && HasNextLevel && RequestLoad(CurrentLevelIndex + 1);
         private bool RequestLoad(int index)
         {
             if (world==null || !world.OwnsPhysics || IsRestarting) return false;

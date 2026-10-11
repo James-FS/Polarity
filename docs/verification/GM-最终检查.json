@@ -1,0 +1,172 @@
+{
+  "newPlay": {
+    "available": true,
+    "IsBound": true,
+    "Invincible": false,
+    "UnlimitedMarks": false,
+    "PanelOpen": false,
+    "index": 0,
+    "maxHealth": 3,
+    "remaining": 3,
+    "failed": 0,
+    "steps": 3,
+    "passed": true
+  },
+  "finalEditor": {
+    "playing": false,
+    "scene": "Assets/Polarity/Scenes/Game.scene",
+    "dirty": false,
+    "missing": 0,
+    "worlds": 1,
+    "huds": 1,
+    "eventSystems": 1,
+    "teaching": 1,
+    "next": 1,
+    "added": 0,
+    "bindings": {
+      "world": true,
+      "healthText": true,
+      "enemiesText": true,
+      "marksText": true,
+      "speedText": true,
+      "markFeedbackText": true,
+      "propagationText": true,
+      "budgetHintText": true,
+      "modal": true,
+      "modalTitle": true,
+      "modalDescription": true,
+      "pauseButton": true,
+      "resumeButton": true,
+      "retryButton": true,
+      "nextButton": true,
+      "levelText": true,
+      "teachingText": true,
+      "raycaster": true,
+      "worldCamera": true,
+      "statusPanel": true,
+      "controlsPanel": true
+    },
+    "configs": [
+      {
+        "Title": "极性",
+        "MarkBudget": 3,
+        "valid": true,
+        "bodies": 2,
+        "enemies": 1,
+        "enemyHP": [
+          2
+        ],
+        "turrets": 0,
+        "occluders": 73,
+        "markingDistance": 7
+      },
+      {
+        "Title": "接触",
+        "MarkBudget": 2,
+        "valid": true,
+        "bodies": 4,
+        "enemies": 3,
+        "enemyHP": [
+          1,
+          1,
+          1
+        ],
+        "turrets": 0,
+        "occluders": 73,
+        "markingDistance": 7
+      },
+      {
+        "Title": "借火",
+        "MarkBudget": 2,
+        "valid": true,
+        "bodies": 4,
+        "enemies": 3,
+        "enemyHP": [
+          2,
+          2,
+          2
+        ],
+        "turrets": 1,
+        "occluders": 73,
+        "markingDistance": 7
+      },
+      {
+        "Title": "选择起点",
+        "MarkBudget": 3,
+        "valid": true,
+        "bodies": 6,
+        "enemies": 4,
+        "enemyHP": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "turrets": 0,
+        "occluders": 73,
+        "markingDistance": 8
+      },
+      {
+        "Title": "改变通路",
+        "MarkBudget": 3,
+        "valid": true,
+        "bodies": 6,
+        "enemies": 4,
+        "enemyHP": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "turrets": 1,
+        "occluders": 79,
+        "markingDistance": 8
+      },
+      {
+        "Title": "极性失控",
+        "MarkBudget": 3,
+        "valid": true,
+        "bodies": 6,
+        "enemies": 4,
+        "enemyHP": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "turrets": 1,
+        "occluders": 73,
+        "markingDistance": 8
+      }
+    ],
+    "timeScale": 1,
+    "fixedStep": 0.02,
+    "physics": "FixedUpdate"
+  },
+  "gmBindings": {
+    "managers": 1,
+    "views": 1,
+    "bindings": {
+      "manager": true,
+      "panel": true,
+      "factsText": true,
+      "statusText": true,
+      "invincibleLabel": true,
+      "unlimitedLabel": true,
+      "openButton": true,
+      "closeButton": true,
+      "invincibleButton": true,
+      "healthButton": true,
+      "marksButton": true,
+      "unlimitedButton": true,
+      "nextButton": true,
+      "retryButton": true,
+      "resetButton": true
+    },
+    "hudGM": true,
+    "world": true,
+    "buttons": 9,
+    "passed": true
+  },
+  "console": []
+}
