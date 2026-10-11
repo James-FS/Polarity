@@ -1,0 +1,79 @@
+{
+  "freshPlay": {
+    "index": 0,
+    "title": "Polarity",
+    "budget": 3,
+    "initialBodies": 2,
+    "scale": 1,
+    "fixedStep": 0.02,
+    "passed": true
+  },
+  "assets": [
+    {
+      "path": "D:/Code/Polarity/Polarity/Assets/Polarity/Configs/Levels/01-Polarity.asset",
+      "hash": "c652a31046c204d8c050b2da6d10c97f5439c543021459654f6631d8d70a9ce5",
+      "unchanged": true
+    },
+    {
+      "path": "D:/Code/Polarity/Polarity/Assets/Polarity/Configs/Levels/02-Contact.asset",
+      "hash": "b9e43531b4738cd6ff155389c0f91f5f2e44a6775f13c9268133fc218f40efe4",
+      "unchanged": true
+    },
+    {
+      "path": "D:/Code/Polarity/Polarity/Assets/Polarity/Configs/Levels/03-BorrowFire.asset",
+      "hash": "34bc640bc82326212c22571e9e0f74afaa85de9f4111a794dc2b8dd665d28551",
+      "unchanged": true
+    },
+    {
+      "path": "D:/Code/Polarity/Polarity/Assets/Polarity/Configs/Levels/04-ChooseSource.asset",
+      "hash": "f6f14361d284e256be1814ab9a7052e6bbaa0212bf0c204296edf275d5f2eeea",
+      "unchanged": true
+    },
+    {
+      "path": "D:/Code/Polarity/Polarity/Assets/Polarity/Configs/Levels/05-ChangeRoute.asset",
+      "hash": "1f7ac473251d2025913e29a350a6a76011078b326af0bdf4fc971d177a96f906",
+      "unchanged": true
+    },
+    {
+      "path": "D:/Code/Polarity/Polarity/Assets/Polarity/Configs/Levels/06-Unleashed.asset",
+      "hash": "f288dd12b1d68c83036c502f31a4fbc31bd0dc2fc1b69fdc806ecfb109ddfecf",
+      "unchanged": true
+    },
+    {
+      "path": "D:/Code/Polarity/Polarity/Assets/Polarity/Configs/Levels/AdvancedGameplayConfig.asset",
+      "hash": "8559f880a0b0cc6097b30078c982210e2d2e421f900c290ebbec727882817263",
+      "unchanged": true
+    },
+    {
+      "path": "D:/Code/Polarity/Polarity/Assets/Polarity/Prefabs/Levels/01-Polarity.prefab",
+      "hash": "b0d03219e50e2bd298d28c708c29f1b5d37c3e7edf0970955ab8c3c6f1d6ba89",
+      "unchanged": true
+    },
+    {
+      "path": "D:/Code/Polarity/Polarity/Assets/Polarity/Prefabs/Levels/02-Contact.prefab",
+      "hash": "79942bb618ed2ff816da4155941470f73e34ef6bc1b74a3a6eaceac3f1527ad7",
+      "unchanged": true
+    },
+    {
+      "path": "D:/Code/Polarity/Polarity/Assets/Polarity/Prefabs/Levels/03-BorrowFire.prefab",
+      "hash": "30c61ca3944f78741ff140be79b13762e04a235d6e2c32be11eebe77a59049c9",
+      "unchanged": true
+    },
+    {
+      "path": "D:/Code/Polarity/Polarity/Assets/Polarity/Prefabs/Levels/04-ChooseSource.prefab",
+      "hash": "9a9e81f5ab59fa32009be82bb2964a48f04dd38fda6e7aa340ab407aa3b964bd",
+      "unchanged": true
+    },
+    {
+      "path": "D:/Code/Polarity/Polarity/Assets/Polarity/Prefabs/Levels/05-ChangeRoute.prefab",
+      "hash": "4594794c27e60d8fe1d1a0de308a083187a8a1ad89813190ae2a216bb1361eec",
+      "unchanged": true
+    },
+    {
+      "path": "D:/Code/Polarity/Polarity/Assets/Polarity/Prefabs/Levels/06-Unleashed.prefab",
+      "hash": "70d80adbb585572efff7b1112f6d96f2549569e3de7f2cf7c7ec53e810ec8aff",
+      "unchanged": true
+    }
+  ],
+  "passed": true
+}

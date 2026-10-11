@@ -1,0 +1,100 @@
+[
+  {
+    "level": 1,
+    "phase": "Won",
+    "time": 2.0399999544024467,
+    "hp": 3,
+    "marks": 0,
+    "spread": 0,
+    "projectileEnemyHits": 0,
+    "steps": 102,
+    "attempts": 102,
+    "failed": 0,
+    "markResults": [
+      "Applied",
+      "Applied",
+      "Applied"
+    ]
+  },
+  {
+    "level": 2,
+    "phase": "Won",
+    "time": 7.7399998269975185,
+    "hp": 1,
+    "marks": 1,
+    "spread": 2,
+    "projectileEnemyHits": 0,
+    "steps": 387,
+    "attempts": 387,
+    "failed": 0,
+    "markResults": [
+      "Applied"
+    ]
+  },
+  {
+    "level": 3,
+    "phase": "Won",
+    "time": 6.6599998511374,
+    "hp": 3,
+    "marks": 1,
+    "spread": 2,
+    "projectileEnemyHits": 2,
+    "steps": 333,
+    "attempts": 333,
+    "failed": 0,
+    "markResults": [
+      "Applied"
+    ]
+  },
+  {
+    "level": 4,
+    "phase": "Won",
+    "time": 1.9599999561905861,
+    "hp": 3,
+    "marks": 0,
+    "spread": 3,
+    "projectileEnemyHits": 0,
+    "steps": 98,
+    "attempts": 98,
+    "failed": 0,
+    "markResults": [
+      "Applied",
+      "Applied",
+      "Applied"
+    ]
+  },
+  {
+    "level": 5,
+    "phase": "Won",
+    "time": 1.7399999611079693,
+    "hp": 3,
+    "marks": 0,
+    "spread": 2,
+    "projectileEnemyHits": 0,
+    "steps": 87,
+    "attempts": 87,
+    "failed": 0,
+    "markResults": [
+      "Applied",
+      "Applied",
+      "Applied"
+    ]
+  },
+  {
+    "level": 6,
+    "phase": "Won",
+    "time": 1.9599999561905861,
+    "hp": 3,
+    "marks": 0,
+    "spread": 3,
+    "projectileEnemyHits": 0,
+    "steps": 98,
+    "attempts": 98,
+    "failed": 0,
+    "markResults": [
+      "Applied",
+      "Applied",
+      "Applied"
+    ]
+  }
+]

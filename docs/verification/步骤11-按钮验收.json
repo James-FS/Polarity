@@ -1,0 +1,90 @@
+[
+  {
+    "action": "Final Retry",
+    "index": 5,
+    "budget": 3,
+    "steps": 0,
+    "processed": 0,
+    "pending": 0,
+    "scale": 1,
+    "life": 3,
+    "IsBound": true,
+    "MarkNotificationCount": 0,
+    "PropagationNotificationCount": 0,
+    "oldDestroyed": true,
+    "owners": 1,
+    "teaching": 1,
+    "nextButtons": 1,
+    "passed": true
+  },
+  {
+    "action": "Next Room",
+    "index": 1,
+    "budget": 2,
+    "steps": 0,
+    "processed": 0,
+    "pending": 0,
+    "scale": 1,
+    "life": 3,
+    "IsBound": true,
+    "MarkNotificationCount": 0,
+    "PropagationNotificationCount": 0,
+    "oldDestroyed": true,
+    "owners": 1,
+    "teaching": 1,
+    "nextButtons": 1,
+    "passed": true
+  },
+  {
+    "action": "UI guards and slow pause",
+    "passed": true,
+    "budget": 2,
+    "pending": 0
+  },
+  {
+    "action": "Actual Resume",
+    "passed": true
+  },
+  {
+    "action": "Paused Retry",
+    "index": 1,
+    "budget": 2,
+    "steps": 0,
+    "processed": 0,
+    "pending": 0,
+    "scale": 1,
+    "life": 3,
+    "IsBound": true,
+    "MarkNotificationCount": 0,
+    "PropagationNotificationCount": 0,
+    "oldDestroyed": true,
+    "owners": 1,
+    "teaching": 1,
+    "nextButtons": 1,
+    "passed": true
+  },
+  {
+    "action": "Actual room Lost",
+    "passed": true,
+    "phase": "Lost",
+    "time": 4.179999906569719
+  },
+  {
+    "action": "Lost R",
+    "index": 1,
+    "budget": 2,
+    "steps": 0,
+    "processed": 0,
+    "pending": 0,
+    "scale": 1,
+    "life": 3,
+    "IsBound": true,
+    "MarkNotificationCount": 0,
+    "PropagationNotificationCount": 0,
+    "oldDestroyed": true,
+    "owners": 1,
+    "teaching": 1,
+    "nextButtons": 1,
+    "passed": true
+  }
+]

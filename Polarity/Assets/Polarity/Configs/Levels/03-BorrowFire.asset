@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8979d453c3076664dba4ac64495a5977, type: 3}
+  m_Name: 03-BorrowFire
+  m_EditorClassIdentifier: 
+  title: Borrow Fire
+  teachingHint: Spread + through enemies to pull the negative shots toward them.
+    Shots cannot be marked or spread signs. Stay behind the crate after the warning
+    locks.
+  markBudget: 2
+  roomPrefab: {fileID: 2787149514573076492, guid: a012c20195dee6342b47a7a4abbabb9a, type: 3}
+  gameplayConfig: {fileID: 11400000, guid: 661203f918e15044787b16d63c4ae3c7, type: 2}

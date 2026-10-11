@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8979d453c3076664dba4ac64495a5977, type: 3}
+  m_Name: 01-Polarity
+  m_EditorClassIdentifier: 
+  title: Polarity
+  teachingHint: Left click an enemy +, right click the crate -. Opposites attract.
+    Recolor the crate + to push the enemy into the red spikes. Each change costs
+    1.
+  markBudget: 3
+  roomPrefab: {fileID: 9195967240919048102, guid: 3bd9c617de5ef7d458e5971f00e0794a, type: 3}
+  gameplayConfig: {fileID: 11400000, guid: 661203f918e15044787b16d63c4ae3c7, type: 2}

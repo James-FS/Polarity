@@ -6,6 +6,8 @@ using Polarity.Entities;
 using Polarity.Model;
 using UnityEngine;
 using Pole = Polarity.Model.Polarity;
+using MagneticSnapshot = Polarity.Simulation.MagnetismSystem.BodySample;
+using MagneticLink = Polarity.Simulation.MagnetismSystem.Link;
 
 namespace Polarity.Simulation
 {
@@ -98,8 +100,8 @@ namespace Polarity.Simulation
         private readonly List<MagneticLink> magneticLinks = new List<MagneticLink>();
         private Vector2[] magneticForces = Array.Empty<Vector2>();
         private Vector2[] appliedMagneticForces = Array.Empty<Vector2>();
-        private readonly RaycastHit2D[] wallHits = new RaycastHit2D[1];
-        private ContactFilter2D wallFilter;
+        private readonly MagnetismSystem magnetism = new MagnetismSystem();
+        public int PlayerDamageCount { get; private set; }
 
         public LevelState State { get; private set; }
         public IReadOnlyList<PolarityBody> Bodies => readOnlyBodies ?? (readOnlyBodies = bodies.AsReadOnly());
@@ -118,6 +120,13 @@ namespace Polarity.Simulation
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void ResetStaticOwner() => physicsOwner = null;
+
+        internal void ConfigureRoom(LevelRoom room, LevelDefinition definition)
+        {
+            if (ownsPhysics || State!=null) throw new InvalidOperationException("Configure a room before World initialization.");
+            player=room.Player; initialBodies=room.CopyBodies(); turrets=room.CopyTurrets();
+            gameplayConfig=definition.GameplayConfig; initialMarkBudget=definition.MarkBudget;
+        }
 
         private void OnEnable()
         {
@@ -148,9 +157,6 @@ namespace Polarity.Simulation
             markingWallFilter.SetLayerMask(1 << LayerMask.NameToLayer("Wall"));
             markingWallFilter.useTriggers = false;
             State.PhaseChanged += OnPhaseChanged;
-            wallFilter = new ContactFilter2D();
-            wallFilter.SetLayerMask(settings.MagneticBlockingLayers);
-            wallFilter.useTriggers = false;
 
             previousTimeScale = Time.timeScale;
             SlowMotionRequested = false;
@@ -509,6 +515,7 @@ namespace Polarity.Simulation
             {
                 float interval = contact.Target == PlayerHealth ? settings.PlayerDamageInterval : settings.EnemyDamageInterval;
                 contact.Target.ApplyDamage(settings.DamagePerHit,time,interval);
+                if (contact.Target==PlayerHealth) PlayerDamageCount++;
                 damageResults.Add(new DamageResult(CompletedStepCount+1,contact,settings.DamagePerHit,contact.Target.CurrentHealth));
             }
             // All life states change before propagation, but no collections are modified here.
@@ -617,45 +624,10 @@ namespace Polarity.Simulation
 
         private void CalculateMagneticForces()
         {
-            LastPairEvaluationCount = LastMagneticPairCount = LastBlockedPairCount = 0;
-            magneticLinks.Clear();
-            float radiusSquared = settings.MagneticRadius * settings.MagneticRadius;
-            for (int i = 0; i < magneticSnapshots.Count; i++)
-            for (int j = i + 1; j < magneticSnapshots.Count; j++)
-            {
-                LastPairEvaluationCount++;
-                MagneticSnapshot a = magneticSnapshots[i], b = magneticSnapshots[j];
-                if (a.Polarity == Pole.Neutral || b.Polarity == Pole.Neutral || settings.MagneticStrength <= 0f)
-                    continue;
-                Vector2 offset = b.Position - a.Position;
-                float distanceSquared = offset.sqrMagnitude;
-                if (!IsFinite(offset) || distanceSquared >= radiusSquared)
-                    continue;
-                if (Physics2D.Linecast(a.Position, b.Position, wallFilter, wallHits) > 0)
-                {
-                    LastBlockedPairCount++;
-                    continue;
-                }
-                bool coincident = distanceSquared <= 0.00000001f;
-                float distance = Mathf.Sqrt(distanceSquared);
-                Vector2 direction = coincident ? StableSeparationAxis(a.Body.BodyId, b.Body.BodyId) : offset / distance;
-                // At coincident centers either charge relationship uses bounded separation.
-                if (coincident || a.Polarity == b.Polarity)
-                    direction = -direction;
-                float magnitude = settings.MagneticStrength * (1f - distance / settings.MagneticRadius);
-                Vector2 force = direction * magnitude;
-                magneticForces[i] += force;
-                magneticForces[j] -= force;
-                LastMagneticPairCount++;
-                magneticLinks.Add(new MagneticLink(a.Position, b.Position));
-            }
-        }
-
-        private static Vector2 StableSeparationAxis(int a, int b)
-        {
-            uint hash = unchecked((uint)a * 73856093u ^ (uint)b * 19349663u);
-            float angle = (hash % 8) * (Mathf.PI / 4f);
-            return new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+            magnetism.Evaluate(magneticSnapshots,settings,magneticForces,magneticLinks);
+            LastPairEvaluationCount=magnetism.PairEvaluationCount;
+            LastMagneticPairCount=magnetism.MagneticPairCount;
+            LastBlockedPairCount=magnetism.BlockedPairCount;
         }
 
         private void ApplyMagneticForces()
@@ -760,26 +732,6 @@ namespace Polarity.Simulation
                 Gizmos.DrawLine(previous, next);
                 previous = next;
             }
-        }
-
-        private readonly struct MagneticSnapshot
-        {
-            public readonly PolarityBody Body;
-            public readonly Vector2 Position;
-            public readonly Pole Polarity;
-
-            public MagneticSnapshot(PolarityBody body, Vector2 position, Pole polarity)
-            {
-                Body = body;
-                Position = position;
-                Polarity = polarity;
-            }
-        }
-
-        private readonly struct MagneticLink
-        {
-            public readonly Vector2 A, B;
-            public MagneticLink(Vector2 a, Vector2 b) { A = a; B = b; }
         }
 
         private void FailStep(string message)

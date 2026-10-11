@@ -19,6 +19,8 @@ namespace Polarity.Views
         [SerializeField] private GameObject modal;
         [SerializeField] private Text modalTitle, modalDescription;
         [SerializeField] private Button pauseButton, resumeButton, retryButton;
+        [SerializeField] private Button nextButton;
+        [SerializeField] private Text levelText, teachingText;
         [SerializeField] private GraphicRaycaster raycaster;
         [SerializeField] private Camera worldCamera;
         [SerializeField] private RectTransform statusPanel, controlsPanel;
@@ -40,6 +42,7 @@ namespace Polarity.Views
             pauseButton.onClick.AddListener(TogglePause);
             resumeButton.onClick.AddListener(TogglePause);
             retryButton.onClick.AddListener(Retry);
+            if (nextButton!=null) nextButton.onClick.AddListener(Next);
             Bind();
         }
         // First enable can precede World.OnEnable; Start runs after room initialization.
@@ -50,6 +53,8 @@ namespace Polarity.Views
             subscribedWorld = world;
             state = world.State;
             health = world.PlayerHealth;
+            if (levelText!=null) levelText.text=world.Level.CurrentDefinition!=null ? $"ROOM {world.Level.CurrentLevelIndex+1} / {world.Level.LevelCount}  |  {world.Level.CurrentDefinition.Title}" : "POLARITY";
+            if (teachingText!=null) teachingText.text=world.Level.CurrentDefinition?.TeachingHint ?? "";
             RefreshCounters();
             RefreshPhase(state.Phase);
             markFeedbackText.text = world.LastMarkResult.HasValue ? Describe(world.LastMarkResult.Value) : "Point at an enemy or crate to mark it.";
@@ -68,6 +73,7 @@ namespace Polarity.Views
             pauseButton.onClick.RemoveListener(TogglePause);
             resumeButton.onClick.RemoveListener(TogglePause);
             retryButton.onClick.RemoveListener(Retry);
+            if (nextButton!=null) nextButton.onClick.RemoveListener(Next);
             if (state != null)
             {
                 state.PhaseChanged -= RefreshPhase;
@@ -95,6 +101,7 @@ namespace Polarity.Views
         }
         private void TogglePause() => world.Level.TogglePause();
         private void Retry() => world.Level.RequestRestart();
+        private void Next() => world.Level.RequestNextLevel();
         private void OnCounterChanged(int value) => RefreshCounters();
         private void RefreshCounters()
         {
@@ -126,9 +133,10 @@ namespace Polarity.Views
             bool ended = phase == LevelPhase.Won || phase == LevelPhase.Lost;
             modal.SetActive(paused || ended);
             resumeButton.gameObject.SetActive(paused);
+            if (nextButton!=null) nextButton.gameObject.SetActive(phase==LevelPhase.Won && world.Level.HasNextLevel);
             pauseButton.interactable = phase == LevelPhase.Running;
-            modalTitle.text = paused ? "PAUSED" : phase == LevelPhase.Won ? "ROOM CLEARED" : "PLAYER DOWN";
-            modalDescription.text = paused ? "WASD Move | Left + orange | Right - blue\nHold Space 0.3x | Esc Resume | R Retry\n\nOnly enemies and crates can be marked.\nShots: negative, no marking or spreading.\n\nCONTACT SPREAD (free)\n+ touches neutral -> both +\n- touches neutral -> both -\nExisting signs stay; source keeps its sign." : phase == LevelPhase.Won ? "All enemies cleared. Dangerous simulation has stopped.\n\nPress R or Retry to play this room again." : "Life depleted. Try a different mark or movement route.\n\nPress R or Retry for a fresh room.";
+            modalTitle.text = paused ? "PAUSED" : phase == LevelPhase.Won ? (world.Level.HasNextLevel ? "ROOM CLEARED" : "ALL ROOMS CLEARED") : "PLAYER DOWN";
+            modalDescription.text = paused ? "WASD Move | Left + orange | Right - blue\nHold Space 0.3x | Esc Resume | R Retry\n\nOnly enemies and crates can be marked.\nShots: negative, no marking or spreading.\n\nCONTACT SPREAD (free)\n+ touches neutral -> both +\n- touches neutral -> both -\nExisting signs stay; source keeps its sign." : phase == LevelPhase.Won ? $"Time {world.SimulationTime:0.0}s  |  Hits {world.PlayerDamageCount}  |  Marks {state.MarkBudget-state.RemainingMarks}/{state.MarkBudget}\n\n" + (world.Level.HasNextLevel ? "Enter or Next Room to continue. R retries this room." : "All six rooms complete. R retries the final room.") : "Life depleted. Try a different mark or movement route.\n\nPress R or Retry for a fresh room.";
             OnSpeed(world.CurrentTimeScale);
         }
         // Query this frame's position, independent of EventSystem.Update ordering.

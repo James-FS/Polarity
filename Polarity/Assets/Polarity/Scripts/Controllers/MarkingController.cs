@@ -23,6 +23,7 @@ namespace Polarity.Controllers
         public string PointerFeedback { get; private set; } = "Point at an enemy or crate";
         public Camera WorldCamera => worldCamera;
 
+        internal void ConfigureRoom(LevelRoom room) => occludingSprites=room.CopyOccluders();
         private void Update()
         {
             Vector2 point = Input.mousePosition;

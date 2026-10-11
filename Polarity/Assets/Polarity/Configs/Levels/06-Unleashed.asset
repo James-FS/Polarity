@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8979d453c3076664dba4ac64495a5977, type: 3}
+  m_Name: 06-Unleashed
+  m_EditorClassIdentifier: 
+  title: Polarity Unleashed
+  teachingHint: Combine source choice, FREE spread, movement, spikes and negative
+    shots. Use the center blue crate and keep one mark for a key recolor. Either
+    group can start.
+  markBudget: 3
+  roomPrefab: {fileID: 646820652789367114, guid: 745e9e776c42e274b9c5395be2941a16, type: 3}
+  gameplayConfig: {fileID: 11400000, guid: 0ad59378214f18d4a97e0b35293920be, type: 2}
