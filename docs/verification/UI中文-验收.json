@@ -1,0 +1,1586 @@
+[
+  {
+    "name": "关1教学",
+    "index": 0,
+    "phase": "Running",
+    "budget": 3,
+    "checks": [
+      {
+        "name": "Title",
+        "text": "第 1 / 6 关  |  极性",
+        "height": 30.0,
+        "preferredHeight": 26.0,
+        "width": 900.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Life",
+        "text": "生命  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 240.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Enemies",
+        "text": "剩余敌人  1",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Marks",
+        "text": "标记次数  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Speed",
+        "text": "正常  1.0 倍",
+        "height": 32.0,
+        "preferredHeight": 29.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "暂停 [Esc]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 176.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Keys",
+        "text": "WASD 移动  |  左键 + 正极（橙）  |  右键 - 负极（蓝）  |  按住空格 慢速 0.3 倍  |  Esc 暂停  |  R 重试",
+        "height": 26.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "BudgetHint",
+        "text": "首次赋极与改色均消耗 1 次标记；接触传播免费。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "MarkFeedback",
+        "text": "指向敌人或箱子进行标记。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Propagation",
+        "text": "接触传播  /  免费；已有极性不被覆盖。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Teaching",
+        "text": "左键给敌人标记正极，右键给箱子标记负极：异极相吸。再将箱子改为正极，把敌人推向红色尖刺。每次赋极或改色消耗 1 次。",
+        "height": 48.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      }
+    ],
+    "passed": true
+  },
+  {
+    "name": "关2教学",
+    "index": 1,
+    "phase": "Running",
+    "budget": 2,
+    "checks": [
+      {
+        "name": "Title",
+        "text": "第 2 / 6 关  |  接触",
+        "height": 30.0,
+        "preferredHeight": 26.0,
+        "width": 900.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Life",
+        "text": "生命  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 240.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Enemies",
+        "text": "剩余敌人  3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Marks",
+        "text": "标记次数  2 / 2",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Speed",
+        "text": "正常  1.0 倍",
+        "height": 32.0,
+        "preferredHeight": 29.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "暂停 [Esc]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 176.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Keys",
+        "text": "WASD 移动  |  左键 + 正极（橙）  |  右键 - 负极（蓝）  |  按住空格 慢速 0.3 倍  |  Esc 暂停  |  R 重试",
+        "height": 26.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "BudgetHint",
+        "text": "首次赋极与改色均消耗 1 次标记；接触传播免费。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "MarkFeedback",
+        "text": "指向敌人或箱子进行标记。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Propagation",
+        "text": "接触传播  /  免费；已有极性不被覆盖。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Teaching",
+        "text": "给一个敌人标记正极，再走位促成接触：传播免费，三个敌人只需一次标记。蓝色箱子会吸引正极物体；已有极性不被覆盖，留下一次备用标记。",
+        "height": 48.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      }
+    ],
+    "passed": true
+  },
+  {
+    "name": "关3教学",
+    "index": 2,
+    "phase": "Running",
+    "budget": 2,
+    "checks": [
+      {
+        "name": "Title",
+        "text": "第 3 / 6 关  |  借火",
+        "height": 30.0,
+        "preferredHeight": 26.0,
+        "width": 900.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Life",
+        "text": "生命  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 240.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Enemies",
+        "text": "剩余敌人  3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Marks",
+        "text": "标记次数  2 / 2",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Speed",
+        "text": "正常  1.0 倍",
+        "height": 32.0,
+        "preferredHeight": 29.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "暂停 [Esc]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 176.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Keys",
+        "text": "WASD 移动  |  左键 + 正极（橙）  |  右键 - 负极（蓝）  |  按住空格 慢速 0.3 倍  |  Esc 暂停  |  R 重试",
+        "height": 26.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "BudgetHint",
+        "text": "首次赋极与改色均消耗 1 次标记；接触传播免费。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "MarkFeedback",
+        "text": "指向敌人或箱子进行标记。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Propagation",
+        "text": "接触传播  /  免费；已有极性不被覆盖。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Teaching",
+        "text": "利用接触传播让敌人带上正极，引导负极炮弹命中敌人。炮弹不能被标记，也不能传播或接收极性；炮台锁定后可用箱子挡弹。",
+        "height": 48.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      }
+    ],
+    "passed": true
+  },
+  {
+    "name": "关4教学",
+    "index": 3,
+    "phase": "Running",
+    "budget": 3,
+    "checks": [
+      {
+        "name": "Title",
+        "text": "第 4 / 6 关  |  选择起点",
+        "height": 30.0,
+        "preferredHeight": 26.0,
+        "width": 900.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Life",
+        "text": "生命  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 240.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Enemies",
+        "text": "剩余敌人  4",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Marks",
+        "text": "标记次数  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Speed",
+        "text": "正常  1.0 倍",
+        "height": 32.0,
+        "preferredHeight": 29.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "暂停 [Esc]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 176.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Keys",
+        "text": "WASD 移动  |  左键 + 正极（橙）  |  右键 - 负极（蓝）  |  按住空格 慢速 0.3 倍  |  Esc 暂停  |  R 重试",
+        "height": 26.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "BudgetHint",
+        "text": "首次赋极与改色均消耗 1 次标记；接触传播免费。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "MarkFeedback",
+        "text": "指向敌人或箱子进行标记。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Propagation",
+        "text": "接触传播  /  免费；已有极性不被覆盖。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Teaching",
+        "text": "可以从任意一组敌人开始，利用免费传播。中央蓝色箱子会吸引正极敌人，改为正极后将它们推开；另一个箱子可作掩体。",
+        "height": 48.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      }
+    ],
+    "passed": true
+  },
+  {
+    "name": "关5教学",
+    "index": 4,
+    "phase": "Running",
+    "budget": 3,
+    "checks": [
+      {
+        "name": "Title",
+        "text": "第 5 / 6 关  |  改变通路",
+        "height": 30.0,
+        "preferredHeight": 26.0,
+        "width": 900.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Life",
+        "text": "生命  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 240.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Enemies",
+        "text": "剩余敌人  4",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Marks",
+        "text": "标记次数  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Speed",
+        "text": "正常  1.0 倍",
+        "height": 32.0,
+        "preferredHeight": 29.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "暂停 [Esc]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 176.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Keys",
+        "text": "WASD 移动  |  左键 + 正极（橙）  |  右键 - 负极（蓝）  |  按住空格 慢速 0.3 倍  |  Esc 暂停  |  R 重试",
+        "height": 26.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "BudgetHint",
+        "text": "首次赋极与改色均消耗 1 次标记；接触传播免费。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "MarkFeedback",
+        "text": "指向敌人或箱子进行标记。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Propagation",
+        "text": "接触传播  /  免费；已有极性不被覆盖。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Teaching",
+        "text": "墙角会改变被推开的敌人路线，红色尖刺会造成伤害。先在敌人间传播，再改色中央箱子；箱子也能挡住负极炮弹。",
+        "height": 48.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      }
+    ],
+    "passed": true
+  },
+  {
+    "name": "关6教学",
+    "index": 5,
+    "phase": "Running",
+    "budget": 3,
+    "checks": [
+      {
+        "name": "Title",
+        "text": "第 6 / 6 关  |  极性失控",
+        "height": 30.0,
+        "preferredHeight": 26.0,
+        "width": 900.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Life",
+        "text": "生命  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 240.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Enemies",
+        "text": "剩余敌人  4",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Marks",
+        "text": "标记次数  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Speed",
+        "text": "正常  1.0 倍",
+        "height": 32.0,
+        "preferredHeight": 29.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "暂停 [Esc]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 176.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Keys",
+        "text": "WASD 移动  |  左键 + 正极（橙）  |  右键 - 负极（蓝）  |  按住空格 慢速 0.3 倍  |  Esc 暂停  |  R 重试",
+        "height": 26.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "BudgetHint",
+        "text": "首次赋极与改色均消耗 1 次标记；接触传播免费。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "MarkFeedback",
+        "text": "指向敌人或箱子进行标记。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Propagation",
+        "text": "接触传播  /  免费；已有极性不被覆盖。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Teaching",
+        "text": "综合利用起点选择、免费传播、走位、尖刺与负极炮弹。从任意一组开始，利用中央蓝色箱子，并保留一次标记用于关键改色。",
+        "height": 48.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      }
+    ],
+    "passed": true
+  },
+  {
+    "name": "暂停",
+    "index": 0,
+    "phase": "Paused",
+    "budget": 3,
+    "checks": [
+      {
+        "name": "Title",
+        "text": "第 1 / 6 关  |  极性",
+        "height": 30.0,
+        "preferredHeight": 26.0,
+        "width": 900.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Life",
+        "text": "生命  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 240.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Enemies",
+        "text": "剩余敌人  1",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Marks",
+        "text": "标记次数  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Speed",
+        "text": "已暂停",
+        "height": 32.0,
+        "preferredHeight": 29.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "暂停 [Esc]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 176.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Keys",
+        "text": "WASD 移动  |  左键 + 正极（橙）  |  右键 - 负极（蓝）  |  按住空格 慢速 0.3 倍  |  Esc 暂停  |  R 重试",
+        "height": 26.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "BudgetHint",
+        "text": "首次赋极与改色均消耗 1 次标记；接触传播免费。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "MarkFeedback",
+        "text": "指向敌人或箱子进行标记。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Propagation",
+        "text": "接触传播  /  免费；已有极性不被覆盖。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Teaching",
+        "text": "左键给敌人标记正极，右键给箱子标记负极：异极相吸。再将箱子改为正极，把敌人推向红色尖刺。每次赋极或改色消耗 1 次。",
+        "height": 48.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Title",
+        "text": "已暂停",
+        "height": 45.0,
+        "preferredHeight": 44.0,
+        "width": 514.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Description",
+        "text": "WASD 移动 | 左键 + 橙 | 右键 - 蓝\n空格慢速 0.3 倍 | Esc 继续 | R 重试\n\n只能标记敌人与箱子。炮弹默认负极，\n不能标记、传播或接收极性。\n\n接触传播（免费）\n有极性物体接触无极性物体时传递极性，\n源头保留极性；已有极性不被覆盖。",
+        "height": 250.0,
+        "preferredHeight": 234.0,
+        "width": 506.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "继续 [Esc]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "重试 [R]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      }
+    ],
+    "passed": true
+  },
+  {
+    "name": "标记耗尽",
+    "index": 0,
+    "phase": "Running",
+    "budget": 0,
+    "checks": [
+      {
+        "name": "Title",
+        "text": "第 1 / 6 关  |  极性",
+        "height": 30.0,
+        "preferredHeight": 26.0,
+        "width": 900.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Life",
+        "text": "生命  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 240.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Enemies",
+        "text": "剩余敌人  1",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Marks",
+        "text": "标记次数  0 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Speed",
+        "text": "正常  1.0 倍",
+        "height": 32.0,
+        "preferredHeight": 29.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "暂停 [Esc]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 176.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Keys",
+        "text": "WASD 移动  |  左键 + 正极（橙）  |  右键 - 负极（蓝）  |  按住空格 慢速 0.3 倍  |  Esc 暂停  |  R 重试",
+        "height": 26.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "BudgetHint",
+        "text": "标记次数已用尽。仍可移动、利用接触传播，或按 R 重试。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "MarkFeedback",
+        "text": "主动标记  2  +  /  消耗 1 次",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Propagation",
+        "text": "接触传播  /  免费；已有极性不被覆盖。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Teaching",
+        "text": "左键给敌人标记正极，右键给箱子标记负极：异极相吸。再将箱子改为正极，把敌人推向红色尖刺。每次赋极或改色消耗 1 次。",
+        "height": 48.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      }
+    ],
+    "passed": true
+  },
+  {
+    "name": "本关完成",
+    "index": 0,
+    "phase": "Won",
+    "budget": 0,
+    "checks": [
+      {
+        "name": "Title",
+        "text": "第 1 / 6 关  |  极性",
+        "height": 30.0,
+        "preferredHeight": 26.0,
+        "width": 900.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Life",
+        "text": "生命  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 240.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Enemies",
+        "text": "剩余敌人  0",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Marks",
+        "text": "标记次数  0 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Speed",
+        "text": "正常  1.0 倍",
+        "height": 32.0,
+        "preferredHeight": 29.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "暂停 [Esc]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 176.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Keys",
+        "text": "WASD 移动  |  左键 + 正极（橙）  |  右键 - 负极（蓝）  |  按住空格 慢速 0.3 倍  |  Esc 暂停  |  R 重试",
+        "height": 26.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "BudgetHint",
+        "text": "标记次数已用尽。仍可移动、利用接触传播，或按 R 重试。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "MarkFeedback",
+        "text": "主动标记  2  +  /  消耗 1 次",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Propagation",
+        "text": "接触传播  /  免费；已有极性不被覆盖。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Teaching",
+        "text": "左键给敌人标记正极，右键给箱子标记负极：异极相吸。再将箱子改为正极，把敌人推向红色尖刺。每次赋极或改色消耗 1 次。",
+        "height": 48.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Title",
+        "text": "本关完成",
+        "height": 45.0,
+        "preferredHeight": 44.0,
+        "width": 514.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Description",
+        "text": "用时 1.1 秒  |  受伤 0 次  |  标记 3/3\n\n按 Enter 或点击“下一关”继续；按 R 重试本关。",
+        "height": 250.0,
+        "preferredHeight": 78.0,
+        "width": 506.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "重试 [R]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "下一关 [Enter]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      }
+    ],
+    "passed": true
+  },
+  {
+    "name": "全部完成",
+    "index": 5,
+    "phase": "Won",
+    "budget": 0,
+    "checks": [
+      {
+        "name": "Title",
+        "text": "第 6 / 6 关  |  极性失控",
+        "height": 30.0,
+        "preferredHeight": 26.0,
+        "width": 900.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Life",
+        "text": "生命  3 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 240.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Enemies",
+        "text": "剩余敌人  0",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Marks",
+        "text": "标记次数  0 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Speed",
+        "text": "正常  1.0 倍",
+        "height": 32.0,
+        "preferredHeight": 29.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "暂停 [Esc]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 176.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Keys",
+        "text": "WASD 移动  |  左键 + 正极（橙）  |  右键 - 负极（蓝）  |  按住空格 慢速 0.3 倍  |  Esc 暂停  |  R 重试",
+        "height": 26.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "BudgetHint",
+        "text": "标记次数已用尽。仍可移动、利用接触传播，或按 R 重试。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "MarkFeedback",
+        "text": "主动标记  5  +  /  消耗 1 次",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Propagation",
+        "text": "接触传播  1 -> 6  +  /  免费",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Teaching",
+        "text": "综合利用起点选择、免费传播、走位、尖刺与负极炮弹。从任意一组开始，利用中央蓝色箱子，并保留一次标记用于关键改色。",
+        "height": 48.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Title",
+        "text": "全部关卡完成",
+        "height": 45.0,
+        "preferredHeight": 44.0,
+        "width": 514.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Description",
+        "text": "用时 2.0 秒  |  受伤 0 次  |  标记 3/3\n\n六个关卡全部完成！按 R 可重试最后一关。",
+        "height": 250.0,
+        "preferredHeight": 78.0,
+        "width": 506.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "重试 [R]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      }
+    ],
+    "passed": true
+  },
+  {
+    "name": "失败",
+    "index": 1,
+    "phase": "Lost",
+    "budget": 2,
+    "checks": [
+      {
+        "name": "Title",
+        "text": "第 2 / 6 关  |  接触",
+        "height": 30.0,
+        "preferredHeight": 26.0,
+        "width": 900.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Life",
+        "text": "生命  0 / 3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 240.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Enemies",
+        "text": "剩余敌人  3",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Marks",
+        "text": "标记次数  2 / 2",
+        "height": 34.0,
+        "preferredHeight": 32.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Speed",
+        "text": "正常  1.0 倍",
+        "height": 32.0,
+        "preferredHeight": 29.0,
+        "width": 220.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "暂停 [Esc]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 176.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Keys",
+        "text": "WASD 移动  |  左键 + 正极（橙）  |  右键 - 负极（蓝）  |  按住空格 慢速 0.3 倍  |  Esc 暂停  |  R 重试",
+        "height": 26.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "BudgetHint",
+        "text": "首次赋极与改色均消耗 1 次标记；接触传播免费。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "MarkFeedback",
+        "text": "指向敌人或箱子进行标记。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Propagation",
+        "text": "接触传播  /  免费；已有极性不被覆盖。",
+        "height": 28.0,
+        "preferredHeight": 25.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Teaching",
+        "text": "给一个敌人标记正极，再走位促成接触：传播免费，三个敌人只需一次标记。蓝色箱子会吸引正极物体；已有极性不被覆盖，留下一次备用标记。",
+        "height": 48.0,
+        "preferredHeight": 24.0,
+        "width": 1230.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Title",
+        "text": "挑战失败",
+        "height": 45.0,
+        "preferredHeight": 44.0,
+        "width": 514.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Description",
+        "text": "生命已耗尽。试试不同的标记或走位。\n\n按 R 或点击“重试”，重新挑战本关。",
+        "height": 250.0,
+        "preferredHeight": 78.0,
+        "width": 506.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      },
+      {
+        "name": "Label",
+        "text": "重试 [R]",
+        "height": 42.0,
+        "preferredHeight": 29.0,
+        "width": 235.0,
+        "missing": "",
+        "enabled": true,
+        "cull": false,
+        "withinScreen": true
+      }
+    ],
+    "passed": true
+  }
+]

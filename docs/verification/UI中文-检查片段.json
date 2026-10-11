@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-11",
+  "service": "D:/Code/mcp/services/codely-unity/server.mjs",
+  "editorImports": "using Object=UnityEngine.Object;\nusing Codely.Newtonsoft.Json;\nusing System.Reflection;\nusing Polarity.Entities;\nusing Polarity.Simulation;\nusing Polarity.Controllers;\nusing Polarity.Model;\nusing UnityEditor;\nusing System.Linq;\n",
+  "finalEditor": "using Polarity.Config;using Polarity.Views;var scene=UnityEditor.SceneManagement.EditorSceneManager.OpenScene(\"Assets/Polarity/Scenes/Game.scene\");var level=Object.FindObjectOfType<Polarity.Controllers.LevelController>();var world=Object.FindObjectOfType<Polarity.Simulation.SimulationWorld>();var hud=Object.FindObjectOfType<HUDView>();var definitions=(LevelDefinition[])typeof(Polarity.Controllers.LevelController).GetField(\"levelSequence\",BindingFlags.Instance|BindingFlags.NonPublic).GetValue(level);var refs=new SerializedObject(hud);var mandatory=new[]{\"world\",\"healthText\",\"enemiesText\",\"marksText\",\"speedText\",\"markFeedbackText\",\"propagationText\",\"budgetHintText\",\"modal\",\"modalTitle\",\"modalDescription\",\"pauseButton\",\"resumeButton\",\"retryButton\",\"nextButton\",\"levelText\",\"teachingText\",\"raycaster\",\"worldCamera\",\"statusPanel\",\"controlsPanel\"};var bindings=mandatory.ToDictionary(n=>n,n=>refs.FindProperty(n).objectReferenceValue!=null);int missing=scene.GetRootGameObjects().SelectMany(g=>g.GetComponentsInChildren<Transform>(true)).Sum(t=>GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(t.gameObject));var configs=definitions.Select(d=>new{d.Title,d.MarkBudget,valid=d.IsValid&&d.RoomPrefab.HasValidBindings(),bodies=d.RoomPrefab.CopyBodies().Length,enemies=d.RoomPrefab.CopyBodies().Count(b=>b.gameObject.layer==LayerMask.NameToLayer(\"Enemy\")),enemyHP=d.RoomPrefab.CopyBodies().Where(b=>b.GetComponent<Health>()!=null).Select(b=>b.GetComponent<Health>().MaxHealth).ToArray(),turrets=d.RoomPrefab.CopyTurrets().Length,occluders=d.RoomPrefab.CopyOccluders().Length,markingDistance=d.GameplayConfig.CreateRuntimeSettings().MarkingDistance}).ToArray();AssetDatabase.SaveAssets();UnityEditor.SceneManagement.EditorSceneManager.SaveScene(scene);return JsonConvert.SerializeObject(new{playing=EditorApplication.isPlaying,scene=scene.path,dirty=scene.isDirty,missing,worlds=Object.FindObjectsOfType<SimulationWorld>().Length,huds=Object.FindObjectsOfType<HUDView>().Length,eventSystems=Object.FindObjectsOfType<UnityEngine.EventSystems.EventSystem>().Length,teaching=hud.GetComponentsInChildren<UnityEngine.UI.Text>(true).Count(t=>t.name==\"Teaching\"),next=hud.GetComponentsInChildren<UnityEngine.UI.Button>(true).Count(t=>t.name==\"NextButton\"),added=PrefabUtility.GetAddedGameObjects(hud.gameObject).Count,bindings,configs,timeScale=Time.timeScale,fixedStep=Time.fixedDeltaTime,physics=Physics2D.simulationMode.ToString()});",
+  "font": "using Polarity.Views;var font=AssetDatabase.LoadAssetAtPath<Font>(\"Assets/Polarity/Fonts/NotoSansSC-Regular.otf\");var texts=Object.FindObjectOfType<HUDView>().GetComponentsInChildren<UnityEngine.UI.Text>(true);var chars=@\"usingSytem.ColcGr;PaEMdUvIpVw{/<>RfBbL[D,xO(10)]H:hzFWTkj3=4!N}&A|?$\"\"第+关极性失控指向敌人或箱子进行标记。接触传播免费；已有不被覆盖-q生命剩余次数用尽仍可移动、利，按重试首赋与改色均消耗6527暂停9慢速倍正常本完成全部卡挑战败左键橙右蓝\\空格继续只能炮弹默认负收（）物体无时递源头保留秒受伤点击“下一”六个！最后同的走位新Q'主是该目超出范围墙阻挡请模拟止法住给：异相吸再将为把推红尖刺每促三需会引备借火让带上导中也台锁定选择起以从任意组开始央它们另作掩变通路角线造害先在间综合并于\";var importer=(TrueTypeFontImporter)AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(font));return JsonConvert.SerializeObject(new{font=font.name,dynamic=font.dynamic,includeFontData=importer.includeFontData,texts=texts.Length,allBound=texts.All(t=>t.font==font),missing=string.Concat(chars.Distinct().Where(c=>!font.HasCharacter(c))),labels=texts.Select(t=>new{t.name,t.text}).ToArray()});",
+  "normalPlay": "using Object=UnityEngine.Object;using UnityEditor;using Polarity.Simulation;using Polarity.Views;using System.Threading.Tasks;using System.Linq;using Codely.Newtonsoft.Json;async Task<string> Run(){EditorApplication.isPaused=false;var w=Object.FindObjectOfType<SimulationWorld>();long before=w.CompletedStepCount;await Task.Delay(600);var h=Object.FindObjectOfType<HUDView>();return JsonConvert.SerializeObject(new{index=w.Level.CurrentLevelIndex,phase=w.State.Phase.ToString(),attempts=w.SimulationAttemptCount,steps=w.CompletedStepCount,failed=w.FailedStepCount,sampledSteps=w.CompletedStepCount-before,bound=h.IsBound,fixedStep=Time.fixedDeltaTime,scale=Time.timeScale,texts=h.GetComponentsInChildren<UnityEngine.UI.Text>(true).Where(t=>t.gameObject.activeInHierarchy).Select(t=>new{t.name,t.text}).ToArray()});}return Run();",
+  "uiChecks": {
+    "file": "UI中文-验收.json",
+    "count": 11,
+    "allPassed": true,
+    "resolution": "1280x720",
+    "checks": [
+      "Font.HasCharacter",
+      "preferredHeight <= rect.height",
+      "enabled and not culled",
+      "all rect corners within screen"
+    ]
+  },
+  "buttons": {
+    "file": "UI中文-按钮验收.json",
+    "count": 5,
+    "allPassed": true,
+    "entry": "send_raw manage_input mouse_click target=ui"
+  }
+}

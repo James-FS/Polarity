@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8979d453c3076664dba4ac64495a5977, type: 3}
   m_Name: 04-ChooseSource
   m_EditorClassIdentifier: 
-  title: Choose a Source
-  teachingHint: Choose a source in either group. Spread is FREE. The center blue
-    crate pulls signed enemies; recolor it + to release them. The other crate can
-    provide cover.
+  title: "\u9009\u62E9\u8D77\u70B9"
+  teachingHint: "\u53EF\u4EE5\u4ECE\u4EFB\u610F\u4E00\u7EC4\u654C\u4EBA\u5F00\u59CB\uFF0C\u5229\u7528\u514D\u8D39\u4F20\u64AD\u3002\u4E2D\u592E\u84DD\u8272\u7BB1\u5B50\u4F1A\u5438\u5F15\u6B63\u6781\u654C\u4EBA\uFF0C\u6539\u4E3A\u6B63\u6781\u540E\u5C06\u5B83\u4EEC\u63A8\u5F00\uFF1B\u53E6\u4E00\u4E2A\u7BB1\u5B50\u53EF\u4F5C\u63A9\u4F53\u3002"
   markBudget: 3
   roomPrefab: {fileID: 3933778399546037366, guid: 7d2a6a44528d8f74d942571547842803, type: 3}
   gameplayConfig: {fileID: 11400000, guid: 0ad59378214f18d4a97e0b35293920be, type: 2}

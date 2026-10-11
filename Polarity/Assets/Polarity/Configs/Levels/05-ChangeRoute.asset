@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8979d453c3076664dba4ac64495a5977, type: 3}
   m_Name: 05-ChangeRoute
   m_EditorClassIdentifier: 
-  title: Change the Route
-  teachingHint: Walls redirect released groups. The red corner strip hurts. Spread
-    through the enemies before recoloring the center crate. Crates stop negative
-    shots.
+  title: "\u6539\u53D8\u901A\u8DEF"
+  teachingHint: "\u5899\u89D2\u4F1A\u6539\u53D8\u88AB\u63A8\u5F00\u7684\u654C\u4EBA\u8DEF\u7EBF\uFF0C\u7EA2\u8272\u5C16\u523A\u4F1A\u9020\u6210\u4F24\u5BB3\u3002\u5148\u5728\u654C\u4EBA\u95F4\u4F20\u64AD\uFF0C\u518D\u6539\u8272\u4E2D\u592E\u7BB1\u5B50\uFF1B\u7BB1\u5B50\u4E5F\u80FD\u6321\u4F4F\u8D1F\u6781\u70AE\u5F39\u3002"
   markBudget: 3
   roomPrefab: {fileID: 7258891664536530753, guid: f4517ab9f04148e47be5b6e8f7f574fe, type: 3}
   gameplayConfig: {fileID: 11400000, guid: 0ad59378214f18d4a97e0b35293920be, type: 2}

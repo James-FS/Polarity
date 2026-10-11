@@ -53,12 +53,12 @@ namespace Polarity.Views
             subscribedWorld = world;
             state = world.State;
             health = world.PlayerHealth;
-            if (levelText!=null) levelText.text=world.Level.CurrentDefinition!=null ? $"ROOM {world.Level.CurrentLevelIndex+1} / {world.Level.LevelCount}  |  {world.Level.CurrentDefinition.Title}" : "POLARITY";
+            if (levelText!=null) levelText.text=world.Level.CurrentDefinition!=null ? $"第 {world.Level.CurrentLevelIndex+1} / {world.Level.LevelCount} 关  |  {world.Level.CurrentDefinition.Title}" : "极性失控";
             if (teachingText!=null) teachingText.text=world.Level.CurrentDefinition?.TeachingHint ?? "";
             RefreshCounters();
             RefreshPhase(state.Phase);
-            markFeedbackText.text = world.LastMarkResult.HasValue ? Describe(world.LastMarkResult.Value) : "Point at an enemy or crate to mark it.";
-            propagationText.text = world.LastPropagation.HasValue ? Describe(world.LastPropagation.Value) : "CONTACT SPREAD  /  Free; existing polarity stays.";
+            markFeedbackText.text = world.LastMarkResult.HasValue ? Describe(world.LastMarkResult.Value) : "指向敌人或箱子进行标记。";
+            propagationText.text = world.LastPropagation.HasValue ? Describe(world.LastPropagation.Value) : "接触传播  /  免费；已有极性不被覆盖。";
             state.PhaseChanged += RefreshPhase;
             state.MarksChanged += OnCounterChanged;
             state.EnemyCountChanged += OnCounterChanged;
@@ -105,10 +105,10 @@ namespace Polarity.Views
         private void OnCounterChanged(int value) => RefreshCounters();
         private void RefreshCounters()
         {
-            healthText.text = $"LIFE  {health.CurrentHealth} / {health.MaxHealth}";
-            enemiesText.text = $"ENEMIES  {state.ActiveEnemyCount}";
-            marksText.text = $"MARKS  {state.RemainingMarks} / {state.MarkBudget}";
-            budgetHintText.text = state.RemainingMarks == 0 ? "No marks left. You can still move, use contact spread, or press R to retry." : "First mark and recolor each use 1 mark. Contact spread is free.";
+            healthText.text = $"生命  {health.CurrentHealth} / {health.MaxHealth}";
+            enemiesText.text = $"剩余敌人  {state.ActiveEnemyCount}";
+            marksText.text = $"标记次数  {state.RemainingMarks} / {state.MarkBudget}";
+            budgetHintText.text = state.RemainingMarks == 0 ? "标记次数已用尽。仍可移动、利用接触传播，或按 R 重试。" : "首次赋极与改色均消耗 1 次标记；接触传播免费。";
         }
         private void OnMark(MarkResult result)
         {
@@ -125,7 +125,7 @@ namespace Polarity.Views
         }
         private void OnSpeed(float value)
         {
-            speedText.text = state.Phase == LevelPhase.Paused ? "PAUSED" : state.Phase == LevelPhase.Running && value < .99f ? $"SLOW  {value:0.0}x" : "NORMAL  1.0x";
+            speedText.text = state.Phase == LevelPhase.Paused ? "已暂停" : state.Phase == LevelPhase.Running && value < .99f ? $"慢速  {value:0.0} 倍" : "正常  1.0 倍";
         }
         private void RefreshPhase(LevelPhase phase)
         {
@@ -135,8 +135,8 @@ namespace Polarity.Views
             resumeButton.gameObject.SetActive(paused);
             if (nextButton!=null) nextButton.gameObject.SetActive(phase==LevelPhase.Won && world.Level.HasNextLevel);
             pauseButton.interactable = phase == LevelPhase.Running;
-            modalTitle.text = paused ? "PAUSED" : phase == LevelPhase.Won ? (world.Level.HasNextLevel ? "ROOM CLEARED" : "ALL ROOMS CLEARED") : "PLAYER DOWN";
-            modalDescription.text = paused ? "WASD Move | Left + orange | Right - blue\nHold Space 0.3x | Esc Resume | R Retry\n\nOnly enemies and crates can be marked.\nShots: negative, no marking or spreading.\n\nCONTACT SPREAD (free)\n+ touches neutral -> both +\n- touches neutral -> both -\nExisting signs stay; source keeps its sign." : phase == LevelPhase.Won ? $"Time {world.SimulationTime:0.0}s  |  Hits {world.PlayerDamageCount}  |  Marks {state.MarkBudget-state.RemainingMarks}/{state.MarkBudget}\n\n" + (world.Level.HasNextLevel ? "Enter or Next Room to continue. R retries this room." : "All six rooms complete. R retries the final room.") : "Life depleted. Try a different mark or movement route.\n\nPress R or Retry for a fresh room.";
+            modalTitle.text = paused ? "已暂停" : phase == LevelPhase.Won ? (world.Level.HasNextLevel ? "本关完成" : "全部关卡完成") : "挑战失败";
+            modalDescription.text = paused ? "WASD 移动 | 左键 + 橙 | 右键 - 蓝\n空格慢速 0.3 倍 | Esc 继续 | R 重试\n\n只能标记敌人与箱子。炮弹默认负极，\n不能标记、传播或接收极性。\n\n接触传播（免费）\n有极性物体接触无极性物体时传递极性，\n源头保留极性；已有极性不被覆盖。" : phase == LevelPhase.Won ? $"用时 {world.SimulationTime:0.0} 秒  |  受伤 {world.PlayerDamageCount} 次  |  标记 {state.MarkBudget-state.RemainingMarks}/{state.MarkBudget}\n\n" + (world.Level.HasNextLevel ? "按 Enter 或点击“下一关”继续；按 R 重试本关。" : "六个关卡全部完成！按 R 可重试最后一关。") : "生命已耗尽。试试不同的标记或走位。\n\n按 R 或点击“重试”，重新挑战本关。";
             OnSpeed(world.CurrentTimeScale);
         }
         // Query this frame's position, independent of EventSystem.Update ordering.
@@ -151,21 +151,21 @@ namespace Polarity.Views
             return uiHits.Count > 0;
         }
         private static string Describe(PropagationResult result)
-            => $"CONTACT SPREAD  {result.SourceId} -> {result.TargetId}  {(result.Polarity == Polarity.Model.Polarity.Positive ? "+" : "-")}  /  FREE";
+            => $"接触传播  {result.SourceId} -> {result.TargetId}  {(result.Polarity == Polarity.Model.Polarity.Positive ? "+" : "-")}  /  免费";
         private static string Describe(MarkResult result)
         {
             string sign = result.Request.Polarity == Polarity.Model.Polarity.Positive ? "+" : "-";
             switch (result.Outcome)
             {
-                case MarkOutcome.Applied: return $"MANUAL MARK  {result.Request.TargetId}  {sign}  /  Used 1 mark";
-                case MarkOutcome.Unchanged: return "Already this polarity. No mark used.";
-                case MarkOutcome.TooFar: return "Out of marking range. No mark used.";
-                case MarkOutcome.WallBlocked: return "Wall blocks marking. No mark used.";
-                case MarkOutcome.BudgetEmpty: return "No marks remaining. You can still move or retry.";
-                case MarkOutcome.InvalidTarget: return "Point at an enemy or crate. No mark used.";
-                case MarkOutcome.NotMarkable: return "Only enemies and crates can be marked. No mark used.";
-                case MarkOutcome.NotRunning: return "Simulation is stopped. No mark used.";
-                default: return "Mark unavailable. No mark used.";
+                case MarkOutcome.Applied: return $"主动标记  {result.Request.TargetId}  {sign}  /  消耗 1 次";
+                case MarkOutcome.Unchanged: return "已是该极性，不消耗次数。";
+                case MarkOutcome.TooFar: return "目标超出标记范围，不消耗次数。";
+                case MarkOutcome.WallBlocked: return "墙体阻挡标记，不消耗次数。";
+                case MarkOutcome.BudgetEmpty: return "标记次数已用尽，仍可移动或重试。";
+                case MarkOutcome.InvalidTarget: return "请指向敌人或箱子，不消耗次数。";
+                case MarkOutcome.NotMarkable: return "只能标记敌人与箱子，不消耗次数。";
+                case MarkOutcome.NotRunning: return "模拟已停止，不消耗次数。";
+                default: return "暂时无法标记，不消耗次数。";
             }
         }
     }
