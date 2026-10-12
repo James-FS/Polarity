@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "message": "Command executed successfully",
+  "data": {
+    "success": true,
+    "message": "Retrieved editor state.",
+    "data": {
+      "isPlaying": false,
+      "isPaused": false,
+      "isCompiling": false,
+      "isUpdating": false,
+      "applicationPath": "C:/Program Files/Tuanjie/Hub/Editor/2022.3.62t13/Editor/Tuanjie.exe",
+      "applicationContentsPath": "C:/Program Files/Tuanjie/Hub/Editor/2022.3.62t13/Editor/Data",
+      "timeSinceStartup": 28852.3869438
+    },
+    "state": {
+      "editor": {
+        "playMode": "stopped",
+        "focusedWindow": "GameView",
+        "requiresFocusForOperations": false,
+        "isCompiling": false,
+        "isUpdating": false,
+        "lastCompilation": {
+          "status": "idle"
+        },
+        "timeSinceStartup": 28852.38
+      },
+      "project": {
+        "srp": "builtin",
+        "defineSymbols": [],
+        "packages": [],
+        "dirty": false
+      },
+      "scene": {
+        "activeScenePath": "Assets/Polarity/Scenes/Game.scene",
+        "dirty": false,
+        "hasNavMeshData": false,
+        "hasLightingData": false
+      },
+      "selection": {
+        "activeObject": null
+      },
+      "console": {
+        "unreadCount": 0,
+        "lastErrors": []
+      },
+      "assets": {
+        "touched": []
+      }
+    }
+  }
+}

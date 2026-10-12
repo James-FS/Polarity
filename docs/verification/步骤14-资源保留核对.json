@@ -1,0 +1,17 @@
+{
+  "baseline": "dadf542c9ddee2ff1aa76c8a08288be18bd2a60c",
+  "checked": 623,
+  "unchanged": 621,
+  "changed": [
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/02-Contact.asset",
+      "before": "777B1DE159D121DD8E246BC1265DDBA042164BB82BD4B5D6FBBCF8F9195C0182",
+      "after": "CFD2688C04E22AA40EB0BE471DB1E33B984CD5DF37F41F8FDABAB4F7E99BE7FB"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/02-Contact.prefab",
+      "before": "241A708535FBCA7B9E36C8845E0448B06ECC394CD918F35EC25FBCDCF089F9B7",
+      "after": "BA173CEA57642D7A9D3085E5625FE2EF86110E5FD0F4F12EC30DF826C83351DF"
+    }
+  ]
+}
