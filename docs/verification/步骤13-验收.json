@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-12",
+  "step": 13,
+  "status": "已完成",
+  "layoutVersion": "01-whitebox-v1",
+  "acceptance": {
+    "budgetClearAndMargin": true,
+    "realCrateMovementAndDamage": true,
+    "spawnAndPassage": true,
+    "alternativeInputsAndLifecycle": true
+  },
+  "formalRecordedRuns": {
+    "total": 31,
+    "won": 27,
+    "lost": 4
+  },
+  "manualChecks": {
+    "edges": "10/10",
+    "flow": "9/9",
+    "selection": "6/6"
+  },
+  "actualFixedUpdate": [
+    {
+      "name": "normal",
+      "phase": "Won",
+      "steps": 317,
+      "failed": 0,
+      "hp": 3,
+      "simulationTime": 6.339999858289957
+    },
+    {
+      "name": "slow",
+      "phase": "Won",
+      "steps": 317,
+      "failed": 0,
+      "hp": 3,
+      "simulationTime": 6.339999858289957,
+      "realSeconds": 21.13303
+    }
+  ],
+  "final": {
+    "playing": false,
+    "dirty": false,
+    "missing": 0,
+    "bindings": true
+  },
+  "nextStep": 14,
+  "limits": [
+    "1280x720 local editor only",
+    "No external blind test or standalone build",
+    "Timing and destination perturbations are tested points, not continuous guaranteed intervals",
+    "Slow screenshot was black; runtime validation uses real step and damage logs"
+  ]
+}
