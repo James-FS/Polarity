@@ -1,0 +1,2491 @@
+{
+  "head": "35d0166aae292709d96fbd0099d64ce8421c3a20",
+  "initialStatus": "?? Polarity/.codex/",
+  "files": [
+    {
+      "path": "Polarity/Assets/Polarity.meta",
+      "sha256": "A5CE3EF66A1D0CF8846985F78E98762BB23FA89EA5A12EC8AD41D3F334264858"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Art.meta",
+      "sha256": "9125F7DC1266EE831A6FAD04B5ECC03569588CEF1D29A8F8F69B2091FF195EE8"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Art/TurretWarning.mat",
+      "sha256": "7C52BDF46DAC3EDADDD4CF8DC86A3727834B96FD8E058A6A43B54E8AE680E40A"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Art/TurretWarning.mat.meta",
+      "sha256": "FCE717CCF8987E5306F430396CCC8C1C90D0F0B299F916EF014666607C33B5DD"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Art/WhiteCircle.png",
+      "sha256": "1E33C6BB61AE7FCC8BA332FBE8B0AE8B2414959E82F36FBDDB719A2A00AC83C0"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Art/WhiteCircle.png.meta",
+      "sha256": "BECB02DD1BBED610F6CA2CD426C7E8C822C9913E8B1795289F9406465D3C789B"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Art/WhiteSquare.png",
+      "sha256": "43A9B706D381F0C01344DA0D47446F344DED477F5F8A565E6CCAE0AED17160CF"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Art/WhiteSquare.png.meta",
+      "sha256": "11DF112A94E70E218CBCFC24A821C1AD74AA40AA497319F66CBD3DEDF2D33DBA"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Art/WhiteboxRightFace.png",
+      "sha256": "3FF779A4D9B9B332239A9DE665EF100197FF4002A2FDBD40E191B8AA9B87439B"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Art/WhiteboxRightFace.png.meta",
+      "sha256": "BA8393591AEC51D55EA82FFE824F46B182FB6EF8F71D46E7FD6005B5D4E761A4"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Art/WhiteboxTopFace.png",
+      "sha256": "A6796DA7D68960B132F970A47296B6EB3607B08ED69BA7A4915A7E718606BB02"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Art/WhiteboxTopFace.png.meta",
+      "sha256": "D80B80D5EFC511A77D55DBE5B3E85B2D3E7B194DAE1F3E37CB04EC41994B75F6"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Audio.meta",
+      "sha256": "A5615FF3F73303D876AA8F71FBD481B472FE1AE5469B2A1B06FA45231C54D243"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Audio/.gitkeep",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs.meta",
+      "sha256": "EDF9D93D4BA73C9800C843A239E603417E679ED634C1E153C06B2BC43481FFE4"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/GameplayConfig.asset",
+      "sha256": "E93BDB2C2E4E7707F348535DDA53BDD22967BDB1BC959142EEC4D68020AEAB90"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/GameplayConfig.asset.meta",
+      "sha256": "BF39D25CF63FFED2FDD27E9E4797582596B5BA0D89E716BE0E78E443766509BD"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels.meta",
+      "sha256": "2D573CA974E586442892B34240F14FE20AD8E178ED9D6260447543A642934833"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/01-Polarity.asset",
+      "sha256": "E5743F705D4AB9106E6175D1A5118E184E9E1E0946E3F8A88C80490B9422D7C1"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/01-Polarity.asset.meta",
+      "sha256": "D513BB8C5BBB675074F30AD681A798B1C004EF396533FB8D8C4E5C826960EA6D"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/02-Contact.asset",
+      "sha256": "777B1DE159D121DD8E246BC1265DDBA042164BB82BD4B5D6FBBCF8F9195C0182"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/02-Contact.asset.meta",
+      "sha256": "61BAAE292F824FCF54465F0E7E61CEC27E986547870907C928B2E43D952DA308"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/03-BorrowFire.asset",
+      "sha256": "573426B4407A1C9F7CC7B19875D090C0295385CEE3657FEE0AE290475DD1664B"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/03-BorrowFire.asset.meta",
+      "sha256": "1C3E3F1F50888AC3D9C54588212653D5ECF036DC43B4D972B6A4BDEBDFD17DEA"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/04-ChooseSource.asset",
+      "sha256": "A526A567729C321F28D7F5FB084D95B2F705508C2EA6CED11E6FE2FEE8791983"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/04-ChooseSource.asset.meta",
+      "sha256": "E4E904CB202B01AF82CEDF81F0B3399DAA9DEFD708506B10660A33E00D0BAAD9"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/05-ChangeRoute.asset",
+      "sha256": "8DB73F58E5971B89544C4525BBA90C1A6D753F4DAD6A64B11A50CFFB2714CADE"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/05-ChangeRoute.asset.meta",
+      "sha256": "C3CB7E84FF594FBB0BE87E09797E18B7511862AF84F6C504659C2DE5CCC71485"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/06-Unleashed.asset",
+      "sha256": "A1A56BB2B4D7DC0EF4DE380E1B00FBF262216D6FFD1B637B49C85E861C0C67C5"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/06-Unleashed.asset.meta",
+      "sha256": "8175F55BA8AFA1FD77E5304AFDF2CE43022FAF4F1AAFFFD5C98D8A3487AD3D80"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/AdvancedGameplayConfig.asset",
+      "sha256": "8559F880A0B0CC6097B30078C982210E2D2E421F900C290EBBEC727882817263"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/Levels/AdvancedGameplayConfig.asset.meta",
+      "sha256": "5C45DF41E7E608A81C74DC00CD20F1856C3A5229C1CC3FFE631E23E2CAC94BFF"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/WhiteboxPhysics.physicsMaterial2D",
+      "sha256": "96C7DA54DD2870757F588E979D06D18F746F4D98673A0932AD546BC1CBBA6922"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Configs/WhiteboxPhysics.physicsMaterial2D.meta",
+      "sha256": "C6684B0831F124EA5A33F574ECEB2EDB89014C02F692972328E838FFBE0713C6"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Fonts.meta",
+      "sha256": "825B0D34A65FAEF9CD08B4D079DD4353C2E5A69E305FCE37A7C598E83F7E04F7"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Fonts/LICENSE.txt",
+      "sha256": "6A73F9541C2DE74158C0E7CF6B0A58EF774F5A780BF191F2D7EC9CC53EFE2BF2"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Fonts/LICENSE.txt.meta",
+      "sha256": "77BE912C322F7110116F47A94FF55B34DE06CF4269DA390C0EF15D9E6E2ABAD8"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Fonts/NotoSansSC-Regular.otf",
+      "sha256": "FAA6C9DF652116DDE789D351359F3D7E5D2285A2B2A1F04A2D7244DF706D5EA9"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Fonts/NotoSansSC-Regular.otf.meta",
+      "sha256": "5888EB1D4F2A24E6E4AFEB89379ECEC2D5BD25696CE8BE8EB09CCBA4F1F9C43F"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Fonts/README.md",
+      "sha256": "CB1507FB83D9872E005B16C6860485A7D9374AC882D1D174B807D152D7F930D0"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Fonts/README.md.meta",
+      "sha256": "DFBB429956780DA9124F36EB2D8925A806CEDE92043316BB77B1A62C773395AE"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs.meta",
+      "sha256": "5CFDD5CA716BFA3D3B58B4B44E297C2B27D82CE11E4FF6D1D273B38BED79B9CB"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors.meta",
+      "sha256": "0BA8AFD6C71AC0B11B45AEDA3DB6E0A7025A867449FD01E2ACB4DF2BB6DB1DE8"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Crate.prefab",
+      "sha256": "1CA273D67D7A3E742B91C7824EAC33A6A8D738E3A34AAFEB546AF173FAE806B0"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Crate.prefab.meta",
+      "sha256": "E34AC57928D64C51BD237DC7DF3D374F1AAB024D9FDC5EE63AC50D49D2893B9A"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+      "sha256": "FC7FA8EBFE553B603C7224B34D8C5432997D95360A8B641C3ACA7B57C59FDB79"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Enemy.prefab.meta",
+      "sha256": "8D331A7CA66A9A6056C4407237B795772B4CBC7B48588D6D803930AA42F16B30"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Player.prefab",
+      "sha256": "155ED71770269CC649C30AF39CD1627F6234E939228499338186D8F12FF22F14"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Player.prefab.meta",
+      "sha256": "39F1FAEE07A3949BEBBC9F610DC95CF93457AFC6022FF6C1B267B6FCF7187392"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Projectile.prefab",
+      "sha256": "F1FC121F0C65AB269D869A6FD744FDDC4C247869D56B4DD933B1F3C5CB137C17"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Projectile.prefab.meta",
+      "sha256": "111CF8A4B4D02D47189A868EDDB1AB6F839D34DF29557CB0061FDF724D695225"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Turret.prefab",
+      "sha256": "54ED5EF8AC518FA706E8CCC70D0A0DB2BCC29AF2759571704A84140BAB92D97D"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Actors/Turret.prefab.meta",
+      "sha256": "8E9181596FB999244D39B05F6B206BCF2351CF7E79AFCBB813D401470DF64721"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels.meta",
+      "sha256": "5496D5B9EA6B42F10C1990E84BFF144BA92CE886DD9C66B0C944C502641A5EAE"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/.gitkeep",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/01-Polarity.prefab",
+      "sha256": "907128FF746F48F2B323C35E2C08D130B0ADFA91BD7DD45FFE9BA5D08EEB9685"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/01-Polarity.prefab.meta",
+      "sha256": "A50EE3B6E5C043E6A4DFAB4088E2DB8267EB89CB2C442EF45583DA60273FCD0C"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/02-Contact.prefab",
+      "sha256": "241A708535FBCA7B9E36C8845E0448B06ECC394CD918F35EC25FBCDCF089F9B7"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/02-Contact.prefab.meta",
+      "sha256": "829952E8DF6078EB75434B065712381E1F0A2E2C388FC558A9146EFED6E82BDC"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/03-BorrowFire.prefab",
+      "sha256": "0784A654B2D306A94322E0B73E75F08888D689AE84B754C6E769D23878A40B9B"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/03-BorrowFire.prefab.meta",
+      "sha256": "93617C3BC235073B30AD33D7561D4FCDB7A4322F81D64601FDB634AAF377B6C0"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/04-ChooseSource.prefab",
+      "sha256": "F29C9BCF66BE12BF626C82590AEE392F41D917328E417BD47BB618D24D07ED18"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/04-ChooseSource.prefab.meta",
+      "sha256": "CAD1ABF83103AC376A6A7577D41021D298850E8D0EF8C060142034DBD2253D8E"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/05-ChangeRoute.prefab",
+      "sha256": "1C4BD18D30ED1D4E559C123DBCD26CB417928A5E5CFF39935A3EAA285E557CF7"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/05-ChangeRoute.prefab.meta",
+      "sha256": "4DC2BDE0A95E82E3ED634C6646D19077B6FAB3FB6CF8CCA764F42964AD5A7E36"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/06-Unleashed.prefab",
+      "sha256": "23A62DA5435266B8D5D6BB357B0FA40310EC90579BC13441C56C114FA585653B"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/Levels/06-Unleashed.prefab.meta",
+      "sha256": "423097BFACFD94A05B5FBA872D381153795752F4DCC6EBF49113B65BD369C22A"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/UI.meta",
+      "sha256": "6990A440452552A02704AEE66D00CA43A98CB901EF7C4CBA9F56DAB9DA227DB1"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/UI/.gitkeep",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/UI/HUD.prefab",
+      "sha256": "07F15B412159F4713C54B3285B2B2282547090B2F78DD39243326045251E9E39"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Prefabs/UI/HUD.prefab.meta",
+      "sha256": "9FDADEF0ED0030AC3DD508025BCE1CC37D71852F051D34A9B817E7484654D01C"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scenes.meta",
+      "sha256": "E00E9160E4D137109B9B85B65C029C8207604D3CAB6445FDE8B8AF2596835354"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scenes/Game.scene",
+      "sha256": "3A7D0B71B3131EC7E789DC82E6DF42D7BC83FF1EFF0FF44FD3F085C127DAE583"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scenes/Game.scene.meta",
+      "sha256": "6DFDFF8F2B7E8FBEA3FECC0CC4B1FBA13D5EA147EADBFD2A285D93E90975EAA8"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts.meta",
+      "sha256": "E5F31009EF96F31EC1329B35B24EB39191FD00B3A1DDDDC0719188F9894CF5FE"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Config.meta",
+      "sha256": "51929DB977411040E877987D01E74084AB21B46DBED58B55EE51707EB6EA59A3"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Config/.gitkeep",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Config/GameplayConfig.cs",
+      "sha256": "8244B63A94854B1C47A48D44E0A176991FA412E58CA884A2749419FA39573170"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Config/GameplayConfig.cs.meta",
+      "sha256": "A3DB21C69BFE3D9C4D85F949D0DC96C80185D05FA04BC9B34446C65ED712014E"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Config/LevelDefinition.cs",
+      "sha256": "2835B0DE1122B20D989F8C192C93AAE7B47796ED9504F3825F477A1BA3DB2EBC"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Config/LevelDefinition.cs.meta",
+      "sha256": "679F790DF39FF03FF1ABCFEEFB4121CC4513FFCCCBC60A745DB961006826AE99"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Controllers.meta",
+      "sha256": "B5E62769EF477B742958A5F6EB31625C95A8C2D22108D7FEED82E5D63583DC66"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Controllers/.gitkeep",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Controllers/LevelController.cs",
+      "sha256": "A7A50AF3041C4727CB56D28169866852CE16CBE60CE0C7408A6A364FBB51BB61"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Controllers/LevelController.cs.meta",
+      "sha256": "355C71B2E1BCF9D9DA0300CC4A6CBDCCFB0775081BB116A4819788D923100870"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Controllers/MarkingController.cs",
+      "sha256": "B92AABFF95FC8CC9249CF278FDF2E9B88AB08F3CD499051E0CB63275529966C1"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Controllers/MarkingController.cs.meta",
+      "sha256": "596ABE483F26C63916B7E5D3DF7127F0A043BD93B5D2840AB5B5DB143A91AB27"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Controllers/PlayerController.cs",
+      "sha256": "1D8E9208CFB3B8002458127775E05FD1D4870513647AB4CF640E4CF1FBE21441"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Controllers/PlayerController.cs.meta",
+      "sha256": "318886E9C131A57583CE235EDB2A97744903FF75C5A2EA82E7DD4E2A0043C406"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Debugging.meta",
+      "sha256": "32AD6517CCDD22F27B8B4DB1A28038E187B2450E4BA561F1ADEBE86EA43A03B6"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Debugging/GMManager.cs",
+      "sha256": "3A2A5F41903CD07B501162A3BE8A66644A132577199A0255F5A66958C00F34BA"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Debugging/GMManager.cs.meta",
+      "sha256": "830ADD3715147B25D7E69D1F18D7CB8BB8A56D42352B91616984D3BC696DA3FA"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Debugging/GMView.cs",
+      "sha256": "D15F923FD8AAC902C0BA3EFCF7AC4ADA2565CBA84C85E144151D936D84C51FFD"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Debugging/GMView.cs.meta",
+      "sha256": "AD889B60382E3E07AC004D2AF739E2E303A44FFC49683FD629423EF25F2CEDCC"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities.meta",
+      "sha256": "FCCA01CB48B48D9005DAC8862D508BC3E765BB35DBC3812E2D592AE63AEBA646"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/.gitkeep",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/ContactRecorder.cs",
+      "sha256": "6E8DFA6948F9BF97E953312D6AA1030500471AE5050BD0338F4DA3F47EDB40DA"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/ContactRecorder.cs.meta",
+      "sha256": "0EBDE23E632F7429F9CA8D650B5567E07C9C3AADA50DCC9B049081E2A0E84663"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/EnemyMotor.cs",
+      "sha256": "15C9BAC57DA7D8DC341B400948F0D1B5EA27441C96E0FF7B1BE7D507CD00F578"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/EnemyMotor.cs.meta",
+      "sha256": "C2544377FE254B5EDA69E139268B79D121F33A537A21519E10B35B80D5D6C0D7"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/Health.cs",
+      "sha256": "EC78089731D60B153987DA843A9CC732BD7398B4C50049C500810470C0424E4B"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/Health.cs.meta",
+      "sha256": "E32FA9B7A73CF11ECB7D78DC81D16A9858E4F06572A0D0E84773BAC884E2C067"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/LevelRoom.cs",
+      "sha256": "5CB4F0186449566788A35EE96EC9BD8BB96EB6F4D695C6F495DDDB24F119B9C9"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/LevelRoom.cs.meta",
+      "sha256": "8D7DBAAE2218273797D13257C209276C7F4CB14C1E7387355077939E70C8DC93"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/PolarityBody.cs",
+      "sha256": "FA9A7A1D60AEBB58E2E65F28BD60EB47A5209E2CAD4D7377E324886259D82C50"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/PolarityBody.cs.meta",
+      "sha256": "21300DA238315A3425ABD90E5A59C9048ACB671FCF4236A71FB0B4F61D2473E7"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/Projectile.cs",
+      "sha256": "3E92846F2E15666D7C62B25FF7223B63B98303AA675FC51352ED4ADBFD9F29E5"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/Projectile.cs.meta",
+      "sha256": "11A1E79506177EA2C6955E6EE75091A69D3177F556ABDBE5DD0392A370A4BBD6"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/SpikeHazard.cs",
+      "sha256": "405FBA6ECAFD4CE6B0EAEC4EAE98F84EAC1E1EE95AA0C015490A9F22D60F23E2"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/SpikeHazard.cs.meta",
+      "sha256": "C7102468727947E05E3B3BD29B511E5ECDE86AB92FAF9F0E34647CE17D483A45"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/Turret.cs",
+      "sha256": "4567BC69E10CF0584646C0BBF010904B3318AA9EBF3264371EE7BDA0AB032D94"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Entities/Turret.cs.meta",
+      "sha256": "8EFC7A4F6175C1A5314C248843D3670C647ED6A3D609CA38279113D39A0C5E7A"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model.meta",
+      "sha256": "AAAC17E7A369AB1ED5435342A4CA36158EAD8442E52FCD5F050B795663D3AC14"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model/.gitkeep",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model/ContactData.cs",
+      "sha256": "D788F2D015D560EDF2B68A94DB411DF612BD91DD56E5037BF3E6D68744AF020D"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model/ContactData.cs.meta",
+      "sha256": "B08497298965D18B09643BB30822D48AF202DFF5735CACF35EFADE4E4F528958"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model/DamageData.cs",
+      "sha256": "CAD9960EEA376029DA1854F00CEA7990E94A67E43CD8ACB7C9C89048E6DDF0DF"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model/DamageData.cs.meta",
+      "sha256": "875E260222C20E2FBF278324E57E87290E8A204C9EA4621D8E5128487C2478B7"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model/LevelPhase.cs",
+      "sha256": "D519B5F3AA756DB5E0DEF578C586D721FA519E658266AB83FA05CD69CA02AA0D"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model/LevelPhase.cs.meta",
+      "sha256": "D925DC6F520667A2BFF8E55D0C7768BB9D5DBE720A8E520EC33C3A6EC69E2899"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model/LevelState.cs",
+      "sha256": "C6B0446B5C5B00FFF34B34D8C29C44B3041E9ABB5CB9631748FE168F820D6257"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model/LevelState.cs.meta",
+      "sha256": "9DF2AC8D4DC18EC23BE22BD54BE17549EB07AF35B8A7094C9462631921BBE727"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model/MarkRequest.cs",
+      "sha256": "AC239CD54825E6006CC9155403BB8C0AC86D17DE6B4E7AA415798B0B5E353CD5"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model/MarkRequest.cs.meta",
+      "sha256": "4135C3B8BD64BCDEF4419A87B13805D998966C476FFDE5C28DAA94C1EA0E47B5"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model/Polarity.cs",
+      "sha256": "EE6B01322A895FC08C9E924DDF8E2ABAD8B7650AEF7D811211C542AF96FED599"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Model/Polarity.cs.meta",
+      "sha256": "140FB48EACF3B036CFB9A83FD2CD9762791A35E55428C285C05B012994968D75"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation.meta",
+      "sha256": "9ADFBDE31C521C74F714DA9F5B2274F25B6838384CA3F47256959C92E4BC7A98"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/.gitkeep",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/ContactCollection.cs",
+      "sha256": "8D5917C481471337A0ED835905971DFA2504EBD0424658917246694A2F77D999"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/ContactCollection.cs.meta",
+      "sha256": "20CF5A8DEA8DDC6FB0CF23E89DF7E11E525FF8B5E096850F7078B8155924E980"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/DamageCollection.cs",
+      "sha256": "C6847B82EAA32A6B51A69B6EA3EC027DC901AD134ACED7946987609273D864ED"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/DamageCollection.cs.meta",
+      "sha256": "150C102FD8170C661191D8493C0B094E71646A644E3E5E17B989474439D98FC0"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/DamageSystem.cs",
+      "sha256": "1B3387187707362BB6770943010463674A8FB1C618019DC256601EBD397A27B8"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/DamageSystem.cs.meta",
+      "sha256": "CE2A71D1354943EC4DA5AE2C3DA1995EE8C469643B0323BB07A71AA224A2473E"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/MagnetismSystem.cs",
+      "sha256": "676469F5B27F24F661BABEEEA2379DA01659A6F2E1DB7AF46757C185AD9E0F36"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/MagnetismSystem.cs.meta",
+      "sha256": "1DA45813C1EB96DECFA446380AEB6AC7FA23E56167B549C93DC8E9213BB9D8BE"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/ProjectileCollection.cs",
+      "sha256": "D2D7401ED88665A809252CFF583A1DE940B0BE48FA7D9CD1D9F304AE797840D8"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/ProjectileCollection.cs.meta",
+      "sha256": "0DED0A50AB4BD16320C389C276C2C6B4009F0D7F307D14EC198C6A39F42AC15C"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/PropagationSystem.cs",
+      "sha256": "6554C91CDB9D5401981AF6EAD4EF15A6E492EA3B4065E5B67586ABF05E69B50F"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/PropagationSystem.cs.meta",
+      "sha256": "2FE814E64BB409980346EE2502C52B4185744D889388B8FF5478923C1CE43555"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/SimulationWorld.cs",
+      "sha256": "6CEE81109FB3FD5632142CDC01D3D5341D9D1F2BCD7BACE94F62A134A9944791"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Simulation/SimulationWorld.cs.meta",
+      "sha256": "7EF63FA5256DE4DDBBA7DBB7D917E59ECAE6A92F9135BDA0EC5D7B2F6A048216"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Views.meta",
+      "sha256": "6FF0A3BFB2897D622331188AA5AB8AAC381B05944548A60B122CE07C4BAE561F"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Views/HUDView.cs",
+      "sha256": "444862A90A76D71151862BA3001880576A8B100FC70F25E11A66F3BE6963431A"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Views/HUDView.cs.meta",
+      "sha256": "C025C0658956B5303B038DBACA257D6E5972007967202680A00F3AFF3F070EE2"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Views/MarkingDebugView.cs",
+      "sha256": "C74C5A04E96982F91F42284BCF127D83ABB659B07BC0A23F0F1E15C6839D7D4B"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Views/MarkingDebugView.cs.meta",
+      "sha256": "4E2A53997D76FC94584274464A9B253E312EE45DE80E79F6D92137E1CECA4837"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Views/PolarityView.cs",
+      "sha256": "E8C193E717196A6893741550E1B6B085E6097480A587380E0344796BAD038970"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Views/PolarityView.cs.meta",
+      "sha256": "66505F77FE051DC6144DC8A517EE2F50F74AECB6AEE21A28A03F54B9DBC7C311"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Views/TurretView.cs",
+      "sha256": "84A408F7ABBAE7817F66892EB132015D68688B3BC755705CEDBB4E6C27E37507"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Views/TurretView.cs.meta",
+      "sha256": "6F4E1BD0A5F2F2A28A536454E2337AED91C2011BC6607B0E1B7C24B38974AD9C"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Views/YSortView.cs",
+      "sha256": "9969B4A315DF54696682B0417A27F918595CBF417B8DF40E93BA16E569E51E2C"
+    },
+    {
+      "path": "Polarity/Assets/Polarity/Scripts/Views/YSortView.cs.meta",
+      "sha256": "A00CEDB5A8CF83143519D5DF64C89DDD40A3197C5CEA0987074F251A6390A78C"
+    },
+    {
+      "path": "Polarity/Assets/Scenes.meta",
+      "sha256": "D5C9DB793682D229A0D8A73FBCCA5AB1A93FD4243ECDB13269A3D3138EF19EAA"
+    },
+    {
+      "path": "Polarity/Assets/Scenes/SampleScene.scene",
+      "sha256": "120D00BE434B5573219B19E566EB41A3D0EFC88F0D1C78DBB5A20E4D9419BDF2"
+    },
+    {
+      "path": "Polarity/Assets/Scenes/SampleScene.scene.meta",
+      "sha256": "E7391FF924B7DEFDF30E0B0B235F8113618481C93F567E0C699C8895A9534579"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/.gitattributes",
+      "sha256": "E9129C6885604F190ACA336AFD1BE6DF70446A21963DFE9CDDCD7978AA7DF70C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/CHANGELOG.md",
+      "sha256": "32705BDC67B0FD4A4EEFF30A6B2FD7DF6EFEC0C4ED38C072A133EC8924D217E8"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/CHANGELOG.md.meta",
+      "sha256": "6441288BD8557211558ADB7B476D65D34E7D692FD15F1BB1AA2A1C0EC221BAD8"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor.meta",
+      "sha256": "8DF86D229D2C24F9597DA8200FFED273359433CD29023340F0B67BA32B4286EB"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge.meta",
+      "sha256": "1D5ED2B3EB79F42E7E3267F01EE1815CB1479E31C64E03913EF7C842A75B671B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/AssemblyInfo.cs",
+      "sha256": "DAB0102304531B109A4C5AEFAD53FC624354ABA6B114C9D2D1360213558B3B4C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/AssemblyInfo.cs.meta",
+      "sha256": "281E1ECC3C9CF8A771BD45FD179B4CA3935B88FAE038314B0A36B3B8C69457DC"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers.meta",
+      "sha256": "AB0FAAD5DE2AE3C1DBE3584F11D0C9EDEA8F65C3A3854FF5FFA8D906A9D12A4E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/ActionRouter.cs",
+      "sha256": "728AEE41AB908EA1D171D2ACB046C0567BC650E201C6E7A69AC8F81080B517CE"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/ActionRouter.cs.meta",
+      "sha256": "E7191158A76A4CBC2A02E8F1E9D32E9FC8D9F97F1BB6FC99DB3298C6903D5F14"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/AssetListeningGuard.cs",
+      "sha256": "C214FF0FDBBD43FBBF137029B53939F5EAB377D3AEBF112C8CEECA892EA4F201"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/AssetListeningGuard.cs.meta",
+      "sha256": "F30113BF8860703E7B4FE7510F16BE5251B008DF9576827A2DE26B4B2DA8613E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/AsyncTaskRunner.cs",
+      "sha256": "AAF20EA6E3B7830B985B6044D1D7C8FEBAB9E22FE753E68A3B4897D86DDC82B4"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/AsyncTaskRunner.cs.meta",
+      "sha256": "2D1BB2DBC6E4884CA00AF18043B65D1485B1C6B292BE9DC75AFD11802DD00E61"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/BackgroundCommandPump.cs",
+      "sha256": "7F3929D3FFE859C4389E1E7081E790B94042150BA15501017FB412ABA0E4FB56"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/BackgroundCommandPump.cs.meta",
+      "sha256": "6DEBE0D07970961FE968B1C51085C41F83A99E24A4642EE2613373540CB1A894"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/BridgeUpdateRestartPrompt.cs",
+      "sha256": "248F65A058EDF7836335F0F5B330708ED58B8D709374131784FFD8C62A77E236"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/BridgeUpdateRestartPrompt.cs.meta",
+      "sha256": "70A59941A532FA0F50CE6B42D5400B72AF9FF61E6C120914A08542A203359DB0"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/CommandContext.cs",
+      "sha256": "509579EFBF6936CA8B122EECEA9C92F94AD25D479BA7E4462A6AF81B543CFA8E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/CommandContext.cs.meta",
+      "sha256": "9C10BA34FEEAC308E2C06ABC1E3015CE8814F5E1E64CAD1BB0F25CA0662455E2"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/CompilationHelper.cs",
+      "sha256": "DD7F9BF178B61E8A69BDA571C9ABDE7A0DDD4F2D6C6BB1856C5CC9ADB93983C9"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/CompilationHelper.cs.meta",
+      "sha256": "AC753D5786816627B2E122B857922549EA3B3A0776DC6294A34A42308D0A1EA1"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/CoroutineRunner.cs",
+      "sha256": "7FDB0BF1E2CC8F43EBDDC697D7A47393447E3640EC39C50D1D31A00A309B1130"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/CoroutineRunner.cs.meta",
+      "sha256": "0B07FAC811A8673D48D0FD7742BF1C6B03AC82FC6ABC6C5D495D5E4313F94271"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/DetachedJobs.cs",
+      "sha256": "1F8622F9CBD2489E2380559E35A53A99C20480B2B3E2D75A0AD590364AE6EB19"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/DetachedJobs.cs.meta",
+      "sha256": "C1A8FC2654178BBE49087C05DD4B89B141D660AABAC4BC6188E2FCB72D5C337A"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/DialogWatcher.cs",
+      "sha256": "BCAE0DCBB9098E46EADF89ADA24B78BBE3F1557EA919FA903C1E96392F5BC1DE"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/DialogWatcher.cs.meta",
+      "sha256": "38C2CE83D680BBA499FD83A64EB6846D87B8E8708451F0ADB68CA58B46016D37"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/EditorAutomationGuard.cs",
+      "sha256": "029E362F60BAC62F10DCD0EE8A9C45D9727AFDC55C7899D428089BE5717A0030"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/EditorAutomationGuard.cs.meta",
+      "sha256": "EB2B0A12C1643673178E8E00B78AFE6785FF132F20AF6F180BCAE2EC4513E072"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/ExecPath.cs",
+      "sha256": "ED62D1EF19CBE82D2A15156C5AAD7B664403B7A19085193D7274D44FB161D96E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/ExecPath.cs.meta",
+      "sha256": "72CF17C97916C9B90AF1297459460E42E2AB1B146C0886B8FD7F6FF1A1538127"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/GameObjectSerializer.cs",
+      "sha256": "1D5F16178F3DECB205A036625AF2FA8889567184B22309FFDA95C80842ECA786"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/GameObjectSerializer.cs.meta",
+      "sha256": "2543351C9C58449BEBC69A066DAA7D204883F2975A5C2423B3705E4096151D6B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/JobContext.cs",
+      "sha256": "B92306116BBAA7C69E04EF2EDA499F2F87BD21D565C027764F0F8D935B9E4F7A"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/JobContext.cs.meta",
+      "sha256": "262FD5C94775C5EED80EECDA302404678188A1753F0A01AB5F96B0A6676513D3"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/JobControl.cs",
+      "sha256": "A800352C77F3E5DF1489ECA3318C9DEBB2F1B195B385482A3357114A36AAD675"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/JobControl.cs.meta",
+      "sha256": "36B404B7CB71E146D1B9E5672FEA4E786438E46852C2C9B4CADAB7128A556FD5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/JobRegistry.cs",
+      "sha256": "05C6F4F343A44A38504540355BB0BC5599D55AAF32C7D4481D31189DB7A84FB5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/JobRegistry.cs.meta",
+      "sha256": "AF12F5841563EB69E151DDD60F6889B0B842228280E7467F7DC8F2AB39FAB99C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/JobRunnerBase.cs",
+      "sha256": "E3A33EC4C57B54D6FEC70DAECD70CEF3DF78BE434FFF2693429D4D87EB22FED8"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/JobRunnerBase.cs.meta",
+      "sha256": "C71FE3A27A19DD9489E9C727D7085BCE4E46F55017759137057F02BC53AFA705"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/JsonCommandHelper.cs",
+      "sha256": "8A3334BABB8C2D470286136AC1533CD1B5864AAE3F2C46484ACD84FDA1BD6EEA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/JsonCommandHelper.cs.meta",
+      "sha256": "4EEFD69F19DF148BEAA37FD8BAFA62D5D6D484D1A644A36134AFD5563BA886DA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/MacModalDialogScanner.cs",
+      "sha256": "060729E8C282EF5B3581584952C6069B694DBFD2904256ABA4B9363942213657"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/MacModalDialogScanner.cs.meta",
+      "sha256": "A898C5969946A85226A8B5CCF4165E00CFBBB870377BF93E0A79FC34F0F577D7"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/MainThreadHelper.cs",
+      "sha256": "7CA8F0C66F46E9712D94AA6F00C0D9A9EDDF27BA512AC8855E60ED6F65FDC4F8"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/MainThreadHelper.cs.meta",
+      "sha256": "BEFB7AFD46F94A5EFFA9DC93F0368188979127113A611E919D1C0E89D1A5BA1B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/ModalDialogScanner.cs",
+      "sha256": "17BD0BF512C4D6C09B7AEAE5EB090BA1A448E46D7F350EC2FFF50FD0AA287BB8"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/ModalDialogScanner.cs.meta",
+      "sha256": "640610AE23E559D3A464D823DF50A4B5E3744E7B70AC1729388A47EAC70F2AC2"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/PortManager.cs",
+      "sha256": "10D86113226EB4D4C9392E3045B08A6E22BA7C2A0F85EF4D84AC53C0895A4963"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/PortManager.cs.meta",
+      "sha256": "33E23396687F604A75AEBA3297519CA9AAB519A11690D24B13A33080397BC0AC"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/Response.cs",
+      "sha256": "DED826C3986878918E0BC2BA6F71400D75BC1C1744ED81A38A6BA0C2226B00F4"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/Response.cs.meta",
+      "sha256": "2AF1B76EB0AEBB8B5380A44EB5C91491D8F216A6E7B0961F87B24A07AE16E588"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/SelectionPayloadBuilder.cs",
+      "sha256": "B90CD0BF123AFF8C0AF1EF936DA3B68183BB0483C1645FB0ACE6F3DB43D7D953"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/SelectionPayloadBuilder.cs.meta",
+      "sha256": "A04185B0541824314D556B3BF2D8041449828B3EEF6CD6114BE7B492633A5D5D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/ServerPathResolver.cs",
+      "sha256": "948709ED5770AAC486E82571F57BA4EF8A63DF74615085CF8253C10D5165C70C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/ServerPathResolver.cs.meta",
+      "sha256": "944E8D86ED19C5F1BA40C72A620FEE99B9A128667120887D13AE3C27D9817EBA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/ShaderVariantApi.cs",
+      "sha256": "96D07A64E37A10D59EB694EDE3DFD38814DA48D20B896E5BD9EA5F4060A049BC"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/ShaderVariantApi.cs.meta",
+      "sha256": "729C56DC1A516A9FA0682C4CD5133D2E62A3B16AF9501C3D99D74EB395E52A01"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/StateComposer.cs",
+      "sha256": "78F617FD388221647556679FAAF8A0D4AEF027FA5B74EDC78629823549F60FFE"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/StateComposer.cs.meta",
+      "sha256": "2BFD2D03148F71904299880CCC3FA17C498ECDE56F3FD44B0112281603463356"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/StepJob.cs",
+      "sha256": "5ADFF18E823E6E92585D229DE212AE7F5D77966D8A7382F5CC965911002B7800"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/StepJob.cs.meta",
+      "sha256": "7F28224F7D1DDB511D3ADC00EDB18FA450FA22FBC575F965E462BF3EB22F6E35"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/StepJobRunner.cs",
+      "sha256": "F3E3039FE594E7D5A3B6F3070586E1579DF520334AF154894D90ECBF31D32264"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/StepJobRunner.cs.meta",
+      "sha256": "A19A5DB60A46EA27412901C55F22CA067C06C938D95D30F2ED9CF607EB4F54B1"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/TelemetryHelper.cs",
+      "sha256": "5F439C0F48DDB41063D8012BEB9BE25788DAE90700469D81B815658AE3D501B2"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/TelemetryHelper.cs.meta",
+      "sha256": "5DA1012293507ECF78C114E78720E3352589B631819FBFAC311B279270CD33FA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/UnityStateDirtyHook.cs",
+      "sha256": "50CADF164AB6F42911A54AA186B719AB5F4492BBE028ECB100E41C135C991EBA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/UnityStateDirtyHook.cs.meta",
+      "sha256": "55DB89074E9BB20674E7A45BECE5D59A8AF81FE4333EF8E199738DD539E56C5B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/Vector3Helper.cs",
+      "sha256": "B10D2BA9D3CAF6364BD2223B9A009B970608FCA2B6D7622F1706F932198CAA67"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/Vector3Helper.cs.meta",
+      "sha256": "2B17DF81F89BCE701727A5D0A54621B87DF21F30446A026B1CB05F424D64E790"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/Win32ModalDialogScanner.cs",
+      "sha256": "EC89AEA73E76CF85DACE435FC26829ACC02FEE1ECF8477BC27CD6CA12592189D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/Win32ModalDialogScanner.cs.meta",
+      "sha256": "5CAA77DF0BCA5549B8E5EFC6DD7E0A493F83A97C7672027467A8BCA9A73836E4"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/WriteGuard.cs",
+      "sha256": "B932C8E2003F43BC9FD5E7BC680FBF02ACF660F0E16A47920F0E15BE804CF12F"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/WriteGuard.cs.meta",
+      "sha256": "B59334F5AACF4613EE9E78016C36A426B1A96D281F9E41A10EDE0DA1E5A1F662"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons.meta",
+      "sha256": "B6EC60BC6EB27984AD6DFEB5DEFD7FA55AB5049898CB780CAEFEFF406902B3AE"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/app.png",
+      "sha256": "2BD0346B78F194D06BACE64FF99D9B507B28E24E9ECA56C6D30C21398236FAA2"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/app.png.meta",
+      "sha256": "8079B406B87FD7CE4A3BC85BE8A111ED49BFE007CD326054C09CF8CC8E35B937"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/app_light_mode.png",
+      "sha256": "0AC591009D4974C856C843027C929242CAF070341DABA58149ACCE1B63451883"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/app_light_mode.png.meta",
+      "sha256": "FF31C48560EA812565B2110274F657E29A8D32F79B6026B716CE6A844AA68840"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/cli.png",
+      "sha256": "4041FBEF0B55F5A653A85B1B2F07C8545B09987032C7212403CFD24561043DB3"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/cli.png.meta",
+      "sha256": "53F2931F4BA46CA5A3CACA9749BCCEE8DCB70ADB3270E877D0EDAC2D502B7ABF"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/codely_logo.png",
+      "sha256": "2BD0346B78F194D06BACE64FF99D9B507B28E24E9ECA56C6D30C21398236FAA2"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/codely_logo.png.meta",
+      "sha256": "C6B76D4C842DD081D3DD8CE0197854DEF84A08182E7370828E6BD306E8BFF620"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/codely_logo_light_theme.png",
+      "sha256": "0AC591009D4974C856C843027C929242CAF070341DABA58149ACCE1B63451883"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/codely_logo_light_theme.png.meta",
+      "sha256": "52FC8E589B1F1F287B90EAF71EE888694DDACF05360F1D69F3E1223DB5A1581D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/connect.png",
+      "sha256": "554BD0851E3B8C9E8D05A3D9C7CE4DD7CA6036304D26C96469BD54EEA05531A1"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/connect.png.meta",
+      "sha256": "F4D223D6C89AF03848AB8EB8538862511FC3181AF66E0D6111D3C00BA30811DE"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/connect_hover.png",
+      "sha256": "CC98F7EC671638CCCB7EAB6051F8344E16E06F2D67C1B46B7ED19506766FDD34"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/connect_hover.png.meta",
+      "sha256": "AE43E4AE4AFAC0704E3E29F1E4BEDA60B6EB75120ED5D2282E811D739423054A"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/connect_pressed.png",
+      "sha256": "033A5C3C9900115AB8D0C210BBDC7638E8171E33D485A1E310572BF739B23917"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/connect_pressed.png.meta",
+      "sha256": "8CF84EA70C8CB6265E75CC9E3DE5748E7D78DB82C2CB0ADACD1F1EFE2D77FDCD"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/connecting.png",
+      "sha256": "58F69F535AC3ADEA48797A5A632A2C558BF31B58359B72F78E329912B88B37AC"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/connecting.png.meta",
+      "sha256": "A27BE3E22F7B7FF8C40471757A4EB77C5F62AAF62D0BF266B411D0CD091D64CB"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/disconnect.png",
+      "sha256": "330B4B2E92D4A60037CBCAB904E86F2268C66F9B0D827EC68BC4465696261FD3"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/disconnect.png.meta",
+      "sha256": "DD845482A86FE596F16AA0FBD1B122D3D0D685EC340DD437D2B1218E4BB669A0"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/disconnect_hover.png",
+      "sha256": "1DB265CEBC9ACC235969BA5726A08B32D2014F0060BC2E38890C601CD609755F"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/disconnect_hover.png.meta",
+      "sha256": "24B7B14A29FDE4692D52E9A492E43515E692983B0FB43C1597DDAE3D448C751D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/disconnect_pressed.png",
+      "sha256": "0CCEF89EA828D67351A52267383AAB6D3657565B4397131D584C00523C32FD78"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/disconnect_pressed.png.meta",
+      "sha256": "B422E1027F7306A8516E50306702191FCE931EF00DE742BF2815DE512525E8F7"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/jetbrains.png",
+      "sha256": "A195E77E62DBD179E5D947C5EDFCB4182B7E4FB47ABFA0269F86E976B98B1C5B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/jetbrains.png.meta",
+      "sha256": "D9835047C8F57C55AA3518F23BEE68C6F6C05DA3CC92F4C01AADAEE8CDD94673"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/setup_download.png",
+      "sha256": "1D1D2237D5F299DDCADFA4E5F798972A8CDA69AC5AD97BA81B91968268BE1423"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/setup_download.png.meta",
+      "sha256": "0906492708B83B8332D7E789F34836E507149B5F827E7F08C4D580844180DFAB"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/setup_main.png",
+      "sha256": "5B4BCBF31F1EFE4C3218CA7A77C5A6A15390310984C0FE6F2EAA623B4C554C6E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/setup_main.png.meta",
+      "sha256": "2E82443E73E3D6DCC5FD96C8FE9672BC8425EBDA2E2316C52F6E1653BCFE441B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/title_icon.png",
+      "sha256": "D97C67E529FB87807960DD5AA736055F3DC1812C424988A0C602BED831DAE27B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/title_icon.png.meta",
+      "sha256": "4D593BAA2FEEB5DEF42A94A4CA4FDC7B5015E409D9613068F25BB7BD9E737578"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/title_icon_light_theme.png",
+      "sha256": "43ACF568EF40C8E608AECAB964199C5E972DD174E728459C75E02D6AD469F389"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/title_icon_light_theme.png.meta",
+      "sha256": "4B20AE2598BEE4870DF4B1C70AA1FEF352E261FBDD65C136AA2EEFB2C01FE9DA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/toolbar.png",
+      "sha256": "26E4A20ABF430130E5A328A9B9B3D1716D6109790657ABB85285C1A611647943"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/toolbar.png.meta",
+      "sha256": "65495B3F643DE352B4721692246854A5D2E5A674C412CED4E2A3FA20A6D978D0"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/toolbar_light_theme.png",
+      "sha256": "DB326A8FDA74CA84CA3F3E46011288EACC425381027AB9A57D790FBB46E6ED1B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/toolbar_light_theme.png.meta",
+      "sha256": "2149AB48ADC97F067607AFD5470F745A9220E0376908CE38EBAF7383D8BB174D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/tuanjie.png",
+      "sha256": "0A923CFD399858099F91436EDF5925057197557851F98EC50EA46923D1196557"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/tuanjie.png.meta",
+      "sha256": "5794DB87487C6B54099F56B87DEE23F62A4AF6311E5AF81EE0C069292990A6CD"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/unity_editor.png",
+      "sha256": "2CB12975957CAD78EEB7F4D98D13561387EA113F6BD828F80CD2CC28AAF965EA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/unity_editor.png.meta",
+      "sha256": "98A6AE35AC07AE8F939CF9C98863AA3903DEDFAD0827899F805681599E05AABE"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/unknown.png",
+      "sha256": "7086F85B6D9380180D8C508F8A0D4B708BA9EACE166DAE4B09D39EEE5AE19523"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/unknown.png.meta",
+      "sha256": "4A06E4DC41C93A0B4BCA2277E9ED20E32B77837152ED4B1EB6755FB09B4EFD10"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/visualstudio.png",
+      "sha256": "5A88B4B0209D692C08575DA8446E6F44F001D31F13CA788D27C4B974462BFC8F"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/visualstudio.png.meta",
+      "sha256": "16A64FA324A46FF611437B3CA6AF38A6320470D6619928907C9A5E3FC41A982C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/vscode.png",
+      "sha256": "4E148ACF65CBD0944C8E822C60F05317327C3C789C15153D8F483D1F9EC2AEBB"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Icons/vscode.png.meta",
+      "sha256": "28707D5F5D91A1CCDFC09FF9B5E68772836C8083DCCF7BA5FE216EE166E37150"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native.meta",
+      "sha256": "ADD42D35BCB602E6FA8C019E08E3EFF0CB1A8F8AD2E75BD789E00106E890810E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/EditorBusyProxy.cs",
+      "sha256": "5AD9E5CB6C182B1B482F29406A5BCFDB9E21F5DC26330A02ABBD99E4C3F34F4F"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/EditorBusyProxy.cs.meta",
+      "sha256": "31A28CBAF777DFB6011818EF3D16FD6EE693855F247D46F075888D422354D6A9"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeDllLoader.cs",
+      "sha256": "2AB2E75AC0E9F05A195DEDBBFFFE3ACE488EB85E137A08E45D76BE7C934C3E67"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeDllLoader.cs.meta",
+      "sha256": "4F6BAA69F5CF99B3841B0F8870833E4530C0847DA1BACD9B184C371FC4E68DD0"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeUnityTcpBridgeAPI.cs",
+      "sha256": "1A9D46D7BBC195E74A1C8FB3C7CA5B10F05F251E4E1F1ED833210D502F37DA5D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeUnityTcpBridgeAPI.cs.meta",
+      "sha256": "E6656F10F6D0074F6586280B48935D91D1711C77FB663151E301A36F8873947A"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeUnityTcpBridgeHost.cs",
+      "sha256": "A2867448861F15C0874E6355EC016DA83230A72A1A89160DD540DA4CEF0FCDB5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeUnityTcpBridgeHost.cs.meta",
+      "sha256": "3573B0A61AF420155E33ABE2D2A72FE338440ADE08A60F08A106C0E9E5665EFC"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeAPI.cs",
+      "sha256": "3F4574BE3025DCBD94272BA24431EDA53BD7616476DABFC935CDF7BEA64B9FA9"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeAPI.cs.meta",
+      "sha256": "50257DCF01E19B3E2DB443461F036177C0779D28C12178BFFC28DFE6C51C332D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.AddComponent.cs",
+      "sha256": "71C777F1C68ABDB45CFED3DF416D2512991CC0EDCD85A1733733D0425850F5B2"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.AddComponent.cs.meta",
+      "sha256": "F6A3E61B725B0710052B6DEF7E65CC697793F301FC70A6D7ADC639459ED05997"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.AdvancedDropdownPopup.cs",
+      "sha256": "CABAD1C87BABD5682D0E76A7A09026D5370A3122D77B69B9F3B7582AF9937AB0"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.AdvancedDropdownPopup.cs.meta",
+      "sha256": "111F3347B0349B88BDDFDE90B0320466BF2EF546146A286CC02BED0A422B53B5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.Composite.cs",
+      "sha256": "F9703B00A63151AA7A7DBF232EEF6D991A7E2CED83073AFD5023DA4387107F8F"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.Composite.cs.meta",
+      "sha256": "EFFC4A4E0B538B27CDD95B8210B298293164B4E067C5B73B8637762F99E48013"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.Cursor.cs",
+      "sha256": "5C3D1534144E929A705C7A055B6B9EC5FADE67F7DEB95CB900C31566FD090A5E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.Cursor.cs.meta",
+      "sha256": "1B118210C205189EEEC5C26B5A32877B0275F5C911982E292D362534AA4296B7"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.DragAndDrop.cs",
+      "sha256": "DCA81E7D040E8920D689277CFBD75253B60F795E25660695C826052EF8B7F5F0"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.DragAndDrop.cs.meta",
+      "sha256": "0B31A9AE4DD54107C4B7DA07DC6993DAE90E6C9F953A6DE38B1C82AD94DC6631"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.IconSelector.cs",
+      "sha256": "1C522A5F9CA7053634A4DC0B5519EC57EF3EA31F595B932025BDC2732A6A20FE"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.IconSelector.cs.meta",
+      "sha256": "F55CBFE7DA160C5B95A28CAFF3F2D24E3F665E668CBB13D69A88383E98C11C52"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.Json.cs",
+      "sha256": "AC48B6C81D44F3D1A61D63C0E00665A18C2D8CCC08B3190841846E3412F47D77"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.Json.cs.meta",
+      "sha256": "FF72B785DC58322FA76BDD3D85EDA9E2879C7E24B00B7033D3BCA3AB97B1FBE2"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.NewInputSystem.cs",
+      "sha256": "11E334A484C208605C21833B72A7D33AB0052D6C7477A6288EB749CB83A1B3A9"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.NewInputSystem.cs.meta",
+      "sha256": "124DFA16DD82C353D880ADB2CAA92116441A0A094AB1FB070640AD62FAF56920"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.ObjectSelector.cs",
+      "sha256": "DF04A5BD2FBE5E5AA9926BE50C69DE509522610597A607F6494572924A7D3E0C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.ObjectSelector.cs.meta",
+      "sha256": "EC2FA7B3C1520B8AFFB02909F04CEE59E8F33A0244FB600C7F0C5C9C81D4D9E5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.PaneOptions.cs",
+      "sha256": "064B499B82517D367B3A609879CB1037BDD908DB318BB11F5A12C6D815AB149B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.PaneOptions.cs.meta",
+      "sha256": "C2A362AF2457F92341925620C574F63CF639002855609A575BEC3C5DC18A31BF"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.Panel.cs",
+      "sha256": "D289A2FC50F0D797E7A05F16F3C06E790171A2D899E58999A21E4D18DFF85004"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.Panel.cs.meta",
+      "sha256": "0AA86201E8761B773D0EF29CA43695CCE25BAD908E7E919751CE27AFB524E51F"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.PopupDock.cs",
+      "sha256": "66CE6F40A68B0857975A0C5867765E4EF9254D4BB26F58BA06FFB6997036758C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.PopupDock.cs.meta",
+      "sha256": "F5A1FE9CF82A747EE30457D2E3AB4AFE5049BD213D5A48ACD94079B064E4334F"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.PopupMenu.cs",
+      "sha256": "F5C6707929B06F6B7D0123B3F4326FB2E91DF643686E1A3838184401E1D984FD"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.PopupMenu.cs.meta",
+      "sha256": "B3B535BC88FF79CE9B8EAA4AA7029FDF3557570BEB7E36B6C3BA5717EF394175"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.TabDrag.cs",
+      "sha256": "98F5B65849CD033EF38060E805CD10B05F706DCD403192B42860FBC14AC03E30"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.TabDrag.cs.meta",
+      "sha256": "157C2FDBF64B7374476238FAB5C679986C7AB568D0C7AFD6788339D51058B099"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.cs",
+      "sha256": "DB247B87244ABE82E7C8B839CACF370DA649D0348454810C5430E51D64E10767"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/NativeWindowBridgeHost.cs.meta",
+      "sha256": "EEAD2339A98311E2CD4B04466DCC904AD79E33BE4FB1124D411D9313F1B5E8BE"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/StreamingMaskWindow.cs",
+      "sha256": "C50ADB6E6AB834577FCDDBE851B1753AD31D44EA399EFFEAE42237FB827596CF"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Native/StreamingMaskWindow.cs.meta",
+      "sha256": "3D2A95BECCCE761F66F1E44B15D0E62F1B741C48F02D639827E1023CF217E0A6"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Notifier.meta",
+      "sha256": "6A6E12519F951CFF0B0193F2473F0D5234EE6ED54DA3082A215F89D2F55C49A3"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Notifier/AgentInputNotifier.cs",
+      "sha256": "610D8800DB24DB3E88FAB973D32A4E057BA841E46ECA59E5F1FC9F083E6FE0A8"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Notifier/AgentInputNotifier.cs.meta",
+      "sha256": "3DA5A62E129EE775A5765B3EB6EB1BDEE0C02346104987523844319ABC7D7090"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Notifier/ConsoleLogChangedNotifier.cs",
+      "sha256": "01B53E4840E2A2E8032555FA709385B92F2C0828840447E6EF0276BE0C5B0250"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Notifier/ConsoleLogChangedNotifier.cs.meta",
+      "sha256": "23EEE1CE7B53C15BBD0FCD8C0E1C67BAE0C0CA3625C8811B878F7EED9FCA57FB"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Notifier/SceneHierarchyNotifier.cs",
+      "sha256": "D991858BFD2D189C8941A8C7D215B022E4051357D240E46F9D8E4D601043C5D9"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Notifier/SceneHierarchyNotifier.cs.meta",
+      "sha256": "207F3088937BC1BCE37D41B904E04696BADFDDBDE3F66A875411157AB1D07F52"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Notifier/SelectionChangedNotifier.cs",
+      "sha256": "D14A87FD8F8AC9DEC1F5E637B3B70A58EDCB1588BA1670E1811450E9BF47B43C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Notifier/SelectionChangedNotifier.cs.meta",
+      "sha256": "0AC44688D8D96C224C1620B9A38C51EE175271186BE14088555830FB2A401BA0"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Serialization.meta",
+      "sha256": "6AF0F97A3116A45EFB26D93D40BB433CFAA956CCF44E4CD2F27FB4BA500F51C7"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Serialization/UnityTypeConverters.cs",
+      "sha256": "D02F564248EA8AD4D032B7B36B9D11289F02ECA2BCB0A1529AA48F8E19F0655E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Serialization/UnityTypeConverters.cs.meta",
+      "sha256": "9EDB9E335E8729A3266706825B360A138123088B775C4B094E366CA67C8FBFA4"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools.meta",
+      "sha256": "6B850FFC556AB4B0F41D44EA5B040981CDEF9F314BA6610146EA43584CE9C7AC"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ExecuteCSharpScript.cs",
+      "sha256": "FC90F1BFC41E55021720EE741FE14CD06EA97486439664C1AF64A5B2871ACA39"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ExecuteCSharpScript.cs.meta",
+      "sha256": "94EB4BB13D67416368056550CF3795F5D0B45A2E7F195C7E5592366FE57F8ED0"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ExecuteCustomTool.cs",
+      "sha256": "4E09108066ED41182EB41E06732759BDDB27ED9F6139D6C520EC2D2C50E7B785"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ExecuteCustomTool.cs.meta",
+      "sha256": "A8B7C0EFC135B22B3321D486A60207D7A910D6A715B18C4CC19561CE19F9A9C2"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ExecuteMenuItem.cs",
+      "sha256": "57A184F930F9405F99FA20DF085A03C5F5FF6C4834CE42F19AFBBE7850F2E991"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ExecuteMenuItem.cs.meta",
+      "sha256": "F1610241BC55A5C1D245176F44E9F8971EAE9C04B55A832BB23D3D45DBF47F01"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ExecuteScriptCommand.cs",
+      "sha256": "85CE8B3A539037E867EA0A83B0D74FF054B9AE6CA6F0EAE05365A80892D9E735"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ExecuteScriptCommand.cs.meta",
+      "sha256": "72CAAC188B9DBD3C65E2F467CE6A1CECEFEB70DCBF49FEA4B1E43682BDF9EFC3"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/Jobs.meta",
+      "sha256": "75DDE73F420B574588FB36D35AF1AC2317F3BFA7291B7CA43B6D7638C9DDBCF6"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/Jobs/EditorStepJobs.cs",
+      "sha256": "8B54629AE313B77217B9E2DB7D518CB5065D975FCB777CF075F39C3A9FC94FB8"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/Jobs/EditorStepJobs.cs.meta",
+      "sha256": "FBB077E4D325E03BED3BA3705AF337AEF71CEFB5E9EF652C92215F56A3A3D0C5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/Jobs/PackageStepJobs.cs",
+      "sha256": "1520CE34A0C8319C924EF905AD12E44690AB13B658A8DA7028C47E3BF3A6FA66"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/Jobs/PackageStepJobs.cs.meta",
+      "sha256": "5AE3C96DF0D84C5C1D5D5B5E41A6BF1F94B916904B0C8D52436D185C4024951E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ListTools.cs",
+      "sha256": "1ED3AD9917C00FC6FC983741D32C5C5039A8FFEBB42EE267F06D564C82FF2773"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ListTools.cs.meta",
+      "sha256": "D42BB8A0D83ACFDDC857E7EA7AD3B9C5E91E0183A79AB872DCC02C0B1562779B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageAsset.cs",
+      "sha256": "89AE89F0DB70D3C910EE7C456ED1565BB04EF26E83FC347E602D8095E4CA9E2F"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageAsset.cs.meta",
+      "sha256": "33D63F9286A2F43637FDE57A65A1FAA45795F2D24F57CCD73F4025E771277D9A"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageBake.cs",
+      "sha256": "51529819F9E16DC5D482826D3169BAA69096FF4F5EC97C33AEA9880F311C151A"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageBake.cs.meta",
+      "sha256": "F060EADD39D00BC450A91C690B4FB852F00BAFCE6E0EB4F430F7CE0BB0E63917"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageDialog.cs",
+      "sha256": "711FBE61A52048BC405AB232E1AA3918FE613D46313AFA7CFC5E4AAD3A0D6CD5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageDialog.cs.meta",
+      "sha256": "E88247F965A6A945BF1AB7DB7EEE15021803DEACDF16739660D613D9E225F5C4"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageEditor.cs",
+      "sha256": "D6C3CB7AB9B61C14D4DC85DF46A5944453FFD4739F221EBBA4D6104554C0EB85"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageEditor.cs.meta",
+      "sha256": "E89A4165FCFDE869A72FE28248526D8EF02568B92FA8D3BC04850042B598FFA9"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageGameObject.cs",
+      "sha256": "95262444FCEF0740209E2170C8644B3816E8873BF63990A11CE385CFFA909FF0"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageGameObject.cs.meta",
+      "sha256": "DA5466C0AD5F3AE390CC1FF1D700ED20E209602C6DF342B73CC2BFB98033B366"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageGameView.cs",
+      "sha256": "0E36D6830FAD53208EDBB0F913346902B6CDF37B8AADBCF2317C963531EA00A9"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageGameView.cs.meta",
+      "sha256": "C4E65A2100F961BBBF87682096C8466011E7D52DDCAF73F24B180CEAADDFD5CC"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageGuid.cs",
+      "sha256": "C4A1C0D6EC34E3E05E8518DAB17ABB67D009DC3F983DB0C3111712CC276C9D22"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageGuid.cs.meta",
+      "sha256": "6FA9232DAA2CF433DBFAEDB03C5A6FE7F16C2356D7E81362326F19BDFBF3E9EA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageInput.cs",
+      "sha256": "A5335CD29521AC810218DB2A82D6285FFDE59BF9F01CD5C4DF68554D2E6C7C70"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageInput.cs.meta",
+      "sha256": "1870D278D5D6592A930EFDB6552BA278840CD846865EFEF05FE03251317B5DEB"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageJob.cs",
+      "sha256": "A4BE90111873F96B6E428349CC2FD79ABE30FB296040E085AAC11B086B4DD8F5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageJob.cs.meta",
+      "sha256": "9550FCFBBAFEFE38C4D4F8CCCD889AF73B9A97885AB5888A3BC0500EA76703E3"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManagePackage.cs",
+      "sha256": "8B50FC9F07420977B23923DF684966A5124AA7AC23623C85455046E421F2A944"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManagePackage.cs.meta",
+      "sha256": "C3AB3750BC75911F54170CE9377DAC6DD14197104C5BF228AF614E34E13D2684"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageScene.cs",
+      "sha256": "D378C0057E47D2B2A1A5AC3931976DD0B17AC005258ED02286D1BCB68ABBBAC5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageScene.cs.meta",
+      "sha256": "BCE52199A72337F88DA29C0DF9568A05D81F5397E76FC4A4491A3F92372141B5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageScreenshot.cs",
+      "sha256": "DAECDAF2402D09036918AF05D89140CC98BD411CA0981AB14D84D8797568F915"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageScreenshot.cs.meta",
+      "sha256": "E456DFA6591AAAF07D20D69A8E4CDB9470EC63A2E67C8F15C2B712DE2F003A38"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageShader.cs",
+      "sha256": "2C9AC7A98A3DB06201C594A9652A2EF0F8393A2E35459629BFAFE05FC97B2328"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageShader.cs.meta",
+      "sha256": "16DF59A056F3F217DAF8CEFF2E8318C0B0F3CFE890B4EA4F967A9C768F58E741"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageWindowBridge.cs",
+      "sha256": "ADC6CADE3389483BAB2861A4ED05EB473F8A4350C454B5BC6ACC6018BC83E763"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageWindowBridge.cs.meta",
+      "sha256": "23D6B8EEF636FF7B9B02B60B467C6A141E7941DC390A4A1F76FBCCB52C1FC065"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/PlatformMp4Encoder.cs",
+      "sha256": "A9E97455F8525E0EA7BF58A9B8AACEE3F774620FCEE10FE941394764F5D34538"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/PlatformMp4Encoder.cs.meta",
+      "sha256": "C7734CA58D87AEF2414CDB4D1C4290B630BEC3C62ABD649DE8634539189AF3A9"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/REPL.meta",
+      "sha256": "7DA643449F2BDD5EB834BECD9DF904358AC28D43CAF32EEC1E99B6EF7779E488"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/REPL/Repl.ApiHelper.cs",
+      "sha256": "A701E96FB97CA01FF981DE34C25190C08BCCF4FE262E326CB158DD315ED9C935"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/REPL/Repl.ApiHelper.cs.meta",
+      "sha256": "7B40C22865A38D74D43AC397E3AC5C2A2CE2FA55911C15C37E2754C3E5FE2F10"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/REPL/Repl.cs",
+      "sha256": "FE491135F2924E1412E06B0D1370B49C702BF1418E0E4D9391FC967C5457FEFC"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/REPL/Repl.cs.meta",
+      "sha256": "D57EFA42E37D58FABC0CB816A62563895A7E6A70860BCFAFDD12B97F7C7D30C9"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/REPL/ReplGuard.cs",
+      "sha256": "E99FD723D9A7E727A7A7922691457877943D01A650753FC286D882EF55E23024"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/REPL/ReplGuard.cs.meta",
+      "sha256": "E3048580A32BD4A3F59B6B62F8B41794176AD44584E0AA2C92A4476C62960ED1"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ReadConsole.cs",
+      "sha256": "75D96415E3792F0DE6ECAC41336F003BE5F6724FB1837555F3E8DC09BFC52E33"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ReadConsole.cs.meta",
+      "sha256": "2EB432FA4F39A5E4AB459B857D26E224E7D9748CEB858EFE7A80ADE0C5A7B742"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix.meta",
+      "sha256": "CFB23718883C9ADB9BD7D2054F5A93EA4F9907FEA57149C22669C69BCE26CE7C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixAmbiguousReference.cs",
+      "sha256": "9B25EB26B0A4B425B3CEA7931C12A7B9DF09713CB6F70332BD31F111A2F3A623"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixAmbiguousReference.cs.meta",
+      "sha256": "3A94005D59C6566E2C7D895301AFBD4947E42ACEAC79069C5D2A926D53D1D8AA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixMissingAssemblyReference.cs",
+      "sha256": "0EF6ACE074E60BDD104B7BF190422819AB68A63BD83270FC55E934FA9E7A2FA9"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixMissingAssemblyReference.cs.meta",
+      "sha256": "06143AE8115D6E20274BE2595363742928B919F6D4FFA211FB5CDF8C23196DD3"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixMissingBrace.cs",
+      "sha256": "713AAF168AE8BA72F0F2F040AF57BE7B63E84380FE90EA7BE9A5F6841AE9FE79"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixMissingBrace.cs.meta",
+      "sha256": "168A82F0D3B50D7FA7D22122B5CCB3314E9061723EDD1D4F0F6AD4ED17520E2D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixMissingImports.cs",
+      "sha256": "E879FBBC905391556226DBC34D2664F52BF3245E5643C1BD354F13AB68F30C39"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixMissingImports.cs.meta",
+      "sha256": "881A49965D6FF8606264A5F8985AA0AF7FD04808CF131BDBE26A43322A3C04EF"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixMissingParenthesis.cs",
+      "sha256": "A5E23070B44F3039C5BAA9221AE04FDA734CD3F84B65F08AEE0A0B7708DA2D3F"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixMissingParenthesis.cs.meta",
+      "sha256": "DD81A84D9626287F8117292E26B28A395FDCF41375CB9798CEBCB81055F7D016"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixMissingSemicolon.cs",
+      "sha256": "2616938A6E0834A04367A17DBDE9B9CC118CED06E5BABFBB0060151734DE1EFF"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixMissingSemicolon.cs.meta",
+      "sha256": "2ECEE88A376BA4E6C1FCFAF17F0904501755EB878EC760DBC421C58F1471E753"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixMissingSquareBracket.cs",
+      "sha256": "2FF6402FDC5395A59887E064EE4A36C5AF09BAEC067FA7A8514A67FF6D48D97D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixMissingSquareBracket.cs.meta",
+      "sha256": "08F515DEAED5C5A06BFB00D676E715A3D148DD3E7E650085989CC976C590F373"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixUnqualifiedUnityStaticMethod.cs",
+      "sha256": "32F5969E8940ED3CD52606FF26DD0820283B27737DE918BA6B64C950347E0422"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/FixUnqualifiedUnityStaticMethod.cs.meta",
+      "sha256": "F2A6C83A1DB0E8D5C695BB1C7F5B0968AA70D7D5E86BFB9301FC8A3E5E38CEA0"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/ScriptFixContext.cs",
+      "sha256": "B1FC73A9F9F973C2B429ABBAA7D1CFBFFA21BC7A68BB5105C88F6B1A20B3A7EF"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/ScriptFixContext.cs.meta",
+      "sha256": "70B02598C210C62D7DB68C52760C860773B58A2B9A5F779BE000DCF0B2970FCD"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/ScriptFixProvider.cs",
+      "sha256": "07EEEED6AED26BEC48D4BC8B8949E7D2681353D529446AC8C609EDD3260123DA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/ScriptFixProvider.cs.meta",
+      "sha256": "51C0D2E78B390BE7A0A5C97C5AA6A5A37F78BB750A633A4BF05F0FCD7576EF30"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/ScriptSyntaxUtils.cs",
+      "sha256": "11BA46F81AA29CB2C756A94F02579DD42517C60B98E6475A69E704434572ACD5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ScriptFix/ScriptSyntaxUtils.cs.meta",
+      "sha256": "E8397796A6F87F3B87F3384FF338411698A2E19BDD30CFD3F01FAE9DE4C2E6FA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/TmpEssentialsAutoImporter.cs",
+      "sha256": "9DB5A4328E5AC254817792B4471D6C11AEE285329002E93614ACB34E91DEC735"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/TmpEssentialsAutoImporter.cs.meta",
+      "sha256": "3CE24E41F7B453C0B20ED7CBDBCFB612421D9A56E5AA2381A3BB17F1994A16AF"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/VirtualInputDevices.cs",
+      "sha256": "5B1040A3C91FE6AB9196E016EDDD2224BF43DE780F8A708D2BB6DC58F9524A21"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/VirtualInputDevices.cs.meta",
+      "sha256": "66CA0C2486B5FB1F1D8FFD4CC895641EB165948BDB6D57650619875B7973316C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/_InternalAssetListening.cs",
+      "sha256": "CA994E4F59DD497650267B9BA8BD49283C710847A9AD9541E2293D188C900E3E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/_InternalAssetListening.cs.meta",
+      "sha256": "625849743CB727CC989E92418E0FE1129289E2225D98A69F93296735CBD9B52C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/_InternalStateDirtyNotifier.cs",
+      "sha256": "FD5531FCA7462FCBA0743638731ABFA35E552905432BADBC73161B9602571735"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/_InternalStateDirtyNotifier.cs.meta",
+      "sha256": "E4339A1F98B86261DDE1ABBE39EF63E458F949292CF536D60C9EB584062071C0"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/command-catalog.xml",
+      "sha256": "CEDF05B95C345998E9858949B538B2B1B981F4173B2C3C6442447D59887BFB77"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/command-catalog.xml.meta",
+      "sha256": "B66BB2EE652A4E61395FBD9D7E0652AA52B34F52CA2EBCF63B570F31C7B45F6C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/UnityTcp.Editor.asmdef",
+      "sha256": "19DF388515CFF81B7A6D560E21A7EC9B84CD51EDC670736925B71C4B8BA1206E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/UnityTcp.Editor.asmdef.meta",
+      "sha256": "F698B5A20D2EB4AFBFF95C9AE091E9173F6F7031ADA994A20C7D333AC1B95AB3"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/UnityTcpBridge.cs",
+      "sha256": "305E9ACEE37893FA497354BE4BD1AF140995BA48C87A6C2815462D6D7C12C61D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/UnityTcpBridge.cs.meta",
+      "sha256": "F13A3242F1FF7CAC932568BA3A824C304FF88D7CBE990AE38FFC751E3683B22C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Windows.meta",
+      "sha256": "FD9340A76EB424D1FFDE828B00DF2AE876BC52FB2AE8413AE0B26617E8FD55DA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Windows/README_Windows.md",
+      "sha256": "3C6436C21C801C66E228383E5570A2EBA6DD0DA93EA6CB92A295669BF3481B0B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Windows/README_Windows.md.meta",
+      "sha256": "DB239241EE23EBC428E03D3DCB6C08A339203272AB18F30360C3FF6CAA653861"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Windows/TcpBridgeControlWindow.cs",
+      "sha256": "31D4BAC1B97502A56B884B5806925678475CCC90363D4594A8682FEC35A6188E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Windows/TcpBridgeControlWindow.cs.meta",
+      "sha256": "FF96EABF72B20D33CE818B3110F75DED45511BB836308FF5BBEE1AB604E93FA6"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/fonts.meta",
+      "sha256": "4A3EC19664BEC80D2F0AF4162FA1C590B87A78AC8C2368258034A7D92C361CFC"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/fonts/FiraMono-Regular.ttf",
+      "sha256": "9C1C51ABEC8B9F7FA24BFB88EBE80B354CC6DA9D4036D6BEDEAF495D24933E42"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/fonts/FiraMono-Regular.ttf.meta",
+      "sha256": "F87C137D120C4B1A1BB772CC6BAD662FA9DE1ED1AD80153358DD11C79438FC9A"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/fonts/Inter.ttc",
+      "sha256": "EA4E3D9970B9B6B566110A1B0E13635FE235280B83DD2443DCB3FACA1E2456EF"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/fonts/Inter.ttc.meta",
+      "sha256": "670B33FEA120E33CF17412DCDFBB849630AA01C8BD8B9C3E8610F31B3D50DFCE"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/fonts/NotoSans-Regular.ttf",
+      "sha256": "FE8C022F48D8DD29F17B744D16F9346F4357E16F7D4F7BE58B000AE7C291B614"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Bridge/fonts/NotoSans-Regular.ttf.meta",
+      "sha256": "8C8313024554D5B3623FFF2F83D1852FA88717F5141FBCD3CD52C3327FFBAE28"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Common.meta",
+      "sha256": "6F9CD34B7E906E5A9675057BD9636CD8E3B15DB9C3792D4D058C3D60E1F8BD51"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Common/Codely.Common.asmdef",
+      "sha256": "56C09E09C540A8C6E18BF9CFD66064F8DE7F45E08A598E566C9C056DB2388736"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Common/Codely.Common.asmdef.meta",
+      "sha256": "0ABFC9A53767EA6E51CB05AC1E72B53F80FE2B99CA912FB0D39826C9046C5E53"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Common/CodelyLogger.cs",
+      "sha256": "E181E08E0F62FB802BC8E39ECED787D0A7062AB43F081FAFB15EE80C59570826"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Common/CodelyLogger.cs.meta",
+      "sha256": "48C5E3FADA787C05AF7DD8C211D59C4E0A641FC4C3DF40423CE40277A1171AAB"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Common/EditorProcessGuard.cs",
+      "sha256": "00FC2865D26D424DECF09E6601B695740F8311C50EDE7C7C1575A7D639DC3777"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Common/EditorProcessGuard.cs.meta",
+      "sha256": "4C79D212DD4A8A3F636EC9EDBCFDD2089D0365FF8252A60EF4B6CA77F9716235"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Common/InstanceIdExtensions.cs",
+      "sha256": "DC2551AC55209A444C1F30E6B0A40C3F2B499250BA28520ADCE5366559E3980E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Common/InstanceIdExtensions.cs.meta",
+      "sha256": "C25F288AC560684AA7E6FF08783454E439DC506F327436C6E9F720BD3C52492B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Layout.meta",
+      "sha256": "4036FCD9D775AD6532308732ACEB51379FC0AF249567294B6CDCD4C71D2AE010"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Layout/Tuanjie AI Mode.wlt",
+      "sha256": "BEF1E4CF3AE3BA5F1E2DFA7922ED7A9FAD6215FD345C0FDA364B1A48F4B451D8"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Layout/Tuanjie AI Mode.wlt.meta",
+      "sha256": "A89983C2917B61D1E4A58535D47F2855D83EDFC30CF7CCD448D78FCA901DDD11"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri.meta",
+      "sha256": "2FB0238FB03D61EF5D78B8BCA9BE172412749CC39E82ADEE6B4E1AD0D76587FD"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/Cn.Tuanjie.Codely.Editor.asmdef",
+      "sha256": "39BE07CE60DFFD9EDD698A10F3E4653C074CA73DAAEB409D9BF82695E2973B48"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/Cn.Tuanjie.Codely.Editor.asmdef.meta",
+      "sha256": "9BD05271E1169305B777FBAEACA91F33F8A5F755F5DB2BB5FE71038FA721FBEC"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyEventTracker.cs",
+      "sha256": "FD4279148AB274654CE81EC031D921EEEF87BB793728F9AF5D3F7F0AAF015FD8"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyEventTracker.cs.meta",
+      "sha256": "036A2476D49C280972042D8E9E872C17631ACBEB728358005BC619080F0FCEFC"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyIpcManager.cs",
+      "sha256": "CD5EB8757AB16DC6085D651FAD419AF7821892D90B092B2D8D5300DE51D8A8CB"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyIpcManager.cs.meta",
+      "sha256": "DFCAA719D8F1860C87DD1C46A3FACA62FEF1FD3D4E9E27A623103329CF4A617D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyIpcServer.cs",
+      "sha256": "7A961E4C58CBC56ADC846EB961A0A9D08CA60A40111CEA870CB25BF021660598"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyIpcServer.cs.meta",
+      "sha256": "28D1687CC376747F952422C114EFF867558648E6CCFD30576F1426A0E7C6FD37"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyLayoutInstaller.cs",
+      "sha256": "A49170E5343741F5DFF727B24FE22736809A38167FC822CFB1C2B31E0E2B8C54"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyLayoutInstaller.cs.meta",
+      "sha256": "829739DC6D804CC9C955B67A5FC6A265BAF2D6AF981AF039833C726422CCAA70"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyToolbar.cs",
+      "sha256": "63B2D479D8635CFD0AD9DAB2ABC9D0EE6A29EA552D301923CB41E3B3773F3968"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyToolbar.cs.meta",
+      "sha256": "57F007084DC1B7E9E062B9D9328AE5A1D2F33512BE8958A0F27A76D8262B4B6B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyWindow.cs",
+      "sha256": "7901DAB9530F918146232C35D12916917CE4EF0139BEA947156E28E5325B94AC"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyWindow.cs.meta",
+      "sha256": "A9D557504F57AAFA50BBFF686D3DD955866DDD842636EEDDCA10955A8846A40D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyWindowDocker.cs",
+      "sha256": "8D9AB0AA740E2AACB0165C71731A6357DA4A311284DC064665C3A5BC6B28C1CD"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/CodelyWindowDocker.cs.meta",
+      "sha256": "A83F796D4C86FDD897F50AFAD9B9568043CD88C86C2A0489ABFBCBAAE5E246EE"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/DrillWindow.cs",
+      "sha256": "2AA1DF9EAC04648C8E9397C8E022DF6779A22232959ABF2147823C57D854F067"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/DrillWindow.cs.meta",
+      "sha256": "DFA02F3F1E348AF1A523B7630312B595F05BC2EF0F3827B5A19079B71DF5B93D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/EditorWindowNativeHandleHelper.cs",
+      "sha256": "47753761393538FF13C6955B346B9C2DD16AE96CB7F7DA5140962438A0B3DA89"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/EditorWindowNativeHandleHelper.cs.meta",
+      "sha256": "D75D5B0F055D5776A94826F83D972359A2A350E17C8335935E0C55D46276B5C5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/Icons.meta",
+      "sha256": "A19E09482165CF61A7356D00A77D7D5A8BAEF00DC03B872F787E217A6AD0A649"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/Icons/title_icon.png",
+      "sha256": "D97C67E529FB87807960DD5AA736055F3DC1812C424988A0C602BED831DAE27B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/Icons/title_icon.png.meta",
+      "sha256": "4983D141FA58A64FF0A9DC6652E767FFC14F5852EFDF0129F9CC8F0CB2B3BE3B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/Icons/title_icon_light_theme.png",
+      "sha256": "43ACF568EF40C8E608AECAB964199C5E972DD174E728459C75E02D6AD469F389"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/Icons/title_icon_light_theme.png.meta",
+      "sha256": "64B566A2529400CF741ECF2BBD409FFC9147C1E54095CA7CFF213172A36B432C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/InternalBridge.meta",
+      "sha256": "347D2CC876FB59820E824250695E198FD6E855676D9ED8A9C5F1CE74DD22635F"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/InternalBridge/UnityConnectSession.cs",
+      "sha256": "F457337AD8BB762669182B6DA79DFC2FE8CC0D37CF0A2FD25F8A91D40F897962"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/InternalBridge/UnityConnectSession.cs.meta",
+      "sha256": "E879BAA72510E88C9BF6F02CAB66E917DFC7869D8E06C68BDBCC755C061C28D0"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/MacOSWebViewBridge.cs",
+      "sha256": "241BEC809401D79D48CD805489FB2036866F26101306EFF8A77881521DF9F5A7"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/MacOSWebViewBridge.cs.meta",
+      "sha256": "02469F11500569644713FA6570D6428423652C93305B496373CC4AD470C757F2"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/NativeBrowserAPI.cs",
+      "sha256": "5DA93F044E007973EC4C8C93C2EAA87E8D3A888AF1825C2371E6B36E9E5DCD11"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/NativeBrowserAPI.cs.meta",
+      "sha256": "5B7743DEAEBC32E920086DC23F948161521166A7C372DD2A4D6FFC3E8FB80B34"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/NativeWindowHelper.cs",
+      "sha256": "D138C51CB3EBD9523397589F045B45A1F9AAF3CD474460EA1D709B46F510C464"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/NativeWindowHelper.cs.meta",
+      "sha256": "1B9C9A71F0D80B7E40ABC324C14B0B4FDC85B3F7C0B94A4F4975D7FCA7BE9A3A"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/TauriUtils.cs",
+      "sha256": "1BBF211DC789E345C567CD81D460798B3F9F3C89C4670B5ABC96DFDD8495F918"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/TauriUtils.cs.meta",
+      "sha256": "702286A8E143D8B2F5E2EA73920709CCB5D4B2BDB9443EC2625FC4594A6EEB6B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/WebView2Host.cs",
+      "sha256": "FAA6F3E149C41B97811A7E8AE8451007D2ED593CDA7A8E6D296DE1FB52962804"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/WebView2Host.cs.meta",
+      "sha256": "431B4A12138FD1A4881E6288BD9A46A3C06288F97E9940238A89B37D459DF849"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/WindowHostStabilityPolicy.cs",
+      "sha256": "8C0F8B4C620353429727661E858B56A7CB6E74A6A9FB29030A8E9D34603C5DF5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/WindowHostStabilityPolicy.cs.meta",
+      "sha256": "3E656BDF92C6969A2A0818873C38640551CCB0C70BF991DB79449C323DC01D36"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/WindowResourcePreservationPolicy.cs",
+      "sha256": "01FEF92A4288CD58E8ABA35F17056B3CDEB3B5035240935561B6BA443D856C6C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Editor/Tauri/WindowResourcePreservationPolicy.cs.meta",
+      "sha256": "21533FE27A2C87B4B2496911AC2C9DE3E1269BE0B3061CD00DCE84A82A683940"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/POLARITY-PATCH.md",
+      "sha256": "89A0631BE72399A0EA5C5E5788F79328675E505E5CA71D67897C063D9962BC7C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/POLARITY-PATCH.md.meta",
+      "sha256": "95534F7A20E63A451BB5F2B20EE2AEDD455DC3469B8459722185D52231D22519"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins.meta",
+      "sha256": "BAFDEDD95AC79413B929EC86EF164AFEB146EA82E3A029D5088DF203EF086ECD"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Codely.Newtonsoft.Json.dll",
+      "sha256": "4F666A8DC094E7CDEBD406D42B1B3D6AF35F92A974B3CE82923B38033BD084A3"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Codely.Newtonsoft.Json.dll.meta",
+      "sha256": "5C6055FC6ABDF680F6B071B1D4041E4933F8DD2DFEFA4235CC2EE58E44DA26FB"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Codely.Roslyn.README.md",
+      "sha256": "618E8EE9D30ACE8BE1656CBC661AAB6FEC8C9ED83E5C661A4B1A528922760918"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Codely.Roslyn.README.md.meta",
+      "sha256": "D9033EF33222E628F144F8F073B1DA9AE0756682DEBFFE56827FBC559D25C3AB"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Codely.Roslyn.dll",
+      "sha256": "B1B362ED1EEB89AF629FBAF028A5B8A2D0EE13C67F728E92C5EE4E57FB63E296"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Codely.Roslyn.dll.meta",
+      "sha256": "6C3E9C1678529DE878479EF360F427324ABDB7F432DDE6315CA4C3CE0910E4ED"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Linux.meta",
+      "sha256": "9EA94FBAC4C97407DA040C1B968147D9D2D38F1E303ABBB21F625FA5D02FCB61"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Linux/x86_64.meta",
+      "sha256": "FDA271D6F396DF3B65937FA16EDEFBD80408AE989AC6DC22418CA6827E043957"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Linux/x86_64/libNativeTcpBridge.so",
+      "sha256": "FB471E82E4EDDFF74A4525D1123E102839DD31AE246C7E464E1C7787D4CAD6B8"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Linux/x86_64/libNativeTcpBridge.so.meta",
+      "sha256": "D9380E76897C529C90A9C53BFC566C66A91F3933068C881C3D3755F0EECE4219"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win.meta",
+      "sha256": "0D335B25915436A1CA09C99099CAECEF6D469C9D7F65A1CA25E611BAEAA5777B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser.dll",
+      "sha256": "A2FBD082AEAA1E91EEECD7B45DE09463DBC450091AFCB6BD0BA929653BF36C81"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser.dll.meta",
+      "sha256": "55AC2D1EEB4A294D334515EAD51AF15D2C578B8CDB25F455761EE2266647715E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser.meta",
+      "sha256": "A5B08CD7681B54D1016AF68171A790B46868DB2C6AA2C76D8A805E5B0C7EAA75"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/CMakeLists.txt",
+      "sha256": "AFCBF64B86495AB24E3C27130CF3A9FD2359E4A2EA5C6F4A222BDA5564EB5988"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/CMakeLists.txt.meta",
+      "sha256": "230456BEE60D7A04F8427B3DE954F0AE0415B672B70DD805AF61818FDE56988B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/build.ps1",
+      "sha256": "C9FCD5D2A8ED3CD4B30F0D282E82C197902C6FF7B4236EA7B7A32493616D1CBB"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/build.ps1.meta",
+      "sha256": "DC8990F946D625869D3A1EE968F48FC547C194C2F01EE171D7ABDD343A1B2BD2"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/include.meta",
+      "sha256": "10C74FA527BEAD576F2F3BEBB5760BCF070B540D90458A3BFA3CE4C992A90309"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/include/NativeBrowser.h",
+      "sha256": "8BA6302125529CE5E4FCB86000D52FA601056FF0BE32259DA610EB34D43DD3AA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/include/NativeBrowser.h.meta",
+      "sha256": "275894EB2B58BED81BFC5839E169CF81A0E7B22D831FAF1FB89DC87BFA8EA464"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src.meta",
+      "sha256": "CF7956AE7355612819FBFBBC53193994CAA69F64BAA7E9FB654734FBD37ACAE9"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/BrowserInstance.cpp",
+      "sha256": "1354BF89AD5837647177D121D89EE2FAF3D091308C222F43FD97D1A061A7D178"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/BrowserInstance.cpp.meta",
+      "sha256": "65BA11D60876B83165FAABAFB005EAF1FE92D870658F8D147BA07797EFE608E8"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/BrowserInstance.h",
+      "sha256": "5BA81D01E11D1A183A34B56162924A55C00839D49F9293BFF0B0074D8F01C4B8"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/BrowserInstance.h.meta",
+      "sha256": "2992207285E7E2A11FB759A777549C4E63B1F7236F93EAD06E93023462218BB2"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/CallbackRegistry.h",
+      "sha256": "1B6C989106784BC55004BA634DD66643E1D2D047DC5DC7DAD8BB2B2EE7A9B31C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/CallbackRegistry.h.meta",
+      "sha256": "0A151AD7D57AF3E58F9B2C5B2329AC8AF26A0E65BB07CF3B25FB0B745B51B5E5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/NativeBrowser.cpp",
+      "sha256": "6F43DE8E88600135162A94A123CBEDF77C55A80BDE3C3FD926A6A34D01EFD56E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/NativeBrowser.cpp.meta",
+      "sha256": "0D58D2BEEF0594A804970C3D45384CF1C97E0F2418248B6B88486603D98CE191"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/STAThread.cpp",
+      "sha256": "B33A9C3CA073F686B5067F795E007EFE34629A0789173802B26F575396D1346C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/STAThread.cpp.meta",
+      "sha256": "AFE521CA89CF1DA0CDCFC8038B37D70FC46E1CEC68DDF5356C65DBEA4119206A"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/STAThread.h",
+      "sha256": "CD2C4454F0471933ABCE02D982C4D4D6BB34E2C644B4564B28068232FD37975F"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/STAThread.h.meta",
+      "sha256": "4626AA4358F215B5C594C3C3E3BE117B48F57E547E82ECAE60DDE876AB12EE52"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/WndProcHook.cpp",
+      "sha256": "852CC9BBD7B4BB44310EAD272C79CE2D8171051598E920F0D3234A10CC0BBFC5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/WndProcHook.cpp.meta",
+      "sha256": "50C03AB6B048699B0157992B9059BBFB79253D7EE4B79E3E660A8FF680AEDDAA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/WndProcHook.h",
+      "sha256": "CFB1F3A562719A8CC21968DF00CDA40B5E6100582882381A57E64AAA1DF1D807"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/src/WndProcHook.h.meta",
+      "sha256": "D7D1BC0E9EAEFDF8CF6F5249CEF081DFC3E68ADDAA851D8610D3D2223310B215"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/vendor.meta",
+      "sha256": "F542FF41E2F233890DCEC1ACC94223F713C4CCD96DEBE9D7E085E808EEE8EDBD"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/vendor/webview2.meta",
+      "sha256": "C5F99C8011CE8103DDC77E27C63853D2091AAE609C08FDA486282744BCA49CAD"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/vendor/webview2/include.meta",
+      "sha256": "83158CA6D5A013CB0E2FE08681C6CAE372125A5C122422CCAA58823CC2C286DF"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/vendor/webview2/include/WebView2.h",
+      "sha256": "854F495325961C86993D0E6F29DFDFC062010FEE9E78DA642DB56C8CC0B03CE2"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/vendor/webview2/include/WebView2.h.meta",
+      "sha256": "B0263DF86C4F4FC9FB166A733B712965CB8A5853971F4C8371846E7901E4E8CF"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/vendor/webview2/lib.meta",
+      "sha256": "C2CF8C6915AA80FF5B9BD1932239394A9F95D46AF6EA343842B3910AFBF7B8C3"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/vendor/webview2/lib/x64.meta",
+      "sha256": "E59D659D68018B005D754A8B26961EE398E8A55B675C9F39857BC8AF7556F00A"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/vendor/webview2/lib/x64/WebView2LoaderStatic.lib",
+      "sha256": "40EB6F62A64A8146951E1097A6D33AA01387250375E022EA91898285E16D7515"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeBrowser/vendor/webview2/lib/x64/WebView2LoaderStatic.lib.meta",
+      "sha256": "679827C82A6611FC6DFE58204556E89AA83B725293A85ED26420CC5179B0D330"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeIpcClient.dll",
+      "sha256": "D57F85AAD6D2445417F2B963C07B938611C345EB620A800702ADDAF6D9B9650C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeIpcClient.dll.meta",
+      "sha256": "40A4DBD7A97B8779563AC87A4192220BEF9D0A835516B0DA4786C8CA77685007"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeTcpBridge.dll",
+      "sha256": "E8D7EFA7A0ACBDAD08D6544AE7C1C3711F9ADEBE3647C20D85FFC05D2E84DF3C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeTcpBridge.dll.meta",
+      "sha256": "191A66C054454935DDC90715925A281B93377538B0D84A50AD155E6E1E0492FA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeWindowBridge.dll",
+      "sha256": "CBF334BDE4C35408F4268F6CA6A4AE74307A51224650413855937B3F74109704"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/NativeWindowBridge.dll.meta",
+      "sha256": "F39D0D52ED28F160E54C913C714602FED555BB57280A3B982FB308FC9F07DD63"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/datachannel.dll",
+      "sha256": "A853B8D22610F58A06A18D21C47528FFC8A7C4AF6F5D2FD8D95EDF3513C8B583"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/datachannel.dll.meta",
+      "sha256": "9BEF612555A9D25F231B897E1819D878CD8E19CD3F0E90E57AE14ABC44653276"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/libcrypto-3-x64.dll",
+      "sha256": "7E015ABCFA14137224769EA9E9773311A3C85646D3EE8EA50AA97E51334840BB"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/libcrypto-3-x64.dll.meta",
+      "sha256": "085BEA7968A28CDD2BCC134FAF601B875D92CD3F2B69D71EB48258AF75C35BED"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/libssl-3-x64.dll",
+      "sha256": "E97F372C98638FC2706D5D621AD3E00E8DCD841EAFF5F4F7CDAACB10E1EC338D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/Win/libssl-3-x64.dll.meta",
+      "sha256": "55379AC14005F9F342F6F9BD3D10F16EDBB818BCC95250B4F318D56FD0D31557"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS.meta",
+      "sha256": "BA4612C542283D688223581DAD57179FFAB82D4C9D90F77E554491DD30B6C4FF"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/WebView.meta",
+      "sha256": "F13DCC208F0E2F5F7868E73ADB650E74737AFCCDD8F53226141A183C285D5865"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/WebView/WebViewPlugin.mm",
+      "sha256": "A614368721D89E8E6A87F225C5539ACECA56D03729598ABAE8B783718CF1B942"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/WebView/WebViewPlugin.mm.meta",
+      "sha256": "3B1838A665C302D08061488C9CCE652176F13D04A61CD774C649DAE4A5A7DB57"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/WebView/build-webview.sh",
+      "sha256": "37D6F47FCA71B6C9B4D95838130503822A4925F4EBEC48A41CC0A33E059D1248"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/WebView/build-webview.sh.meta",
+      "sha256": "689B37B610F2AB8D505083D8CD429E6126F91D95B2830BF5DF2DC32A377C69B7"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/WebViewPlugin.bundle.meta",
+      "sha256": "6D0016590F1F5C97A0AD55762D4ABE8A42EA95A9442A7CF9F169BD9C4171B57B"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/WebViewPlugin.bundle/Contents.meta",
+      "sha256": "2ECE8E0A51F9F906BB0EC5978AF44FE3AA8C7D61DE8B85C3F5FA10448B70BDCE"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/WebViewPlugin.bundle/Contents/Info.plist",
+      "sha256": "BBB0BE5273F8050B13E9932AA8D858E0CF00E3767C8641DDAFEAAC57282425BB"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/WebViewPlugin.bundle/Contents/Info.plist.meta",
+      "sha256": "5E81462D05B98AE1C3384436796A6533A8C7D6E08F491490C6EB518AE376F74A"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/WebViewPlugin.bundle/Contents/MacOS.meta",
+      "sha256": "FBFCE4FA34D5C1D12F5DE47F200254ECE6FB8342FB6C664D58AE1DBD0C6EF267"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/WebViewPlugin.bundle/Contents/MacOS/WebViewPlugin",
+      "sha256": "0A1CD36FB729E497B7858C4523282396F5AA276B55C726A8BC46F566B1A134E2"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/WebViewPlugin.bundle/Contents/MacOS/WebViewPlugin.meta",
+      "sha256": "DD20279533EBEAE84934A954DEF93FAABE420F0E7AD5977BE81BDB93250144FD"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/libNativeTcpBridge.dylib",
+      "sha256": "DFC520B9EB8C7F0EAB946CA95A61FF9A6E1BFC3240140232813417177B80D362"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/libNativeTcpBridge.dylib.meta",
+      "sha256": "7FA19B63E31B71B92D8C2417ED4AD96F02490790DB93474BBE9060F56796DA9C"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/libNativeWindowBridge.dylib",
+      "sha256": "0177151BED4FF50B4FA0EAC47F0D7DB5ACCF8FA60FD9FF9DE772A8E9F8689985"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/libNativeWindowBridge.dylib.meta",
+      "sha256": "55C9B7785F8DD6DA29E09B60489D6D764BB37DA4D3C49E80A8E349F594BCCA20"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/libcrypto.3.dylib",
+      "sha256": "7E96CE186A37AE45875FCA926092E447BEE865EA90D207811D5115520E92A09D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/libcrypto.3.dylib.meta",
+      "sha256": "5AA7C5593726736B79E33092977173BCAA5FB19A0B845D5F27A55736FD2A5483"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/libdatachannel.dylib",
+      "sha256": "72D19562AEBE01400575F40890475B1A009B7A44D4B883C490156B3C3E223415"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/libdatachannel.dylib.meta",
+      "sha256": "3C9F0C198C5EBE1055A493D9F9A3EB4773E136E686752D077450A4092C24DC4E"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/libssl.3.dylib",
+      "sha256": "AB15A320ABE2B17A02316ACD2060AD6C17FD48685DF27D555D6996D4358F729D"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/Plugins/macOS/libssl.3.dylib.meta",
+      "sha256": "8553D42E9841207D157A00E943668280E51B64FBE88BDB2B980E8968E49D23A5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/README.md",
+      "sha256": "91C6A27C2DA59E936BAEF071B96407F846FF33DBDDACA2198ED8DFBFD30F4E81"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/README.md.meta",
+      "sha256": "D0F81F9082C1242A5E3FE68EF439BD39F389598D1C787B8D91F19A57D7DE0C89"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/package.json",
+      "sha256": "78693F1026CCB5C1C1A5B1F2699714136E0548F6644F98526AEB9F044C68DEE6"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/package.json.meta",
+      "sha256": "10C02430F6B0C1066370F0C20C3479C7BD6350B2E95576949388156D124DBBFE"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/scripts.meta",
+      "sha256": "AEEE54FFADD930A7AAD336BE9824577A2CE0087E9A9E726DFBE63120DCF2FDDF"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/scripts/fix-meta-guids.ps1",
+      "sha256": "C0512CD5F5D48CA0CB37FD74BC56A69207D39650CB4620B7D873594F3CC0335A"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/scripts/fix-meta-guids.ps1.meta",
+      "sha256": "F81C728F94B56FE0D68E5C16603A17402E96232BA399FC91FE9AC52A15E054B5"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/scripts/fix-meta-guids.sh",
+      "sha256": "1525EE2A5417E59A19BFC78AAB0EC069C6F674202EB09511EA5120EDC4FF2013"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/scripts/fix-meta-guids.sh.meta",
+      "sha256": "5C4A5E00D14223D69EB8764A30BF4AA6F1C5737699D0119E436FDC6E6B281809"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/scripts/validate-meta-guids.bat",
+      "sha256": "A1D16CB5F6E6AB620A014BEF416987B5CC52CAF507458A1EE997D8DDDEC0F981"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/scripts/validate-meta-guids.bat.meta",
+      "sha256": "1DC7EB1C34A57B04594BE83C34973570A7CB007614ED4F538FB6C8746BCAAFEA"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/scripts/validate-meta-guids.sh",
+      "sha256": "141F37C4ABBDB1BCF67050728BA7EBAA4B6D4A994530ED86691DC9C73E12ADC3"
+    },
+    {
+      "path": "Polarity/Packages/cn.tuanjie.codely.bridge/scripts/validate-meta-guids.sh.meta",
+      "sha256": "9017B9357000E7E47955DBB65B7EC1450660F066C54F24FCDD25738480A8A323"
+    },
+    {
+      "path": "Polarity/Packages/manifest.json",
+      "sha256": "45B49C84F09BF62A9E2F47E8FED6BE334AF3C4ED9BC7159CD42D1803F01AA304"
+    },
+    {
+      "path": "Polarity/Packages/packages-lock.json",
+      "sha256": "2C512C96223D740C43D4625B8B7F998DBC84391B0CB10D11059B19CC0E45BD51"
+    },
+    {
+      "path": "Polarity/ProjectSettings/AudioManager.asset",
+      "sha256": "D9FD872BF1958F195C36620ADF4116A0F35B588E543083EDFD63A4D82E6B9D59"
+    },
+    {
+      "path": "Polarity/ProjectSettings/AutoStreamingSettings.asset",
+      "sha256": "B82534D0D61B397DA0ACAD7C14D410970DDCD24F766E4887ACEB966805281FD5"
+    },
+    {
+      "path": "Polarity/ProjectSettings/ClusterInputManager.asset",
+      "sha256": "B9BFE44C380AEAF8D2F8D8203D49EEFF2D23658C2931BCD057A7DCEC164CD9AF"
+    },
+    {
+      "path": "Polarity/ProjectSettings/DynamicsManager.asset",
+      "sha256": "26685624D095C8F88B710C2F7A60CC673122D2EAC976316A9EA529C0FF38BBFF"
+    },
+    {
+      "path": "Polarity/ProjectSettings/EditorBuildSettings.asset",
+      "sha256": "EC0DD5AF3DE46792E2987C1892447CEDEDF37827892DAD75DD6B437BDB62727E"
+    },
+    {
+      "path": "Polarity/ProjectSettings/EditorSettings.asset",
+      "sha256": "40C7CAE2A004D895DF4D078CD5A0B5F6EE590B9C6DD10CEFB0F1565C139158A6"
+    },
+    {
+      "path": "Polarity/ProjectSettings/GraphicsSettings.asset",
+      "sha256": "1570432C59D47E718CED0C2E5DC77AFBEB19EAD9535C86B0C5A811F67A8D6A78"
+    },
+    {
+      "path": "Polarity/ProjectSettings/InputManager.asset",
+      "sha256": "52C9FF116C27597572A438BCA7A7AF79EAAADD087A9F33F82F5A00CD6B00724C"
+    },
+    {
+      "path": "Polarity/ProjectSettings/MemorySettings.asset",
+      "sha256": "ED2398FBA542DF66F3F210DC5AE96FC014C9D0EF25D3D370262BB508E6506C99"
+    },
+    {
+      "path": "Polarity/ProjectSettings/NavMeshAreas.asset",
+      "sha256": "66513150A6D867E8F820E4C40757F98A29F38DDCAC57964F0FE09FCF50F6D092"
+    },
+    {
+      "path": "Polarity/ProjectSettings/NetworkManager.asset",
+      "sha256": "A48C6753E9F8286D8BA6CA1C99316C1BD45A4850845FBA45AB8707D7E432701E"
+    },
+    {
+      "path": "Polarity/ProjectSettings/PackageManagerSettings.asset",
+      "sha256": "0F81343F5F4741B883F3B7F7A0D9E76BF1A27B4C9532E8BAB4323BE6D31AAA23"
+    },
+    {
+      "path": "Polarity/ProjectSettings/Physics2DSettings.asset",
+      "sha256": "337D121D7AE1D92F8B455DBA8F2D2175CDB0291EB0A137EFED6CDAEE9AAA4A78"
+    },
+    {
+      "path": "Polarity/ProjectSettings/PresetManager.asset",
+      "sha256": "CC32B39EB67B542910A21D2D529FE237361C506B71368DF0A81CC18B24AEEF01"
+    },
+    {
+      "path": "Polarity/ProjectSettings/ProjectSettings.asset",
+      "sha256": "5EC62493A9112BD7001F848BC50406AAE3D7D40B0FC2024DDBB9341DE5F848FE"
+    },
+    {
+      "path": "Polarity/ProjectSettings/ProjectVersion.txt",
+      "sha256": "ADD0609351955F044B19CD0883158510856E88CE16CAE08997278E83F356505F"
+    },
+    {
+      "path": "Polarity/ProjectSettings/QualitySettings.asset",
+      "sha256": "1BFBC18E8363EB2F7D9A4D1B53DDBD223335D1F10B8E15EF5BD3FD44B82FAE69"
+    },
+    {
+      "path": "Polarity/ProjectSettings/SceneTemplateSettings.json",
+      "sha256": "5BAF593374AD67246277A435D8D0DED7167696EEF6E05D2D245670E490625D8C"
+    },
+    {
+      "path": "Polarity/ProjectSettings/TagManager.asset",
+      "sha256": "27F2E863782A18C8E30F23E8ED70043D0F993447364DD285801EA6B7394E968C"
+    },
+    {
+      "path": "Polarity/ProjectSettings/TextureManagerSettings.asset",
+      "sha256": "231B80AAC938163F8FDC58D30A8169447E5A42BEBD7E4326E7765A4A2EDC5DB3"
+    },
+    {
+      "path": "Polarity/ProjectSettings/ThreadInfoSettings.asset",
+      "sha256": "0A4E560076CF416733775B6A0A7D75514443F33E66E4442008DCEF61483B646C"
+    },
+    {
+      "path": "Polarity/ProjectSettings/TimeManager.asset",
+      "sha256": "F0177CF935894942D072474158C30E66D666D53379DE2559A38CF67B67506B8D"
+    },
+    {
+      "path": "Polarity/ProjectSettings/UnityConnectSettings.asset",
+      "sha256": "7FB631DFB20A21A72372837E4BAAD5F17B354EE1DF8559B201C54018A6BF01A7"
+    },
+    {
+      "path": "Polarity/ProjectSettings/VFXManager.asset",
+      "sha256": "600FD3BC021F5D2F4B5338FB8AE9AF1D3DEB2721DC1C90DDD84DB99A7470D087"
+    },
+    {
+      "path": "Polarity/ProjectSettings/VersionControlSettings.asset",
+      "sha256": "FE081D33B9755626A716E7E9C7B447D17F8660BFF02B3A67FEA06EB49AF52FF9"
+    },
+    {
+      "path": "Polarity/ProjectSettings/XRSettings.asset",
+      "sha256": "EDD2BEB4A2E388312B4B7DA241AA51070434005D82C59363F1237DD2E567585F"
+    }
+  ],
+  "recoveryDirectory": "D:\\Code\\Polarity\\Polarity\\Temp\\Step12-Recovery"
+}

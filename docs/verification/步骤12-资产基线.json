@@ -1,0 +1,4190 @@
+{
+  "scene": "Assets/Polarity/Scenes/Game.scene",
+  "sceneDirty": false,
+  "playing": false,
+  "version": "2022.3.62t13",
+  "rooms": [
+    {
+      "definition": "Assets/Polarity/Configs/Levels/01-Polarity.asset",
+      "guid": "e5f6070b995e543458a215c144038c18",
+      "Title": "极性",
+      "TeachingHint": "左键给敌人标记正极，右键给箱子标记负极：异极相吸。再将箱子改为正极，把敌人推向红色尖刺。每次赋极或改色消耗 1 次。",
+      "MarkBudget": 3,
+      "room": "Assets/Polarity/Prefabs/Levels/01-Polarity.prefab",
+      "roomGuid": "3bd9c617de5ef7d458e5971f00e0794a",
+      "valid": true,
+      "config": "Assets/Polarity/Configs/GameplayConfig.asset",
+      "settings": {
+        "MagneticStrength": 20,
+        "MagneticRadius": 7,
+        "MarkingDistance": 7,
+        "MaxBodySpeed": 12,
+        "MaxMagneticAcceleration": 30,
+        "MagneticBlockingLayers": 4096,
+        "ImpactDamageThreshold": 4.5,
+        "EnemyDamageInterval": 0.35,
+        "PlayerDamageInterval": 0.8,
+        "DamagePerHit": 1,
+        "SlowMotionScale": 0.3
+      },
+      "player": {
+        "name": "Player",
+        "position": [
+          3,
+          -2.5,
+          0
+        ],
+        "localScale": [
+          1,
+          1,
+          1
+        ],
+        "lossyScale": [
+          1,
+          1,
+          1
+        ],
+        "source": "Assets/Polarity/Prefabs/Actors/Player.prefab",
+        "colliders": [
+          {
+            "name": "Player",
+            "type": "CircleCollider2D",
+            "layer": "Player",
+            "trigger": false,
+            "enabled": true,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "center": [
+              3,
+              -2.5,
+              0
+            ],
+            "size": [
+              1,
+              1
+            ]
+          }
+        ],
+        "mass": 1,
+        "drag": 1,
+        "initialPolarity": null,
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "hp": 3,
+        "speed": 4.5
+      },
+      "bodies": [
+        {
+          "order": 1,
+          "actor": {
+            "name": "Enemy_01",
+            "position": [
+              -2.2,
+              0,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_01",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -2.2,
+                  0,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 2,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 2,
+          "actor": {
+            "name": "Crate_01",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "localScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "lossyScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Crate.prefab",
+            "colliders": [
+              {
+                "name": "Crate_01",
+                "type": "BoxCollider2D",
+                "layer": "Crate",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1.4,
+                  1.4,
+                  1
+                ],
+                "center": [
+                  0,
+                  0,
+                  0
+                ],
+                "size": [
+                  1.4,
+                  1.4
+                ]
+              }
+            ],
+            "mass": 4,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 0,
+            "speed": 0
+          }
+        }
+      ],
+      "walls": [
+        {
+          "name": "Wall_Top",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            21,
+            0.5,
+            1
+          ],
+          "center": [
+            0,
+            6.25,
+            0
+          ],
+          "size": [
+            21,
+            0.5
+          ]
+        },
+        {
+          "name": "Wall_Bottom",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            21,
+            0.5,
+            1
+          ],
+          "center": [
+            0,
+            -6.25,
+            0
+          ],
+          "size": [
+            21,
+            0.5
+          ]
+        },
+        {
+          "name": "Wall_Left",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            0.5,
+            12,
+            1
+          ],
+          "center": [
+            -10.25,
+            0,
+            0
+          ],
+          "size": [
+            0.5,
+            12
+          ]
+        },
+        {
+          "name": "Wall_Right",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            0.5,
+            12,
+            1
+          ],
+          "center": [
+            10.25,
+            0,
+            0
+          ],
+          "size": [
+            0.5,
+            12
+          ]
+        }
+      ],
+      "hazards": [
+        {
+          "name": "Spikes_Left",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            -4.5,
+            0,
+            0
+          ],
+          "size": [
+            0.65,
+            7.4
+          ]
+        },
+        {
+          "name": "Spikes_Top",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            3.85,
+            0
+          ],
+          "size": [
+            15,
+            0.5
+          ]
+        },
+        {
+          "name": "Spikes_Bottom",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            -3.85,
+            0
+          ],
+          "size": [
+            15,
+            0.5
+          ]
+        }
+      ],
+      "turrets": [],
+      "occluders": [
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "BodySprite",
+        "Foot_Left",
+        "Foot_Right",
+        "Arm_Left",
+        "Arm_Right",
+        "TorsoTop",
+        "ChestPanel",
+        "Head",
+        "HeadSide",
+        "HeadTop",
+        "Visor",
+        "Eye_Left",
+        "Eye_Right"
+      ],
+      "missing": 0
+    },
+    {
+      "definition": "Assets/Polarity/Configs/Levels/02-Contact.asset",
+      "guid": "a7982148b05b31243800df7793a75522",
+      "Title": "接触",
+      "TeachingHint": "给一个敌人标记正极，再走位促成接触：传播免费，三个敌人只需一次标记。蓝色箱子会吸引正极物体；已有极性不被覆盖，留下一次备用标记。",
+      "MarkBudget": 2,
+      "room": "Assets/Polarity/Prefabs/Levels/02-Contact.prefab",
+      "roomGuid": "ea2379cb7cbcd804c83aa0e806e3e4db",
+      "valid": true,
+      "config": "Assets/Polarity/Configs/GameplayConfig.asset",
+      "settings": {
+        "MagneticStrength": 20,
+        "MagneticRadius": 7,
+        "MarkingDistance": 7,
+        "MaxBodySpeed": 12,
+        "MaxMagneticAcceleration": 30,
+        "MagneticBlockingLayers": 4096,
+        "ImpactDamageThreshold": 4.5,
+        "EnemyDamageInterval": 0.35,
+        "PlayerDamageInterval": 0.8,
+        "DamagePerHit": 1,
+        "SlowMotionScale": 0.3
+      },
+      "player": {
+        "name": "Player",
+        "position": [
+          3,
+          -2.5,
+          0
+        ],
+        "localScale": [
+          1,
+          1,
+          1
+        ],
+        "lossyScale": [
+          1,
+          1,
+          1
+        ],
+        "source": "Assets/Polarity/Prefabs/Actors/Player.prefab",
+        "colliders": [
+          {
+            "name": "Player",
+            "type": "CircleCollider2D",
+            "layer": "Player",
+            "trigger": false,
+            "enabled": true,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "center": [
+              3,
+              -2.5,
+              0
+            ],
+            "size": [
+              1,
+              1
+            ]
+          }
+        ],
+        "mass": 1,
+        "drag": 1,
+        "initialPolarity": null,
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "hp": 3,
+        "speed": 4.5
+      },
+      "bodies": [
+        {
+          "order": 1,
+          "actor": {
+            "name": "Enemy_01",
+            "position": [
+              -2.8,
+              -1.1,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_01",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -2.8,
+                  -1.1,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 1,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 2,
+          "actor": {
+            "name": "Enemy_02",
+            "position": [
+              -2.8,
+              0,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_02",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -2.8,
+                  0,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 1,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 3,
+          "actor": {
+            "name": "Enemy_03",
+            "position": [
+              -2.8,
+              1.1,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_03",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -2.8,
+                  1.1,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 1,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 4,
+          "actor": {
+            "name": "Crate_01",
+            "position": [
+              -0.4,
+              0,
+              0
+            ],
+            "localScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "lossyScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Crate.prefab",
+            "colliders": [
+              {
+                "name": "Crate_01",
+                "type": "BoxCollider2D",
+                "layer": "Crate",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1.4,
+                  1.4,
+                  1
+                ],
+                "center": [
+                  -0.4,
+                  0,
+                  0
+                ],
+                "size": [
+                  1.4,
+                  1.4
+                ]
+              }
+            ],
+            "mass": 4,
+            "drag": 1,
+            "initialPolarity": "Negative",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 0,
+            "speed": 0
+          }
+        }
+      ],
+      "walls": [
+        {
+          "name": "Wall_Top",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            21,
+            0.5,
+            1
+          ],
+          "center": [
+            0,
+            6.25,
+            0
+          ],
+          "size": [
+            21,
+            0.5
+          ]
+        },
+        {
+          "name": "Wall_Bottom",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            21,
+            0.5,
+            1
+          ],
+          "center": [
+            0,
+            -6.25,
+            0
+          ],
+          "size": [
+            21,
+            0.5
+          ]
+        },
+        {
+          "name": "Wall_Left",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            0.5,
+            12,
+            1
+          ],
+          "center": [
+            -10.25,
+            0,
+            0
+          ],
+          "size": [
+            0.5,
+            12
+          ]
+        },
+        {
+          "name": "Wall_Right",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            0.5,
+            12,
+            1
+          ],
+          "center": [
+            10.25,
+            0,
+            0
+          ],
+          "size": [
+            0.5,
+            12
+          ]
+        }
+      ],
+      "hazards": [
+        {
+          "name": "Spikes_Left",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            -5.8,
+            0,
+            0
+          ],
+          "size": [
+            0.65,
+            7.4
+          ]
+        },
+        {
+          "name": "Spikes_Top",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            3.85,
+            0
+          ],
+          "size": [
+            15,
+            0.5
+          ]
+        },
+        {
+          "name": "Spikes_Bottom",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            -3.85,
+            0
+          ],
+          "size": [
+            15,
+            0.5
+          ]
+        }
+      ],
+      "turrets": [],
+      "occluders": [
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "BodySprite",
+        "Foot_Left",
+        "Foot_Right",
+        "Arm_Left",
+        "Arm_Right",
+        "TorsoTop",
+        "ChestPanel",
+        "Head",
+        "HeadSide",
+        "HeadTop",
+        "Visor",
+        "Eye_Left",
+        "Eye_Right"
+      ],
+      "missing": 0
+    },
+    {
+      "definition": "Assets/Polarity/Configs/Levels/03-BorrowFire.asset",
+      "guid": "5e2a4671cfa73444e94751b634b93208",
+      "Title": "借火",
+      "TeachingHint": "利用接触传播让敌人带上正极，引导负极炮弹命中敌人。炮弹不能被标记，也不能传播或接收极性；炮台锁定后可用箱子挡弹。",
+      "MarkBudget": 2,
+      "room": "Assets/Polarity/Prefabs/Levels/03-BorrowFire.prefab",
+      "roomGuid": "a012c20195dee6342b47a7a4abbabb9a",
+      "valid": true,
+      "config": "Assets/Polarity/Configs/GameplayConfig.asset",
+      "settings": {
+        "MagneticStrength": 20,
+        "MagneticRadius": 7,
+        "MarkingDistance": 7,
+        "MaxBodySpeed": 12,
+        "MaxMagneticAcceleration": 30,
+        "MagneticBlockingLayers": 4096,
+        "ImpactDamageThreshold": 4.5,
+        "EnemyDamageInterval": 0.35,
+        "PlayerDamageInterval": 0.8,
+        "DamagePerHit": 1,
+        "SlowMotionScale": 0.3
+      },
+      "player": {
+        "name": "Player",
+        "position": [
+          3,
+          -2.5,
+          0
+        ],
+        "localScale": [
+          1,
+          1,
+          1
+        ],
+        "lossyScale": [
+          1,
+          1,
+          1
+        ],
+        "source": "Assets/Polarity/Prefabs/Actors/Player.prefab",
+        "colliders": [
+          {
+            "name": "Player",
+            "type": "CircleCollider2D",
+            "layer": "Player",
+            "trigger": false,
+            "enabled": true,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "center": [
+              3,
+              -2.5,
+              0
+            ],
+            "size": [
+              1,
+              1
+            ]
+          }
+        ],
+        "mass": 1,
+        "drag": 1,
+        "initialPolarity": null,
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "hp": 3,
+        "speed": 4.5
+      },
+      "bodies": [
+        {
+          "order": 1,
+          "actor": {
+            "name": "Enemy_01",
+            "position": [
+              -2.8,
+              -1.1,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_01",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -2.8,
+                  -1.1,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 2,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 2,
+          "actor": {
+            "name": "Enemy_02",
+            "position": [
+              -2.8,
+              0,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_02",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -2.8,
+                  0,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 2,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 3,
+          "actor": {
+            "name": "Enemy_03",
+            "position": [
+              -2.8,
+              1.1,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_03",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -2.8,
+                  1.1,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 2,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 4,
+          "actor": {
+            "name": "Crate_01",
+            "position": [
+              1,
+              -1.6,
+              0
+            ],
+            "localScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "lossyScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Crate.prefab",
+            "colliders": [
+              {
+                "name": "Crate_01",
+                "type": "BoxCollider2D",
+                "layer": "Crate",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1.4,
+                  1.4,
+                  1
+                ],
+                "center": [
+                  1,
+                  -1.6,
+                  0
+                ],
+                "size": [
+                  1.4,
+                  1.4
+                ]
+              }
+            ],
+            "mass": 4,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 0,
+            "speed": 0
+          }
+        }
+      ],
+      "walls": [
+        {
+          "name": "Wall_Top",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            21,
+            0.5,
+            1
+          ],
+          "center": [
+            0,
+            6.25,
+            0
+          ],
+          "size": [
+            21,
+            0.5
+          ]
+        },
+        {
+          "name": "Wall_Bottom",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            21,
+            0.5,
+            1
+          ],
+          "center": [
+            0,
+            -6.25,
+            0
+          ],
+          "size": [
+            21,
+            0.5
+          ]
+        },
+        {
+          "name": "Wall_Left",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            0.5,
+            12,
+            1
+          ],
+          "center": [
+            -10.25,
+            0,
+            0
+          ],
+          "size": [
+            0.5,
+            12
+          ]
+        },
+        {
+          "name": "Wall_Right",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            0.5,
+            12,
+            1
+          ],
+          "center": [
+            10.25,
+            0,
+            0
+          ],
+          "size": [
+            0.5,
+            12
+          ]
+        }
+      ],
+      "hazards": [
+        {
+          "name": "Spikes_Left",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            -6.6,
+            0,
+            0
+          ],
+          "size": [
+            0.65,
+            7.4
+          ]
+        },
+        {
+          "name": "Spikes_Top",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            3.85,
+            0
+          ],
+          "size": [
+            15,
+            0.5
+          ]
+        },
+        {
+          "name": "Spikes_Bottom",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            -3.85,
+            0
+          ],
+          "size": [
+            15,
+            0.5
+          ]
+        }
+      ],
+      "turrets": [
+        {
+          "actor": {
+            "name": "Turret_01",
+            "position": [
+              5.6,
+              2.6,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Turret.prefab",
+            "colliders": [
+              {
+                "name": "Turret_01",
+                "type": "CircleCollider2D",
+                "layer": "Turret",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  5.6,
+                  2.6,
+                  0
+                ],
+                "size": [
+                  1.2,
+                  1.2
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 0,
+            "initialPolarity": null,
+            "canMark": false,
+            "canSpread": false,
+            "canReceive": false,
+            "hp": 0,
+            "speed": 0
+          },
+          "serialized": "{\"MonoBehaviour\":{\"m_Enabled\":true,\"m_EditorHideFlags\":0,\"m_Name\":\"\",\"m_EditorClassIdentifier\":\"\",\"projectilePrefab\":{\"fileID\":2965638408608357944,\"guid\":\"2f62f2953340cdb4d9ad8dada7edee28\",\"type\":3},\"initialDelay\":2.0,\"shotInterval\":3.5,\"warningDuration\":1.0,\"lockDuration\":0.20000000298023225,\"projectileSpeed\":5.0,\"muzzleDistance\":1.100000023841858}}"
+        }
+      ],
+      "occluders": [
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "BodySprite",
+        "Foot_Left",
+        "Foot_Right",
+        "Arm_Left",
+        "Arm_Right",
+        "TorsoTop",
+        "ChestPanel",
+        "Head",
+        "HeadSide",
+        "HeadTop",
+        "Visor",
+        "Eye_Left",
+        "Eye_Right"
+      ],
+      "missing": 0
+    },
+    {
+      "definition": "Assets/Polarity/Configs/Levels/04-ChooseSource.asset",
+      "guid": "2e144e2bb4ffe9141861a584d4a2b4ba",
+      "Title": "选择起点",
+      "TeachingHint": "可以从任意一组敌人开始，利用免费传播。中央蓝色箱子会吸引正极敌人，改为正极后将它们推开；另一个箱子可作掩体。",
+      "MarkBudget": 3,
+      "room": "Assets/Polarity/Prefabs/Levels/04-ChooseSource.prefab",
+      "roomGuid": "7d2a6a44528d8f74d942571547842803",
+      "valid": true,
+      "config": "Assets/Polarity/Configs/Levels/AdvancedGameplayConfig.asset",
+      "settings": {
+        "MagneticStrength": 20,
+        "MagneticRadius": 7,
+        "MarkingDistance": 8,
+        "MaxBodySpeed": 12,
+        "MaxMagneticAcceleration": 30,
+        "MagneticBlockingLayers": 4096,
+        "ImpactDamageThreshold": 4.5,
+        "EnemyDamageInterval": 0.35,
+        "PlayerDamageInterval": 0.8,
+        "DamagePerHit": 1,
+        "SlowMotionScale": 0.3
+      },
+      "player": {
+        "name": "Player",
+        "position": [
+          3,
+          0,
+          0
+        ],
+        "localScale": [
+          1,
+          1,
+          1
+        ],
+        "lossyScale": [
+          1,
+          1,
+          1
+        ],
+        "source": "Assets/Polarity/Prefabs/Actors/Player.prefab",
+        "colliders": [
+          {
+            "name": "Player",
+            "type": "CircleCollider2D",
+            "layer": "Player",
+            "trigger": false,
+            "enabled": true,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "center": [
+              3,
+              0,
+              0
+            ],
+            "size": [
+              1,
+              1
+            ]
+          }
+        ],
+        "mass": 1,
+        "drag": 1,
+        "initialPolarity": null,
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "hp": 3,
+        "speed": 4.5
+      },
+      "bodies": [
+        {
+          "order": 1,
+          "actor": {
+            "name": "Enemy_01",
+            "position": [
+              -2.5,
+              -1.4,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_01",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -2.5,
+                  -1.4,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 2,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 2,
+          "actor": {
+            "name": "Enemy_02",
+            "position": [
+              -3.58,
+              -1.4,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_02",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -3.58,
+                  -1.4,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 2,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 3,
+          "actor": {
+            "name": "Enemy_03",
+            "position": [
+              -2.5,
+              1.4,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_03",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -2.5,
+                  1.4,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 2,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 4,
+          "actor": {
+            "name": "Enemy_04",
+            "position": [
+              -3.58,
+              1.4,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_04",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -3.58,
+                  1.4,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 2,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 5,
+          "actor": {
+            "name": "Crate_01",
+            "position": [
+              -0.1,
+              0,
+              0
+            ],
+            "localScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "lossyScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Crate.prefab",
+            "colliders": [
+              {
+                "name": "Crate_01",
+                "type": "BoxCollider2D",
+                "layer": "Crate",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1.4,
+                  1.4,
+                  1
+                ],
+                "center": [
+                  -0.1,
+                  0,
+                  0
+                ],
+                "size": [
+                  1.4,
+                  1.4
+                ]
+              }
+            ],
+            "mass": 4,
+            "drag": 1,
+            "initialPolarity": "Negative",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 0,
+            "speed": 0
+          }
+        },
+        {
+          "order": 6,
+          "actor": {
+            "name": "Crate_02",
+            "position": [
+              2.2,
+              -1.7,
+              0
+            ],
+            "localScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "lossyScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Crate.prefab",
+            "colliders": [
+              {
+                "name": "Crate_02",
+                "type": "BoxCollider2D",
+                "layer": "Crate",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1.4,
+                  1.4,
+                  1
+                ],
+                "center": [
+                  2.2,
+                  -1.7,
+                  0
+                ],
+                "size": [
+                  1.4,
+                  1.4
+                ]
+              }
+            ],
+            "mass": 4,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 0,
+            "speed": 0
+          }
+        }
+      ],
+      "walls": [
+        {
+          "name": "Wall_Top",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            21,
+            0.5,
+            1
+          ],
+          "center": [
+            0,
+            6.25,
+            0
+          ],
+          "size": [
+            21,
+            0.5
+          ]
+        },
+        {
+          "name": "Wall_Bottom",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            21,
+            0.5,
+            1
+          ],
+          "center": [
+            0,
+            -6.25,
+            0
+          ],
+          "size": [
+            21,
+            0.5
+          ]
+        },
+        {
+          "name": "Wall_Left",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            0.5,
+            12,
+            1
+          ],
+          "center": [
+            -10.25,
+            0,
+            0
+          ],
+          "size": [
+            0.5,
+            12
+          ]
+        },
+        {
+          "name": "Wall_Right",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            0.5,
+            12,
+            1
+          ],
+          "center": [
+            10.25,
+            0,
+            0
+          ],
+          "size": [
+            0.5,
+            12
+          ]
+        }
+      ],
+      "hazards": [
+        {
+          "name": "Spikes_Left",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            -5.8,
+            0,
+            0
+          ],
+          "size": [
+            0.65,
+            7.4
+          ]
+        },
+        {
+          "name": "Spikes_Top",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            3.85,
+            0
+          ],
+          "size": [
+            15,
+            0.5
+          ]
+        },
+        {
+          "name": "Spikes_Bottom",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            -3.85,
+            0
+          ],
+          "size": [
+            15,
+            0.5
+          ]
+        }
+      ],
+      "turrets": [],
+      "occluders": [
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "BodySprite",
+        "Foot_Left",
+        "Foot_Right",
+        "Arm_Left",
+        "Arm_Right",
+        "TorsoTop",
+        "ChestPanel",
+        "Head",
+        "HeadSide",
+        "HeadTop",
+        "Visor",
+        "Eye_Left",
+        "Eye_Right"
+      ],
+      "missing": 0
+    },
+    {
+      "definition": "Assets/Polarity/Configs/Levels/05-ChangeRoute.asset",
+      "guid": "76bf36b4ef785524ea0a47af7d8fedb6",
+      "Title": "改变通路",
+      "TeachingHint": "墙角会改变被推开的敌人路线，红色尖刺会造成伤害。先在敌人间传播，再改色中央箱子；箱子也能挡住负极炮弹。",
+      "MarkBudget": 3,
+      "room": "Assets/Polarity/Prefabs/Levels/05-ChangeRoute.prefab",
+      "roomGuid": "f4517ab9f04148e47be5b6e8f7f574fe",
+      "valid": true,
+      "config": "Assets/Polarity/Configs/Levels/AdvancedGameplayConfig.asset",
+      "settings": {
+        "MagneticStrength": 20,
+        "MagneticRadius": 7,
+        "MarkingDistance": 8,
+        "MaxBodySpeed": 12,
+        "MaxMagneticAcceleration": 30,
+        "MagneticBlockingLayers": 4096,
+        "ImpactDamageThreshold": 4.5,
+        "EnemyDamageInterval": 0.35,
+        "PlayerDamageInterval": 0.8,
+        "DamagePerHit": 1,
+        "SlowMotionScale": 0.3
+      },
+      "player": {
+        "name": "Player",
+        "position": [
+          3,
+          0,
+          0
+        ],
+        "localScale": [
+          1,
+          1,
+          1
+        ],
+        "lossyScale": [
+          1,
+          1,
+          1
+        ],
+        "source": "Assets/Polarity/Prefabs/Actors/Player.prefab",
+        "colliders": [
+          {
+            "name": "Player",
+            "type": "CircleCollider2D",
+            "layer": "Player",
+            "trigger": false,
+            "enabled": true,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "center": [
+              3,
+              0,
+              0
+            ],
+            "size": [
+              1,
+              1
+            ]
+          }
+        ],
+        "mass": 1,
+        "drag": 1,
+        "initialPolarity": null,
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "hp": 3,
+        "speed": 4.5
+      },
+      "bodies": [
+        {
+          "order": 1,
+          "actor": {
+            "name": "Enemy_01",
+            "position": [
+              -2.5,
+              -1.4,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_01",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -2.5,
+                  -1.4,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 1,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 2,
+          "actor": {
+            "name": "Enemy_02",
+            "position": [
+              -3.58,
+              -1.4,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_02",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -3.58,
+                  -1.4,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 1,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 3,
+          "actor": {
+            "name": "Enemy_03",
+            "position": [
+              -2.5,
+              1.4,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_03",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -2.5,
+                  1.4,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 1,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 4,
+          "actor": {
+            "name": "Enemy_04",
+            "position": [
+              -3.58,
+              1.4,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_04",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -3.58,
+                  1.4,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 1,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 5,
+          "actor": {
+            "name": "Crate_01",
+            "position": [
+              -0.1,
+              0,
+              0
+            ],
+            "localScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "lossyScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Crate.prefab",
+            "colliders": [
+              {
+                "name": "Crate_01",
+                "type": "BoxCollider2D",
+                "layer": "Crate",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1.4,
+                  1.4,
+                  1
+                ],
+                "center": [
+                  -0.1,
+                  0,
+                  0
+                ],
+                "size": [
+                  1.4,
+                  1.4
+                ]
+              }
+            ],
+            "mass": 4,
+            "drag": 1,
+            "initialPolarity": "Negative",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 0,
+            "speed": 0
+          }
+        },
+        {
+          "order": 6,
+          "actor": {
+            "name": "Crate_02",
+            "position": [
+              2.2,
+              -1.7,
+              0
+            ],
+            "localScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "lossyScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Crate.prefab",
+            "colliders": [
+              {
+                "name": "Crate_02",
+                "type": "BoxCollider2D",
+                "layer": "Crate",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1.4,
+                  1.4,
+                  1
+                ],
+                "center": [
+                  2.2,
+                  -1.7,
+                  0
+                ],
+                "size": [
+                  1.4,
+                  1.4
+                ]
+              }
+            ],
+            "mass": 4,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 0,
+            "speed": 0
+          }
+        }
+      ],
+      "walls": [
+        {
+          "name": "Wall_Top",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            21,
+            0.5,
+            1
+          ],
+          "center": [
+            0,
+            6.25,
+            0
+          ],
+          "size": [
+            21,
+            0.5
+          ]
+        },
+        {
+          "name": "Wall_Bottom",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            21,
+            0.5,
+            1
+          ],
+          "center": [
+            0,
+            -6.25,
+            0
+          ],
+          "size": [
+            21,
+            0.5
+          ]
+        },
+        {
+          "name": "Wall_Left",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            0.5,
+            12,
+            1
+          ],
+          "center": [
+            -10.25,
+            0,
+            0
+          ],
+          "size": [
+            0.5,
+            12
+          ]
+        },
+        {
+          "name": "Wall_Right",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            0.5,
+            12,
+            1
+          ],
+          "center": [
+            10.25,
+            0,
+            0
+          ],
+          "size": [
+            0.5,
+            12
+          ]
+        },
+        {
+          "name": "ShortCorner",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            1.6,
+            0.35,
+            1
+          ],
+          "center": [
+            -1.2,
+            2.5,
+            0
+          ],
+          "size": [
+            1.6,
+            0.35
+          ]
+        },
+        {
+          "name": "CornerSide",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            0.35,
+            1,
+            1
+          ],
+          "center": [
+            -0.45,
+            3,
+            0
+          ],
+          "size": [
+            0.35,
+            1
+          ]
+        }
+      ],
+      "hazards": [
+        {
+          "name": "Spikes_Left",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            -5.8,
+            0,
+            0
+          ],
+          "size": [
+            0.65,
+            7.4
+          ]
+        },
+        {
+          "name": "Spikes_Top",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            3.85,
+            0
+          ],
+          "size": [
+            15,
+            0.5
+          ]
+        },
+        {
+          "name": "Spikes_Bottom",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            -3.85,
+            0
+          ],
+          "size": [
+            15,
+            0.5
+          ]
+        },
+        {
+          "name": "CornerSpikes",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            -1.2,
+            2.25,
+            0
+          ],
+          "size": [
+            1.6,
+            0.3
+          ]
+        }
+      ],
+      "turrets": [
+        {
+          "actor": {
+            "name": "Turret_01",
+            "position": [
+              5.6,
+              2.6,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Turret.prefab",
+            "colliders": [
+              {
+                "name": "Turret_01",
+                "type": "CircleCollider2D",
+                "layer": "Turret",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  5.6,
+                  2.6,
+                  0
+                ],
+                "size": [
+                  1.2,
+                  1.2
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 0,
+            "initialPolarity": null,
+            "canMark": false,
+            "canSpread": false,
+            "canReceive": false,
+            "hp": 0,
+            "speed": 0
+          },
+          "serialized": "{\"MonoBehaviour\":{\"m_Enabled\":true,\"m_EditorHideFlags\":0,\"m_Name\":\"\",\"m_EditorClassIdentifier\":\"\",\"projectilePrefab\":{\"fileID\":2965638408608357944,\"guid\":\"2f62f2953340cdb4d9ad8dada7edee28\",\"type\":3},\"initialDelay\":2.0,\"shotInterval\":3.5,\"warningDuration\":1.0,\"lockDuration\":0.20000000298023225,\"projectileSpeed\":5.0,\"muzzleDistance\":1.100000023841858}}"
+        }
+      ],
+      "occluders": [
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "BodySprite",
+        "Foot_Left",
+        "Foot_Right",
+        "Arm_Left",
+        "Arm_Right",
+        "TorsoTop",
+        "ChestPanel",
+        "Head",
+        "HeadSide",
+        "HeadTop",
+        "Visor",
+        "Eye_Left",
+        "Eye_Right"
+      ],
+      "missing": 0
+    },
+    {
+      "definition": "Assets/Polarity/Configs/Levels/06-Unleashed.asset",
+      "guid": "b861364b40c0e7146a19a621497ab62d",
+      "Title": "极性失控",
+      "TeachingHint": "综合利用起点选择、免费传播、走位、尖刺与负极炮弹。从任意一组开始，利用中央蓝色箱子，并保留一次标记用于关键改色。",
+      "MarkBudget": 3,
+      "room": "Assets/Polarity/Prefabs/Levels/06-Unleashed.prefab",
+      "roomGuid": "745e9e776c42e274b9c5395be2941a16",
+      "valid": true,
+      "config": "Assets/Polarity/Configs/Levels/AdvancedGameplayConfig.asset",
+      "settings": {
+        "MagneticStrength": 20,
+        "MagneticRadius": 7,
+        "MarkingDistance": 8,
+        "MaxBodySpeed": 12,
+        "MaxMagneticAcceleration": 30,
+        "MagneticBlockingLayers": 4096,
+        "ImpactDamageThreshold": 4.5,
+        "EnemyDamageInterval": 0.35,
+        "PlayerDamageInterval": 0.8,
+        "DamagePerHit": 1,
+        "SlowMotionScale": 0.3
+      },
+      "player": {
+        "name": "Player",
+        "position": [
+          3,
+          0,
+          0
+        ],
+        "localScale": [
+          1,
+          1,
+          1
+        ],
+        "lossyScale": [
+          1,
+          1,
+          1
+        ],
+        "source": "Assets/Polarity/Prefabs/Actors/Player.prefab",
+        "colliders": [
+          {
+            "name": "Player",
+            "type": "CircleCollider2D",
+            "layer": "Player",
+            "trigger": false,
+            "enabled": true,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "center": [
+              3,
+              0,
+              0
+            ],
+            "size": [
+              1,
+              1
+            ]
+          }
+        ],
+        "mass": 1,
+        "drag": 1,
+        "initialPolarity": null,
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "hp": 3,
+        "speed": 4.5
+      },
+      "bodies": [
+        {
+          "order": 1,
+          "actor": {
+            "name": "Enemy_01",
+            "position": [
+              -2.5,
+              -1.4,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_01",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -2.5,
+                  -1.4,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 2,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 2,
+          "actor": {
+            "name": "Enemy_02",
+            "position": [
+              -3.58,
+              -1.4,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_02",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -3.58,
+                  -1.4,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 2,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 3,
+          "actor": {
+            "name": "Enemy_03",
+            "position": [
+              -2.5,
+              1.4,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_03",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -2.5,
+                  1.4,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 2,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 4,
+          "actor": {
+            "name": "Enemy_04",
+            "position": [
+              -3.58,
+              1.4,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Enemy.prefab",
+            "colliders": [
+              {
+                "name": "Enemy_04",
+                "type": "CircleCollider2D",
+                "layer": "Enemy",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  -3.58,
+                  1.4,
+                  0
+                ],
+                "size": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 2,
+            "speed": 2.2
+          }
+        },
+        {
+          "order": 5,
+          "actor": {
+            "name": "Crate_01",
+            "position": [
+              -0.1,
+              0,
+              0
+            ],
+            "localScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "lossyScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Crate.prefab",
+            "colliders": [
+              {
+                "name": "Crate_01",
+                "type": "BoxCollider2D",
+                "layer": "Crate",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1.4,
+                  1.4,
+                  1
+                ],
+                "center": [
+                  -0.1,
+                  0,
+                  0
+                ],
+                "size": [
+                  1.4,
+                  1.4
+                ]
+              }
+            ],
+            "mass": 4,
+            "drag": 1,
+            "initialPolarity": "Negative",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 0,
+            "speed": 0
+          }
+        },
+        {
+          "order": 6,
+          "actor": {
+            "name": "Crate_02",
+            "position": [
+              2.2,
+              -1.7,
+              0
+            ],
+            "localScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "lossyScale": [
+              1.4,
+              1.4,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Crate.prefab",
+            "colliders": [
+              {
+                "name": "Crate_02",
+                "type": "BoxCollider2D",
+                "layer": "Crate",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1.4,
+                  1.4,
+                  1
+                ],
+                "center": [
+                  2.2,
+                  -1.7,
+                  0
+                ],
+                "size": [
+                  1.4,
+                  1.4
+                ]
+              }
+            ],
+            "mass": 4,
+            "drag": 1,
+            "initialPolarity": "Neutral",
+            "canMark": true,
+            "canSpread": true,
+            "canReceive": true,
+            "hp": 0,
+            "speed": 0
+          }
+        }
+      ],
+      "walls": [
+        {
+          "name": "Wall_Top",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            21,
+            0.5,
+            1
+          ],
+          "center": [
+            0,
+            6.25,
+            0
+          ],
+          "size": [
+            21,
+            0.5
+          ]
+        },
+        {
+          "name": "Wall_Bottom",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            21,
+            0.5,
+            1
+          ],
+          "center": [
+            0,
+            -6.25,
+            0
+          ],
+          "size": [
+            21,
+            0.5
+          ]
+        },
+        {
+          "name": "Wall_Left",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            0.5,
+            12,
+            1
+          ],
+          "center": [
+            -10.25,
+            0,
+            0
+          ],
+          "size": [
+            0.5,
+            12
+          ]
+        },
+        {
+          "name": "Wall_Right",
+          "type": "BoxCollider2D",
+          "layer": "Wall",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            0.5,
+            12,
+            1
+          ],
+          "center": [
+            10.25,
+            0,
+            0
+          ],
+          "size": [
+            0.5,
+            12
+          ]
+        }
+      ],
+      "hazards": [
+        {
+          "name": "Spikes_Left",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            -5.8,
+            0,
+            0
+          ],
+          "size": [
+            0.65,
+            7.4
+          ]
+        },
+        {
+          "name": "Spikes_Top",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            3.85,
+            0
+          ],
+          "size": [
+            15,
+            0.5
+          ]
+        },
+        {
+          "name": "Spikes_Bottom",
+          "type": "BoxCollider2D",
+          "layer": "Hazard",
+          "trigger": true,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            -3.85,
+            0
+          ],
+          "size": [
+            15,
+            0.5
+          ]
+        }
+      ],
+      "turrets": [
+        {
+          "actor": {
+            "name": "Turret_01",
+            "position": [
+              5.6,
+              2.6,
+              0
+            ],
+            "localScale": [
+              1,
+              1,
+              1
+            ],
+            "lossyScale": [
+              1,
+              1,
+              1
+            ],
+            "source": "Assets/Polarity/Prefabs/Actors/Turret.prefab",
+            "colliders": [
+              {
+                "name": "Turret_01",
+                "type": "CircleCollider2D",
+                "layer": "Turret",
+                "trigger": false,
+                "enabled": true,
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "center": [
+                  5.6,
+                  2.6,
+                  0
+                ],
+                "size": [
+                  1.2,
+                  1.2
+                ]
+              }
+            ],
+            "mass": 1,
+            "drag": 0,
+            "initialPolarity": null,
+            "canMark": false,
+            "canSpread": false,
+            "canReceive": false,
+            "hp": 0,
+            "speed": 0
+          },
+          "serialized": "{\"MonoBehaviour\":{\"m_Enabled\":true,\"m_EditorHideFlags\":0,\"m_Name\":\"\",\"m_EditorClassIdentifier\":\"\",\"projectilePrefab\":{\"fileID\":2965638408608357944,\"guid\":\"2f62f2953340cdb4d9ad8dada7edee28\",\"type\":3},\"initialDelay\":2.0,\"shotInterval\":3.5,\"warningDuration\":1.0,\"lockDuration\":0.20000000298023225,\"projectileSpeed\":5.0,\"muzzleDistance\":1.100000023841858}}"
+        }
+      ],
+      "occluders": [
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "FrontFace",
+        "TopFace",
+        "TopEdge",
+        "BodySprite",
+        "Foot_Left",
+        "Foot_Right",
+        "Arm_Left",
+        "Arm_Right",
+        "TorsoTop",
+        "ChestPanel",
+        "Head",
+        "HeadSide",
+        "HeadTop",
+        "Visor",
+        "Eye_Left",
+        "Eye_Right"
+      ],
+      "missing": 0
+    }
+  ],
+  "actors": [
+    {
+      "name": "Player",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "lossyScale": [
+        1,
+        1,
+        1
+      ],
+      "source": null,
+      "colliders": [
+        {
+          "name": "Player",
+          "type": "CircleCollider2D",
+          "layer": "Player",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            1,
+            1
+          ]
+        }
+      ],
+      "mass": 1,
+      "drag": 1,
+      "initialPolarity": null,
+      "canMark": false,
+      "canSpread": false,
+      "canReceive": false,
+      "hp": 3,
+      "speed": 4.5
+    },
+    {
+      "name": "Enemy",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "lossyScale": [
+        1,
+        1,
+        1
+      ],
+      "source": null,
+      "colliders": [
+        {
+          "name": "Enemy",
+          "type": "CircleCollider2D",
+          "layer": "Enemy",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            1,
+            1
+          ]
+        }
+      ],
+      "mass": 1,
+      "drag": 1,
+      "initialPolarity": "Neutral",
+      "canMark": true,
+      "canSpread": true,
+      "canReceive": true,
+      "hp": 2,
+      "speed": 3.2
+    },
+    {
+      "name": "Crate",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "localScale": [
+        1.4,
+        1.4,
+        1
+      ],
+      "lossyScale": [
+        1.4,
+        1.4,
+        1
+      ],
+      "source": null,
+      "colliders": [
+        {
+          "name": "Crate",
+          "type": "BoxCollider2D",
+          "layer": "Crate",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            1.4,
+            1.4,
+            1
+          ],
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            1.4,
+            1.4
+          ]
+        }
+      ],
+      "mass": 4,
+      "drag": 1,
+      "initialPolarity": "Neutral",
+      "canMark": true,
+      "canSpread": true,
+      "canReceive": true,
+      "hp": 0,
+      "speed": 0
+    },
+    {
+      "name": "Projectile",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "lossyScale": [
+        1,
+        1,
+        1
+      ],
+      "source": null,
+      "colliders": [
+        {
+          "name": "Projectile",
+          "type": "CircleCollider2D",
+          "layer": "Projectile",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            0.6,
+            0.6
+          ]
+        }
+      ],
+      "mass": 0.3,
+      "drag": 0,
+      "initialPolarity": "Negative",
+      "canMark": false,
+      "canSpread": false,
+      "canReceive": false,
+      "hp": 0,
+      "speed": 0
+    },
+    {
+      "name": "Turret",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "localScale": [
+        1,
+        1,
+        1
+      ],
+      "lossyScale": [
+        1,
+        1,
+        1
+      ],
+      "source": null,
+      "colliders": [
+        {
+          "name": "Turret",
+          "type": "CircleCollider2D",
+          "layer": "Turret",
+          "trigger": false,
+          "enabled": true,
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "center": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            1.2,
+            1.2
+          ]
+        }
+      ],
+      "mass": 1,
+      "drag": 0,
+      "initialPolarity": null,
+      "canMark": false,
+      "canSpread": false,
+      "canReceive": false,
+      "hp": 0,
+      "speed": 0
+    }
+  ],
+  "camera": {
+    "position": [
+      0,
+      0,
+      -10
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "orthographic": true,
+    "orthographicSize": 7.8,
+    "rect": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "aspect": 1.77777779
+  },
+  "hud": {
+    "path": "Assets/Polarity/Prefabs/UI/HUD.prefab",
+    "refs": [
+      {
+        "field": "m_Script",
+        "assigned": true,
+        "target": "HUDView"
+      },
+      {
+        "field": "world",
+        "assigned": true,
+        "target": "SimulationWorld"
+      },
+      {
+        "field": "healthText",
+        "assigned": true,
+        "target": "Life"
+      },
+      {
+        "field": "enemiesText",
+        "assigned": true,
+        "target": "Enemies"
+      },
+      {
+        "field": "marksText",
+        "assigned": true,
+        "target": "Marks"
+      },
+      {
+        "field": "speedText",
+        "assigned": true,
+        "target": "Speed"
+      },
+      {
+        "field": "markFeedbackText",
+        "assigned": true,
+        "target": "MarkFeedback"
+      },
+      {
+        "field": "propagationText",
+        "assigned": true,
+        "target": "Propagation"
+      },
+      {
+        "field": "budgetHintText",
+        "assigned": true,
+        "target": "BudgetHint"
+      },
+      {
+        "field": "modal",
+        "assigned": true,
+        "target": "Modal"
+      },
+      {
+        "field": "modalTitle",
+        "assigned": true,
+        "target": "Title"
+      },
+      {
+        "field": "modalDescription",
+        "assigned": true,
+        "target": "Description"
+      },
+      {
+        "field": "pauseButton",
+        "assigned": true,
+        "target": "PauseButton"
+      },
+      {
+        "field": "resumeButton",
+        "assigned": true,
+        "target": "ResumeButton"
+      },
+      {
+        "field": "retryButton",
+        "assigned": true,
+        "target": "RetryButton"
+      },
+      {
+        "field": "nextButton",
+        "assigned": true,
+        "target": "NextButton"
+      },
+      {
+        "field": "levelText",
+        "assigned": true,
+        "target": "Title"
+      },
+      {
+        "field": "teachingText",
+        "assigned": true,
+        "target": "Teaching"
+      },
+      {
+        "field": "raycaster",
+        "assigned": true,
+        "target": "HUD"
+      },
+      {
+        "field": "worldCamera",
+        "assigned": true,
+        "target": "Main Camera"
+      },
+      {
+        "field": "statusPanel",
+        "assigned": true,
+        "target": "Status"
+      },
+      {
+        "field": "controlsPanel",
+        "assigned": true,
+        "target": "Controls"
+      },
+      {
+        "field": "gmView",
+        "assigned": true,
+        "target": "HUD"
+      }
+    ],
+    "serialized": "{\"MonoBehaviour\":{\"m_Enabled\":true,\"m_EditorHideFlags\":0,\"m_Name\":\"\",\"m_EditorClassIdentifier\":\"\",\"world\":{\"instanceID\":0},\"healthText\":{\"instanceID\":0},\"enemiesText\":{\"instanceID\":0},\"marksText\":{\"instanceID\":0},\"speedText\":{\"instanceID\":0},\"markFeedbackText\":{\"instanceID\":0},\"propagationText\":{\"instanceID\":0},\"budgetHintText\":{\"instanceID\":0},\"modal\":{\"instanceID\":0},\"modalTitle\":{\"instanceID\":0},\"modalDescription\":{\"instanceID\":0},\"pauseButton\":{\"instanceID\":0},\"resumeButton\":{\"instanceID\":0},\"retryButton\":{\"instanceID\":0},\"nextButton\":{\"instanceID\":0},\"levelText\":{\"instanceID\":0},\"teachingText\":{\"instanceID\":0},\"raycaster\":{\"instanceID\":0},\"worldCamera\":{\"instanceID\":0},\"statusPanel\":{\"instanceID\":0},\"controlsPanel\":{\"instanceID\":0},\"gmView\":{\"instanceID\":0}}}"
+  },
+  "matrix": [
+    {
+      "a": "Player",
+      "b": "Player",
+      "collides": true
+    },
+    {
+      "a": "Player",
+      "b": "Enemy",
+      "collides": true
+    },
+    {
+      "a": "Player",
+      "b": "Crate",
+      "collides": true
+    },
+    {
+      "a": "Player",
+      "b": "Projectile",
+      "collides": true
+    },
+    {
+      "a": "Player",
+      "b": "Wall",
+      "collides": true
+    },
+    {
+      "a": "Player",
+      "b": "Turret",
+      "collides": true
+    },
+    {
+      "a": "Player",
+      "b": "Hazard",
+      "collides": true
+    },
+    {
+      "a": "Enemy",
+      "b": "Player",
+      "collides": true
+    },
+    {
+      "a": "Enemy",
+      "b": "Enemy",
+      "collides": true
+    },
+    {
+      "a": "Enemy",
+      "b": "Crate",
+      "collides": true
+    },
+    {
+      "a": "Enemy",
+      "b": "Projectile",
+      "collides": true
+    },
+    {
+      "a": "Enemy",
+      "b": "Wall",
+      "collides": true
+    },
+    {
+      "a": "Enemy",
+      "b": "Turret",
+      "collides": true
+    },
+    {
+      "a": "Enemy",
+      "b": "Hazard",
+      "collides": true
+    },
+    {
+      "a": "Crate",
+      "b": "Player",
+      "collides": true
+    },
+    {
+      "a": "Crate",
+      "b": "Enemy",
+      "collides": true
+    },
+    {
+      "a": "Crate",
+      "b": "Crate",
+      "collides": true
+    },
+    {
+      "a": "Crate",
+      "b": "Projectile",
+      "collides": true
+    },
+    {
+      "a": "Crate",
+      "b": "Wall",
+      "collides": true
+    },
+    {
+      "a": "Crate",
+      "b": "Turret",
+      "collides": true
+    },
+    {
+      "a": "Crate",
+      "b": "Hazard",
+      "collides": false
+    },
+    {
+      "a": "Projectile",
+      "b": "Player",
+      "collides": true
+    },
+    {
+      "a": "Projectile",
+      "b": "Enemy",
+      "collides": true
+    },
+    {
+      "a": "Projectile",
+      "b": "Crate",
+      "collides": true
+    },
+    {
+      "a": "Projectile",
+      "b": "Projectile",
+      "collides": false
+    },
+    {
+      "a": "Projectile",
+      "b": "Wall",
+      "collides": true
+    },
+    {
+      "a": "Projectile",
+      "b": "Turret",
+      "collides": true
+    },
+    {
+      "a": "Projectile",
+      "b": "Hazard",
+      "collides": false
+    },
+    {
+      "a": "Wall",
+      "b": "Player",
+      "collides": true
+    },
+    {
+      "a": "Wall",
+      "b": "Enemy",
+      "collides": true
+    },
+    {
+      "a": "Wall",
+      "b": "Crate",
+      "collides": true
+    },
+    {
+      "a": "Wall",
+      "b": "Projectile",
+      "collides": true
+    },
+    {
+      "a": "Wall",
+      "b": "Wall",
+      "collides": true
+    },
+    {
+      "a": "Wall",
+      "b": "Turret",
+      "collides": true
+    },
+    {
+      "a": "Wall",
+      "b": "Hazard",
+      "collides": false
+    },
+    {
+      "a": "Turret",
+      "b": "Player",
+      "collides": true
+    },
+    {
+      "a": "Turret",
+      "b": "Enemy",
+      "collides": true
+    },
+    {
+      "a": "Turret",
+      "b": "Crate",
+      "collides": true
+    },
+    {
+      "a": "Turret",
+      "b": "Projectile",
+      "collides": true
+    },
+    {
+      "a": "Turret",
+      "b": "Wall",
+      "collides": true
+    },
+    {
+      "a": "Turret",
+      "b": "Turret",
+      "collides": true
+    },
+    {
+      "a": "Turret",
+      "b": "Hazard",
+      "collides": false
+    },
+    {
+      "a": "Hazard",
+      "b": "Player",
+      "collides": true
+    },
+    {
+      "a": "Hazard",
+      "b": "Enemy",
+      "collides": true
+    },
+    {
+      "a": "Hazard",
+      "b": "Crate",
+      "collides": false
+    },
+    {
+      "a": "Hazard",
+      "b": "Projectile",
+      "collides": false
+    },
+    {
+      "a": "Hazard",
+      "b": "Wall",
+      "collides": false
+    },
+    {
+      "a": "Hazard",
+      "b": "Turret",
+      "collides": false
+    },
+    {
+      "a": "Hazard",
+      "b": "Hazard",
+      "collides": false
+    }
+  ],
+  "fixedStep": 0.02,
+  "physics": "FixedUpdate"
+}

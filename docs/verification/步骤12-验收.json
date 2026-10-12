@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-12",
+  "step": 12,
+  "status": "已完成",
+  "acceptance": {
+    "recoverableOldLayout": true,
+    "metricsCameraAndRules": true,
+    "existingArchitectureAndBindings": true,
+    "newLayoutRecordsSeparate": true
+  },
+  "rulesPassed": 10,
+  "ruleCount": 10,
+  "extra8DBoundary": true,
+  "checkedUnchangedFiles": 621,
+  "newLayoutStatus": [
+    {
+      "level": 1,
+      "status": "草案"
+    },
+    {
+      "level": 2,
+      "status": "草案"
+    },
+    {
+      "level": 3,
+      "status": "草案"
+    },
+    {
+      "level": 4,
+      "status": "草案"
+    },
+    {
+      "level": 5,
+      "status": "草案"
+    },
+    {
+      "level": 6,
+      "status": "草案"
+    }
+  ],
+  "nextStep": 13,
+  "limits": [
+    "1280x720 editor only",
+    "No new-layout clears or multi-solution acceptance",
+    "Single-crate player corridor only; enemy avoidance and two-crate blockage pending"
+  ],
+  "evidence": [
+    "步骤12-制作基线与尺度.md",
+    "步骤12-资产基线.json",
+    "步骤12-版本基线.json",
+    "步骤12-运行初始核对.json",
+    "步骤12-规则与通路.json",
+    "步骤12-新关布局记录.json",
+    "步骤12-正常运行.json",
+    "步骤12-最终编辑器.json",
+    "步骤12-最终Console.json",
+    "步骤12-资源保留核对.json",
+    "步骤12-检查片段.json"
+  ]
+}

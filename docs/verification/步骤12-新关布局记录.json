@@ -1,0 +1,826 @@
+{
+  "date": "2026-10-12",
+  "allowedStates": [
+    "草案",
+    "已搭白盒",
+    "单路线已验证",
+    "多解已验证",
+    "盲测待迭代",
+    "盲测通过"
+  ],
+  "productionOrder": [
+    1,
+    2,
+    4,
+    5,
+    3,
+    6
+  ],
+  "playerOrder": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "runSchema": {
+    "runId": null,
+    "layoutVersion": null,
+    "startState": null,
+    "gmCheats": false,
+    "inputs": [],
+    "marks": [],
+    "trajectory": [],
+    "propagation": [
+      {
+        "step": null,
+        "simulationTime": null,
+        "sourceId": null,
+        "targetId": null,
+        "position": null,
+        "polarity": null
+      }
+    ],
+    "damage": [
+      {
+        "step": null,
+        "simulationTime": null,
+        "sourceId": null,
+        "targetId": null,
+        "kind": null,
+        "amount": null,
+        "remainingHP": null
+      }
+    ],
+    "lastEnemy": null,
+    "outcome": null,
+    "remainingBudget": null,
+    "adjustments": null,
+    "evidence": []
+  },
+  "records": [
+    {
+      "level": 1,
+      "definition": "Assets/Polarity/Configs/Levels/01-Polarity.asset",
+      "room": "Assets/Polarity/Prefabs/Levels/01-Polarity.prefab",
+      "status": "草案",
+      "layoutVersion": "design-v0.2-seed",
+      "authoredPrefabVersion": null,
+      "D": 1,
+      "coordinatesUnit": "world XY = D; not applied to assets",
+      "budget": 4,
+      "player": {
+        "id": "P",
+        "position": [
+          3,
+          2
+        ],
+        "hp": 3,
+        "diameter": 1
+      },
+      "enemies": [
+        {
+          "id": "E1",
+          "position": [
+            -2,
+            0
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        }
+      ],
+      "crates": [
+        {
+          "id": "C1",
+          "position": [
+            0.5,
+            0
+          ],
+          "polarity": "Neutral",
+          "size": [
+            1.4,
+            1.4
+          ],
+          "mass": 4
+        }
+      ],
+      "hazards": [
+        {
+          "id": "S1",
+          "position": [
+            -5,
+            0
+          ],
+          "size": [
+            0.8,
+            3
+          ]
+        }
+      ],
+      "walls": [],
+      "turrets": [],
+      "common": {
+        "roomInterior": [
+          20,
+          12
+        ],
+        "playerSpeed": 4.5,
+        "enemySpeed": 2.2,
+        "magneticRadius": 7,
+        "magneticStrength": 20,
+        "markingDistance": 7
+      },
+      "sourceTable": "| 对象 | 初始状态/位置（D） | 作用 |\n| --- | --- | --- |\n| P | (3, 2)，3 HP | 到 E1/C1 均在 7D 内，出生点可绕行 |\n| E1 | (-2, 0)，无极性，2 HP | 位于箱子与危险之间 |\n| C1 | (0.5, 0)，无极性 | 距敌人 2.5D，可相互移动 |\n| S1 | 中心 (-5, 0)，宽 0.8、高 3 | 左侧局部尖刺，上下保留普通地面 |\n| 墙/炮台 | 仅外围墙；无炮台 | 排除额外威胁 |\n| 标记 | 4 次 | 示范 3 次，留 1 次有限纠错 |\n\n开场可操作余量通过慢速、走位和必要的本关速度调整获得。当前速度下不能只靠 7D 内的距离保证静止观察 5—8 秒；记录首次受击时间后再确定压力。不以无敌或强制暂停隐藏这一问题。",
+      "candidateRoutes": "候选通关策略与预期物理\n\n- **A 吸引后排斥，3 次：** E1+ → C1- → 观察靠近后 C1+。E1 与 C1 排斥，玩家从右侧或右下调整追击方向，尝试让敌人进入左侧尖刺。需确认箱子移动后仍有向左的有效分力，并完成 2 HP 的处理。\n- **B 直接同极，2 次：** E1+、C1+，通过站位利用初始排斥方向。没有预先聚集，受力起点和可用距离不同；若能真实清场，正常接受。\n- 正负互换作为规则对称检查，不另计多解；改敌人形成同极也是候选。若接触先让箱子染色，应按实际状态行动，不补扣免费传播次数。\n\n本关只是反馈基础，不以单对吸引/排斥宣称充分涌现。尖刺可能要停留或再次接触才完成击杀，不能以进入危险区作为已经通关。",
+      "actualRuns": [],
+      "propagationEvents": [],
+      "damageEvents": [],
+      "lastEnemyHandling": null,
+      "actualClearWidths": null,
+      "repeats": null,
+      "passes": null,
+      "multiSolution": null,
+      "blindTest": null,
+      "evidence": []
+    },
+    {
+      "level": 2,
+      "definition": "Assets/Polarity/Configs/Levels/02-Contact.asset",
+      "room": "Assets/Polarity/Prefabs/Levels/02-Contact.prefab",
+      "status": "草案",
+      "layoutVersion": "design-v0.2-seed",
+      "authoredPrefabVersion": null,
+      "D": 1,
+      "coordinatesUnit": "world XY = D; not applied to assets",
+      "budget": 3,
+      "player": {
+        "id": "P",
+        "position": [
+          2,
+          1
+        ],
+        "hp": 3,
+        "diameter": 1
+      },
+      "enemies": [
+        {
+          "id": "E1",
+          "position": [
+            -3.3,
+            0.1
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        },
+        {
+          "id": "E2",
+          "position": [
+            -4.5,
+            0.5
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        },
+        {
+          "id": "E3",
+          "position": [
+            -4.9,
+            -0.9
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        }
+      ],
+      "crates": [
+        {
+          "id": "C1",
+          "position": [
+            0.5,
+            -0.6
+          ],
+          "polarity": "Negative",
+          "size": [
+            1.4,
+            1.4
+          ],
+          "mass": 4
+        }
+      ],
+      "hazards": [
+        {
+          "id": "S1",
+          "position": [
+            -0.7,
+            -3
+          ],
+          "size": [
+            3.2,
+            0.8
+          ]
+        }
+      ],
+      "walls": [
+        {
+          "id": "W1",
+          "position": [
+            -4,
+            1.8
+          ],
+          "size": [
+            4,
+            0.4
+          ]
+        },
+        {
+          "id": "W2",
+          "position": [
+            -4,
+            -1.8
+          ],
+          "size": [
+            4,
+            0.4
+          ]
+        }
+      ],
+      "turrets": [],
+      "common": {
+        "roomInterior": [
+          20,
+          12
+        ],
+        "playerSpeed": 4.5,
+        "enemySpeed": 2.2,
+        "magneticRadius": 7,
+        "magneticStrength": 20,
+        "markingDistance": 7
+      },
+      "sourceTable": "| 对象 | 初始状态/位置（D） | 作用 |\n| --- | --- | --- |\n| P | (2, 1)，3 HP | 出口右侧开放区，可上下改变汇合位置 |\n| E1 | (-3.3, 0.1)，无极性，2 HP | 靠前且开场可标记 |\n| E2 | (-4.5, 0.5)，无极性，2 HP | 与 E1 错位、初始不接触，可作另一首标来源 |\n| E3 | (-4.9, -0.9)，无极性，2 HP | 下侧晚接触对象，开场不要求直接标记 |\n| C1 | (0.5, -0.6)，预设负极 | 改变正极对象运动；中性敌人接触它也可能获得负极 |\n| S1 | 中心 (-0.7, -3)，宽 3.2、高 0.8 | 出口下侧局部危险，左右有绕行余量 |\n| 短墙 | 中心 (-4, ±1.8)，各宽 4、高 0.4 | x∈[-6,-2] 的短收口，净宽约 3.2D |\n| 炮台/预算 | 无炮台；3 次 | 首标、局面调整、有限纠错，不必用满 |\n\n预设负极是公开初始状态，不消耗玩家次数、不自动复制给邻居。沿用已实现权限，以减少本关重复操作。若它让中性队伍过早全负，先移动箱子或出口，不临时关闭传播。",
+      "candidateRoutes": "候选通关策略\n\n- **A 重新汇合，通常 2—3 次：** 首标 E1+（1）；横移促成 E2、E3 的免费传播，利用 C1- 的吸引改变队形；在敌人位于箱子左下侧且尖刺方向可用时改 C1+（2），从安全侧调整追击，让排斥、触刺及有效撞击清场。第 3 次仅用于尚未解决的对象或不利状态，不默认必用。必须验证三敌均清除。\n- **B 保留两种极性，最多 3 次：** 从 E2+ 起手（1），通过下侧走位探索 E3 与 C1- 的接触，让它形成负极分支；不尝试覆盖它。保留 C1-，利用正负敌人吸引和玩家换边制造新接触及环境伤害；剩余最多 2 次用于一个敌人的局部改色或箱子调整。此路线是实验候选，若只有拥堵或无法清除残敌，不计作通过路线。\n\nA 与 B 比较的是极性结构和汇合位置。本关不要求证明两种完整解法，但要比较“传播继续”和“传播中断”的可用局面。短提示先说明真实接触，首次传播后说明免费与不覆盖，不写“三个敌人必定只需一次”。\n\n残敌检查：尚有一次时，可根据残敌与 C1 的实际状态选择同极排斥，重新制造左下方向；已经用尽时，通过出口外换边促成它与现存来源接触，再利用真实受力和尖刺。若最后一敌始终只在箱子右侧活动，无法靠走位恢复可用方向，应移动箱子/尖刺或调整预算，不能默认等待就会解决。",
+      "actualRuns": [],
+      "propagationEvents": [],
+      "damageEvents": [],
+      "lastEnemyHandling": null,
+      "actualClearWidths": null,
+      "repeats": null,
+      "passes": null,
+      "multiSolution": null,
+      "blindTest": null,
+      "evidence": []
+    },
+    {
+      "level": 3,
+      "definition": "Assets/Polarity/Configs/Levels/03-BorrowFire.asset",
+      "room": "Assets/Polarity/Prefabs/Levels/03-BorrowFire.prefab",
+      "status": "草案",
+      "layoutVersion": "design-v0.2-seed",
+      "authoredPrefabVersion": null,
+      "D": 1,
+      "coordinatesUnit": "world XY = D; not applied to assets",
+      "budget": 3,
+      "player": {
+        "id": "P",
+        "position": [
+          3,
+          -1.6
+        ],
+        "hp": 3,
+        "diameter": 1
+      },
+      "enemies": [
+        {
+          "id": "E1",
+          "position": [
+            -0.8,
+            1.3
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        },
+        {
+          "id": "E2",
+          "position": [
+            -2,
+            1.8
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        },
+        {
+          "id": "E3",
+          "position": [
+            -2.4,
+            3.1
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        }
+      ],
+      "crates": [
+        {
+          "id": "C1",
+          "position": [
+            1,
+            -1
+          ],
+          "polarity": "Neutral",
+          "size": [
+            1.4,
+            1.4
+          ],
+          "mass": 4
+        }
+      ],
+      "hazards": [],
+      "walls": [],
+      "turrets": [
+        {
+          "position": [
+            -6,
+            0
+          ],
+          "initialDelay": 2,
+          "warningDuration": 1,
+          "lockDuration": 0.2,
+          "shotInterval": 3.5,
+          "projectileSpeed": 5,
+          "projectilePolarity": "Negative"
+        }
+      ],
+      "common": {
+        "roomInterior": [
+          20,
+          12
+        ],
+        "playerSpeed": 4.5,
+        "enemySpeed": 2.2,
+        "magneticRadius": 7,
+        "magneticStrength": 20,
+        "markingDistance": 7
+      },
+      "sourceTable": "| 对象 | 初始状态/位置（D） | 作用 |\n| --- | --- | --- |\n| P | (3, -1.6)，3 HP | 掩体后侧，能从上下两侧绕出 |\n| E1 | (-0.8, 1.3)，无极性，2 HP | 接近中央射线但初始不完全挡在射线上 |\n| E2 | (-2, 1.8)，无极性，2 HP | 可与 E1 形成第一接触 |\n| E3 | (-2.4, 3.1)，无极性，2 HP | 稍晚接近，追击与排斥决定能否续传 |\n| C1 | (1, -1)，无极性 | 初始射线上可挡弹；上下有绕行空间 |\n| T | (-6, 0)，固定炮台 | 射击穿过中央，目标随玩家站位而变 |\n| 尖刺/内墙 | 均无 | 清楚归因于火力，不排除共同撞击伤害 |\n| 炮台参数 | 首次等待 2 秒、预警 1 秒、锁定段 0.2 秒、间隔 3.5 秒、弹速 5 | 沿用当前房间参数起测，按模拟时间观察 |\n| 预算 | 3 次 | 传播起点、一次修正与有限纠错，非三敌逐个标记的指定答案 |\n\n预警前的时间不是免费准备阶段，敌人仍追击。慢速同等减慢玩家、敌人与炮弹，不增加预算。2 HP 意味着仅靠单体命中一般需要多次有效伤害，不能用“一炮清群”规划清场。",
+      "candidateRoutes": "候选通关策略\n\n- **A 敌人接收火力，1—3 次：** 给 E1 或 E2 正极（1），通过走位让后续真实接触传播；先从 C1 上侧绕出，使锁定射线从正极敌人侧边经过，再横移避开直线。每次根据剩余敌人的实际位置重新引火。最多另用 2 次修正一个敌人的极性或掩体状态；必须将三敌全部清除，不把首次命中当成验收完成。\n- **B 掩体接收后再切换用途，最多 3 次，进阶候选：** 先给 C1 正极（1）尝试吸走第一发危险；再从敌人建立正极传播（2）。若箱子持续抢走火力，在敌群和射线位置可用时将 C1 改负（3），让它对负极炮弹转为排斥、对正极敌人转为吸引，尝试在掩体侧翼形成命中机会。负极箱子仍可能实体挡弹，排斥也可能把炮弹推离所有敌人，必须实测后才算解法。\n\nB 改变的是炮弹接收对象、箱子用途和玩家站位，作为额外发现，不强迫首次玩家使用。无标记纯走位命中同样允许通关；作为对照判断磁力是否显著改变机会、风险或控制程度。\n\n残敌检查：仅剩中性或负极对象时，仍可把炮台锁定射线引过它的追击路径，靠真实直线命中完成；尚有预算则可改正增加接收机会。正极残敌被排斥过远时，先换射线和站位，不原地等它回到旧位置。箱子已吞掉火力时须绕另一侧引火；不能把初次集群偏转当作最后一敌也可复用的证明。",
+      "actualRuns": [],
+      "propagationEvents": [],
+      "damageEvents": [],
+      "lastEnemyHandling": null,
+      "actualClearWidths": null,
+      "repeats": null,
+      "passes": null,
+      "multiSolution": null,
+      "blindTest": null,
+      "evidence": []
+    },
+    {
+      "level": 4,
+      "definition": "Assets/Polarity/Configs/Levels/04-ChooseSource.asset",
+      "room": "Assets/Polarity/Prefabs/Levels/04-ChooseSource.prefab",
+      "status": "草案",
+      "layoutVersion": "design-v0.2-seed",
+      "authoredPrefabVersion": null,
+      "D": 1,
+      "coordinatesUnit": "world XY = D; not applied to assets",
+      "budget": 3,
+      "player": {
+        "id": "P",
+        "position": [
+          3.5,
+          -2
+        ],
+        "hp": 3,
+        "diameter": 1
+      },
+      "enemies": [
+        {
+          "id": "E1",
+          "position": [
+            -3.2,
+            -0.4
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        },
+        {
+          "id": "E2",
+          "position": [
+            -4.4,
+            0.2
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        },
+        {
+          "id": "E3",
+          "position": [
+            -1.5,
+            1.8
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        },
+        {
+          "id": "E4",
+          "position": [
+            -2.5,
+            3.2
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        }
+      ],
+      "crates": [
+        {
+          "id": "C1",
+          "position": [
+            0.5,
+            0.1
+          ],
+          "polarity": "Neutral",
+          "size": [
+            1.4,
+            1.4
+          ],
+          "mass": 4
+        },
+        {
+          "id": "C2",
+          "position": [
+            2.3,
+            2
+          ],
+          "polarity": "Neutral",
+          "size": [
+            1.4,
+            1.4
+          ],
+          "mass": 4
+        }
+      ],
+      "hazards": [
+        {
+          "id": "S1",
+          "position": [
+            -5.5,
+            0
+          ],
+          "size": [
+            0.8,
+            2.5
+          ]
+        },
+        {
+          "id": "S2",
+          "position": [
+            -2.5,
+            4.3
+          ],
+          "size": [
+            3.2,
+            0.7
+          ]
+        }
+      ],
+      "walls": [],
+      "turrets": [],
+      "common": {
+        "roomInterior": [
+          20,
+          12
+        ],
+        "playerSpeed": 4.5,
+        "enemySpeed": 2.2,
+        "magneticRadius": 7,
+        "magneticStrength": 20,
+        "markingDistance": 8
+      },
+      "sourceTable": "| 对象 | 初始状态/位置（D） | 作用 |\n| --- | --- | --- |\n| P | (3.5, -2)，3 HP | 开场可接近下组来源，随后可上移引导汇合 |\n| E1 / E2 | (-3.2, -0.4) / (-4.4, 0.2)，中性，各 2 HP | 下组较紧凑，但不初始接触 |\n| E3 / E4 | (-1.5, 1.8) / (-2.5, 3.2)，中性，各 2 HP | 上组更疏，E4 是晚接触对象 |\n| C1 | (0.5, 0.1)，中性 | 下侧吸引/排斥中心候选 |\n| C2 | (2.3, 2)，中性 | 上侧另一受力中心，也可能免费接收极性 |\n| S1 | 中心 (-5.5, 0)，宽 0.8、高 2.5 | 下组左侧局部危险 |\n| S2 | 中心 (-2.5, 4.3)，宽 3.2、高 0.7 | 上组远侧危险，初始敌人不触刺 |\n| 内墙/炮台/预算 | 无内墙、无炮台；3 次 | 优先验证状态差异，不叠加寻路与射击 |\n\n使用已有后三关标记距离 8D，但磁力仍为 7D。第二箱不预染色，避免每条路线都绕同一预设负极中心箱；接触染色后照常移动与受力。",
+      "candidateRoutes": "两类候选通关策略\n\n| 路线 | 主动操作与预算 | 站位、用途与完整清场假设 |\n| --- | --- | --- |\n| A 局部敌人改色 | E1+（1），C1-（2），将实际已染正且靠近晚接触队伍的敌人改负，优先考察 E3（3） | 前期引导两组在中央错位接近；改色后利用局部异极吸引、C1 对负极敌人的排斥和新的传播分支，向 S1/S2 调整追击。箱子保持负极，主要利用局部运动、尖刺及达到阈值的撞击，四敌均须清除 |\n| B 上侧区域排斥 | E3+（1），C2-（2），在可用位置将 C2+（3） | 玩家先上移促成上组及后续下组接触，保留上侧箱子的吸引机会；最后从安全侧把区域分离导向 S1/S2。C1 的免费染色或移动照常参与，不能假设四敌已同时同极或一次排斥全杀 |\n\nA 的局部目标按实际极性与位置选择；不是强制 E3 到达指定点才允许改色。B 更接近已学基本组合，但起点、受力中心、站位与最终状态均不同，承担可读基线。两路线都是待验证完整解法，不因出现不同染色图就宣称多解成立。\n\nA 若无法清除剩余对象，先改变晚接触间距、箱子位置或两片局部尖刺角度；不能依靠某次偶然高速碰撞补齐。若三次预算必然只能实现局部现象，先简化布局，再评估是否需要增加一次；预算调整须同一地图重验两路线。\n\n残敌检查：A 中局部负极来源若先死，要重新评估正极残敌与仍为负极的 C1；用危险端点外的走位改变接近方向，观察箱子是否移动到可利用位置。B 中上侧对象先死后，下组残敌须仍能通过接触或向 S1 的受力处理。两类情况都在三次操作之后单独验证；若只剩“吸住但不受伤”，相应路线判为未完成，不补写不存在的第四次标记。",
+      "actualRuns": [],
+      "propagationEvents": [],
+      "damageEvents": [],
+      "lastEnemyHandling": null,
+      "actualClearWidths": null,
+      "repeats": null,
+      "passes": null,
+      "multiSolution": null,
+      "blindTest": null,
+      "evidence": []
+    },
+    {
+      "level": 5,
+      "definition": "Assets/Polarity/Configs/Levels/05-ChangeRoute.asset",
+      "room": "Assets/Polarity/Prefabs/Levels/05-ChangeRoute.prefab",
+      "status": "草案",
+      "layoutVersion": "design-v0.2-seed",
+      "authoredPrefabVersion": null,
+      "D": 1,
+      "coordinatesUnit": "world XY = D; not applied to assets",
+      "budget": 3,
+      "player": {
+        "id": "P",
+        "position": [
+          4,
+          0
+        ],
+        "hp": 3,
+        "diameter": 1
+      },
+      "enemies": [
+        {
+          "id": "E1",
+          "position": [
+            -3.2,
+            1.8
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        },
+        {
+          "id": "E2",
+          "position": [
+            -4.4,
+            2.4
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        },
+        {
+          "id": "E3",
+          "position": [
+            2.4,
+            2.7
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        },
+        {
+          "id": "E4",
+          "position": [
+            3.8,
+            3
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        }
+      ],
+      "crates": [
+        {
+          "id": "C1",
+          "position": [
+            -1.4,
+            2.1
+          ],
+          "polarity": "Neutral",
+          "size": [
+            1.4,
+            1.4
+          ],
+          "mass": 4
+        },
+        {
+          "id": "C2",
+          "position": [
+            1.5,
+            0.2
+          ],
+          "polarity": "Neutral",
+          "size": [
+            1.4,
+            1.4
+          ],
+          "mass": 4
+        }
+      ],
+      "hazards": [
+        {
+          "id": "S1",
+          "position": [
+            0.3,
+            4.4
+          ],
+          "size": [
+            6,
+            0.8
+          ]
+        }
+      ],
+      "walls": [
+        {
+          "id": "W1",
+          "position": [
+            0,
+            -0.5
+          ],
+          "size": [
+            0.6,
+            2.8
+          ]
+        }
+      ],
+      "turrets": [],
+      "common": {
+        "roomInterior": [
+          20,
+          12
+        ],
+        "playerSpeed": 4.5,
+        "enemySpeed": 2.2,
+        "magneticRadius": 7,
+        "magneticStrength": 20,
+        "markingDistance": 8
+      },
+      "sourceTable": "| 对象 | 初始状态/位置（D） | 作用 |\n| --- | --- | --- |\n| P | (4, 0)，3 HP | 右侧开放区，可从短墙上下换边 |\n| E1 / E2 | (-3.2, 1.8) / (-4.4, 2.4)，中性，各 2 HP | 左组靠近墙上端，远端 E2 可移动后再标记 |\n| E3 / E4 | (2.4, 2.7) / (3.8, 3)，中性，各 2 HP | 右组提供移动吸引对象与新的接触机会 |\n| C1 | (-1.4, 2.1)，中性 | 墙上端左侧，移动传播源候选 |\n| C2 | (1.5, 0.2)，中性 | 墙右侧另一受力中心，不堵上下通路 |\n| W1 | 中心 (0, -0.5)，宽 0.6、高 2.8 | 一段凸形短墙，地面占地 y∈[-1.9,0.9] |\n| S1 | 中心 (0.3, 4.4)，宽 6、高 0.8 | 墙上端远侧局部危险，不延伸成整屏边缘尖刺 |\n| 炮台/预算 | 无炮台；3 次 | 同预算比较移动源和局部汇合 |\n\n墙上端到危险区之间净高约 3.1D；下端到外边界也保留宽绕行。C1 初始底面高于墙上端，不能把其中心能过墙角误认为整个箱子能过。后续两箱若同时接近墙端，必须另测绕行，不保证单个 3D 通路能容纳任意堵塞。",
+      "candidateRoutes": "两类候选通关策略\n\n**A 移动传播源，3 次，高风险候选。**\n\n1. 标 C1+（1），标右组 E3-（2）；利用 C1 与右上目标的无遮挡关系，玩家从右侧调整到上侧安全位置，尝试让箱子跨过左组接近路径。E3 若接触 E4，会传播负极，已有正极接收者不受覆盖。\n2. 观察真实接触：左组中性敌人可能接收 C1 的正极；右组负极与箱子保持异极。新正极接收者会排斥 C1，而负极对象吸引它，箱子运动方向可能改变。敌人会避箱，不能只凭路径交叉认定接触成功。\n3. 当箱子与敌群实际位于尖刺内侧的可用位置时，候选将 C1 改负（3）：此前正极敌人保留正极并转为吸引，右组负极转为排斥。尝试利用这两种关系、追击和尖刺完成四敌清场。箱子也会受到反力，不能保证停在危险旁。\n\n若箱子只是移动却从未产生新的免费传播，或改色后正极残敌长期被吸在远离危险的位置，A 未成立。不能把等待偶发高速撞击算作可靠清场，也不能固定箱子或强推其跨墙。\n\n**B 墙端汇合，3 次，基线候选。**\n\n1. 标 E1+（1）、C2-（2）。初始墙体可能阻断该对磁力；玩家上移，让敌人与箱子在墙端附近形成无遮挡关系。\n2. 利用追击、接触和已有排斥促成左组传播，再让右组在开放上端与来源接近。C1 若接收正极，成为额外受力和传播对象；不预设它固定或必经某个坐标。\n3. 当实际正极对象主要位于 C2 上方且有进入 S1 的方向时，将 C2 改正（3），利用向上分离、玩家绕危险端点的站位和真实触刺清场。中性残敌仍需通过后续接触处理，不凭“一次推开”宣称四敌已解决。\n\n两路线区别是主动来源为箱子/敌人、箱子作为移动载体/局部中心、传播位置和墙体遮挡过程。B 不要求箱子完成一段指定搬运；两者均须处理最后一敌。\n\n残敌检查：负极残敌需要位于同极箱子与危险之间才有可用排斥方向；正极残敌被 C1- 吸住但远离 S1 时，仅靠贴靠无效，应尝试从尖刺端点外调整其追击，使它和移动箱子建立新的相对位置。若自然避障与反力使这一位置始终不能恢复，A 清场假设失败。B 则测试残敌绕墙后能否进入 C2+ 的有效半径与向上分离区；隔墙或圈在下侧的残敌不能算已解决。",
+      "actualRuns": [],
+      "propagationEvents": [],
+      "damageEvents": [],
+      "lastEnemyHandling": null,
+      "actualClearWidths": null,
+      "repeats": null,
+      "passes": null,
+      "multiSolution": null,
+      "blindTest": null,
+      "evidence": []
+    },
+    {
+      "level": 6,
+      "definition": "Assets/Polarity/Configs/Levels/06-Unleashed.asset",
+      "room": "Assets/Polarity/Prefabs/Levels/06-Unleashed.prefab",
+      "status": "草案",
+      "layoutVersion": "design-v0.2-seed",
+      "authoredPrefabVersion": null,
+      "D": 1,
+      "coordinatesUnit": "world XY = D; not applied to assets",
+      "budget": 3,
+      "player": {
+        "id": "P",
+        "position": [
+          3,
+          -2.4
+        ],
+        "hp": 3,
+        "diameter": 1
+      },
+      "enemies": [
+        {
+          "id": "E1",
+          "position": [
+            -2.5,
+            0.1
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        },
+        {
+          "id": "E2",
+          "position": [
+            -3.7,
+            0.8
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        },
+        {
+          "id": "E3",
+          "position": [
+            2.3,
+            2
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        },
+        {
+          "id": "E4",
+          "position": [
+            3.6,
+            2.7
+          ],
+          "hp": 2,
+          "polarity": "Neutral",
+          "diameter": 1
+        }
+      ],
+      "crates": [
+        {
+          "id": "C1",
+          "position": [
+            1,
+            -1.6
+          ],
+          "polarity": "Neutral",
+          "size": [
+            1.4,
+            1.4
+          ],
+          "mass": 4
+        },
+        {
+          "id": "C2",
+          "position": [
+            1.8,
+            0.5
+          ],
+          "polarity": "Neutral",
+          "size": [
+            1.4,
+            1.4
+          ],
+          "mass": 4
+        }
+      ],
+      "hazards": [
+        {
+          "id": "S1",
+          "position": [
+            3.4,
+            4.2
+          ],
+          "size": [
+            3.4,
+            0.8
+          ]
+        },
+        {
+          "id": "S2",
+          "position": [
+            -4.5,
+            3.4
+          ],
+          "size": [
+            2.4,
+            0.7
+          ]
+        }
+      ],
+      "walls": [
+        {
+          "id": "W1",
+          "position": [
+            -0.4,
+            2.2
+          ],
+          "size": [
+            0.6,
+            1.8
+          ]
+        }
+      ],
+      "turrets": [
+        {
+          "position": [
+            -6,
+            -1
+          ],
+          "initialDelay": 2,
+          "warningDuration": 1,
+          "lockDuration": 0.2,
+          "shotInterval": 3.5,
+          "projectileSpeed": 5,
+          "projectilePolarity": "Negative"
+        }
+      ],
+      "common": {
+        "roomInterior": [
+          20,
+          12
+        ],
+        "playerSpeed": 4.5,
+        "enemySpeed": 2.2,
+        "magneticRadius": 7,
+        "magneticStrength": 20,
+        "markingDistance": 8
+      },
+      "sourceTable": "| 对象 | 初始状态/位置（D） | 作用 |\n| --- | --- | --- |\n| P | (3, -2.4)，3 HP | 南侧开放回旋区，不紧贴箱子 |\n| E1 / E2 | (-2.5, 0.1) / (-3.7, 0.8)，中性，各 2 HP | 靠火力侧的一组 |\n| E3 / E4 | (2.3, 2) / (3.6, 2.7)，中性，各 2 HP | 靠环境侧的一组，不初始触刺 |\n| C1 | (1, -1.6)，中性 | 火力侧掩体，可保护玩家或耗掉炮弹 |\n| C2 | (1.8, 0.5)，中性 | 环境侧传播/受力中心候选，与 C1 不初始接触 |\n| T | (-6, -1)，固定 | 同第三关炮台参数，瞄准随站位改变 |\n| W1 | 中心 (-0.4, 2.2)，宽 0.6、高 1.8 | 上侧短墙，局部遮挡；中央下侧宽连接 |\n| S1 | 中心 (3.4, 4.2)，宽 3.4、高 0.8 | 右上局部环境击杀区 |\n| S2 | 中心 (-4.5, 3.4)，宽 2.4、高 0.7 | 左上另一局部危险，避免所有环境解围绕唯一中心 |\n| 预算 | 3 次 | 由策略分配；不指定最后一次改箱 |\n\n四敌先保持，第二箱的作用先通过实际位置证明，不为了终关规模增加对象。短墙若导致绕行不可靠，先缩短或移开，不增加全局寻路。炮台不是清除目标，掩体与墙不能成为不受任何威胁的永久观察堡垒。",
+      "candidateRoutes": "两类完整通关候选与混合路线\n\n**A 借火为主，最多 3 次。**\n\n从 E1+ 建立火力侧传播（1），通过 C1 上侧或侧翼引导锁定射线，再移开自身。根据真实接触情况，用第二次在 E3 建立另一正极来源，或暂留预算等待两组接触；不同时承诺第二次既标敌人又标箱子。最后最多一次修正 C1 的极性或一个残敌，避免掩体持续吞弹并维持可接收的目标。\n\n主要伤害预期来自炮弹，C1 承担挡弹/接收火力的取舍，C2 可保持中性或自然接收极性。玩家主要围绕射线与锁定后换位操作，而非守在尖刺旁。重复引火完成四敌清场；2 HP 与单发单目标要求记录足够的真实有效伤害，不能用两次命中代表全关解决。\n\n**B 环境为主，3 次。**\n\n从 E3+ 建立右上队伍传播（1），标 C2-（2），利用右侧和中央站位让已染色敌人与晚接近的左组形成接触。保持 C1 不阻碍中央通路；左组未染色时不能假定会被 C2 吸来。观察局面后在 C2 下侧受力方向可用时改 C2+（3），尝试把右上敌人送入 S1，并利用 S2 或后续接触/受力处理左侧残敌。\n\n主要伤害预期来自尖刺与有效撞击，C2 是受力和传播工具，C1 主要帮助承受炮台压力；玩家以环境端点与群体接近位置为主调整站位。炮弹的偶发助攻可以保留，但不能靠不可复现的炮弹补最后一敌来证明环境路线成立。\n\n**C 混合，额外候选。**\n\n先借火清除部分敌人，发现剩余队形更适合局部改色或尖刺时，将剩余预算转用环境；或反向处理。只有仍有预算的操作才能执行，不把 A/B 各三次拼成六次。混合伤害不需要特殊计分、组合识别或解法认证。\n\n| 比较项 | A 借火 | B 环境 |\n| --- | --- | --- |\n| 来源 | 优先 E1；可能直接建立另一组正极 | 优先 E3，经接触影响跨组 |\n| 主要站位 | 炮台锁定射线侧翼、掩体上下 | C2 与尖刺方向、危险端点外侧 |\n| 箱子用途 | C1 挡弹或改变炮弹接收 | C2 引导、传播和排斥；C1 缓冲射击 |\n| 干预用途 | 补来源或修正接收对象，不必改 C2 | 改 C2 为基线，可探索局部敌人改色 |\n| 风险 | 火力被吞、接收者分散、源先死 | 箱子移动改变方向、左组传播未完成、触刺伤害不足 |\n\n这张表描述设计差异，不代表路线已经可靠。两路线都须在同一布局和同一预算下完成全部清场，并有非像素级余量。\n\n残敌检查：A 即使传播来源先死，仍可用锁定射线穿过中性残敌的追击路径；需要重新引火，不保证继续偏转。B 在预算耗尽后须通过中央接近与危险端点换边，让未染色残敌接触现存来源，或让已染色残敌进入可用环境方向。若 B 的最后一敌只能依赖不可复现的炮弹救场，应调整两组汇合距离、箱子位置或尖刺范围后重验，暂不认定环境路线成立。混合路线可稳定借炮弹完成，但单独记录为混合。",
+      "actualRuns": [],
+      "propagationEvents": [],
+      "damageEvents": [],
+      "lastEnemyHandling": null,
+      "actualClearWidths": null,
+      "repeats": null,
+      "passes": null,
+      "multiSolution": null,
+      "blindTest": null,
+      "evidence": []
+    }
+  ]
+}
