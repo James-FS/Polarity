@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "message": "Command executed successfully",
+  "data": {
+    "success": true,
+    "message": "Retrieved 1 log entries.",
+    "data": [
+      {
+        "type": "Error",
+        "message": "<color=#cc3333><b><color=#2EA3FF>Codely Bridge</color></b>: [ManageInput] Step 'mouse_click' threw: System.FormatException: Input string was not in a correct format.",
+        "file": "./Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageInput.cs",
+        "line": 1124,
+        "stackTrace": "  at System.Number.ThrowOverflowOrFormatException (System.Boolean overflow, System.String overflowResourceKey) [0x0001a] in <49f623f1343b4d088676d72f091692c8>:0 \n\n  at System.Number.ParseInt32 (System.ReadOnlySpan`1[T] value, System.Globalization.NumberStyles styles, System.Globalization.NumberFormatInfo info) [0x00016] in <49f623f1343b4d088676d72f091692c8>:0 \n\n  at System.Int32.Parse (System.String s, System.Globalization.NumberStyles style, System.IFormatProvider provider) [0x0001d] in <49f623f1343b4d088676d72f091692c8>:0 \n\n  at System.Convert.ToInt32 (System.String value, System.IFormatProvider provider) [0x00005] in <49f623f1343b4d088676d72f091692c8>:0 \n\n  at System.String.System.IConvertible.ToInt32 (System.IFormatProvider provider) [0x00000] in <49f623f1343b4d088676d72f091692c8>:0 \n\n  at System.Convert.ToInt32 (System.Object value, System.IFormatProvider provider) [0x00003] in <49f623f1343b4d088676d72f091692c8>:0 \n\n  at Codely.Newtonsoft.Json.Linq.JToken.op_Explicit (Codely.Newtonsoft.Json.Linq.JToken value) [0x0005b] in <f7dc27b1e8cd434194f733691b167a47>:0 \n\n  at Codely.Newtonsoft.Json.Linq.JToken.ToObject (System.Type objectType) [0x001d4] in <f7dc27b1e8cd434194f733691b167a47>:0 \n\n  at Codely.Newtonsoft.Json.Linq.JToken.ToObject[T] () [0x00000] in <f7dc27b1e8cd434194f733691b167a47>:0 \n\n  at UnityTcp.Editor.Tools.ManageInput+<MouseClickCoroutine>d__17.MoveNext () [0x00066] in .\\Packages\\cn.tuanjie.codely.bridge\\Editor\\Bridge\\Tools\\ManageInput.cs:326 \n\n  at UnityTcp.Editor.Tools.ManageInput+<Flatten>d__34.MoveNext () [0x00051] in .\\Packages\\cn.tuanjie.codely.bridge\\Editor\\Bridge\\Tools\\ManageInput.cs:1060 \n\n  at UnityTcp.Editor.Tools.ManageInput+<DispatchStepCoroutine>d__35.MoveNext () [0x00344] in .\\Packages\\cn.tuanjie.codely.bridge\\Editor\\Bridge\\Tools\\ManageInput.cs:1116 </color>\nUnityEngine.Debug:LogError (object)\nUnityTcp.Editor.Helpers.CodelyLogger:LogError (object) (at ./Packages/cn.tuanjie.codely.bridge/Editor/Common/CodelyLogger.cs:137)\nUnityTcp.Editor.Tools.ManageInput/<DispatchStepCoroutine>d__35:MoveNext () (at ./Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageInput.cs:1124)\nUnityTcp.Editor.Tools.ManageInput/<HandleCommandCoroutine>d__8:MoveNext () (at ./Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Tools/ManageInput.cs:213)\nUnityTcp.Editor.Helpers.CoroutineRunner/Impl:Advance (UnityTcp.Editor.Helpers.JobRunnerBase/Job) (at ./Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/CoroutineRunner.cs:131)\nUnityTcp.Editor.Helpers.JobRunnerBase:Tick () (at ./Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/JobRunnerBase.cs:162)\nUnityTcp.Editor.Helpers.CoroutineRunner:Tick () (at ./Packages/cn.tuanjie.codely.bridge/Editor/Bridge/Helpers/CoroutineRunner.cs:52)\nUnityTcp.Editor.UnityTcpBridge:ProcessCommands () (at ./Packages/cn.tuanjie.codely.bridge/Editor/Bridge/UnityTcpBridge.cs:339)\nUnityEditor.EditorApplication:Internal_CallUpdateFunctions ()"
+      }
+    ],
+    "collapse": false
+  }
+}

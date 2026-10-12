@@ -180,7 +180,9 @@ namespace Polarity.Simulation
             if (!initialized)
             {
                 initialized = true;
-                State.SetPhase(startRunning ? LevelPhase.Running : LevelPhase.Ready);
+                bool introduction = levelController.BeginInitialIntroduction();
+                State.SetPhase(startRunning && !introduction ? LevelPhase.Running : LevelPhase.Ready);
+                ApplyTimeScale();
             }
         }
 
@@ -277,7 +279,7 @@ namespace Polarity.Simulation
         }
         private void ApplyTimeScale()
         {
-            float value = !restarting && State?.Phase == LevelPhase.Paused ? 0f :
+            float value = !restarting && (State?.Phase == LevelPhase.Paused || State?.Phase == LevelPhase.Ready) ? 0f :
                 !restarting && State?.Phase == LevelPhase.Running && SlowMotionRequested ? settings.SlowMotionScale : 1f;
             bool changed = !Mathf.Approximately(CurrentTimeScale,value);
             CurrentTimeScale = value;

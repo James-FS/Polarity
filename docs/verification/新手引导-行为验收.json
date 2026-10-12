@@ -1,0 +1,331 @@
+{
+  "checks": [
+    {
+      "name": "retry does not reopen introduction",
+      "pass": true,
+      "facts": null
+    },
+    {
+      "name": "review request",
+      "pass": true,
+      "facts": null
+    },
+    {
+      "name": "preparation freezes all simulation and rejects marks",
+      "pass": true,
+      "facts": null
+    },
+    {
+      "name": "begin restores running and clears movement",
+      "pass": true,
+      "facts": null
+    },
+    {
+      "name": "visible enemy selection",
+      "pass": true,
+      "facts": {
+        "candidate": 1,
+        "hover": true
+      }
+    },
+    {
+      "name": "first mark budget explanation",
+      "pass": true,
+      "facts": "灰色表示无极性；双方都有极性时，才会相吸或相斥。\n赋极消耗一次标记；还剩 3 次。"
+    },
+    {
+      "name": "same mark explanation is free",
+      "pass": true,
+      "facts": null
+    },
+    {
+      "name": "opposite relationship",
+      "pass": true,
+      "facts": "异极相吸。观察双方的实际运动。改成同极会怎样？"
+    },
+    {
+      "name": "real impact explains damage",
+      "pass": true,
+      "facts": {
+        "source": "强烈撞击伤害了敌人。",
+        "feedback": "异极相吸。双方正在靠近。改成同极会怎样？\n强烈撞击伤害了敌人。敌人剩余 1 点生命。"
+      }
+    },
+    {
+      "name": "recolor explanation and same relationship",
+      "pass": true,
+      "facts": {
+        "hint": "同极相斥。双方正在分开。调整站位，利用排斥方向。\n改色也消耗一次，只改变这个对象；还剩 1 次。"
+      }
+    },
+    {
+      "name": "zero budget retains movement message",
+      "pass": true,
+      "facts": null
+    },
+    {
+      "name": "A",
+      "pass": true,
+      "facts": {
+        "name": "A",
+        "phase": "Won",
+        "steps": 317,
+        "time": 6.339999858289957,
+        "hp": 3,
+        "budget": 1,
+        "failed": 0,
+        "feedback": 3,
+        "damageFeedback": 2,
+        "source": "尖刺伤害了敌人。",
+        "intro": false,
+        "hits": [
+          {
+            "Step": 65,
+            "kind": "Impact",
+            "RemainingHealth": 1
+          },
+          {
+            "Step": 317,
+            "kind": "Spike",
+            "RemainingHealth": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "mirror",
+      "pass": true,
+      "facts": {
+        "name": "mirror",
+        "phase": "Won",
+        "steps": 317,
+        "time": 6.339999858289957,
+        "hp": 3,
+        "budget": 1,
+        "failed": 0,
+        "feedback": 3,
+        "damageFeedback": 2,
+        "source": "尖刺伤害了敌人。",
+        "intro": false,
+        "hits": [
+          {
+            "Step": 65,
+            "kind": "Impact",
+            "RemainingHealth": 1
+          },
+          {
+            "Step": 317,
+            "kind": "Spike",
+            "RemainingHealth": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "direct same",
+      "pass": true,
+      "facts": {
+        "name": "direct same",
+        "phase": "Won",
+        "steps": 274,
+        "time": 5.479999877512455,
+        "hp": 3,
+        "budget": 2,
+        "failed": 0,
+        "feedback": 2,
+        "damageFeedback": 2,
+        "source": "尖刺伤害了敌人。",
+        "intro": false,
+        "hits": [
+          {
+            "Step": 256,
+            "kind": "Spike",
+            "RemainingHealth": 1
+          },
+          {
+            "Step": 274,
+            "kind": "Spike",
+            "RemainingHealth": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "early clear",
+      "pass": true,
+      "facts": {
+        "name": "early clear",
+        "phase": "Won",
+        "steps": 165,
+        "time": 3.2999999262392521,
+        "hp": 3,
+        "budget": 2,
+        "failed": 0,
+        "feedback": 2,
+        "damageFeedback": 2,
+        "source": "尖刺伤害了敌人。",
+        "intro": false,
+        "hits": [
+          {
+            "Step": 65,
+            "kind": "Impact",
+            "RemainingHealth": 1
+          },
+          {
+            "Step": 165,
+            "kind": "Spike",
+            "RemainingHealth": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "won cannot open preparation",
+      "pass": true,
+      "facts": null
+    },
+    {
+      "name": "won stays frozen",
+      "pass": true,
+      "facts": null
+    },
+    {
+      "name": "actual next accepted",
+      "pass": true,
+      "facts": null
+    },
+    {
+      "name": "second room remains running without tutorial",
+      "pass": true,
+      "facts": null
+    },
+    {
+      "name": "second room rejects review",
+      "pass": true,
+      "facts": null
+    },
+    {
+      "name": "second room retry remains original",
+      "pass": true,
+      "facts": null
+    },
+    {
+      "name": "real player hurt and failure keep warning and retry",
+      "pass": true,
+      "facts": {
+        "phase": "Lost",
+        "hits": 3,
+        "source": "敌人接触会伤害你。"
+      }
+    },
+    {
+      "name": "failure retry clears feedback and keeps running",
+      "pass": true,
+      "facts": null
+    }
+  ],
+  "routes": [
+    {
+      "name": "A",
+      "phase": "Won",
+      "steps": 317,
+      "time": 6.339999858289957,
+      "hp": 3,
+      "budget": 1,
+      "failed": 0,
+      "feedback": 3,
+      "damageFeedback": 2,
+      "source": "尖刺伤害了敌人。",
+      "intro": false,
+      "hits": [
+        {
+          "Step": 65,
+          "kind": "Impact",
+          "RemainingHealth": 1
+        },
+        {
+          "Step": 317,
+          "kind": "Spike",
+          "RemainingHealth": 0
+        }
+      ]
+    },
+    {
+      "name": "mirror",
+      "phase": "Won",
+      "steps": 317,
+      "time": 6.339999858289957,
+      "hp": 3,
+      "budget": 1,
+      "failed": 0,
+      "feedback": 3,
+      "damageFeedback": 2,
+      "source": "尖刺伤害了敌人。",
+      "intro": false,
+      "hits": [
+        {
+          "Step": 65,
+          "kind": "Impact",
+          "RemainingHealth": 1
+        },
+        {
+          "Step": 317,
+          "kind": "Spike",
+          "RemainingHealth": 0
+        }
+      ]
+    },
+    {
+      "name": "direct same",
+      "phase": "Won",
+      "steps": 274,
+      "time": 5.479999877512455,
+      "hp": 3,
+      "budget": 2,
+      "failed": 0,
+      "feedback": 2,
+      "damageFeedback": 2,
+      "source": "尖刺伤害了敌人。",
+      "intro": false,
+      "hits": [
+        {
+          "Step": 256,
+          "kind": "Spike",
+          "RemainingHealth": 1
+        },
+        {
+          "Step": 274,
+          "kind": "Spike",
+          "RemainingHealth": 0
+        }
+      ]
+    },
+    {
+      "name": "early clear",
+      "phase": "Won",
+      "steps": 165,
+      "time": 3.2999999262392521,
+      "hp": 3,
+      "budget": 2,
+      "failed": 0,
+      "feedback": 2,
+      "damageFeedback": 2,
+      "source": "尖刺伤害了敌人。",
+      "intro": false,
+      "hits": [
+        {
+          "Step": 65,
+          "kind": "Impact",
+          "RemainingHealth": 1
+        },
+        {
+          "Step": 165,
+          "kind": "Spike",
+          "RemainingHealth": 0
+        }
+      ]
+    }
+  ],
+  "total": 23,
+  "passed": 23
+}

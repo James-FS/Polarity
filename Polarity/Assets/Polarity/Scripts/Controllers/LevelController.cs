@@ -14,6 +14,9 @@ namespace Polarity.Controllers
         [SerializeField] private LevelRoom previewRoom;
         private static int selectedIndex;
         private static string selectedScene;
+        private static bool introductionDismissed;
+        public bool IsIntroductionOpen { get; private set; }
+        public bool IsFirstLevel => CurrentDefinition != null && CurrentLevelIndex == 0;
         private SimulationWorld world;
         public LevelDefinition CurrentDefinition { get; private set; }
         public LevelRoom CurrentRoom { get; private set; }
@@ -21,7 +24,7 @@ namespace Polarity.Controllers
         public int LevelCount => levelSequence.Length;
         public bool HasNextLevel => CurrentDefinition != null && CurrentLevelIndex + 1 < LevelCount;
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-        private static void ResetSelection() { selectedIndex=0; selectedScene=null; }
+        private static void ResetSelection() { selectedIndex=0; selectedScene=null; introductionDismissed=false; }
         private void Awake()
         {
             world=GetComponent<SimulationWorld>();
@@ -45,7 +48,8 @@ namespace Polarity.Controllers
         private void Update()
         {
             SampleControlInput(Input.GetKey(KeyCode.Space),Input.GetKeyDown(KeyCode.Escape),Input.GetKeyDown(KeyCode.R));
-            if (Input.GetKeyDown(KeyCode.Return)) RequestNextLevel();
+            if (Input.GetKeyDown(KeyCode.Return))
+            { if (IsIntroductionOpen) RequestBeginLevel(); else RequestNextLevel(); }
         }
         public void SampleControlInput(bool slowHeld, bool pausePressed, bool restartPressed)
         {
@@ -53,7 +57,31 @@ namespace Polarity.Controllers
             if (restartPressed) { RequestRestart(); return; }
             if (!slowHeld) slowInputArmed = true;
             world.SetSlowMotion(slowInputArmed && slowHeld);
-            if (pausePressed) TogglePause();
+            if (pausePressed) { if (IsIntroductionOpen) RequestBeginLevel(); else TogglePause(); }
+        }
+        internal bool BeginInitialIntroduction()
+        {
+            IsIntroductionOpen = IsFirstLevel && !introductionDismissed;
+            return IsIntroductionOpen;
+        }
+        public bool RequestShowIntroduction()
+        {
+            if (!IsFirstLevel || world == null || IsRestarting || !world.OwnsPhysics ||
+                (world.State.Phase != LevelPhase.Running && world.State.Phase != LevelPhase.Paused)) return false;
+            IsIntroductionOpen = true;
+            world.SetSlowMotion(false);
+            world.SetPhase(LevelPhase.Ready);
+            return true;
+        }
+        public bool RequestBeginLevel()
+        {
+            if (!IsIntroductionOpen || world == null || IsRestarting || !world.OwnsPhysics || world.State.Phase != LevelPhase.Ready) return false;
+            introductionDismissed = true;
+            IsIntroductionOpen = false;
+            world.Player.ClearIntent();
+            world.SetSlowMotion(false);
+            world.SetPhase(LevelPhase.Running);
+            return true;
         }
         public bool TogglePause()
         {

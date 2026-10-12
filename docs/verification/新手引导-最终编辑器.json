@@ -1,0 +1,80 @@
+{
+  "playing": false,
+  "compiling": false,
+  "dirty": false,
+  "scene": "Assets/Polarity/Scenes/Game.scene",
+  "timeScale": 1.0,
+  "dt": 0.02,
+  "physics": "FixedUpdate",
+  "worlds": 1,
+  "huds": 1,
+  "tutorials": 1,
+  "missing": 0,
+  "refs": [
+    {
+      "name": "introduction",
+      "assigned": true
+    },
+    {
+      "name": "startButton",
+      "assigned": true
+    },
+    {
+      "name": "skipButton",
+      "assigned": true
+    },
+    {
+      "name": "reviewButton",
+      "assigned": true
+    },
+    {
+      "name": "guidanceText",
+      "assigned": true
+    },
+    {
+      "name": "marksText",
+      "assigned": true
+    },
+    {
+      "name": "hoverText",
+      "assigned": true
+    },
+    {
+      "name": "hoverPanel",
+      "assigned": true
+    }
+  ],
+  "uiHidden": true,
+  "rooms": [
+    {
+      "Title": "磁力试验室",
+      "MarkBudget": 4,
+      "valid": true
+    },
+    {
+      "Title": "接触",
+      "MarkBudget": 2,
+      "valid": true
+    },
+    {
+      "Title": "借火",
+      "MarkBudget": 2,
+      "valid": true
+    },
+    {
+      "Title": "选择起点",
+      "MarkBudget": 3,
+      "valid": true
+    },
+    {
+      "Title": "改变通路",
+      "MarkBudget": 3,
+      "valid": true
+    },
+    {
+      "Title": "极性失控",
+      "MarkBudget": 3,
+      "valid": true
+    }
+  ]
+}

@@ -32,6 +32,7 @@ namespace Polarity.Views
         private LevelState state;
         private Health health;
         public bool IsBound => state != null;
+        public SimulationWorld World => world;
         public int MarkNotificationCount { get; private set; }
         public int PropagationNotificationCount { get; private set; }
         public bool ModalVisible => modal != null && modal.activeSelf;
@@ -126,7 +127,7 @@ namespace Polarity.Views
         }
         private void OnSpeed(float value)
         {
-            speedText.text = state.Phase == LevelPhase.Paused ? "已暂停" : state.Phase == LevelPhase.Running && value < .99f ? $"慢速  {value:0.0} 倍" : "正常  1.0 倍";
+            speedText.text = state.Phase == LevelPhase.Ready ? "准备中" : state.Phase == LevelPhase.Paused ? "已暂停" : state.Phase == LevelPhase.Running && value < .99f ? $"慢速  {value:0.0} 倍" : "正常  1.0 倍";
         }
         private void RefreshPhase(LevelPhase phase)
         {
@@ -145,6 +146,7 @@ namespace Polarity.Views
         {
             if (!isActiveAndEnabled) return false;
             // Modal covers the screen immediately, even before the next Canvas rebuild.
+            if (world != null && world.Level != null && world.Level.IsIntroductionOpen) return true;
             if (gmView != null && gmView.BlocksPointer) return true;
             if (ModalVisible) return new Rect(0,0,Screen.width,Screen.height).Contains(point);
             if (raycaster == null || EventSystem.current == null) return false;
