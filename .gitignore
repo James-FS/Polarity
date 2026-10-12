@@ -12,6 +12,8 @@
 # Generated IDE project files and local IDE state.
 **/.vs/
 **/.idea/
+Polarity/.codex/
+Polarity/.vscode/
 *.csproj
 *.unityproj
 *.sln
