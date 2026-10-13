@@ -1,0 +1,316 @@
+{
+  "date": "2026-10-13",
+  "engine": "Tuanjie 1.10.1 / 2022.3.62t13",
+  "layout": "04-whitebox-v1",
+  "state": "多解已验证；外部盲测待实施",
+  "scope": "第四关配置与房间；没有修改共同规则、代码、其他关卡或美术",
+  "acceptance": {
+    "stableRoute": true,
+    "differentCompleteStrategies": true,
+    "localRecolorAndNewContact": true,
+    "residualsAndNoGhostSources": true
+  },
+  "repeats": [
+    {
+      "name": "A-repeat-1",
+      "result": "Won",
+      "steps": 1028,
+      "time": 20.55999954044819,
+      "hp": 3,
+      "budget": 0
+    },
+    {
+      "name": "B-repeat-1",
+      "result": "Won",
+      "steps": 811,
+      "time": 16.219999637454748,
+      "hp": 3,
+      "budget": 0
+    },
+    {
+      "name": "A-repeat-2",
+      "result": "Won",
+      "steps": 1028,
+      "time": 20.55999954044819,
+      "hp": 3,
+      "budget": 0
+    },
+    {
+      "name": "B-repeat-2",
+      "result": "Won",
+      "steps": 811,
+      "time": 16.219999637454748,
+      "hp": 3,
+      "budget": 0
+    },
+    {
+      "name": "A-repeat-3",
+      "result": "Won",
+      "steps": 1028,
+      "time": 20.55999954044819,
+      "hp": 3,
+      "budget": 0
+    },
+    {
+      "name": "B-repeat-3",
+      "result": "Won",
+      "steps": 811,
+      "time": 16.219999637454748,
+      "hp": 3,
+      "budget": 0
+    },
+    {
+      "name": "A-repeat-4",
+      "result": "Won",
+      "steps": 1028,
+      "time": 20.55999954044819,
+      "hp": 3,
+      "budget": 0
+    },
+    {
+      "name": "B-repeat-4",
+      "result": "Won",
+      "steps": 811,
+      "time": 16.219999637454748,
+      "hp": 3,
+      "budget": 0
+    },
+    {
+      "name": "A-repeat-5",
+      "result": "Won",
+      "steps": 1028,
+      "time": 20.55999954044819,
+      "hp": 3,
+      "budget": 0
+    },
+    {
+      "name": "B-repeat-5",
+      "result": "Won",
+      "steps": 811,
+      "time": 16.219999637454748,
+      "hp": 3,
+      "budget": 0
+    }
+  ],
+  "margins": [
+    {
+      "name": "A-time-165",
+      "result": "Running",
+      "enemies": 1,
+      "hp": 3,
+      "seconds": 39.99999910593033
+    },
+    {
+      "name": "A-time-175",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 20.439999543130398
+    },
+    {
+      "name": "A-time-185",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 21.17999952659011
+    },
+    {
+      "name": "A-time-200",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 15.21999965980649
+    },
+    {
+      "name": "A-time-210",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 10.079999774694443
+    },
+    {
+      "name": "A-time-215",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 15.519999653100967
+    },
+    {
+      "name": "A-time-220",
+      "result": "Lost",
+      "enemies": 2,
+      "hp": 0,
+      "seconds": 16.33999963477254
+    },
+    {
+      "name": "B-time-100",
+      "result": "Lost",
+      "enemies": 2,
+      "hp": 0,
+      "seconds": 18.299999590963125
+    },
+    {
+      "name": "B-time-110",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 15.099999662488699
+    },
+    {
+      "name": "B-time-125",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 15.019999664276838
+    },
+    {
+      "name": "B-time-150",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 15.17999966070056
+    },
+    {
+      "name": "B-time-160",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 14.319999679923058
+    },
+    {
+      "name": "B-time-175",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 14.139999683946371
+    },
+    {
+      "name": "A-offsetX--9",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 20.55999954044819
+    },
+    {
+      "name": "B-offsetX--9",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 16.139999639242887
+    },
+    {
+      "name": "A-offsetX--8.5",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 20.55999954044819
+    },
+    {
+      "name": "B-offsetX--8.5",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 16.179999638348818
+    },
+    {
+      "name": "A-offsetX--7.5",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 20.419999543577433
+    },
+    {
+      "name": "B-offsetX--7.5",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 16.29999963566661
+    },
+    {
+      "name": "A-offsetX--7",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 20.339999545365572
+    },
+    {
+      "name": "B-offsetX--7",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 16.37999963387847
+    },
+    {
+      "name": "A-offsetY-1.5",
+      "result": "Running",
+      "enemies": 1,
+      "hp": 2,
+      "seconds": 39.99999910593033
+    },
+    {
+      "name": "A-offsetY-2.5",
+      "result": "Won",
+      "enemies": 0,
+      "hp": 3,
+      "seconds": 20.05999955162406
+    }
+  ],
+  "auto": [
+    {
+      "name": "A正常",
+      "result": "Won",
+      "time": 20.55999954044819,
+      "real": 20.5611343,
+      "steps": 1028,
+      "attempts": 1028,
+      "failed": 0,
+      "hp": 3,
+      "budget": 0,
+      "gm": false
+    },
+    {
+      "name": "B正常",
+      "result": "Won",
+      "time": 16.219999637454748,
+      "real": 16.2168884,
+      "steps": 811,
+      "attempts": 811,
+      "failed": 0,
+      "hp": 3,
+      "budget": 0,
+      "gm": false
+    },
+    {
+      "name": "B慢速",
+      "result": "Won",
+      "time": 16.219999637454748,
+      "real": 53.9998474,
+      "steps": 811,
+      "attempts": 811,
+      "failed": 0,
+      "hp": 3,
+      "budget": 0,
+      "gm": false
+    }
+  ],
+  "flow": {
+    "passed": 18,
+    "total": 18
+  },
+  "knownLimits": [
+    "A提前0.5秒（3.30秒）留下被异极箱子吸在右侧边界的E3；不计通过。早0.30、晚0.50秒的实际离散点通过，不外推连续窗口。",
+    "A终点下移0.5D留下残敌；上移0.5D、横向±0.5/1D通过。",
+    "外部玩家盲测、实体键鼠、跨设备与独立构建留待步骤19—21。"
+  ],
+  "preservation": {
+    "baseline": "c7ac70fdf4c235bd5f9198560cb96f9364147f56",
+    "total": 631,
+    "changed": [
+      "Polarity/Assets/Polarity/Configs/Levels/04-ChooseSource.asset",
+      "Polarity/Assets/Polarity/Prefabs/Levels/04-ChooseSource.prefab"
+    ],
+    "unchanged": 629,
+    "onlyFourth": true,
+    "localConfigHash": "b990efe17c9c5ff92503f5028dfef210612bf342eabffff64d5483c8088516c9"
+  }
+}

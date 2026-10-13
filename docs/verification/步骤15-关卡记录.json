@@ -1,0 +1,666 @@
+{
+  "date": "2026-10-13",
+  "level": 4,
+  "status": "多解已验证",
+  "layoutVersion": "04-whitebox-v1",
+  "definition": "Assets/Polarity/Configs/Levels/04-ChooseSource.asset",
+  "room": "Assets/Polarity/Prefabs/Levels/04-ChooseSource.prefab",
+  "D": 1,
+  "budget": 3,
+  "player": {
+    "xy": [
+      3.5,
+      -2
+    ],
+    "hp": 3,
+    "speed": 4.5
+  },
+  "enemies": [
+    {
+      "id": 1,
+      "xy": [
+        -3.2,
+        -0.4
+      ],
+      "polarity": "Neutral",
+      "hp": 2,
+      "speed": 2.2,
+      "diameter": 1
+    },
+    {
+      "id": 2,
+      "xy": [
+        -4.4,
+        0.2
+      ],
+      "polarity": "Neutral",
+      "hp": 2,
+      "speed": 2.2,
+      "diameter": 1
+    },
+    {
+      "id": 3,
+      "xy": [
+        -2.4,
+        0.8
+      ],
+      "polarity": "Neutral",
+      "hp": 2,
+      "speed": 2.2,
+      "diameter": 1
+    },
+    {
+      "id": 4,
+      "xy": [
+        -2.5,
+        3.2
+      ],
+      "polarity": "Neutral",
+      "hp": 2,
+      "speed": 2.2,
+      "diameter": 1
+    }
+  ],
+  "crates": [
+    {
+      "id": 5,
+      "xy": [
+        0.5,
+        0.1
+      ],
+      "polarity": "Neutral",
+      "mass": 4,
+      "size": [
+        1.4,
+        1.4
+      ],
+      "destructible": false
+    },
+    {
+      "id": 6,
+      "xy": [
+        2.3,
+        2
+      ],
+      "polarity": "Neutral",
+      "mass": 4,
+      "size": [
+        1.4,
+        1.4
+      ],
+      "destructible": false
+    }
+  ],
+  "hazards": [
+    {
+      "id": "S1",
+      "xy": [
+        -5.5,
+        0
+      ],
+      "size": [
+        0.8,
+        2.5
+      ]
+    },
+    {
+      "id": "S2",
+      "xy": [
+        3,
+        4.3
+      ],
+      "size": [
+        3.2,
+        0.7
+      ]
+    }
+  ],
+  "interior": [
+    20,
+    12
+  ],
+  "innerWalls": [],
+  "turrets": [],
+  "config": {
+    "magneticRadius": 7,
+    "magneticStrength": 20,
+    "markingDistance": 8,
+    "enemyHP": 2
+  },
+  "routes": [
+    {
+      "name": "A-repeat-1",
+      "marks": [
+        {
+          "step": 1,
+          "time": 0.02,
+          "TargetId": 1,
+          "pole": "Positive",
+          "outcome": "Applied",
+          "budget": 2
+        },
+        {
+          "step": 61,
+          "time": 1.2199999731779099,
+          "TargetId": 5,
+          "pole": "Negative",
+          "outcome": "Applied",
+          "budget": 1
+        },
+        {
+          "step": 191,
+          "time": 3.819999915063381,
+          "TargetId": 3,
+          "pole": "Negative",
+          "outcome": "Applied",
+          "budget": 0
+        }
+      ],
+      "trajectory": [
+        [
+          5,
+          -2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          -8,
+          2
+        ]
+      ],
+      "switchAt": [
+        0,
+        180,
+        330,
+        450
+      ],
+      "spread": [
+        {
+          "Step": 34,
+          "time": 0.6799999848008156,
+          "SourceId": 1,
+          "TargetId": 3,
+          "pole": "Positive",
+          "NormalImpulse": 0.9223276,
+          "source": [
+            -2.35561442,
+            -0.597391248
+          ],
+          "target": [
+            -1.92546141,
+            0.299727648
+          ],
+          "budget": 2
+        },
+        {
+          "Step": 63,
+          "time": 1.2599999718368053,
+          "SourceId": 3,
+          "TargetId": 4,
+          "pole": "Positive",
+          "NormalImpulse": 1.30093646,
+          "source": [
+            -1.25576687,
+            1.20114493
+          ],
+          "target": [
+            -0.7977144,
+            2.07937074
+          ],
+          "budget": 1
+        },
+        {
+          "Step": 86,
+          "time": 1.7199999615550041,
+          "SourceId": 4,
+          "TargetId": 6,
+          "pole": "Positive",
+          "NormalImpulse": 3.59130478,
+          "source": [
+            1.10720682,
+            2.5741632
+          ],
+          "target": [
+            2.31205058,
+            1.99999321
+          ],
+          "budget": 1
+        },
+        {
+          "Step": 246,
+          "time": 4.91999989002943,
+          "SourceId": 3,
+          "TargetId": 2,
+          "pole": "Negative",
+          "NormalImpulse": 2.86446929,
+          "source": [
+            3.79797745,
+            -0.6977795
+          ],
+          "target": [
+            4.72888136,
+            -1.04735041
+          ],
+          "budget": 0
+        }
+      ],
+      "hits": [
+        {
+          "Step": 246,
+          "time": 4.91999989002943,
+          "TargetId": 2,
+          "SourceId": 3,
+          "kind": "Impact",
+          "NormalSpeed": 5.72893524,
+          "RemainingHealth": 1,
+          "xy": [
+            4.72888136,
+            -1.04735041
+          ]
+        },
+        {
+          "Step": 246,
+          "time": 4.91999989002943,
+          "TargetId": 3,
+          "SourceId": 2,
+          "kind": "Impact",
+          "NormalSpeed": 5.72893524,
+          "RemainingHealth": 1,
+          "xy": [
+            3.79797745,
+            -0.6977795
+          ]
+        },
+        {
+          "Step": 279,
+          "time": 5.579999875277281,
+          "TargetId": 4,
+          "SourceId": -2,
+          "kind": "Spike",
+          "NormalSpeed": 0,
+          "RemainingHealth": 1,
+          "xy": [
+            0.921201944,
+            3.81085348
+          ]
+        },
+        {
+          "Step": 297,
+          "time": 5.939999867230654,
+          "TargetId": 4,
+          "SourceId": -2,
+          "kind": "Spike",
+          "NormalSpeed": 0,
+          "RemainingHealth": 0,
+          "xy": [
+            1.21087849,
+            3.96160173
+          ]
+        },
+        {
+          "Step": 454,
+          "time": 9.079999797046185,
+          "TargetId": 2,
+          "SourceId": -2,
+          "kind": "Spike",
+          "NormalSpeed": 0,
+          "RemainingHealth": 0,
+          "xy": [
+            4.822475,
+            3.498484
+          ]
+        },
+        {
+          "Step": 1004,
+          "time": 20.079999551177025,
+          "TargetId": 1,
+          "SourceId": -1,
+          "kind": "Spike",
+          "NormalSpeed": 0,
+          "RemainingHealth": 1,
+          "xy": [
+            -4.60021162,
+            1.05232656
+          ]
+        },
+        {
+          "Step": 1022,
+          "time": 20.439999543130398,
+          "TargetId": 1,
+          "SourceId": -1,
+          "kind": "Spike",
+          "NormalSpeed": 0,
+          "RemainingHealth": 0,
+          "xy": [
+            -5.35993576,
+            1.240404
+          ]
+        },
+        {
+          "Step": 1028,
+          "time": 20.55999954044819,
+          "TargetId": 3,
+          "SourceId": -1,
+          "kind": "Spike",
+          "NormalSpeed": 0,
+          "RemainingHealth": 0,
+          "xy": [
+            -4.597558,
+            0.8912297
+          ]
+        }
+      ],
+      "lastEnemy": {
+        "Step": 1028,
+        "time": 20.55999954044819,
+        "TargetId": 3,
+        "SourceId": -1,
+        "kind": "Spike",
+        "NormalSpeed": 0,
+        "RemainingHealth": 0,
+        "xy": [
+          -4.597558,
+          0.8912297
+        ]
+      },
+      "crates": [
+        {
+          "id": 5,
+          "maxDisplacement": 10.115248549933218,
+          "end": [
+            -9.239421,
+            2.62460852
+          ]
+        },
+        {
+          "id": 6,
+          "maxDisplacement": 3.916824281197184,
+          "end": [
+            -0.520989656,
+            -0.554955065
+          ]
+        }
+      ],
+      "outcome": "Won",
+      "time": 20.55999954044819,
+      "budget": 0
+    },
+    {
+      "name": "B-repeat-1",
+      "marks": [
+        {
+          "step": 1,
+          "time": 0.02,
+          "TargetId": 3,
+          "pole": "Positive",
+          "outcome": "Applied",
+          "budget": 2
+        },
+        {
+          "step": 21,
+          "time": 0.4199999910593033,
+          "TargetId": 6,
+          "pole": "Negative",
+          "outcome": "Applied",
+          "budget": 1
+        },
+        {
+          "step": 136,
+          "time": 2.719999939650297,
+          "TargetId": 6,
+          "pole": "Positive",
+          "outcome": "Applied",
+          "budget": 0
+        }
+      ],
+      "trajectory": [
+        [
+          5,
+          -2
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          1,
+          5.3
+        ],
+        [
+          -8,
+          3
+        ]
+      ],
+      "switchAt": [
+        0,
+        180,
+        340,
+        470
+      ],
+      "spread": [
+        {
+          "Step": 62,
+          "time": 1.2399999722838402,
+          "SourceId": 3,
+          "TargetId": 5,
+          "pole": "Positive",
+          "NormalImpulse": 1.88411736,
+          "source": [
+            -0.6991194,
+            -0.09736702
+          ],
+          "target": [
+            0.5094206,
+            0.09872436
+          ],
+          "budget": 1
+        },
+        {
+          "Step": 76,
+          "time": 1.5199999660253525,
+          "SourceId": 3,
+          "TargetId": 2,
+          "pole": "Positive",
+          "NormalImpulse": 1.59786808,
+          "source": [
+            -0.8769629,
+            -0.174463257
+          ],
+          "target": [
+            -1.84143472,
+            -0.416524619
+          ],
+          "budget": 1
+        },
+        {
+          "Step": 86,
+          "time": 1.7199999615550041,
+          "SourceId": 6,
+          "TargetId": 4,
+          "pole": "Negative",
+          "NormalImpulse": 1.96412742,
+          "source": [
+            1.017552,
+            1.46313477
+          ],
+          "target": [
+            -0.186822951,
+            1.74781466
+          ],
+          "budget": 1
+        },
+        {
+          "Step": 160,
+          "time": 3.1999999284744263,
+          "SourceId": 5,
+          "TargetId": 1,
+          "pole": "Positive",
+          "NormalImpulse": 0.426911354,
+          "source": [
+            3.397786,
+            -0.580188632
+          ],
+          "target": [
+            2.71310639,
+            -1.78756714
+          ],
+          "budget": 0
+        }
+      ],
+      "hits": [
+        {
+          "Step": 95,
+          "time": 1.8999999575316906,
+          "TargetId": 3,
+          "SourceId": 4,
+          "kind": "Impact",
+          "NormalSpeed": 6.66609955,
+          "RemainingHealth": 1,
+          "xy": [
+            -0.2299995,
+            0.2671742
+          ]
+        },
+        {
+          "Step": 95,
+          "time": 1.8999999575316906,
+          "TargetId": 4,
+          "SourceId": 3,
+          "kind": "Impact",
+          "NormalSpeed": 6.66609955,
+          "RemainingHealth": 1,
+          "xy": [
+            -0.6260174,
+            1.18435442
+          ]
+        },
+        {
+          "Step": 146,
+          "time": 2.919999934732914,
+          "TargetId": 3,
+          "SourceId": 4,
+          "kind": "Impact",
+          "NormalSpeed": 8.243323,
+          "RemainingHealth": 0,
+          "xy": [
+            -0.5884946,
+            0.394547135
+          ]
+        },
+        {
+          "Step": 146,
+          "time": 2.919999934732914,
+          "TargetId": 4,
+          "SourceId": 3,
+          "kind": "Impact",
+          "NormalSpeed": 8.243323,
+          "RemainingHealth": 0,
+          "xy": [
+            -0.8901282,
+            -0.55422616
+          ]
+        },
+        {
+          "Step": 200,
+          "time": 3.999999910593033,
+          "TargetId": 1,
+          "SourceId": 0,
+          "kind": "Impact",
+          "NormalSpeed": 4.76667356,
+          "RemainingHealth": 1,
+          "xy": [
+            4.226047,
+            -5.495625
+          ]
+        },
+        {
+          "Step": 614,
+          "time": 12.27999972552061,
+          "TargetId": 2,
+          "SourceId": -1,
+          "kind": "Spike",
+          "NormalSpeed": 0,
+          "RemainingHealth": 1,
+          "xy": [
+            -4.61934137,
+            -0.0414149165
+          ]
+        },
+        {
+          "Step": 632,
+          "time": 12.639999717473984,
+          "TargetId": 2,
+          "SourceId": -1,
+          "kind": "Spike",
+          "NormalSpeed": 0,
+          "RemainingHealth": 0,
+          "xy": [
+            -5.41787148,
+            0.07647679
+          ]
+        },
+        {
+          "Step": 811,
+          "time": 16.219999637454748,
+          "TargetId": 1,
+          "SourceId": -1,
+          "kind": "Spike",
+          "NormalSpeed": 0,
+          "RemainingHealth": 0,
+          "xy": [
+            -4.5906,
+            -0.327288
+          ]
+        }
+      ],
+      "lastEnemy": {
+        "Step": 811,
+        "time": 16.219999637454748,
+        "TargetId": 1,
+        "SourceId": -1,
+        "kind": "Spike",
+        "NormalSpeed": 0,
+        "RemainingHealth": 0,
+        "xy": [
+          -4.5906,
+          -0.327288
+        ]
+      },
+      "crates": [
+        {
+          "id": 5,
+          "maxDisplacement": 8.979251020044247,
+          "end": [
+            7.830942,
+            5.28500128
+          ]
+        },
+        {
+          "id": 6,
+          "maxDisplacement": 5.5166125482828265,
+          "end": [
+            -2.126066,
+            5.28016567
+          ]
+        }
+      ],
+      "outcome": "Won",
+      "time": 16.219999637454748,
+      "budget": 0
+    }
+  ],
+  "repeatEvidence": "步骤15-正式路线.json",
+  "marginEvidence": "步骤15-正式余量.json",
+  "blindTest": null,
+  "knownLimits": [
+    "A提前0.5秒（3.30秒）留下被异极箱子吸在右侧边界的E3；不计通过。早0.30、晚0.50秒的实际离散点通过，不外推连续窗口。",
+    "A终点下移0.5D留下残敌；上移0.5D、横向±0.5/1D通过。",
+    "外部玩家盲测、实体键鼠、跨设备与独立构建留待步骤19—21。"
+  ]
+}
