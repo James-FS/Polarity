@@ -36,6 +36,14 @@ namespace Polarity.Entities
             NotifyHealthChanged();
             return true;
         }
+        internal bool SetRuntimeHealth(int target)
+        {
+            if (!IsAlive || target < 1 || target > 999) return false;
+            if (target > MaxHealth) bonusHealth += target - MaxHealth;
+            CurrentHealth = target;
+            NotifyHealthChanged();
+            return true;
+        }
         internal void NotifyHealthChanged() => HealthChanged?.Invoke(CurrentHealth);
         private void OnDestroy() { World = null; HealthChanged = null; }
         private void OnValidate() => maxHealth = Mathf.Max(1, maxHealth);

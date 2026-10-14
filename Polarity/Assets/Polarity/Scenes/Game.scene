@@ -535,6 +535,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelRoot
       objectReference: {fileID: 0}
+    - target: {fileID: 3255462017831308582, guid: 3bd9c617de5ef7d458e5971f00e0794a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3546541054499409918, guid: 3bd9c617de5ef7d458e5971f00e0794a, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

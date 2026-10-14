@@ -314,6 +314,10 @@ namespace Polarity.Simulation
                     return (State.Phase == LevelPhase.Running || State.Phase == LevelPhase.Paused) && PlayerHealth.AddRuntimeHealth(value);
                 case Polarity.Debugging.GMCommand.AddMarks:
                     return (State.Phase == LevelPhase.Running || State.Phase == LevelPhase.Paused) && State.AddRuntimeMarks(value);
+                case Polarity.Debugging.GMCommand.SetHealth:
+                    return (State.Phase == LevelPhase.Running || State.Phase == LevelPhase.Paused) && PlayerHealth.SetRuntimeHealth(value);
+                case Polarity.Debugging.GMCommand.SetRemainingMarks:
+                    return (State.Phase == LevelPhase.Running || State.Phase == LevelPhase.Paused) && State.SetRuntimeRemainingMarks(value);
                 default: return false;
             }
         }

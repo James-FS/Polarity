@@ -22,6 +22,8 @@ namespace Polarity.Controllers
         public LevelRoom CurrentRoom { get; private set; }
         public int CurrentLevelIndex { get; private set; }
         public int LevelCount => levelSequence.Length;
+        public string GetLevelTitle(int index) => index >= 0 && index < LevelCount && levelSequence[index] != null
+            ? levelSequence[index].Title : string.Empty;
         public bool HasNextLevel => CurrentDefinition != null && CurrentLevelIndex + 1 < LevelCount;
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void ResetSelection() { selectedIndex=0; selectedScene=null; introductionDismissed=false; }
@@ -101,6 +103,8 @@ namespace Polarity.Controllers
         }
         internal bool RequestGMNextLevel()
             => Polarity.Debugging.GMManager.IsAvailable && HasNextLevel && RequestLoad(CurrentLevelIndex + 1);
+        internal bool RequestGMLevel(int index)
+            => Polarity.Debugging.GMManager.IsAvailable && index >= 0 && index < LevelCount && RequestLoad(index);
         private bool RequestLoad(int index)
         {
             if (world==null || !world.OwnsPhysics || IsRestarting) return false;

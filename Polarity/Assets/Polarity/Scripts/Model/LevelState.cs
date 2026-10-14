@@ -52,6 +52,15 @@ namespace Polarity.Model
             MarksChanged?.Invoke(RemainingMarks);
             return true;
         }
+        internal bool SetRuntimeRemainingMarks(int target)
+        {
+            if (target < 0 || target > 999 || MarkBudget - RemainingMarks > int.MaxValue - target) return false;
+            int spent = MarkBudget - RemainingMarks;
+            MarkBudget = spent + target;
+            RemainingMarks = target;
+            MarksChanged?.Invoke(RemainingMarks);
+            return true;
+        }
 
         internal void SetUnlimitedMarks(bool value)
         {
