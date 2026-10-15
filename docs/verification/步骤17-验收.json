@@ -1,0 +1,3982 @@
+{
+  "version": "03-whitebox-v1",
+  "baseline": "b0f45e5",
+  "date": "2026-10-15",
+  "engine": "Tuanjie 1.10.1 / 2022.3.62t13",
+  "normalA": {
+    "name": "A",
+    "mode": "automatic normal-speed FixedUpdate; movement/mark API intents; Level.Update disabled to prevent external keyboard override",
+    "markDelay": 0,
+    "initial": [
+      {
+        "id": 1,
+        "xy": [
+          -0.8,
+          1.3
+        ],
+        "pole": "Neutral",
+        "hp": 2
+      },
+      {
+        "id": 2,
+        "xy": [
+          -2,
+          1.8
+        ],
+        "pole": "Neutral",
+        "hp": 2
+      },
+      {
+        "id": 3,
+        "xy": [
+          -2.4,
+          3.1
+        ],
+        "pole": "Neutral",
+        "hp": 2
+      },
+      {
+        "id": 4,
+        "xy": [
+          1,
+          -1
+        ],
+        "pole": "Neutral",
+        "hp": null
+      }
+    ],
+    "phase": "Won",
+    "time": 24.739999447017908,
+    "steps": 1237,
+    "realSeconds": 24.7761078,
+    "scale": 1,
+    "hp": 2,
+    "enemies": 0,
+    "budget": 2,
+    "failed": 0,
+    "gm": false,
+    "marks": [
+      {
+        "step": 1,
+        "TargetId": 1,
+        "outcome": "Applied",
+        "budget": 2
+      }
+    ],
+    "spreads": [
+      {
+        "Step": 159,
+        "SourceId": 1,
+        "TargetId": 2,
+        "pole": "Positive",
+        "source": [
+          5.01509333,
+          1.11269021
+        ],
+        "target": [
+          4.02010775,
+          1.18201315
+        ],
+        "budget": 2
+      },
+      {
+        "Step": 160,
+        "SourceId": 2,
+        "TargetId": 3,
+        "pole": "Positive",
+        "source": [
+          4.04906034,
+          1.15683722
+        ],
+        "target": [
+          3.43968248,
+          1.94890606
+        ],
+        "budget": 2
+      }
+    ],
+    "damage": [
+      {
+        "Step": 196,
+        "TargetId": 1,
+        "SourceId": 0,
+        "kind": "Impact",
+        "NormalSpeed": 6.060295,
+        "RemainingHealth": 1,
+        "xy": [
+          9.495557,
+          -0.7365668
+        ]
+      },
+      {
+        "Step": 237,
+        "TargetId": 1,
+        "SourceId": 5,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 0,
+        "xy": [
+          8.516288,
+          -1.41138649
+        ]
+      },
+      {
+        "Step": 335,
+        "TargetId": 0,
+        "SourceId": 6,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 2,
+        "xy": [
+          -4.05359364,
+          -1.32809615
+        ]
+      },
+      {
+        "Step": 613,
+        "TargetId": 3,
+        "SourceId": 7,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 1,
+        "xy": [
+          3.08630228,
+          2.70739436
+        ]
+      },
+      {
+        "Step": 721,
+        "TargetId": 2,
+        "SourceId": 8,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 1,
+        "xy": [
+          0.502478,
+          -4.06116056
+        ]
+      },
+      {
+        "Step": 907,
+        "TargetId": 2,
+        "SourceId": 9,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 0,
+        "xy": [
+          -2.44356871,
+          0.276599675
+        ]
+      },
+      {
+        "Step": 1237,
+        "TargetId": 3,
+        "SourceId": 11,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 0,
+        "xy": [
+          -0.337316,
+          -2.14464712
+        ]
+      }
+    ],
+    "shots": [
+      {
+        "id": 5,
+        "step": 152,
+        "origin": [
+          -4.90154,
+          -0.05818537
+        ],
+        "direction": [
+          0.9986,
+          -0.0528957881
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 1.823775,
+        "lastPosition": [
+          8.13053,
+          -2.04577637
+        ],
+        "lastStep": 236,
+        "recipient": "actor-1",
+        "endStep": 237
+      },
+      {
+        "id": 6,
+        "step": 329,
+        "origin": [
+          -5.380513,
+          -0.908975244
+        ],
+        "direction": [
+          0.563169956,
+          -0.8263411
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.1641114,
+        "lastPosition": [
+          -4.88812733,
+          -1.34004807
+        ],
+        "lastStep": 334,
+        "recipient": "actor-0",
+        "endStep": 335
+      },
+      {
+        "id": 7,
+        "step": 506,
+        "origin": [
+          -4.96953249,
+          0.38488552
+        ],
+        "direction": [
+          0.936788559,
+          0.349895924
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 2.26733541,
+        "lastPosition": [
+          3.57064652,
+          2.160242
+        ],
+        "lastStep": 612,
+        "recipient": "actor-3",
+        "endStep": 613
+      },
+      {
+        "id": 8,
+        "step": 683,
+        "origin": [
+          -5.02797365,
+          -0.5149415
+        ],
+        "direction": [
+          0.8836604,
+          -0.468128622
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.121172167,
+        "lastPosition": [
+          0.0000643730164,
+          -3.31572413
+        ],
+        "lastStep": 720,
+        "recipient": "actor-2",
+        "endStep": 721
+      },
+      {
+        "id": 9,
+        "step": 860,
+        "origin": [
+          -5.23838854,
+          0.7936925
+        ],
+        "direction": [
+          0.692374051,
+          0.721538663
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 3.82663679,
+        "lastPosition": [
+          -1.62832642,
+          0.123171933
+        ],
+        "lastStep": 906,
+        "recipient": "actor-2",
+        "endStep": 907
+      },
+      {
+        "id": 10,
+        "step": 1037,
+        "origin": [
+          -4.91927528,
+          -0.205020547
+        ],
+        "direction": [
+          0.982477248,
+          -0.186382309
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.04124677,
+        "lastPosition": [
+          -0.00534088165,
+          -1.09524333
+        ],
+        "lastStep": 1085,
+        "recipient": "crate-4",
+        "endStep": 1086
+      },
+      {
+        "id": 11,
+        "step": 1214,
+        "origin": [
+          -5.00965,
+          -0.478755951
+        ],
+        "direction": [
+          0.900317967,
+          -0.435232669
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.2408944,
+        "lastPosition": [
+          -1.27198851,
+          -2.01805449
+        ],
+        "lastStep": 1236,
+        "recipient": "actor-3",
+        "endStep": 1237
+      }
+    ],
+    "waypoints": [
+      {
+        "step": 81,
+        "progress": 1,
+        "p": [
+          7.057434,
+          3.60778642
+        ]
+      },
+      {
+        "step": 175,
+        "progress": 2,
+        "p": [
+          7.057434,
+          -3.69165277
+        ]
+      },
+      {
+        "step": 300,
+        "progress": 3,
+        "p": [
+          -3.643597,
+          -4.093676
+        ]
+      },
+      {
+        "step": 391,
+        "progress": 4,
+        "p": [
+          -4.03954744,
+          3.60861063
+        ]
+      },
+      {
+        "step": 516,
+        "progress": 5,
+        "p": [
+          6.67237234,
+          4.041119
+        ]
+      },
+      {
+        "step": 607,
+        "progress": 6,
+        "p": [
+          7.074396,
+          -3.65990877
+        ]
+      },
+      {
+        "step": 732,
+        "progress": 7,
+        "p": [
+          -3.62663484,
+          -4.061932
+        ]
+      },
+      {
+        "step": 823,
+        "progress": 8,
+        "p": [
+          -4.05914354,
+          3.649985
+        ]
+      },
+      {
+        "step": 948,
+        "progress": 9,
+        "p": [
+          6.65277624,
+          4.082494
+        ]
+      },
+      {
+        "step": 1039,
+        "progress": 10,
+        "p": [
+          7.08528471,
+          -3.62942338
+        ]
+      },
+      {
+        "step": 1164,
+        "progress": 11,
+        "p": [
+          -3.62663484,
+          -4.061932
+        ]
+      }
+    ],
+    "locks": [
+      {
+        "step": 101,
+        "phase": "Aiming",
+        "aim": [
+          0.9758003,
+          0.218663737
+        ],
+        "p": [
+          7.057434,
+          2.83776021
+        ]
+      },
+      {
+        "step": 142,
+        "phase": "Locked",
+        "aim": [
+          0.9986,
+          -0.0528957881
+        ],
+        "p": [
+          7.057434,
+          -0.779886842
+        ]
+      },
+      {
+        "step": 152,
+        "phase": "Cooling",
+        "aim": [
+          0.9986,
+          -0.0528957881
+        ],
+        "p": [
+          7.057434,
+          -1.66223943
+        ]
+      },
+      {
+        "step": 278,
+        "phase": "Aiming",
+        "aim": [
+          0.731034756,
+          -0.6823403
+        ],
+        "p": [
+          -1.70241892,
+          -4.093676
+        ]
+      },
+      {
+        "step": 319,
+        "phase": "Locked",
+        "aim": [
+          0.563169956,
+          -0.8263411
+        ],
+        "p": [
+          -4.07610559,
+          -2.73470116
+        ]
+      },
+      {
+        "step": 329,
+        "phase": "Cooling",
+        "aim": [
+          0.563169956,
+          -0.8263411
+        ],
+        "p": [
+          -4.07610559,
+          -1.85234761
+        ]
+      },
+      {
+        "step": 455,
+        "phase": "Aiming",
+        "aim": [
+          0.8720864,
+          0.4893519
+        ],
+        "p": [
+          1.29001558,
+          4.041119
+        ]
+      },
+      {
+        "step": 496,
+        "phase": "Locked",
+        "aim": [
+          0.936788559,
+          0.349895924
+        ],
+        "p": [
+          4.907665,
+          4.041119
+        ]
+      },
+      {
+        "step": 506,
+        "phase": "Cooling",
+        "aim": [
+          0.936788559,
+          0.349895924
+        ],
+        "p": [
+          5.79001856,
+          4.041119
+        ]
+      },
+      {
+        "step": 632,
+        "phase": "Aiming",
+        "aim": [
+          0.9409064,
+          -0.338666618
+        ],
+        "p": [
+          5.196898,
+          -4.061932
+        ]
+      },
+      {
+        "step": 673,
+        "phase": "Locked",
+        "aim": [
+          0.8836604,
+          -0.468128622
+        ],
+        "p": [
+          1.57924807,
+          -4.061932
+        ]
+      },
+      {
+        "step": 683,
+        "phase": "Cooling",
+        "aim": [
+          0.8836604,
+          -0.468128622
+        ],
+        "p": [
+          0.6968955,
+          -4.061932
+        ]
+      },
+      {
+        "step": 809,
+        "phase": "Aiming",
+        "aim": [
+          0.640602052,
+          0.7678731
+        ],
+        "p": [
+          -4.05914354,
+          2.41468978
+        ]
+      },
+      {
+        "step": 850,
+        "phase": "Locked",
+        "aim": [
+          0.692374051,
+          0.721538663
+        ],
+        "p": [
+          -1.99428546,
+          4.082494
+        ]
+      },
+      {
+        "step": 860,
+        "phase": "Cooling",
+        "aim": [
+          0.692374051,
+          0.721538663
+        ],
+        "p": [
+          -1.11193287,
+          4.082494
+        ]
+      },
+      {
+        "step": 986,
+        "phase": "Aiming",
+        "aim": [
+          0.9962575,
+          0.08643559
+        ],
+        "p": [
+          7.08528471,
+          1.047048
+        ]
+      },
+      {
+        "step": 1027,
+        "phase": "Locked",
+        "aim": [
+          0.982477248,
+          -0.186382309
+        ],
+        "p": [
+          7.08528471,
+          -2.57059884
+        ]
+      },
+      {
+        "step": 1037,
+        "phase": "Cooling",
+        "aim": [
+          0.982477248,
+          -0.186382309
+        ],
+        "p": [
+          7.08528471,
+          -3.45295262
+        ]
+      },
+      {
+        "step": 1163,
+        "phase": "Aiming",
+        "aim": [
+          0.531666458,
+          -0.84695375
+        ],
+        "p": [
+          -3.53839946,
+          -4.061932
+        ]
+      },
+      {
+        "step": 1204,
+        "phase": "Locked",
+        "aim": [
+          0.900317967,
+          -0.435232669
+        ],
+        "p": [
+          -4.05914354,
+          -0.85001564
+        ]
+      },
+      {
+        "step": 1214,
+        "phase": "Cooling",
+        "aim": [
+          0.900317967,
+          -0.435232669
+        ],
+        "p": [
+          -4.05914354,
+          0.03233716
+        ]
+      }
+    ],
+    "removals": [
+      {
+        "step": 237,
+        "id": 5,
+        "recipient": "actor-1",
+        "crateDistance": 6.42982
+      },
+      {
+        "step": 335,
+        "id": 6,
+        "recipient": "actor-0",
+        "crateDistance": 5.17812729
+      },
+      {
+        "step": 613,
+        "id": 7,
+        "recipient": "actor-3",
+        "crateDistance": 3.08064866
+      },
+      {
+        "step": 721,
+        "id": 8,
+        "recipient": "actor-2",
+        "crateDistance": 1.6333276
+      },
+      {
+        "step": 907,
+        "id": 9,
+        "recipient": "actor-2",
+        "crateDistance": 1.964213
+      },
+      {
+        "step": 1086,
+        "id": 10,
+        "recipient": "crate-4",
+        "crateDistance": 0.304237843
+      },
+      {
+        "step": 1237,
+        "id": 11,
+        "recipient": "actor-3",
+        "crateDistance": 2.01254916
+      }
+    ],
+    "hudModal": false
+  },
+  "delayedSeed": {
+    "name": "A余量",
+    "mode": "automatic normal-speed FixedUpdate; movement/mark API intents; Level.Update disabled to prevent external keyboard override",
+    "markDelay": 5,
+    "initial": [
+      {
+        "id": 1,
+        "xy": [
+          -0.8,
+          1.3
+        ],
+        "pole": "Neutral",
+        "hp": 2
+      },
+      {
+        "id": 2,
+        "xy": [
+          -2,
+          1.8
+        ],
+        "pole": "Neutral",
+        "hp": 2
+      },
+      {
+        "id": 3,
+        "xy": [
+          -2.4,
+          3.1
+        ],
+        "pole": "Neutral",
+        "hp": 2
+      },
+      {
+        "id": 4,
+        "xy": [
+          1,
+          -1
+        ],
+        "pole": "Neutral",
+        "hp": null
+      }
+    ],
+    "phase": "Won",
+    "time": 24.739999447017908,
+    "steps": 1237,
+    "realSeconds": 24.7696362,
+    "scale": 1,
+    "hp": 2,
+    "enemies": 0,
+    "budget": 2,
+    "failed": 0,
+    "gm": false,
+    "marks": [
+      {
+        "step": 6,
+        "TargetId": 1,
+        "outcome": "Applied",
+        "budget": 2
+      }
+    ],
+    "spreads": [
+      {
+        "Step": 159,
+        "SourceId": 1,
+        "TargetId": 2,
+        "pole": "Positive",
+        "source": [
+          5.01509333,
+          1.11269021
+        ],
+        "target": [
+          4.02010775,
+          1.18201315
+        ],
+        "budget": 2
+      },
+      {
+        "Step": 160,
+        "SourceId": 2,
+        "TargetId": 3,
+        "pole": "Positive",
+        "source": [
+          4.04906034,
+          1.15683722
+        ],
+        "target": [
+          3.43968248,
+          1.94890606
+        ],
+        "budget": 2
+      }
+    ],
+    "damage": [
+      {
+        "Step": 196,
+        "TargetId": 1,
+        "SourceId": 0,
+        "kind": "Impact",
+        "NormalSpeed": 6.060295,
+        "RemainingHealth": 1,
+        "xy": [
+          9.495557,
+          -0.7365668
+        ]
+      },
+      {
+        "Step": 237,
+        "TargetId": 1,
+        "SourceId": 5,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 0,
+        "xy": [
+          8.516288,
+          -1.41138649
+        ]
+      },
+      {
+        "Step": 335,
+        "TargetId": 0,
+        "SourceId": 6,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 2,
+        "xy": [
+          -4.05359364,
+          -1.32809615
+        ]
+      },
+      {
+        "Step": 613,
+        "TargetId": 3,
+        "SourceId": 7,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 1,
+        "xy": [
+          3.08630228,
+          2.70739436
+        ]
+      },
+      {
+        "Step": 721,
+        "TargetId": 2,
+        "SourceId": 8,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 1,
+        "xy": [
+          0.502478,
+          -4.06116056
+        ]
+      },
+      {
+        "Step": 907,
+        "TargetId": 2,
+        "SourceId": 9,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 0,
+        "xy": [
+          -2.44356871,
+          0.276599675
+        ]
+      },
+      {
+        "Step": 1237,
+        "TargetId": 3,
+        "SourceId": 11,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 0,
+        "xy": [
+          -0.337316,
+          -2.14464712
+        ]
+      }
+    ],
+    "hudModal": true
+  },
+  "unmarkedControl": {
+    "name": "无标记同路线",
+    "mode": "automatic normal-speed FixedUpdate; movement/mark API intents; Level.Update disabled to prevent external keyboard override",
+    "markDelay": 0,
+    "initial": [
+      {
+        "id": 1,
+        "xy": [
+          -0.8,
+          1.3
+        ],
+        "pole": "Neutral",
+        "hp": 2
+      },
+      {
+        "id": 2,
+        "xy": [
+          -2,
+          1.8
+        ],
+        "pole": "Neutral",
+        "hp": 2
+      },
+      {
+        "id": 3,
+        "xy": [
+          -2.4,
+          3.1
+        ],
+        "pole": "Neutral",
+        "hp": 2
+      },
+      {
+        "id": 4,
+        "xy": [
+          1,
+          -1
+        ],
+        "pole": "Neutral",
+        "hp": null
+      }
+    ],
+    "phase": "Running",
+    "time": 90.0199979878962,
+    "steps": 4501,
+    "realSeconds": 90.00088,
+    "scale": 1,
+    "hp": 1,
+    "enemies": 1,
+    "budget": 3,
+    "failed": 0,
+    "gm": false,
+    "marks": [],
+    "spreads": [],
+    "damage": [
+      {
+        "Step": 582,
+        "TargetId": 3,
+        "SourceId": 7,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 1,
+        "xy": [
+          2.93616343,
+          2.790065
+        ]
+      },
+      {
+        "Step": 750,
+        "TargetId": 2,
+        "SourceId": 8,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 1,
+        "xy": [
+          1.47645521,
+          -3.170956
+        ]
+      },
+      {
+        "Step": 1248,
+        "TargetId": 2,
+        "SourceId": 11,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 0,
+        "xy": [
+          -1.13458455,
+          -2.05302572
+        ]
+      },
+      {
+        "Step": 2002,
+        "TargetId": 1,
+        "SourceId": 15,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 1,
+        "xy": [
+          3.3258462,
+          -2.319507
+        ]
+      },
+      {
+        "Step": 2475,
+        "TargetId": 0,
+        "SourceId": 18,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 2,
+        "xy": [
+          -4.068609,
+          -3.06488228
+        ]
+      },
+      {
+        "Step": 2882,
+        "TargetId": 1,
+        "SourceId": 20,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 0,
+        "xy": [
+          2.6135323,
+          -2.47242165
+        ]
+      },
+      {
+        "Step": 3351,
+        "TargetId": 0,
+        "SourceId": 23,
+        "kind": "Projectile",
+        "NormalSpeed": 0,
+        "RemainingHealth": 1,
+        "xy": [
+          -4.06193924,
+          -2.01787472
+        ]
+      }
+    ],
+    "shots": [
+      {
+        "id": 5,
+        "step": 152,
+        "origin": [
+          -4.90154,
+          -0.05818537
+        ],
+        "direction": [
+          0.9986,
+          -0.0528957881
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 1.69010107e-7,
+        "lastPosition": [
+          -0.008399382,
+          -0.3173749
+        ],
+        "lastStep": 200,
+        "recipient": "crate-4",
+        "endStep": 201
+      },
+      {
+        "id": 6,
+        "step": 329,
+        "origin": [
+          -5.380513,
+          -0.908975244
+        ],
+        "direction": [
+          0.563169956,
+          -0.8263411
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.00000335746927,
+        "lastPosition": [
+          -2.11412764,
+          -5.701753
+        ],
+        "lastStep": 386,
+        "recipient": "solid-or-expired",
+        "endStep": 387
+      },
+      {
+        "id": 7,
+        "step": 506,
+        "origin": [
+          -4.97026348,
+          0.3868363
+        ],
+        "direction": [
+          0.9361243,
+          0.351669341
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.00000122605718,
+        "lastPosition": [
+          2.14428377,
+          3.05952549
+        ],
+        "lastStep": 581,
+        "recipient": "actor-3",
+        "endStep": 582
+      },
+      {
+        "id": 8,
+        "step": 683,
+        "origin": [
+          -5.02820873,
+          -0.5153848
+        ],
+        "direction": [
+          0.883446753,
+          -0.4685316
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.00000212468831,
+        "lastPosition": [
+          0.890881538,
+          -3.65454388
+        ],
+        "lastStep": 749,
+        "recipient": "actor-2",
+        "endStep": 750
+      },
+      {
+        "id": 9,
+        "step": 860,
+        "origin": [
+          -5.23888159,
+          0.7941654
+        ],
+        "direction": [
+          0.6919259,
+          0.721968532
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.000004041335,
+        "lastPosition": [
+          -0.533786,
+          5.70355654
+        ],
+        "lastStep": 927,
+        "recipient": "solid-or-expired",
+        "endStep": 928
+      },
+      {
+        "id": 10,
+        "step": 1037,
+        "origin": [
+          -4.91931152,
+          -0.205212846
+        ],
+        "direction": [
+          0.982444167,
+          -0.186557129
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 5.35840059e-7,
+        "lastPosition": [
+          0.287640959,
+          -1.1939652
+        ],
+        "lastStep": 1089,
+        "recipient": "crate-4",
+        "endStep": 1090
+      },
+      {
+        "id": 11,
+        "step": 1214,
+        "origin": [
+          -5.01049232,
+          -0.480494022
+        ],
+        "direction": [
+          0.8995524,
+          -0.436812729
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.00000160128866,
+        "lastPosition": [
+          -1.95201123,
+          -1.965657
+        ],
+        "lastStep": 1247,
+        "recipient": "actor-2",
+        "endStep": 1248
+      },
+      {
+        "id": 12,
+        "step": 1391,
+        "origin": [
+          -4.95316029,
+          0.337827027
+        ],
+        "direction": [
+          0.9516723,
+          0.307115465
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.00001114535,
+        "lastPosition": [
+          9.702586,
+          5.06741476
+        ],
+        "lastStep": 1544,
+        "recipient": "solid-or-expired",
+        "endStep": 1545
+      },
+      {
+        "id": 13,
+        "step": 1568,
+        "origin": [
+          -5.098645,
+          -0.6305233
+        ],
+        "direction": [
+          0.819413364,
+          -0.573203
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.00000316681053,
+        "lastPosition": [
+          2.11219144,
+          -5.67470741
+        ],
+        "lastStep": 1655,
+        "recipient": "solid-or-expired",
+        "endStep": 1656
+      },
+      {
+        "id": 14,
+        "step": 1745,
+        "origin": [
+          -5.1022377,
+          0.635627747
+        ],
+        "direction": [
+          0.8161477,
+          0.577843368
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.000003829107,
+        "lastPosition": [
+          1.99824822,
+          5.66287041
+        ],
+        "lastStep": 1831,
+        "recipient": "solid-or-expired",
+        "endStep": 1832
+      },
+      {
+        "id": 15,
+        "step": 1922,
+        "origin": [
+          -4.952294,
+          -0.335129946
+        ],
+        "direction": [
+          0.952460051,
+          -0.304663569
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.00000181667338,
+        "lastPosition": [
+          2.66738629,
+          -2.77243662
+        ],
+        "lastStep": 2001,
+        "recipient": "actor-1",
+        "endStep": 2002
+      },
+      {
+        "id": 16,
+        "step": 2099,
+        "origin": [
+          -5.00528336,
+          0.469615579
+        ],
+        "direction": [
+          0.9042879,
+          0.426923245
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.000002989519,
+        "lastPosition": [
+          6.02703238,
+          5.6780777
+        ],
+        "lastStep": 2220,
+        "recipient": "solid-or-expired",
+        "endStep": 2221
+      },
+      {
+        "id": 17,
+        "step": 2276,
+        "origin": [
+          -4.92026329,
+          0.210164145
+        ],
+        "direction": [
+          0.9815787,
+          0.191058308
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.000002718448,
+        "lastPosition": [
+          9.70526,
+          3.05693579
+        ],
+        "lastStep": 2424,
+        "recipient": "solid-or-expired",
+        "endStep": 2425
+      },
+      {
+        "id": 18,
+        "step": 2453,
+        "origin": [
+          -5.23269463,
+          -0.7881895
+        ],
+        "direction": [
+          0.697550237,
+          -0.716535866
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 5.71225769e-7,
+        "lastPosition": [
+          -3.698083,
+          -2.36456871
+        ],
+        "lastStep": 2474,
+        "recipient": "actor-0",
+        "endStep": 2475
+      },
+      {
+        "id": 19,
+        "step": 2630,
+        "origin": [
+          -5.02965927,
+          0.5181109
+        ],
+        "direction": [
+          0.882127941,
+          0.471009851
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.00000277769186,
+        "lastPosition": [
+          4.67374945,
+          5.69922256
+        ],
+        "lastStep": 2739,
+        "recipient": "solid-or-expired",
+        "endStep": 2740
+      },
+      {
+        "id": 20,
+        "step": 2807,
+        "origin": [
+          -4.970641,
+          -0.3878402
+        ],
+        "direction": [
+          0.935780942,
+          -0.352582
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.00000234276376,
+        "lastPosition": [
+          2.04771376,
+          -3.032207
+        ],
+        "lastStep": 2881,
+        "recipient": "actor-1",
+        "endStep": 2882
+      },
+      {
+        "id": 21,
+        "step": 2984,
+        "origin": [
+          -5.368355,
+          0.9005691
+        ],
+        "direction": [
+          0.5742227,
+          0.8186991
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.000006545736,
+        "lastPosition": [
+          -2.03786945,
+          5.64902639
+        ],
+        "lastStep": 3041,
+        "recipient": "solid-or-expired",
+        "endStep": 3042
+      },
+      {
+        "id": 22,
+        "step": 3161,
+        "origin": [
+          -4.90146446,
+          0.0567371771
+        ],
+        "direction": [
+          0.9986689,
+          0.0515792519
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 9.488259e-7,
+        "lastPosition": [
+          9.679099,
+          0.8097951
+        ],
+        "lastStep": 3306,
+        "recipient": "solid-or-expired",
+        "endStep": 3307
+      },
+      {
+        "id": 23,
+        "step": 3338,
+        "origin": [
+          -5.482759,
+          -0.970804751
+        ],
+        "direction": [
+          0.470219076,
+          -0.882549763
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 2.99322664e-7,
+        "lastPosition": [
+          -4.87147474,
+          -2.118119
+        ],
+        "lastStep": 3350,
+        "recipient": "actor-0",
+        "endStep": 3351
+      },
+      {
+        "id": 24,
+        "step": 3515,
+        "origin": [
+          -4.989003,
+          0.433457166
+        ],
+        "direction": [
+          0.9190881,
+          0.394051969
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.00000536173866,
+        "lastPosition": [
+          7.23487949,
+          5.674351
+        ],
+        "lastStep": 3647,
+        "recipient": "solid-or-expired",
+        "endStep": 3648
+      },
+      {
+        "id": 25,
+        "step": 3692,
+        "origin": [
+          -4.99847841,
+          -0.4549227
+        ],
+        "direction": [
+          0.9104741,
+          -0.413566083
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.00000112489056,
+        "lastPosition": [
+          6.473485,
+          -5.66585064
+        ],
+        "lastStep": 3817,
+        "recipient": "solid-or-expired",
+        "endStep": 3818
+      },
+      {
+        "id": 26,
+        "step": 3869,
+        "origin": [
+          -5.408391,
+          0.927361131
+        ],
+        "direction": [
+          0.5378264,
+          0.843055546
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.000004078963,
+        "lastPosition": [
+          -2.396566,
+          5.648475
+        ],
+        "lastStep": 3924,
+        "recipient": "solid-or-expired",
+        "endStep": 3925
+      },
+      {
+        "id": 27,
+        "step": 4046,
+        "origin": [
+          -4.90444469,
+          -0.0987851
+        ],
+        "direction": [
+          0.9959594,
+          -0.0898046345
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 5.070344e-7,
+        "lastPosition": [
+          0.672929764,
+          -0.6016907
+        ],
+        "lastStep": 4101,
+        "recipient": "crate-4",
+        "endStep": 4102
+      },
+      {
+        "id": 28,
+        "step": 4223,
+        "origin": [
+          -5.28804159,
+          -0.8385198
+        ],
+        "direction": [
+          0.6472348,
+          -0.7622907
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 3.996762e-7,
+        "lastPosition": [
+          -1.21046162,
+          -5.64095259
+        ],
+        "lastStep": 4285,
+        "recipient": "solid-or-expired",
+        "endStep": 4286
+      },
+      {
+        "id": 29,
+        "step": 4400,
+        "origin": [
+          -4.96456337,
+          0.3713101
+        ],
+        "direction": [
+          0.941305935,
+          0.337554634
+        ],
+        "pole": "Negative",
+        "canMark": false,
+        "canSpread": false,
+        "canReceive": false,
+        "maxSideOffsetD": 0.000004331406,
+        "lastPosition": [
+          4.636753,
+          3.81437039
+        ],
+        "lastStep": 4501
+      }
+    ],
+    "waypoints": [
+      {
+        "step": 81,
+        "progress": 1,
+        "p": [
+          7.057434,
+          3.60778642
+        ]
+      },
+      {
+        "step": 175,
+        "progress": 2,
+        "p": [
+          7.057434,
+          -3.69165277
+        ]
+      },
+      {
+        "step": 300,
+        "progress": 3,
+        "p": [
+          -3.643597,
+          -4.093676
+        ]
+      },
+      {
+        "step": 391,
+        "progress": 4,
+        "p": [
+          -4.07610559,
+          3.618241
+        ]
+      },
+      {
+        "step": 516,
+        "progress": 5,
+        "p": [
+          6.63581467,
+          4.05075
+        ]
+      },
+      {
+        "step": 607,
+        "progress": 6,
+        "p": [
+          7.068323,
+          -3.66116738
+        ]
+      },
+      {
+        "step": 732,
+        "progress": 7,
+        "p": [
+          -3.63270783,
+          -4.063191
+        ]
+      },
+      {
+        "step": 823,
+        "progress": 8,
+        "p": [
+          -4.06521654,
+          3.64872622
+        ]
+      },
+      {
+        "step": 948,
+        "progress": 9,
+        "p": [
+          6.64670372,
+          4.081235
+        ]
+      },
+      {
+        "step": 1039,
+        "progress": 10,
+        "p": [
+          7.079212,
+          -3.63068223
+        ]
+      },
+      {
+        "step": 1164,
+        "progress": 11,
+        "p": [
+          -3.63270736,
+          -4.063191
+        ]
+      },
+      {
+        "step": 1255,
+        "progress": 12,
+        "p": [
+          -4.065216,
+          3.64872622
+        ]
+      },
+      {
+        "step": 1380,
+        "progress": 13,
+        "p": [
+          6.646704,
+          4.081235
+        ]
+      },
+      {
+        "step": 1471,
+        "progress": 14,
+        "p": [
+          7.07921267,
+          -3.63068223
+        ]
+      },
+      {
+        "step": 1596,
+        "progress": 15,
+        "p": [
+          -3.63270688,
+          -4.063191
+        ]
+      },
+      {
+        "step": 1687,
+        "progress": 16,
+        "p": [
+          -4.06521559,
+          3.64872622
+        ]
+      },
+      {
+        "step": 1812,
+        "progress": 17,
+        "p": [
+          6.64670467,
+          4.081235
+        ]
+      },
+      {
+        "step": 1903,
+        "progress": 18,
+        "p": [
+          7.079213,
+          -3.63068223
+        ]
+      },
+      {
+        "step": 2028,
+        "progress": 19,
+        "p": [
+          -3.6327064,
+          -4.063191
+        ]
+      },
+      {
+        "step": 2119,
+        "progress": 20,
+        "p": [
+          -4.065215,
+          3.64872622
+        ]
+      },
+      {
+        "step": 2244,
+        "progress": 21,
+        "p": [
+          6.646705,
+          4.081235
+        ]
+      },
+      {
+        "step": 2335,
+        "progress": 22,
+        "p": [
+          7.07921362,
+          -3.63068223
+        ]
+      },
+      {
+        "step": 2460,
+        "progress": 23,
+        "p": [
+          -3.632706,
+          -4.063191
+        ]
+      },
+      {
+        "step": 2551,
+        "progress": 24,
+        "p": [
+          -4.07211733,
+          3.63103724
+        ]
+      },
+      {
+        "step": 2676,
+        "progress": 25,
+        "p": [
+          6.639803,
+          4.0635457
+        ]
+      },
+      {
+        "step": 2767,
+        "progress": 26,
+        "p": [
+          7.0723114,
+          -3.64837146
+        ]
+      },
+      {
+        "step": 2892,
+        "progress": 27,
+        "p": [
+          -3.63960814,
+          -4.08088
+        ]
+      },
+      {
+        "step": 2983,
+        "progress": 28,
+        "p": [
+          -4.072117,
+          3.631037
+        ]
+      },
+      {
+        "step": 3108,
+        "progress": 29,
+        "p": [
+          6.63980341,
+          4.0635457
+        ]
+      },
+      {
+        "step": 3199,
+        "progress": 30,
+        "p": [
+          7.072312,
+          -3.64837146
+        ]
+      },
+      {
+        "step": 3324,
+        "progress": 31,
+        "p": [
+          -3.63960767,
+          -4.08088
+        ]
+      },
+      {
+        "step": 3415,
+        "progress": 32,
+        "p": [
+          -4.06193924,
+          3.62918448
+        ]
+      },
+      {
+        "step": 3540,
+        "progress": 33,
+        "p": [
+          6.64998055,
+          4.061693
+        ]
+      },
+      {
+        "step": 3631,
+        "progress": 34,
+        "p": [
+          7.082489,
+          -3.650224
+        ]
+      },
+      {
+        "step": 3756,
+        "progress": 35,
+        "p": [
+          -3.62943053,
+          -4.08273268
+        ]
+      },
+      {
+        "step": 3847,
+        "progress": 36,
+        "p": [
+          -4.06193924,
+          3.62918448
+        ]
+      },
+      {
+        "step": 3972,
+        "progress": 37,
+        "p": [
+          6.64998055,
+          4.061693
+        ]
+      },
+      {
+        "step": 4063,
+        "progress": 38,
+        "p": [
+          7.082489,
+          -3.650224
+        ]
+      },
+      {
+        "step": 4188,
+        "progress": 39,
+        "p": [
+          -3.62943053,
+          -4.08273268
+        ]
+      },
+      {
+        "step": 4279,
+        "progress": 40,
+        "p": [
+          -4.06193924,
+          3.62918448
+        ]
+      },
+      {
+        "step": 4404,
+        "progress": 41,
+        "p": [
+          6.64998055,
+          4.061693
+        ]
+      },
+      {
+        "step": 4495,
+        "progress": 42,
+        "p": [
+          7.082489,
+          -3.650224
+        ]
+      }
+    ],
+    "locks": [
+      {
+        "step": 101,
+        "phase": "Aiming",
+        "aim": [
+          0.9758003,
+          0.218663737
+        ],
+        "p": [
+          7.057434,
+          2.83776021
+        ]
+      },
+      {
+        "step": 142,
+        "phase": "Locked",
+        "aim": [
+          0.9986,
+          -0.0528957881
+        ],
+        "p": [
+          7.057434,
+          -0.779886842
+        ]
+      },
+      {
+        "step": 152,
+        "phase": "Cooling",
+        "aim": [
+          0.9986,
+          -0.0528957881
+        ],
+        "p": [
+          7.057434,
+          -1.66223943
+        ]
+      },
+      {
+        "step": 278,
+        "phase": "Aiming",
+        "aim": [
+          0.731034756,
+          -0.6823403
+        ],
+        "p": [
+          -1.70241892,
+          -4.093676
+        ]
+      },
+      {
+        "step": 319,
+        "phase": "Locked",
+        "aim": [
+          0.563169956,
+          -0.8263411
+        ],
+        "p": [
+          -4.07610559,
+          -2.73470116
+        ]
+      },
+      {
+        "step": 329,
+        "phase": "Cooling",
+        "aim": [
+          0.563169956,
+          -0.8263411
+        ],
+        "p": [
+          -4.07610559,
+          -1.85234761
+        ]
+      },
+      {
+        "step": 455,
+        "phase": "Aiming",
+        "aim": [
+          0.870519042,
+          0.49213475
+        ],
+        "p": [
+          1.25345755,
+          4.05075
+        ]
+      },
+      {
+        "step": 496,
+        "phase": "Locked",
+        "aim": [
+          0.9361243,
+          0.351669341
+        ],
+        "p": [
+          4.871107,
+          4.05075
+        ]
+      },
+      {
+        "step": 506,
+        "phase": "Cooling",
+        "aim": [
+          0.9361243,
+          0.351669341
+        ],
+        "p": [
+          5.753461,
+          4.05075
+        ]
+      },
+      {
+        "step": 632,
+        "phase": "Aiming",
+        "aim": [
+          0.9408148,
+          -0.338920981
+        ],
+        "p": [
+          5.190825,
+          -4.063191
+        ]
+      },
+      {
+        "step": 673,
+        "phase": "Locked",
+        "aim": [
+          0.883446753,
+          -0.4685316
+        ],
+        "p": [
+          1.57317507,
+          -4.063191
+        ]
+      },
+      {
+        "step": 683,
+        "phase": "Cooling",
+        "aim": [
+          0.883446753,
+          -0.4685316
+        ],
+        "p": [
+          0.6908225,
+          -4.063191
+        ]
+      },
+      {
+        "step": 809,
+        "phase": "Aiming",
+        "aim": [
+          0.6396224,
+          0.7686892
+        ],
+        "p": [
+          -4.06521654,
+          2.413431
+        ]
+      },
+      {
+        "step": 850,
+        "phase": "Locked",
+        "aim": [
+          0.6919259,
+          0.721968532
+        ],
+        "p": [
+          -2.00035834,
+          4.081235
+        ]
+      },
+      {
+        "step": 860,
+        "phase": "Cooling",
+        "aim": [
+          0.6919259,
+          0.721968532
+        ],
+        "p": [
+          -1.11800575,
+          4.081235
+        ]
+      },
+      {
+        "step": 986,
+        "phase": "Aiming",
+        "aim": [
+          0.996262252,
+          0.08638025
+        ],
+        "p": [
+          7.079212,
+          1.04578912
+        ]
+      },
+      {
+        "step": 1027,
+        "phase": "Locked",
+        "aim": [
+          0.982444167,
+          -0.186557129
+        ],
+        "p": [
+          7.079212,
+          -2.57185769
+        ]
+      },
+      {
+        "step": 1037,
+        "phase": "Cooling",
+        "aim": [
+          0.982444167,
+          -0.186557129
+        ],
+        "p": [
+          7.079212,
+          -3.45421147
+        ]
+      },
+      {
+        "step": 1163,
+        "phase": "Aiming",
+        "aim": [
+          0.5306392,
+          -0.847597837
+        ],
+        "p": [
+          -3.544472,
+          -4.063191
+        ]
+      },
+      {
+        "step": 1204,
+        "phase": "Locked",
+        "aim": [
+          0.8995524,
+          -0.436812729
+        ],
+        "p": [
+          -4.065216,
+          -0.8512745
+        ]
+      },
+      {
+        "step": 1214,
+        "phase": "Cooling",
+        "aim": [
+          0.8995524,
+          -0.436812729
+        ],
+        "p": [
+          -4.065216,
+          0.0310783088
+        ]
+      },
+      {
+        "step": 1340,
+        "phase": "Aiming",
+        "aim": [
+          0.9112343,
+          0.411888272
+        ],
+        "p": [
+          3.117289,
+          4.081235
+        ]
+      },
+      {
+        "step": 1381,
+        "phase": "Locked",
+        "aim": [
+          0.9516723,
+          0.307115465
+        ],
+        "p": [
+          6.72826147,
+          4.06843233
+        ]
+      },
+      {
+        "step": 1391,
+        "phase": "Cooling",
+        "aim": [
+          0.9516723,
+          0.307115465
+        ],
+        "p": [
+          7.07921267,
+          3.428143
+        ]
+      },
+      {
+        "step": 1517,
+        "phase": "Aiming",
+        "aim": [
+          0.918316662,
+          -0.3958465
+        ],
+        "p": [
+          3.337883,
+          -4.063191
+        ]
+      },
+      {
+        "step": 1558,
+        "phase": "Locked",
+        "aim": [
+          0.819413364,
+          -0.573203
+        ],
+        "p": [
+          -0.279764682,
+          -4.063191
+        ]
+      },
+      {
+        "step": 1568,
+        "phase": "Cooling",
+        "aim": [
+          0.819413364,
+          -0.573203
+        ],
+        "p": [
+          -1.16211736,
+          -4.063191
+        ]
+      },
+      {
+        "step": 1694,
+        "phase": "Aiming",
+        "aim": [
+          0.475842863,
+          0.8795303
+        ],
+        "p": [
+          -3.74874783,
+          4.060102
+        ]
+      },
+      {
+        "step": 1735,
+        "phase": "Locked",
+        "aim": [
+          0.8161477,
+          0.577843368
+        ],
+        "p": [
+          -0.14741683,
+          4.081235
+        ]
+      },
+      {
+        "step": 1745,
+        "phase": "Cooling",
+        "aim": [
+          0.8161477,
+          0.577843368
+        ],
+        "p": [
+          0.734936,
+          4.081235
+        ]
+      },
+      {
+        "step": 1871,
+        "phase": "Aiming",
+        "aim": [
+          0.9984928,
+          -0.0548834875
+        ],
+        "p": [
+          7.079213,
+          -0.8071517
+        ]
+      },
+      {
+        "step": 1912,
+        "phase": "Locked",
+        "aim": [
+          0.952460051,
+          -0.304663569
+        ],
+        "p": [
+          6.60259247,
+          -4.063191
+        ]
+      },
+      {
+        "step": 1922,
+        "phase": "Cooling",
+        "aim": [
+          0.952460051,
+          -0.304663569
+        ],
+        "p": [
+          5.72023869,
+          -4.063191
+        ]
+      },
+      {
+        "step": 2048,
+        "phase": "Aiming",
+        "aim": [
+          0.5818757,
+          -0.8132777
+        ],
+        "p": [
+          -4.065215,
+          -2.61598039
+        ]
+      },
+      {
+        "step": 2089,
+        "phase": "Locked",
+        "aim": [
+          0.9042879,
+          0.426923245
+        ],
+        "p": [
+          -4.065215,
+          1.00166631
+        ]
+      },
+      {
+        "step": 2099,
+        "phase": "Cooling",
+        "aim": [
+          0.9042879,
+          0.426923245
+        ],
+        "p": [
+          -4.065215,
+          1.8840189
+        ]
+      },
+      {
+        "step": 2225,
+        "phase": "Aiming",
+        "aim": [
+          0.9363154,
+          0.351160079
+        ],
+        "p": [
+          4.970233,
+          4.081235
+        ]
+      },
+      {
+        "step": 2266,
+        "phase": "Locked",
+        "aim": [
+          0.9815787,
+          0.191058308
+        ],
+        "p": [
+          7.07921362,
+          2.45755386
+        ]
+      },
+      {
+        "step": 2276,
+        "phase": "Cooling",
+        "aim": [
+          0.9815787,
+          0.191058308
+        ],
+        "p": [
+          7.07921362,
+          1.57520068
+        ]
+      },
+      {
+        "step": 2402,
+        "phase": "Aiming",
+        "aim": [
+          0.881182849,
+          -0.472775728
+        ],
+        "p": [
+          1.48494172,
+          -4.063191
+        ]
+      },
+      {
+        "step": 2443,
+        "phase": "Locked",
+        "aim": [
+          0.697550237,
+          -0.716535866
+        ],
+        "p": [
+          -2.1327045,
+          -4.063191
+        ]
+      },
+      {
+        "step": 2453,
+        "phase": "Cooling",
+        "aim": [
+          0.697550237,
+          -0.716535866
+        ],
+        "p": [
+          -3.01505828,
+          -4.063191
+        ]
+      },
+      {
+        "step": 2579,
+        "phase": "Aiming",
+        "aim": [
+          0.7008651,
+          0.7132938
+        ],
+        "p": [
+          -1.91902387,
+          4.0635457
+        ]
+      },
+      {
+        "step": 2620,
+        "phase": "Locked",
+        "aim": [
+          0.882127941,
+          0.471009851
+        ],
+        "p": [
+          1.69862211,
+          4.0635457
+        ]
+      },
+      {
+        "step": 2630,
+        "phase": "Cooling",
+        "aim": [
+          0.882127941,
+          0.471009851
+        ],
+        "p": [
+          2.58097553,
+          4.0635457
+        ]
+      },
+      {
+        "step": 2756,
+        "phase": "Aiming",
+        "aim": [
+          0.980938554,
+          -0.194318086
+        ],
+        "p": [
+          7.0723114,
+          -2.6777823
+        ]
+      },
+      {
+        "step": 2797,
+        "phase": "Locked",
+        "aim": [
+          0.935780942,
+          -0.352582
+        ],
+        "p": [
+          4.742748,
+          -4.08088
+        ]
+      },
+      {
+        "step": 2807,
+        "phase": "Cooling",
+        "aim": [
+          0.935780942,
+          -0.352582
+        ],
+        "p": [
+          3.860394,
+          -4.08088
+        ]
+      },
+      {
+        "step": 2933,
+        "phase": "Aiming",
+        "aim": [
+          0.9116707,
+          -0.410921633
+        ],
+        "p": [
+          -4.072117,
+          -0.7807286
+        ]
+      },
+      {
+        "step": 2974,
+        "phase": "Locked",
+        "aim": [
+          0.5742227,
+          0.8186991
+        ],
+        "p": [
+          -4.072117,
+          2.83691859
+        ]
+      },
+      {
+        "step": 2984,
+        "phase": "Cooling",
+        "aim": [
+          0.5742227,
+          0.8186991
+        ],
+        "p": [
+          -4.05931425,
+          3.71259427
+        ]
+      },
+      {
+        "step": 3110,
+        "phase": "Aiming",
+        "aim": [
+          0.95286,
+          0.303410232
+        ],
+        "p": [
+          6.79675627,
+          4.02524662
+        ]
+      },
+      {
+        "step": 3151,
+        "phase": "Locked",
+        "aim": [
+          0.9986689,
+          0.0515792519
+        ],
+        "p": [
+          7.072312,
+          0.5869235
+        ]
+      },
+      {
+        "step": 3161,
+        "phase": "Cooling",
+        "aim": [
+          0.9986689,
+          0.0515792519
+        ],
+        "p": [
+          7.072312,
+          -0.2954294
+        ]
+      },
+      {
+        "step": 3287,
+        "phase": "Aiming",
+        "aim": [
+          0.8137384,
+          -0.5812313
+        ],
+        "p": [
+          -0.374900758,
+          -4.08088
+        ]
+      },
+      {
+        "step": 3328,
+        "phase": "Locked",
+        "aim": [
+          0.470219076,
+          -0.882549763
+        ],
+        "p": [
+          -3.93168283,
+          -3.95376849
+        ]
+      },
+      {
+        "step": 3338,
+        "phase": "Cooling",
+        "aim": [
+          0.470219076,
+          -0.882549763
+        ],
+        "p": [
+          -4.07211637,
+          -3.16308212
+        ]
+      },
+      {
+        "step": 3464,
+        "phase": "Aiming",
+        "aim": [
+          0.8216904,
+          0.5699341
+        ],
+        "p": [
+          -0.0559052825,
+          4.061693
+        ]
+      },
+      {
+        "step": 3505,
+        "phase": "Locked",
+        "aim": [
+          0.9190881,
+          0.394051969
+        ],
+        "p": [
+          3.56174254,
+          4.061693
+        ]
+      },
+      {
+        "step": 3515,
+        "phase": "Cooling",
+        "aim": [
+          0.9190881,
+          0.394051969
+        ],
+        "p": [
+          4.444096,
+          4.061693
+        ]
+      },
+      {
+        "step": 3641,
+        "phase": "Aiming",
+        "aim": [
+          0.951348,
+          -0.308118373
+        ],
+        "p": [
+          6.517633,
+          -4.08273268
+        ]
+      },
+      {
+        "step": 3682,
+        "phase": "Locked",
+        "aim": [
+          0.9104741,
+          -0.413566083
+        ],
+        "p": [
+          2.89998245,
+          -4.08273268
+        ]
+      },
+      {
+        "step": 3692,
+        "phase": "Cooling",
+        "aim": [
+          0.9104741,
+          -0.413566083
+        ],
+        "p": [
+          2.01762867,
+          -4.08273268
+        ]
+      },
+      {
+        "step": 3818,
+        "phase": "Aiming",
+        "aim": [
+          0.892003536,
+          0.4520284
+        ],
+        "p": [
+          -4.06193924,
+          1.07035971
+        ]
+      },
+      {
+        "step": 3859,
+        "phase": "Locked",
+        "aim": [
+          0.5378264,
+          0.843055546
+        ],
+        "p": [
+          -3.32061172,
+          4.061693
+        ]
+      },
+      {
+        "step": 3869,
+        "phase": "Cooling",
+        "aim": [
+          0.5378264,
+          0.843055546
+        ],
+        "p": [
+          -2.438258,
+          4.061693
+        ]
+      },
+      {
+        "step": 3995,
+        "phase": "Aiming",
+        "aim": [
+          0.983075142,
+          0.183202818
+        ],
+        "p": [
+          7.082489,
+          2.34977651
+        ]
+      },
+      {
+        "step": 4036,
+        "phase": "Locked",
+        "aim": [
+          0.9959594,
+          -0.0898046345
+        ],
+        "p": [
+          7.082489,
+          -1.26786983
+        ]
+      },
+      {
+        "step": 4046,
+        "phase": "Cooling",
+        "aim": [
+          0.9959594,
+          -0.0898046345
+        ],
+        "p": [
+          7.082489,
+          -2.15022254
+        ]
+      },
+      {
+        "step": 4172,
+        "phase": "Aiming",
+        "aim": [
+          0.6879993,
+          -0.725711346
+        ],
+        "p": [
+          -2.21766448,
+          -4.08273268
+        ]
+      },
+      {
+        "step": 4213,
+        "phase": "Locked",
+        "aim": [
+          0.6472348,
+          -0.7622907
+        ],
+        "p": [
+          -4.06193924,
+          -2.19434547
+        ]
+      },
+      {
+        "step": 4223,
+        "phase": "Cooling",
+        "aim": [
+          0.6472348,
+          -0.7622907
+        ],
+        "p": [
+          -4.06193924,
+          -1.31199265
+        ]
+      },
+      {
+        "step": 4349,
+        "phase": "Aiming",
+        "aim": [
+          0.8847086,
+          0.4661445
+        ],
+        "p": [
+          1.79703534,
+          4.061693
+        ]
+      },
+      {
+        "step": 4390,
+        "phase": "Locked",
+        "aim": [
+          0.941305935,
+          0.337554634
+        ],
+        "p": [
+          5.41468525,
+          4.061693
+        ]
+      },
+      {
+        "step": 4400,
+        "phase": "Cooling",
+        "aim": [
+          0.941305935,
+          0.337554634
+        ],
+        "p": [
+          6.297039,
+          4.061693
+        ]
+      }
+    ],
+    "removals": [
+      {
+        "step": 201,
+        "id": 5,
+        "recipient": "crate-4",
+        "crateDistance": 0.305366337
+      },
+      {
+        "step": 387,
+        "id": 6,
+        "recipient": "solid-or-expired",
+        "crateDistance": 4.83652735
+      },
+      {
+        "step": 582,
+        "id": 7,
+        "recipient": "actor-3",
+        "crateDistance": 3.36936069
+      },
+      {
+        "step": 750,
+        "id": 8,
+        "recipient": "actor-2",
+        "crateDistance": 1.92604709
+      },
+      {
+        "step": 928,
+        "id": 9,
+        "recipient": "solid-or-expired",
+        "crateDistance": 6.127145
+      },
+      {
+        "step": 1090,
+        "id": 10,
+        "recipient": "crate-4",
+        "crateDistance": 0.3544416
+      },
+      {
+        "step": 1248,
+        "id": 11,
+        "recipient": "actor-2",
+        "crateDistance": 2.9276073
+      },
+      {
+        "step": 1545,
+        "id": 12,
+        "recipient": "solid-or-expired",
+        "crateDistance": 9.111259
+      },
+      {
+        "step": 1656,
+        "id": 13,
+        "recipient": "solid-or-expired",
+        "crateDistance": 3.88185835
+      },
+      {
+        "step": 1832,
+        "id": 14,
+        "recipient": "solid-or-expired",
+        "crateDistance": 6.03572
+      },
+      {
+        "step": 2002,
+        "id": 15,
+        "recipient": "actor-1",
+        "crateDistance": 1.01806307
+      },
+      {
+        "step": 2221,
+        "id": 16,
+        "recipient": "solid-or-expired",
+        "crateDistance": 7.059076
+      },
+      {
+        "step": 2425,
+        "id": 17,
+        "recipient": "solid-or-expired",
+        "crateDistance": 8.074754
+      },
+      {
+        "step": 2475,
+        "id": 18,
+        "recipient": "actor-0",
+        "crateDistance": 4.71280956
+      },
+      {
+        "step": 2740,
+        "id": 19,
+        "recipient": "solid-or-expired",
+        "crateDistance": 6.48713446
+      },
+      {
+        "step": 2882,
+        "id": 20,
+        "recipient": "actor-1",
+        "crateDistance": 1.23935771
+      },
+      {
+        "step": 3042,
+        "id": 21,
+        "recipient": "solid-or-expired",
+        "crateDistance": 6.73863173
+      },
+      {
+        "step": 3307,
+        "id": 22,
+        "recipient": "solid-or-expired",
+        "crateDistance": 7.377245
+      },
+      {
+        "step": 3351,
+        "id": 23,
+        "recipient": "actor-0",
+        "crateDistance": 5.859821
+      },
+      {
+        "step": 3648,
+        "id": 24,
+        "recipient": "solid-or-expired",
+        "crateDistance": 7.747224
+      },
+      {
+        "step": 3818,
+        "id": 25,
+        "recipient": "solid-or-expired",
+        "crateDistance": 5.625836
+      },
+      {
+        "step": 3925,
+        "id": 26,
+        "recipient": "solid-or-expired",
+        "crateDistance": 6.90645361
+      },
+      {
+        "step": 4102,
+        "id": 27,
+        "recipient": "crate-4",
+        "crateDistance": 0.312015533
+      },
+      {
+        "step": 4286,
+        "id": 28,
+        "recipient": "solid-or-expired",
+        "crateDistance": 4.58536053
+      }
+    ],
+    "hudModal": false
+  },
+  "exploration": {
+    "method": "paused editor; existing World.FixedUpdate invoked to explore real Physics2D, not normal-speed acceptance",
+    "round1": [
+      {
+        "name": "seed-1",
+        "phase": "Lost",
+        "time": 6.339999858289957,
+        "hp": 0,
+        "enemies": 3,
+        "budget": 2,
+        "marks": [
+          {
+            "step": 1,
+            "TargetId": 1,
+            "pole": "Positive",
+            "outcome": "Applied",
+            "budget": 2
+          }
+        ],
+        "spread": [
+          {
+            "Step": 102,
+            "SourceId": 1,
+            "TargetId": 2,
+            "source": [
+              2.6051662,
+              1.660117
+            ],
+            "target": [
+              1.6089499,
+              1.60188007
+            ]
+          },
+          {
+            "Step": 103,
+            "SourceId": 2,
+            "TargetId": 3,
+            "source": [
+              1.64438307,
+              1.60936141
+            ],
+            "target": [
+              1.12824941,
+              2.46005034
+            ]
+          },
+          {
+            "Step": 132,
+            "SourceId": 2,
+            "TargetId": 4,
+            "source": [
+              1.73266053,
+              0.193067044
+            ],
+            "target": [
+              0.9978175,
+              -1.010105
+            ]
+          }
+        ],
+        "damage": [
+          {
+            "Step": 112,
+            "TargetId": 0,
+            "SourceId": 1,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 2,
+            "xy": [
+              4.022378,
+              2.640142
+            ]
+          },
+          {
+            "Step": 192,
+            "TargetId": 2,
+            "SourceId": 5,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              3.7127018,
+              1.39267623
+            ]
+          },
+          {
+            "Step": 277,
+            "TargetId": 0,
+            "SourceId": 2,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 1,
+            "xy": [
+              4.06456566,
+              -3.66291022
+            ]
+          },
+          {
+            "Step": 317,
+            "TargetId": 0,
+            "SourceId": 2,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 0,
+            "xy": [
+              4.037981,
+              -3.72067642
+            ]
+          }
+        ]
+      },
+      {
+        "name": "seed-2",
+        "phase": "Lost",
+        "time": 6.199999861419201,
+        "hp": 0,
+        "enemies": 3,
+        "budget": 2,
+        "marks": [
+          {
+            "step": 1,
+            "TargetId": 2,
+            "pole": "Positive",
+            "outcome": "Applied",
+            "budget": 2
+          }
+        ],
+        "spread": [
+          {
+            "Step": 75,
+            "SourceId": 2,
+            "TargetId": 3,
+            "source": [
+              0.446917,
+              1.397672
+            ],
+            "target": [
+              -0.037998572,
+              2.26613426
+            ]
+          },
+          {
+            "Step": 84,
+            "SourceId": 2,
+            "TargetId": 1,
+            "source": [
+              0.945821,
+              1.2452209
+            ],
+            "target": [
+              1.94019163,
+              1.26603
+            ]
+          },
+          {
+            "Step": 103,
+            "SourceId": 2,
+            "TargetId": 4,
+            "source": [
+              1.27006352,
+              0.19354482
+            ],
+            "target": [
+              0.9992835,
+              -1.01083016
+            ]
+          }
+        ],
+        "damage": [
+          {
+            "Step": 116,
+            "TargetId": 3,
+            "SourceId": 0,
+            "kind": "Impact",
+            "RemainingHealth": 1,
+            "xy": [
+              -0.81796664,
+              5.50032663
+            ]
+          },
+          {
+            "Step": 156,
+            "TargetId": 0,
+            "SourceId": 2,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 2,
+            "xy": [
+              4.029405,
+              2.34860659
+            ]
+          },
+          {
+            "Step": 191,
+            "TargetId": 2,
+            "SourceId": 5,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              3.65111923,
+              1.39444673
+            ]
+          },
+          {
+            "Step": 270,
+            "TargetId": 0,
+            "SourceId": 2,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 1,
+            "xy": [
+              4.09202,
+              -3.709951
+            ]
+          },
+          {
+            "Step": 310,
+            "TargetId": 0,
+            "SourceId": 2,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 0,
+            "xy": [
+              4.016237,
+              -3.71625137
+            ]
+          }
+        ]
+      },
+      {
+        "name": "seed-0",
+        "phase": "Lost",
+        "time": 5.619999874383211,
+        "hp": 0,
+        "enemies": 3,
+        "budget": 3,
+        "marks": [],
+        "spread": [],
+        "damage": [
+          {
+            "Step": 118,
+            "TargetId": 0,
+            "SourceId": 1,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 2,
+            "xy": [
+              4.014699,
+              2.626936
+            ]
+          },
+          {
+            "Step": 158,
+            "TargetId": 0,
+            "SourceId": 1,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 1,
+            "xy": [
+              4.159813,
+              2.50144839
+            ]
+          },
+          {
+            "Step": 281,
+            "TargetId": 0,
+            "SourceId": 1,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 0,
+            "xy": [
+              4.11373854,
+              -3.718809
+            ]
+          }
+        ]
+      }
+    ],
+    "round2": [
+      {
+        "name": "continuous-1",
+        "phase": "Won",
+        "time": 24.739999447017908,
+        "hp": 2,
+        "enemies": 0,
+        "budget": 2,
+        "marks": [
+          {
+            "step": 1,
+            "TargetId": 1,
+            "pole": "Positive",
+            "outcome": "Applied",
+            "budget": 2
+          }
+        ],
+        "spread": [
+          {
+            "Step": 159,
+            "SourceId": 1,
+            "TargetId": 2,
+            "source": [
+              5.01509333,
+              1.11269021
+            ],
+            "target": [
+              4.02010775,
+              1.18201315
+            ]
+          },
+          {
+            "Step": 160,
+            "SourceId": 2,
+            "TargetId": 3,
+            "source": [
+              4.04906034,
+              1.15683722
+            ],
+            "target": [
+              3.43968248,
+              1.94890606
+            ]
+          }
+        ],
+        "damage": [
+          {
+            "Step": 196,
+            "TargetId": 1,
+            "SourceId": 0,
+            "kind": "Impact",
+            "RemainingHealth": 1,
+            "xy": [
+              9.495557,
+              -0.7365668
+            ]
+          },
+          {
+            "Step": 237,
+            "TargetId": 1,
+            "SourceId": 5,
+            "kind": "Projectile",
+            "RemainingHealth": 0,
+            "xy": [
+              8.516288,
+              -1.41138649
+            ]
+          },
+          {
+            "Step": 335,
+            "TargetId": 0,
+            "SourceId": 6,
+            "kind": "Projectile",
+            "RemainingHealth": 2,
+            "xy": [
+              -4.05359364,
+              -1.32809615
+            ]
+          },
+          {
+            "Step": 613,
+            "TargetId": 3,
+            "SourceId": 7,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              3.08630228,
+              2.70739436
+            ]
+          },
+          {
+            "Step": 721,
+            "TargetId": 2,
+            "SourceId": 8,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              0.502478,
+              -4.06116056
+            ]
+          },
+          {
+            "Step": 907,
+            "TargetId": 2,
+            "SourceId": 9,
+            "kind": "Projectile",
+            "RemainingHealth": 0,
+            "xy": [
+              -2.44356871,
+              0.276599675
+            ]
+          },
+          {
+            "Step": 1237,
+            "TargetId": 3,
+            "SourceId": 11,
+            "kind": "Projectile",
+            "RemainingHealth": 0,
+            "xy": [
+              -0.337316,
+              -2.14464712
+            ]
+          }
+        ]
+      },
+      {
+        "name": "continuous-2",
+        "phase": "Lost",
+        "time": 26.37999941036105,
+        "hp": 0,
+        "enemies": 3,
+        "budget": 2,
+        "marks": [
+          {
+            "step": 1,
+            "TargetId": 2,
+            "pole": "Positive",
+            "outcome": "Applied",
+            "budget": 2
+          }
+        ],
+        "spread": [
+          {
+            "Step": 88,
+            "SourceId": 2,
+            "TargetId": 3,
+            "source": [
+              1.01429558,
+              1.33190238
+            ],
+            "target": [
+              0.516523,
+              2.198268
+            ]
+          },
+          {
+            "Step": 99,
+            "SourceId": 2,
+            "TargetId": 1,
+            "source": [
+              1.64503551,
+              1.13223958
+            ],
+            "target": [
+              2.63668275,
+              1.174508
+            ]
+          },
+          {
+            "Step": 118,
+            "SourceId": 2,
+            "TargetId": 4,
+            "source": [
+              2.04432869,
+              0.0472925268
+            ],
+            "target": [
+              0.9937317,
+              -1.01127779
+            ]
+          }
+        ],
+        "damage": [
+          {
+            "Step": 130,
+            "TargetId": 3,
+            "SourceId": 0,
+            "kind": "Impact",
+            "RemainingHealth": 1,
+            "xy": [
+              -0.12570399,
+              5.49793673
+            ]
+          },
+          {
+            "Step": 561,
+            "TargetId": 1,
+            "SourceId": 7,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              4.90673733,
+              1.9341414
+            ]
+          },
+          {
+            "Step": 880,
+            "TargetId": 0,
+            "SourceId": 9,
+            "kind": "Projectile",
+            "RemainingHealth": 2,
+            "xy": [
+              -1.862629,
+              4.08337736
+            ]
+          },
+          {
+            "Step": 1054,
+            "TargetId": 2,
+            "SourceId": 10,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              -0.7414468,
+              0.197559431
+            ]
+          },
+          {
+            "Step": 1221,
+            "TargetId": 0,
+            "SourceId": 11,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              -4.034886,
+              -1.825756
+            ]
+          },
+          {
+            "Step": 1319,
+            "TargetId": 0,
+            "SourceId": 3,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 0,
+            "xy": [
+              -1.15344536,
+              4.071523
+            ]
+          }
+        ]
+      },
+      {
+        "name": "continuous-0",
+        "phase": "Running",
+        "time": 89.99999798834324,
+        "hp": 1,
+        "enemies": 1,
+        "budget": 3,
+        "marks": [],
+        "spread": [],
+        "damage": [
+          {
+            "Step": 582,
+            "TargetId": 3,
+            "SourceId": 7,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              2.93616343,
+              2.790065
+            ]
+          },
+          {
+            "Step": 750,
+            "TargetId": 2,
+            "SourceId": 8,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              1.47645521,
+              -3.170956
+            ]
+          },
+          {
+            "Step": 1248,
+            "TargetId": 2,
+            "SourceId": 11,
+            "kind": "Projectile",
+            "RemainingHealth": 0,
+            "xy": [
+              -1.13458455,
+              -2.05302572
+            ]
+          },
+          {
+            "Step": 2002,
+            "TargetId": 1,
+            "SourceId": 15,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              3.3258462,
+              -2.319507
+            ]
+          },
+          {
+            "Step": 2475,
+            "TargetId": 0,
+            "SourceId": 18,
+            "kind": "Projectile",
+            "RemainingHealth": 2,
+            "xy": [
+              -4.068609,
+              -3.06488228
+            ]
+          },
+          {
+            "Step": 2882,
+            "TargetId": 1,
+            "SourceId": 20,
+            "kind": "Projectile",
+            "RemainingHealth": 0,
+            "xy": [
+              2.6135323,
+              -2.47242165
+            ]
+          },
+          {
+            "Step": 3351,
+            "TargetId": 0,
+            "SourceId": 23,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              -4.06193924,
+              -2.01787472
+            ]
+          }
+        ]
+      }
+    ],
+    "round3": [
+      {
+        "name": "A-half-unit-turn",
+        "phase": "Lost",
+        "time": 21.439999520778656,
+        "hp": 0,
+        "enemies": 2,
+        "budget": 2,
+        "marks": [
+          {
+            "step": 1,
+            "TargetId": 1,
+            "pole": "Positive",
+            "outcome": "Applied",
+            "budget": 2
+          }
+        ],
+        "spread": [
+          {
+            "Step": 150,
+            "SourceId": 1,
+            "TargetId": 2,
+            "source": [
+              4.646069,
+              1.29108047
+            ],
+            "target": [
+              3.64969873,
+              1.330108
+            ]
+          },
+          {
+            "Step": 151,
+            "SourceId": 2,
+            "TargetId": 3,
+            "source": [
+              3.68033338,
+              1.30786252
+            ],
+            "target": [
+              3.085242,
+              2.110996
+            ]
+          },
+          {
+            "Step": 630,
+            "SourceId": 2,
+            "TargetId": 4,
+            "source": [
+              1.6139884,
+              0.192858011
+            ],
+            "target": [
+              0.998675346,
+              -1.01153386
+            ]
+          }
+        ],
+        "damage": [
+          {
+            "Step": 190,
+            "TargetId": 1,
+            "SourceId": 0,
+            "kind": "Impact",
+            "RemainingHealth": 1,
+            "xy": [
+              9.499285,
+              -0.513589263
+            ]
+          },
+          {
+            "Step": 232,
+            "TargetId": 1,
+            "SourceId": 5,
+            "kind": "Projectile",
+            "RemainingHealth": 0,
+            "xy": [
+              8.61358452,
+              -1.24985635
+            ]
+          },
+          {
+            "Step": 334,
+            "TargetId": 0,
+            "SourceId": 6,
+            "kind": "Projectile",
+            "RemainingHealth": 2,
+            "xy": [
+              -4.04343653,
+              -0.673455656
+            ]
+          },
+          {
+            "Step": 609,
+            "TargetId": 3,
+            "SourceId": 7,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              2.96646667,
+              2.54423785
+            ]
+          },
+          {
+            "Step": 875,
+            "TargetId": 2,
+            "SourceId": 9,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              -2.43768215,
+              3.35154247
+            ]
+          },
+          {
+            "Step": 889,
+            "TargetId": 0,
+            "SourceId": 3,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 1,
+            "xy": [
+              3.227589,
+              4.088381
+            ]
+          },
+          {
+            "Step": 1072,
+            "TargetId": 0,
+            "SourceId": 10,
+            "kind": "Projectile",
+            "RemainingHealth": 0,
+            "xy": [
+              1.73327565,
+              -4.084623
+            ]
+          }
+        ]
+      },
+      {
+        "name": "B-cover-switch",
+        "phase": "Lost",
+        "time": 30.05999932810664,
+        "hp": 0,
+        "enemies": 1,
+        "budget": 0,
+        "marks": [
+          {
+            "step": 1,
+            "TargetId": 4,
+            "pole": "Positive",
+            "outcome": "Applied",
+            "budget": 2
+          },
+          {
+            "step": 41,
+            "TargetId": 1,
+            "pole": "Positive",
+            "outcome": "Applied",
+            "budget": 1
+          },
+          {
+            "step": 201,
+            "TargetId": 4,
+            "pole": "Negative",
+            "outcome": "Applied",
+            "budget": 0
+          }
+        ],
+        "spread": [
+          {
+            "Step": 228,
+            "SourceId": 1,
+            "TargetId": 3,
+            "source": [
+              4.89647055,
+              0.451120734
+            ],
+            "target": [
+              4.62213135,
+              -0.5026219
+            ]
+          },
+          {
+            "Step": 229,
+            "SourceId": 3,
+            "TargetId": 2,
+            "source": [
+              4.603557,
+              -0.553696
+            ],
+            "target": [
+              5.15970564,
+              -1.38420284
+            ]
+          }
+        ],
+        "damage": [
+          {
+            "Step": 254,
+            "TargetId": 3,
+            "SourceId": 4,
+            "kind": "Impact",
+            "RemainingHealth": 1,
+            "xy": [
+              2.08961487,
+              -2.26673818
+            ]
+          },
+          {
+            "Step": 262,
+            "TargetId": 2,
+            "SourceId": 0,
+            "kind": "Impact",
+            "RemainingHealth": 1,
+            "xy": [
+              5.06241226,
+              -5.495625
+            ]
+          },
+          {
+            "Step": 561,
+            "TargetId": 1,
+            "SourceId": 7,
+            "kind": "Projectile",
+            "RemainingHealth": 1,
+            "xy": [
+              1.949381,
+              4.05756569
+            ]
+          },
+          {
+            "Step": 715,
+            "TargetId": 2,
+            "SourceId": 8,
+            "kind": "Projectile",
+            "RemainingHealth": 0,
+            "xy": [
+              0.534412,
+              -1.056694
+            ]
+          },
+          {
+            "Step": 885,
+            "TargetId": 3,
+            "SourceId": 9,
+            "kind": "Projectile",
+            "RemainingHealth": 0,
+            "xy": [
+              -0.9918065,
+              0.764892
+            ]
+          },
+          {
+            "Step": 1423,
+            "TargetId": 0,
+            "SourceId": 1,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 2,
+            "xy": [
+              7.06156158,
+              1.29727769
+            ]
+          },
+          {
+            "Step": 1463,
+            "TargetId": 0,
+            "SourceId": 1,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 1,
+            "xy": [
+              7.11223173,
+              0.0467792526
+            ]
+          },
+          {
+            "Step": 1503,
+            "TargetId": 0,
+            "SourceId": 1,
+            "kind": "EnemyTouch",
+            "RemainingHealth": 0,
+            "xy": [
+              7.110695,
+              -2.52699852
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "version": "03-whitebox-v1",
+    "scene": "Assets/Polarity/Scenes/Game.scene",
+    "dirty": false,
+    "play": false,
+    "valid": true,
+    "budget": 3,
+    "bodies": 4,
+    "enemies": 3,
+    "enemyHealth": [
+      2,
+      2,
+      2
+    ],
+    "spikes": 0,
+    "turrets": 1,
+    "occludersMissing": 0,
+    "hudMissing": [],
+    "missingScripts": 0,
+    "timeScale": 1,
+    "fixedDeltaTime": 0.02,
+    "simulationMode": "FixedUpdate",
+    "teachingVisible": false
+  },
+  "notes": [
+    "Projectile recipient actor-* comes from DamageResult; crate-4 is geometric attribution at consumption, not a recorded collision target ID. A shot10 previous endpoint to crate distance 0.304D, no actor damage.",
+    "A before HUD binding restore and delayed A after restore have same 1237-step result. HUD art/code unchanged by this task.",
+    "Unmarked same-route control stopped at 90.02 simulation seconds with one surviving enemy; this does not establish impossibility of unmarked completion.",
+    "Turning right-side waypoint x from7 to6.5 failed; seed delayed0.1sec succeeded. No continuous timing or position margin claimed.",
+    "B is a failed optional candidate, not a solution.",
+    "Controls/Teaching remains hidden under existing UI design; projectile permissions remain in the existing pause explanation."
+  ]
+}
