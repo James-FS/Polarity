@@ -1,0 +1,12 @@
+{
+  "retry": {
+    "phase": "Running",
+    "hp": 3,
+    "marks": 4,
+    "budget": 4,
+    "modalVisible": false,
+    "restarting": false
+  },
+  "wonPresentationOnly": true,
+  "missingBindings": []
+}

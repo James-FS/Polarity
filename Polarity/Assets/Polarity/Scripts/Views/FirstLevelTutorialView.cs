@@ -14,7 +14,8 @@ namespace Polarity.Views
     public sealed class FirstLevelTutorialView : MonoBehaviour
     {
         [SerializeField] private GameObject introduction;
-        [SerializeField] private Button startButton, skipButton, reviewButton;
+        [SerializeField] private Button reviewButton;
+        [SerializeField] private Button closeButton;
         [SerializeField] private Text guidanceText, marksText, hoverText;
         [SerializeField] private RectTransform hoverPanel;
         private HUDView hud;
@@ -41,8 +42,7 @@ namespace Polarity.Views
             hud = GetComponent<HUDView>();
             canvas = GetComponent<Canvas>();
             marksColor = marksText.color;
-            startButton.onClick.AddListener(Begin);
-            skipButton.onClick.AddListener(Begin);
+            if (closeButton != null) closeButton.onClick.AddListener(Begin);
             reviewButton.onClick.AddListener(Review);
             Bind();
         }
@@ -64,8 +64,7 @@ namespace Polarity.Views
         private void OnDisable()
         {
             if (!Application.isPlaying) return;
-            startButton.onClick.RemoveListener(Begin);
-            skipButton.onClick.RemoveListener(Begin);
+            if (closeButton != null) closeButton.onClick.RemoveListener(Begin);
             reviewButton.onClick.RemoveListener(Review);
             if (world != null)
             {

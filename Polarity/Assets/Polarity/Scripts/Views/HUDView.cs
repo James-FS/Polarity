@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Polarity.Controllers;
 using Polarity.Entities;
 using Polarity.Model;
@@ -20,13 +20,22 @@ namespace Polarity.Views
         [SerializeField] private Text modalTitle, modalDescription;
         [SerializeField] private Button pauseButton, resumeButton, retryButton;
         [SerializeField] private Button nextButton;
+        [SerializeField] private GameObject pauseCard, resultCard;
+        [SerializeField] private GameObject failureCard;
+        [SerializeField] private Text failureLevelText, failureTimeText, failureEnemiesText, failureMarksText;
+        [SerializeField] private Button failureRetryButton;
+        [SerializeField] private Text pauseSummary;
+        [SerializeField] private Button pauseRetryButton, pauseCloseButton;
         [SerializeField] private Text levelText, teachingText;
         [SerializeField] private GraphicRaycaster raycaster;
         [SerializeField] private Camera worldCamera;
         [SerializeField] private RectTransform statusPanel, controlsPanel;
         [SerializeField] private Polarity.Debugging.GMView gmView;
         private Rect originalCameraRect;
+        private RectTransform sideLeftPanel, sideRightPanel;
         private readonly Vector3[] panelCorners = new Vector3[4];
+        private readonly Image[] healthCells = new Image[3];
+        private Image markIcon;
         private readonly List<RaycastResult> uiHits = new List<RaycastResult>();
         private SimulationWorld subscribedWorld;
         private LevelState state;
@@ -41,11 +50,32 @@ namespace Polarity.Views
         {
             if (!Application.isPlaying) return;
             if (worldCamera != null) originalCameraRect = worldCamera.rect;
+            sideLeftPanel = transform.Find("Frame/SideLeft") as RectTransform;
+            sideRightPanel = transform.Find("Frame/SideRight") as RectTransform;
+            if (statusPanel != null)
+            {
+                healthCells[0] = FindStatusImage("LeftStatus/HealthCells/HealthIcon1", "LeftStatus/HealthIcon", "HealthIcon");
+                healthCells[1] = FindStatusImage("LeftStatus/HealthCells/HealthIcon2", "LeftStatus/HealthIcon (1)", "HealthIcon (1)");
+                healthCells[2] = FindStatusImage("LeftStatus/HealthCells/HealthIcon3", "LeftStatus/HealthIcon (2)", "HealthIcon (2)");
+                markIcon = FindStatusImage("RightStatus/MarkIcon", "MarkIcon");
+            }
             pauseButton.onClick.AddListener(TogglePause);
             resumeButton.onClick.AddListener(TogglePause);
             retryButton.onClick.AddListener(Retry);
+            if (failureRetryButton != null) failureRetryButton.onClick.AddListener(Retry);
+            if (pauseRetryButton != null) pauseRetryButton.onClick.AddListener(Retry);
+            if (pauseCloseButton != null) pauseCloseButton.onClick.AddListener(TogglePause);
             if (nextButton!=null) nextButton.onClick.AddListener(Next);
             Bind();
+        }
+        private Image FindStatusImage(params string[] paths)
+        {
+            foreach (string path in paths)
+            {
+                Transform item = statusPanel.Find(path);
+                if (item != null) return item.GetComponent<Image>();
+            }
+            return null;
         }
         // First enable can precede World.OnEnable; Start runs after room initialization.
         private void Start() { if (!IsBound) Bind(); }
@@ -75,6 +105,9 @@ namespace Polarity.Views
             pauseButton.onClick.RemoveListener(TogglePause);
             resumeButton.onClick.RemoveListener(TogglePause);
             retryButton.onClick.RemoveListener(Retry);
+            if (failureRetryButton != null) failureRetryButton.onClick.RemoveListener(Retry);
+            if (pauseRetryButton != null) pauseRetryButton.onClick.RemoveListener(Retry);
+            if (pauseCloseButton != null) pauseCloseButton.onClick.RemoveListener(TogglePause);
             if (nextButton!=null) nextButton.onClick.RemoveListener(Next);
             if (state != null)
             {
@@ -93,13 +126,21 @@ namespace Polarity.Views
         }
         private void LateUpdate()
         {
-            if (!Application.isPlaying || worldCamera == null || statusPanel == null || controlsPanel == null || Screen.height == 0) return;
+            if (!Application.isPlaying || worldCamera == null || statusPanel == null || controlsPanel == null || Screen.width == 0 || Screen.height == 0) return;
             controlsPanel.GetWorldCorners(panelCorners);
             float bottom = Mathf.Clamp01(panelCorners[1].y / Screen.height);
             statusPanel.GetWorldCorners(panelCorners);
             float top = Mathf.Clamp01(panelCorners[0].y / Screen.height);
-            // Reserve HUD space without moving or scaling any physics object.
-            if (top > bottom) worldCamera.rect = new Rect(originalCameraRect.x,bottom,originalCameraRect.width,top-bottom);
+            float left = originalCameraRect.x, right = originalCameraRect.xMax;
+            if (sideLeftPanel != null && sideRightPanel != null)
+            {
+                sideLeftPanel.GetWorldCorners(panelCorners);
+                left = Mathf.Clamp01(panelCorners[2].x / Screen.width);
+                sideRightPanel.GetWorldCorners(panelCorners);
+                right = Mathf.Clamp01(panelCorners[0].x / Screen.width);
+            }
+            // Keep the world inside the HUD frame without changing physics coordinates.
+            if (top > bottom && right > left) worldCamera.rect = new Rect(left, bottom, right-left, top-bottom);
         }
         private void TogglePause() => world.Level.TogglePause();
         private void Retry() => world.Level.RequestRestart();
@@ -107,9 +148,17 @@ namespace Polarity.Views
         private void OnCounterChanged(int value) => RefreshCounters();
         private void RefreshCounters()
         {
-            healthText.text = $"生命  {health.CurrentHealth} / {health.MaxHealth}";
+            healthText.text = $"生命  {health.CurrentHealth}/{health.MaxHealth}";
             enemiesText.text = $"剩余敌人  {state.ActiveEnemyCount}";
-            marksText.text = state.UnlimitedMarks ? "标记次数  ∞（GM）" : $"标记次数  {state.RemainingMarks} / {state.MarkBudget}";
+            marksText.text = state.UnlimitedMarks ? "标记  ∞" : $"标记  {state.RemainingMarks}/{state.MarkBudget}";
+            for (int i = 0; i < healthCells.Length; i++)
+            {
+                if (healthCells[i] != null)
+                    healthCells[i].color = i < health.CurrentHealth ? Color.white : new Color(.30f, .42f, .48f, .55f);
+            }
+            if (markIcon != null)
+                markIcon.color = state.UnlimitedMarks || state.RemainingMarks > 0
+                    ? Color.white : new Color(.42f, .36f, .30f, .60f);
             budgetHintText.text = state.UnlimitedMarks ? "GM 无限标记已开启；范围、墙体与目标权限规则仍有效。" : state.RemainingMarks == 0 ? "标记次数已用尽。仍可移动、利用接触传播，或按 R 重试。" : "首次赋极与改色均消耗 1 次标记；接触传播免费。";
         }
         private void OnMark(MarkResult result)
@@ -134,11 +183,33 @@ namespace Polarity.Views
             bool paused = phase == LevelPhase.Paused;
             bool ended = phase == LevelPhase.Won || phase == LevelPhase.Lost;
             modal.SetActive(paused || ended);
+            if (pauseCard != null) pauseCard.SetActive(paused);
+            if (resultCard != null) resultCard.SetActive(ended && (phase != LevelPhase.Lost || failureCard == null));
+            if (failureCard != null) failureCard.SetActive(phase == LevelPhase.Lost);
+            if (phase == LevelPhase.Lost && failureCard != null)
+            {
+                if (failureLevelText != null) failureLevelText.text = $"第 {world.Level.CurrentLevelIndex + 1} 关  ·  {world.Level.CurrentDefinition?.Title}";
+                if (failureTimeText != null) failureTimeText.text = $"{world.SimulationTime:0.0} 秒";
+                if (failureEnemiesText != null) failureEnemiesText.text = $"{state.ActiveEnemyCount}";
+                if (failureMarksText != null) failureMarksText.text = state.UnlimitedMarks ? "∞" : $"{state.MarkBudget - state.RemainingMarks} / {state.MarkBudget}";
+            }
+            if (paused && pauseSummary != null)
+                pauseSummary.text = $"第 {world.Level.CurrentLevelIndex + 1} 关  /  {world.Level.CurrentDefinition.Title}\n游戏已暂停，准备好后继续。";
             resumeButton.gameObject.SetActive(paused);
-            if (nextButton!=null) nextButton.gameObject.SetActive(phase==LevelPhase.Won && world.Level.HasNextLevel);
+            if (nextButton!=null)
+            {
+                nextButton.gameObject.SetActive(phase==LevelPhase.Won && world.Level.HasNextLevel);
+                nextButton.GetComponentInChildren<Text>().text = "通往下一关";
+                var retryRect = (RectTransform)retryButton.transform;
+                retryRect.anchoredPosition = new Vector2(phase == LevelPhase.Won && world.Level.HasNextLevel ? 180 : 0, -156);
+                if (world.Level.HasNextLevel)
+                    ((RectTransform)nextButton.transform).anchoredPosition = new Vector2(-180, -156);
+            }
             pauseButton.interactable = phase == LevelPhase.Running;
             modalTitle.text = paused ? "已暂停" : phase == LevelPhase.Won ? (world.Level.HasNextLevel ? "本关完成" : "全部关卡完成") : "挑战失败";
-            modalDescription.text = paused ? "WASD 移动 | 左键 + 橙 | 右键 - 蓝\n空格慢速 0.3 倍 | Esc 继续 | R 重试\n\n只能标记敌人与箱子。炮弹默认负极，\n不能标记、传播或接收极性。\n\n接触传播（免费）\n有极性物体接触无极性物体时传递极性，\n源头保留极性；已有极性不被覆盖。" : phase == LevelPhase.Won ? $"用时 {world.SimulationTime:0.0} 秒  |  受伤 {world.PlayerDamageCount} 次  |  标记 {state.MarkBudget-state.RemainingMarks}/{state.MarkBudget}\n\n" + (world.Level.HasNextLevel ? "按 Enter 或点击“下一关”继续；按 R 重试本关。" : "六个关卡全部完成！按 R 可重试最后一关。") : "生命已耗尽。试试不同的标记或走位。\n\n按 R 或点击“重试”，重新挑战本关。";
+            modalDescription.text = paused ? "WASD 移动 | 左键 + 橙 | 右键 - 蓝\n空格慢速 0.3 倍 | Esc 继续 | R 重试" : phase == LevelPhase.Won
+                ? $"用时 {world.SimulationTime:0.0} 秒  |  受伤 {world.PlayerDamageCount} 次\n标记使用 {state.MarkBudget - state.RemainingMarks}/{state.MarkBudget} 次\n" + (world.Level.HasNextLevel ? "本关完成，准备进入下一关。" : "全部六关完成！")
+                : "生命已耗尽。试试不同的标记或走位。\n\n按 R 或点击“重试”，重新挑战本关。";
             OnSpeed(world.CurrentTimeScale);
         }
         // Query this frame's position, independent of EventSystem.Update ordering.

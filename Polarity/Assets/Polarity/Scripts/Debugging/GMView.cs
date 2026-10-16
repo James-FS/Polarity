@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Polarity.Model;
 
@@ -46,16 +46,19 @@ namespace Polarity.Debugging
             subPanel.transform.SetParent(card, false);
             var rect = (RectTransform)subPanel.transform;
             rect.anchorMin = rect.anchorMax = new Vector2(.5f, .5f);
-            rect.sizeDelta = new Vector2(500, 350);
-            rect.anchoredPosition = new Vector2(0, -25);
-            subPanel.GetComponent<Image>().color = new Color(.055f, .065f, .075f, .98f);
-            subTitle = MakeText("Title", new Vector2(0, 145), new Vector2(470, 34), 21);
+            rect.sizeDelta = new Vector2(900, 380);
+            rect.anchoredPosition = new Vector2(0, 3);
+            subPanel.GetComponent<Image>().color = new Color(.018f, .043f, .065f, 1f);
+            var border = subPanel.AddComponent<Outline>();
+            border.effectColor = new Color(.1f, .53f, .64f, .8f);
+            border.effectDistance = new Vector2(1, -1);
+            subTitle = MakeText("Title", new Vector2(0, 145), new Vector2(820, 34), 21);
             levelButtons = new Button[6];
             for (int i = 0; i < levelButtons.Length; i++)
             {
                 int index = i;
-                levelButtons[i] = MakeButton("Level" + (i + 1), new Vector2(i % 2 == 0 ? -123 : 123, 79 - i / 2 * 56),
-                    new Vector2(225, 44), () => manager.GoToLevel(index));
+                levelButtons[i] = MakeButton("Level" + (i + 1), new Vector2(i % 2 == 0 ? -215 : 215, 79 - i / 2 * 56),
+                    new Vector2(400, 44), () => manager.GoToLevel(index));
             }
             MakeButton("AddOne", new Vector2(-123, 75), new Vector2(225, 44), () => AddResource(1));
             MakeButton("AddFive", new Vector2(123, 75), new Vector2(225, 44), () => AddResource(5));
@@ -74,7 +77,7 @@ namespace Polarity.Debugging
             rect.sizeDelta = size;
             copy.fontSize = fontSize;
             copy.alignment = TextAnchor.MiddleCenter;
-            copy.color = Color.white;
+            copy.color = new Color(.8f, .94f, .98f);
             copy.raycastTarget = false;
             return copy;
         }
@@ -86,6 +89,11 @@ namespace Polarity.Debugging
             rect.anchorMin = rect.anchorMax = new Vector2(.5f, .5f);
             rect.anchoredPosition = position;
             rect.sizeDelta = size;
+            var labelRect = copy.GetComponentInChildren<Text>().rectTransform;
+            labelRect.anchorMin = Vector2.zero;
+            labelRect.anchorMax = Vector2.one;
+            labelRect.offsetMin = new Vector2(10, 0);
+            labelRect.offsetMax = new Vector2(-10, 0);
             copy.onClick = new Button.ButtonClickedEvent();
             copy.onClick.AddListener(action);
             copy.GetComponentInChildren<Text>().text = name == "AddOne" ? "+1" : name == "AddFive" ? "+5" :
@@ -100,7 +108,10 @@ namespace Polarity.Debugging
             rect.anchorMin = rect.anchorMax = new Vector2(.5f, .5f);
             rect.anchoredPosition = new Vector2(0, -20);
             rect.sizeDelta = new Vector2(225, 42);
-            container.GetComponent<Image>().color = new Color(.16f, .22f, .27f, 1f);
+            container.GetComponent<Image>().color = new Color(.035f, .11f, .16f, 1f);
+            var border = container.AddComponent<Outline>();
+            border.effectColor = new Color(.18f, .76f, .85f);
+            border.effectDistance = new Vector2(1, -1);
             var valueText = MakeText("Value", Vector2.zero, new Vector2(205, 40), 19);
             valueText.transform.SetParent(container.transform, false);
             valueText.rectTransform.anchorMin = Vector2.zero;
@@ -127,7 +138,7 @@ namespace Polarity.Debugging
         private void Refresh()
         {
             bool ready = GMManager.IsAvailable && manager != null && manager.IsBound;
-            openButton.gameObject.SetActive(ready);
+            openButton.gameObject.SetActive(false);
             panel.SetActive(ready && manager.PanelOpen);
             if (!ready) return;
             var w = manager.World;
@@ -135,9 +146,11 @@ namespace Polarity.Debugging
             factsText.text = $"第 {w.Level.CurrentLevelIndex + 1} / {w.Level.LevelCount} 关 | {PhaseName(w.State.Phase)}\n生命 {w.PlayerHealth.CurrentHealth} / {w.PlayerHealth.MaxHealth} | 标记 " +
                 (w.State.UnlimitedMarks ? $"∞（保留 {w.State.RemainingMarks} / {w.State.MarkBudget}）" : $"{w.State.RemainingMarks} / {w.State.MarkBudget}") +
                 "\n开关随重试与切关保留；调整的资源仅本关有效。";
-            statusText.text = manager.Status;
-            invincibleLabel.text = manager.Invincible ? "无敌：开启" : "无敌：关闭";
-            unlimitedLabel.text = manager.UnlimitedMarks ? "无限标记：开启" : "无限标记：关闭";
+            if (statusText != null) statusText.text = manager.Status;
+            invincibleLabel.text = manager.Invincible ? "无敌：开启  ●" : "无敌：关闭  ○";
+            invincibleLabel.color = manager.Invincible ? new Color(.28f, 1f, .81f) : new Color(.8f, .94f, .98f);
+            unlimitedLabel.text = manager.UnlimitedMarks ? "无限标记：开启  ●" : "无限标记：关闭  ○";
+            unlimitedLabel.color = manager.UnlimitedMarks ? new Color(.28f, 1f, .81f) : new Color(.8f, .94f, .98f);
             string tags = manager.TestState == "正常规则" ? "正常规则" : manager.TestState
                 .Replace("GM 测试：", "").Replace("无限标记", "无限")
                 .Replace("资源已调整", "资源").Replace("已跳关", "跳关")
