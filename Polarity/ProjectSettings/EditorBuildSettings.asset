@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Polarity/Scenes/MainMenu.scene
+    guid: 6d8d4c63cc752144cbe7c14e52cdd97b
+  - enabled: 1
     path: Assets/Polarity/Scenes/Game.scene
     guid: d40fd2f2e1afd87459e6787006a363cf
   - enabled: 0

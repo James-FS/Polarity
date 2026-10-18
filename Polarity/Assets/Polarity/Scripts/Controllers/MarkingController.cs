@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Polarity.Entities;
 using Polarity.Model;
 using Polarity.Simulation;
@@ -5,6 +6,7 @@ using Polarity.Views;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 using Pole = Polarity.Model.Polarity;
 
 namespace Polarity.Controllers
@@ -22,21 +24,35 @@ namespace Polarity.Controllers
         public PolarityBody Candidate { get; private set; }
         public string PointerFeedback { get; private set; } = "Point at an enemy or crate";
         public Camera WorldCamera => worldCamera;
+        private readonly List<RaycastResult> pointerHits = new List<RaycastResult>();
 
         internal void ConfigureRoom(LevelRoom room) => occludingSprites=room.CopyOccluders();
         private void Update()
         {
             Vector2 point = Input.mousePosition;
-            bool overUI = (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) ||
-                (debugView != null && debugView.ContainsScreenPoint(point));
-            ProcessPointerFrame(point, Input.GetMouseButtonDown(0), Input.GetMouseButtonDown(1), overUI);
+            ProcessPointerFrame(point, Input.GetMouseButtonDown(0), Input.GetMouseButtonDown(1));
+        }
+
+        public bool IsPointerOverUIAt(Vector2 point)
+        {
+            if ((hud != null && hud.ContainsScreenPoint(point)) ||
+                (debugView != null && debugView.ContainsScreenPoint(point))) return true;
+            var events = EventSystem.current;
+            if (events == null) return false;
+            // This controller runs before EventSystem.Update. Its cached pointer-enter value
+            // may still describe last frame's UI, so query this click's position instead.
+            pointerHits.Clear();
+            events.RaycastAll(new PointerEventData(events) { position = point }, pointerHits);
+            foreach (var hit in pointerHits)
+                if (hit.module is GraphicRaycaster) return true;
+            return false;
         }
 
         // One call per input frame; button flags are press edges, never held states.
         public void ProcessPointerFrame(Vector2 point, bool positivePressed, bool negativePressed, bool overUI = false)
         {
             Candidate = null;
-            overUI = overUI || (hud != null && hud.ContainsScreenPoint(point));
+            overUI = overUI || IsPointerOverUIAt(point);
             if (world == null || world.State == null || world.State.Phase != LevelPhase.Running || overUI)
             {
                 PointerFeedback = overUI ? "UI" : "Not running";

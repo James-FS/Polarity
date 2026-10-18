@@ -210,8 +210,7 @@ namespace Polarity.Views
             RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)canvas.transform, point,
                 canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera, out Vector2 local);
             hoverPanel.anchoredPosition = local;
-            bool tooFar = Vector2.Distance(world.Player.Rigidbody.position, body.Rigidbody.position) > world.RuntimeSettings.MarkingDistance;
-            hoverText.text = tooFar ? "超出标记范围；移动靠近" : world.State.RemainingMarks == 0 ? "次数用尽，仍可移动" : "左键 + 橙  /  右键 − 蓝";
+            hoverText.text = world.State.RemainingMarks == 0 ? "次数用尽，仍可移动" : "左键 + 橙  /  右键 − 蓝";
         }
     }
 }

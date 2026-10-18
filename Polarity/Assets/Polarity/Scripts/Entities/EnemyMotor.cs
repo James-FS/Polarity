@@ -24,6 +24,21 @@ namespace Polarity.Entities
         public bool LastAvoidingObstacle { get; private set; }
         public long DriveEvaluationCount { get; private set; }
 
+        internal Vector2 CalculateNavigationDrive(PolarityBody body, Vector2 desiredVelocity, bool avoiding)
+        {
+            DriveEvaluationCount++;
+            LastDriveAcceleration = LastSteeringDirection = Vector2.zero;
+            LastAvoidingObstacle = avoiding;
+            if (!isActiveAndEnabled || body == null || !body.IsValid || !IsFinite(desiredVelocity) || !IsFinite(body.Rigidbody.velocity))
+                return Vector2.zero;
+            Vector2 desired = Vector2.ClampMagnitude(desiredVelocity, chaseSpeed);
+            LastSteeringDirection = desired.sqrMagnitude > 0f ? desired.normalized : Vector2.zero;
+            // Navigation, avoidance, braking and escape share the existing drive budget.
+            Vector2 acceleration = desired * body.Rigidbody.drag + (desired - body.Rigidbody.velocity) * steeringResponse;
+            LastDriveAcceleration = Vector2.ClampMagnitude(acceleration, maxDriveAcceleration);
+            return LastDriveAcceleration;
+        }
+
         internal Vector2 CalculateDrive(PolarityBody body, Vector2 targetPosition)
         {
             DriveEvaluationCount++;

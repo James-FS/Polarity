@@ -8,7 +8,6 @@ namespace Polarity.Config
     {
         [SerializeField, Min(0f)] private float magneticStrength = 20f;
         [SerializeField, Min(0.01f)] private float magneticRadius = 7f;
-        [SerializeField, Min(0.01f)] private float markingDistance = 7f;
         [SerializeField, Min(0.01f)] private float maxMagneticAcceleration = 30f;
         [Tooltip("Global safety ceiling, separate from future walking/chasing speed.")]
         [SerializeField, Min(0.01f)] private float maxBodySpeed = 12f;
@@ -24,7 +23,6 @@ namespace Polarity.Config
         public Settings CreateRuntimeSettings() => new Settings(
             SafeValue(magneticStrength, 20f, 0f),
             SafeValue(magneticRadius, 7f, 0.01f),
-            SafeValue(markingDistance, 7f, 0.01f),
             SafeValue(maxMagneticAcceleration, 30f, 0.01f),
             SafeValue(maxBodySpeed, 12f, 0.01f), magneticBlockingLayers.value,
             SafeValue(impactDamageThreshold,4.5f,0.01f),SafeValue(enemyDamageInterval,0.35f,0f),
@@ -38,7 +36,6 @@ namespace Polarity.Config
             Settings settings = CreateRuntimeSettings();
             magneticStrength = settings.MagneticStrength;
             magneticRadius = settings.MagneticRadius;
-            markingDistance = settings.MarkingDistance;
             maxMagneticAcceleration = settings.MaxMagneticAcceleration;
             maxBodySpeed = settings.MaxBodySpeed;
             impactDamageThreshold=settings.ImpactDamageThreshold; enemyDamageInterval=settings.EnemyDamageInterval;
@@ -50,7 +47,6 @@ namespace Polarity.Config
         {
             public readonly float MagneticStrength;
             public readonly float MagneticRadius;
-            public readonly float MarkingDistance;
             public readonly float MaxMagneticAcceleration;
             public readonly float MaxBodySpeed;
             public readonly int MagneticBlockingLayers;
@@ -58,12 +54,11 @@ namespace Polarity.Config
             public readonly int DamagePerHit;
             public readonly float SlowMotionScale;
 
-            internal Settings(float strength, float radius, float markingDistance,
+            internal Settings(float strength, float radius,
                 float maxAcceleration, float maxSpeed, int blockingLayers,float threshold,float enemyInterval,float playerInterval,int damage,float slowScale)
             {
                 MagneticStrength = strength;
                 MagneticRadius = radius;
-                MarkingDistance = markingDistance;
                 MaxMagneticAcceleration = maxAcceleration;
                 MaxBodySpeed = maxSpeed;
                 MagneticBlockingLayers = blockingLayers;

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: WnhK436rUyqiodTX4OcBd5vR1KFdzQKeGPdtWDAFk5iNxNISgq2BB7M=
+guid: WitJ5ir+VnoQwR3BtQHqXu9Gwv3zuIKS3ZbQDlBet84xA0xkF9mCu/U=
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -144,85 +144,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Idle_Front_0
+      name: front_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.166667}
+      pivot: {x: 0.5, y: 0.046875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0abb3281e0b6a504590f55dd104baa61
-      internalID: -1284431514
+      spriteID: 0f23cef42babafe4a92cdd6154a41db2
+      internalID: -684246715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_Front_1
+      name: front_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.166667}
+      pivot: {x: 0.5, y: 0.046875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7b66fd166665d240aeb38a41bfceb3b
-      internalID: -114104943
+      spriteID: e4b11f44177e2c046bdbc02f0ba23e8d
+      internalID: 96768313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_Front_2
+      name: front_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 128
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.166667}
+      pivot: {x: 0.5, y: 0.046875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b99d40c3f8256848a8171b5d3ab4833
-      internalID: 1459769072
+      spriteID: d960f4e82e825f0449150343a44d9a87
+      internalID: 1725721221
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_Front_3
+      name: front_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 192
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.166667}
+      pivot: {x: 0.5, y: 0.046875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd77bdb1793bb27448899851933be184
-      internalID: 659531205
+      spriteID: 24756c34ca8a3a143a1a00a79625fd08
+      internalID: -1710379056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b7a19330e3a29e4598f777b7ae7fa53
+      internalID: -1898666806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9948c81bd647643a2ba57db86d29a1
+      internalID: -841546925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: front_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16033bc124a9c094fafbfbf0d29502bd
+      internalID: -159162895
       vertices: []
       indices: 
       edges: []
@@ -238,10 +301,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Idle_Front_0: -1284431514
-      Player_Idle_Front_1: -114104943
-      Player_Idle_Front_2: 1459769072
-      Player_Idle_Front_3: 659531205
+      front_0: -684246715
+      front_1: 96768313
+      front_2: 1725721221
+      front_3: -1710379056
+      front_4: -1898666806
+      front_5: -841546925
+      front_6: -159162895
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   doOverrideTextureManagerOperations: 0

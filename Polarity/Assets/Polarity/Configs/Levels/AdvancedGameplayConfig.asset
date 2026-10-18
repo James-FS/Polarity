@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magneticStrength: 20
   magneticRadius: 7
-  markingDistance: 8
   maxMagneticAcceleration: 30
   maxBodySpeed: 12
   magneticBlockingLayers:

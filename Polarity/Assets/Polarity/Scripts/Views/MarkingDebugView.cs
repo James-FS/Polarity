@@ -59,6 +59,8 @@ namespace Polarity.Views
             if (marking == null || marking.Candidate == null || world.State.Phase != LevelPhase.Running) return;
             var view = marking.Candidate.GetComponent<PolarityView>();
             if (view == null) return;
+            var contour = view.GetComponent<SpriteSelectionOutline>();
+            if (contour != null && contour.isActiveAndEnabled) return;
             bool found = false;
             Rect outline = default;
             foreach (var face in view.BodySprites)
@@ -85,8 +87,6 @@ namespace Polarity.Views
             {
                 case MarkOutcome.Applied: return "Polarity changed. Used 1 mark.";
                 case MarkOutcome.Unchanged: return "Same polarity: no mark used.";
-                case MarkOutcome.TooFar: return "Out of marking range: no mark used.";
-                case MarkOutcome.WallBlocked: return "Wall blocks marking: no mark used.";
                 case MarkOutcome.BudgetEmpty: return "No marks remaining.";
                 case MarkOutcome.InvalidTarget: return "No valid target: no mark used.";
                 case MarkOutcome.NotMarkable: return "Target cannot be marked: no mark used.";

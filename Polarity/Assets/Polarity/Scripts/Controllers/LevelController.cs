@@ -27,6 +27,7 @@ namespace Polarity.Controllers
         public bool HasNextLevel => CurrentDefinition != null && CurrentLevelIndex + 1 < LevelCount;
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void ResetSelection() { selectedIndex=0; selectedScene=null; introductionDismissed=false; }
+        public static void ResetForNewGame() => ResetSelection();
         private void Awake()
         {
             world=GetComponent<SimulationWorld>();
@@ -44,6 +45,11 @@ namespace Polarity.Controllers
         }
         private bool slowInputArmed;
         public bool IsRestarting { get; private set; }
+        public bool IsPauseSettingsOpen { get; private set; }
+        public bool IsResultDismissed { get; private set; }
+        public bool IsEndMenuOpen { get; private set; }
+        public event Action OutcomeMenuChanged;
+        public event Action<bool> PauseSettingsVisibilityChanged;
         public LevelOutcome? LastOutcome { get; private set; }
         public event Action<LevelOutcome> OutcomeResolved;
         internal void Bind(SimulationWorld owner) => world=owner;
@@ -88,10 +94,37 @@ namespace Polarity.Controllers
         public bool TogglePause()
         {
             if (world == null || IsRestarting || !world.OwnsPhysics) return false;
+            // Esc dismisses the settings layer before resuming the paused world.
+            if (IsPauseSettingsOpen) return SetPauseSettingsVisible(false);
+            if (world.State.Phase == LevelPhase.Won || world.State.Phase == LevelPhase.Lost)
+            {
+                IsResultDismissed = true;
+                IsEndMenuOpen = !IsEndMenuOpen;
+                OutcomeMenuChanged?.Invoke();
+                return true;
+            }
             if (world.State.Phase == LevelPhase.Running) world.SetPhase(LevelPhase.Paused);
             else if (world.State.Phase == LevelPhase.Paused) world.SetPhase(LevelPhase.Running);
             else return false;
             return true;
+        }
+        public bool SetPauseSettingsVisible(bool visible)
+        {
+            if (visible && (world == null || IsRestarting || !world.OwnsPhysics ||
+                (world.State.Phase != LevelPhase.Paused && !IsEndMenuOpen))) return false;
+            if (IsPauseSettingsOpen == visible) return false;
+            IsPauseSettingsOpen = visible;
+            PauseSettingsVisibilityChanged?.Invoke(visible);
+            return true;
+        }
+        public void DismissOutcome()
+        {
+            if (world == null || IsRestarting ||
+                (world.State.Phase != LevelPhase.Won && world.State.Phase != LevelPhase.Lost)) return;
+            IsResultDismissed = true;
+            IsEndMenuOpen = false;
+            SetPauseSettingsVisible(false);
+            OutcomeMenuChanged?.Invoke();
         }
         private void OnApplicationFocus(bool focused) { if (!focused) { slowInputArmed=false; world?.SetSlowMotion(false); } }
         public void SampleRestartInput(bool pressed) { if(pressed) RequestRestart(); }
@@ -105,6 +138,16 @@ namespace Polarity.Controllers
             => Polarity.Debugging.GMManager.IsAvailable && HasNextLevel && RequestLoad(CurrentLevelIndex + 1);
         internal bool RequestGMLevel(int index)
             => Polarity.Debugging.GMManager.IsAvailable && index >= 0 && index < LevelCount && RequestLoad(index);
+        public bool RequestMainMenu()
+        {
+            const string menuPath = "Assets/Polarity/Scenes/MainMenu.scene";
+            if (world == null || !world.OwnsPhysics || IsRestarting || !Application.CanStreamedLevelBeLoaded(menuPath))
+                return false;
+            IsRestarting = true;
+            world.PrepareForRestart();
+            SceneManager.LoadSceneAsync(menuPath, LoadSceneMode.Single);
+            return true;
+        }
         private bool RequestLoad(int index)
         {
             if (world==null || !world.OwnsPhysics || IsRestarting) return false;
@@ -127,7 +170,7 @@ namespace Polarity.Controllers
             world.SetPhase(phase);
         }
         internal void PublishOutcome() { if (LastOutcome.HasValue) OutcomeResolved?.Invoke(LastOutcome.Value); }
-        internal void Clear() { LastOutcome=null; OutcomeResolved=null; }
-        private void OnDestroy() { world=null; OutcomeResolved=null; }
+        internal void Clear() { SetPauseSettingsVisible(false); LastOutcome=null; OutcomeResolved=null; }
+        private void OnDestroy() { world=null; OutcomeResolved=null; PauseSettingsVisibilityChanged=null; OutcomeMenuChanged=null; }
     }
 }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8979d453c3076664dba4ac64495a5977, type: 3}
+  m_Name: Level
+  m_EditorClassIdentifier: 
+  title: "\u7B2C\u4E94\u5173\u5BFC\u822A\u5019\u9009\uFF08\u672A\u9A8C\u6536\uFF09"
+  teachingHint: "\u5019\u9009\u5E03\u5C40\uFF1A\u4FA7\u5411\u53D7\u529B\u4E0E\u514D\u8D39\u4F20\u64AD\u3002\u5C1A\u672A\u5B8C\u6574\u6E05\u573A\uFF0C\u4E0D\u5C5E\u4E8E\u6B63\u5F0F\u5173\u5361\u5E8F\u5217\u3002"
+  markBudget: 3
+  roomPrefab: {fileID: 7258891664536530753, guid: c5c4ab8d29d42204db28755c3a91bab3, type: 3}
+  gameplayConfig: {fileID: 11400000, guid: 0ad59378214f18d4a97e0b35293920be, type: 2}

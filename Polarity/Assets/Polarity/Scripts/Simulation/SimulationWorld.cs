@@ -37,8 +37,6 @@ namespace Polarity.Simulation
         public int ProjectileContactBufferCapacity => projectileContacts.BufferCapacity;
         public IReadOnlyList<Turret> Turrets => Array.AsReadOnly(turrets);
         private int enemyLayer, crateLayer;
-        private readonly RaycastHit2D[] markingWallHits = new RaycastHit2D[1];
-        private ContactFilter2D markingWallFilter;
         public PlayerController Player => player;
         public int PendingMarkCount => markRequests.Count;
         public long ProcessedMarkCount { get; private set; }
@@ -48,6 +46,10 @@ namespace Polarity.Simulation
         private static SimulationWorld physicsOwner;
         private readonly List<PolarityBody> bodies = new List<PolarityBody>();
         private readonly Dictionary<PolarityBody, EnemyMotor> enemyMotors = new Dictionary<PolarityBody, EnemyMotor>();
+        private readonly Dictionary<PolarityBody, EnemyNavigator> enemyNavigators = new Dictionary<PolarityBody, EnemyNavigator>();
+        public IReadOnlyDictionary<PolarityBody, EnemyNavigator> EnemyNavigators => enemyNavigators;
+        private int navigationCursor;
+        public int LastNavigationExpansions { get; private set; }
         public int LastEnemyDriveCount { get; private set; }
         private readonly Dictionary<Rigidbody2D, PolarityBody> bodiesByRigidbody = new Dictionary<Rigidbody2D, PolarityBody>();
         private readonly ContactCollection contacts = new ContactCollection();
@@ -59,6 +61,8 @@ namespace Polarity.Simulation
         private readonly List<DamageResult> damageResults = new List<DamageResult>();
         private IReadOnlyList<DamageResult> readOnlyDamageResults;
         private LevelController levelController;
+        private NavigationGridAuthoring navigation;
+        public NavigationGridAuthoring Navigation => navigation;
         private float previousTimeScale;
         private bool restarting;
         public bool SlowMotionRequested { get; private set; }
@@ -126,6 +130,7 @@ namespace Polarity.Simulation
             if (ownsPhysics || State!=null) throw new InvalidOperationException("Configure a room before World initialization.");
             player=room.Player; initialBodies=room.CopyBodies(); turrets=room.CopyTurrets();
             gameplayConfig=definition.GameplayConfig; initialMarkBudget=definition.MarkBudget;
+            navigation=room.GetComponentInChildren<NavigationGridAuthoring>();
         }
 
         private void OnEnable()
@@ -153,9 +158,6 @@ namespace Polarity.Simulation
             enemyLayer = LayerMask.NameToLayer("Enemy");
             crateLayer = LayerMask.NameToLayer("Crate");
             damageContacts.ConfigureLayers();
-            markingWallFilter = new ContactFilter2D();
-            markingWallFilter.SetLayerMask(1 << LayerMask.NameToLayer("Wall"));
-            markingWallFilter.useTriggers = false;
             State.PhaseChanged += OnPhaseChanged;
 
             previousTimeScale = Time.timeScale;
@@ -176,6 +178,7 @@ namespace Polarity.Simulation
             }
             nextDynamicId = initialBodies.Length + 1;
             foreach (var turret in turrets) if(turret!=null) turret.Initialize();
+            navigation?.InitializeRuntime(this);
             // No Start-order dependency: all bodies are initialized and bound before Running.
             if (!initialized)
             {
@@ -241,7 +244,10 @@ namespace Polarity.Simulation
             bodiesByRigidbody[body.Rigidbody] = body;
             if(body.TryGetComponent<Health>(out var health)) { health.Bind(this,body.BodyId); healthByRigidbody[body.Rigidbody]=health; }
             if (body.gameObject.layer == enemyLayer && body.TryGetComponent<EnemyMotor>(out var motor))
+            {
                 enemyMotors[body] = motor;
+                if (navigation != null) enemyNavigators[body] = new EnemyNavigator();
+            }
             UpdateEnemyCount();
         }
 
@@ -252,6 +258,8 @@ namespace Polarity.Simulation
             projectiles.Remove(body.Rigidbody);
             bodies.Remove(body);
             enemyMotors.Remove(body);
+            if (enemyNavigators.TryGetValue(body, out var navigator)) navigator.Clear();
+            enemyNavigators.Remove(body);
             bodiesByRigidbody.Remove(body.Rigidbody);
             healthByRigidbody.Remove(body.Rigidbody);
             body.SetRegistered(false);
@@ -359,10 +367,7 @@ namespace Polarity.Simulation
                 return MarkOutcome.NotMarkable;
             if (request.Polarity != Pole.Positive && request.Polarity != Pole.Negative) return MarkOutcome.InvalidPolarity;
             if (player == null || !player.isActiveAndEnabled || !player.Rigidbody.simulated) return MarkOutcome.PlayerUnavailable;
-            Vector2 from = player.Rigidbody.position, to = target.Rigidbody.position;
-            if (!IsFinite(from) || !IsFinite(to) || (to - from).sqrMagnitude > settings.MarkingDistance * settings.MarkingDistance)
-                return MarkOutcome.TooFar;
-            if (Physics2D.Linecast(from, to, markingWallFilter, markingWallHits) > 0) return MarkOutcome.WallBlocked;
+            if (!IsFinite(target.Rigidbody.position)) return MarkOutcome.InvalidTarget;
             if (target.CurrentPolarity == request.Polarity) return MarkOutcome.Unchanged;
             return State.UnlimitedMarks || State.RemainingMarks > 0 ? MarkOutcome.Applied : MarkOutcome.BudgetEmpty;
         }
@@ -389,16 +394,29 @@ namespace Polarity.Simulation
         private void ApplyEnemyMovement()
         {
             LastEnemyDriveCount = 0;
+            LastNavigationExpansions = 0;
             if (player == null || !player.isActiveAndEnabled || !player.Rigidbody.simulated) return;
             Vector2 targetPosition = player.Rigidbody.position;
-            foreach (var snapshot in magneticSnapshots)
+            int budget = navigation != null ? navigation.SearchBudgetPerStep : 0;
+            int initialBudget = budget;
+            for (int offset = 0; offset < magneticSnapshots.Count; offset++)
             {
+                var snapshot = magneticSnapshots[(navigationCursor + offset) % magneticSnapshots.Count];
                 if (!enemyMotors.TryGetValue(snapshot.Body, out var motor) || motor == null || !motor.isActiveAndEnabled)
                     continue;
-                Vector2 acceleration = motor.CalculateDrive(snapshot.Body, targetPosition);
+                Vector2 acceleration;
+                if (navigation?.Sampler != null && enemyNavigators.TryGetValue(snapshot.Body, out var navigator))
+                {
+                    Vector2 desired = navigator.Tick(navigation, snapshot.Body.Rigidbody.position, snapshot.Body.Rigidbody.velocity,
+                        targetPosition, motor.ChaseSpeed, motor.MaxDriveAcceleration, SimulationTime, Time.fixedDeltaTime, ref budget);
+                    acceleration = motor.CalculateNavigationDrive(snapshot.Body, desired, navigator.State != EnemyNavigationState.Following);
+                }
+                else acceleration = motor.CalculateDrive(snapshot.Body, targetPosition);
                 snapshot.Body.Rigidbody.AddForce(acceleration * snapshot.Body.Rigidbody.mass, ForceMode2D.Force);
                 LastEnemyDriveCount++;
             }
+            LastNavigationExpansions = initialBudget - budget;
+            navigationCursor = magneticSnapshots.Count == 0 ? 0 : (navigationCursor + 1) % magneticSnapshots.Count;
         }
 
         // Internal rule-layer entry shared with future propagation.
@@ -424,6 +442,7 @@ namespace Polarity.Simulation
                 ConsumeMarkRequests();
                 TickTurretsAndRegisterSpawns();
                 CaptureMagneticSnapshot();
+                navigation?.RefreshRuntime();
                 ApplyPlayerMovement(Time.fixedDeltaTime);
                 ApplyEnemyMovement();
                 CalculateMagneticForces();
@@ -576,6 +595,8 @@ namespace Polarity.Simulation
         internal void PrepareForRestart()
         {
             restarting=true;
+            navigation?.ClearRuntime();
+            foreach (var navigator in enemyNavigators.Values) navigator.Clear();
             touchedSpikes.Clear();
             State.SetPhase(LevelPhase.Ready);
             markRequests.Clear(); ClearContactState(); damageContacts.Clear(); damage.Clear(); damagePlan.Clear(); damageResults.Clear();
@@ -775,6 +796,7 @@ namespace Polarity.Simulation
         {
             if (!ownsPhysics)
                 return;
+            navigation?.ClearRuntime();
             State.PhaseChanged -= OnPhaseChanged;
             TimeScaleChanged=null;
             MarkResolved=null; PropagationCommitted=null; DamageCommitted=null;
@@ -790,6 +812,8 @@ namespace Polarity.Simulation
             bodies.Clear();
             projectiles.Clear();
             enemyMotors.Clear();
+            foreach (var navigator in enemyNavigators.Values) navigator.Clear();
+            enemyNavigators.Clear();
             bodiesByRigidbody.Clear();
             ClearContactState();
             magneticSnapshots.Clear();

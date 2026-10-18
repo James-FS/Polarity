@@ -14,7 +14,9 @@ namespace Polarity.Model
     public enum MarkOutcome
     {
         Applied, NotRunning, InvalidTarget, NotMarkable, InvalidPolarity,
-        PlayerUnavailable, TooFar, WallBlocked, Unchanged, BudgetEmpty
+        PlayerUnavailable,
+        // Values 6/7 belonged to removed distance/line-of-sight rejections.
+        Unchanged = 8, BudgetEmpty = 9
     }
 
     public readonly struct MarkResult
