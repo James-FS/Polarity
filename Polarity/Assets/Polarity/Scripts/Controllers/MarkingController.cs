@@ -102,6 +102,10 @@ namespace Polarity.Controllers
                 face.sprite == null || face.color.a <= 0.01f || (camera.cullingMask & (1 << face.gameObject.layer)) == 0)
                 return false;
             Bounds bounds = face.bounds;
+            var selectionBounds = face.GetComponent<SpriteSelectionBounds>();
+            if (selectionBounds != null && selectionBounds.isActiveAndEnabled &&
+                selectionBounds.TryGetWorldBounds(out Bounds authoredBounds))
+                bounds = authoredBounds;
             Vector3 a = camera.WorldToScreenPoint(bounds.min), b = camera.WorldToScreenPoint(bounds.max);
             if (a.z <= 0 || b.z <= 0) return false;
             rect = Rect.MinMaxRect(Mathf.Min(a.x, b.x), Mathf.Min(a.y, b.y), Mathf.Max(a.x, b.x), Mathf.Max(a.y, b.y));
