@@ -48,3 +48,6 @@ Desktop.ini
 *.aab
 *.unitypackage
 crashlytics-build.properties
+
+# Keep project documentation local; it is not published with the game repository.
+docs/
