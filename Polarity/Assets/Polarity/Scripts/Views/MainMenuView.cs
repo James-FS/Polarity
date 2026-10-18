@@ -16,10 +16,9 @@ namespace Polarity.Views
         [SerializeField, FormerlySerializedAs("controlsButton")] private Button settingsButton;
         [SerializeField, FormerlySerializedAs("closeControlsButton")] private Button closeSettingsButton;
         [SerializeField, FormerlySerializedAs("controlsPanel")] private GameObject settingsPanel;
-        [Tooltip("Optional title illustration; assign here to replace the placeholder decoration.")]
+        [Tooltip("Optional illustration shown on the main menu.")]
         [SerializeField] private Sprite illustration;
         [SerializeField] private Image illustrationImage;
-        [SerializeField] private GameObject illustrationPlaceholder;
         private bool loading;
 
         private void OnEnable()
@@ -52,8 +51,6 @@ namespace Polarity.Views
                 illustrationImage.sprite = illustration;
                 illustrationImage.enabled = illustration != null;
             }
-            if (illustrationPlaceholder != null)
-                illustrationPlaceholder.SetActive(illustration == null);
         }
 
         public void StartGame()

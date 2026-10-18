@@ -10,12 +10,17 @@ namespace Polarity.Views
         [Tooltip("Selection rectangle in sprite pixels, measured from its bottom-left corner. Exclude shadow and decorative particles.")]
         [SerializeField] private Rect pixelRect = new Rect(14f, 12f, 37f, 37f);
         private SpriteRenderer spriteRenderer;
+        private Rect? pixelRectOverride;
 
-        public Rect PixelRect => pixelRect;
+        public Rect PixelRect => pixelRectOverride ?? pixelRect;
+
+        /// <summary>Overrides only visual picking bounds; null restores the authored rectangle.</summary>
+        public void SetPixelRectOverride(Rect? value) => pixelRectOverride = value;
 
         public bool TryGetWorldBounds(out Bounds bounds)
         {
             bounds = default;
+            Rect pixelRect = PixelRect;
             if (spriteRenderer == null)
                 spriteRenderer = GetComponent<SpriteRenderer>();
             Sprite sprite = spriteRenderer.sprite;

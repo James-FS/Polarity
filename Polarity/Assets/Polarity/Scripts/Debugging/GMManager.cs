@@ -13,13 +13,17 @@ namespace Polarity.Debugging
     [DisallowMultipleComponent, RequireComponent(typeof(SimulationWorld)), DefaultExecutionOrder(-75)]
     public sealed class GMManager : MonoBehaviour
     {
+        // Code-only master switch. Set false before distributing a build.
+        // Editor/development-build restrictions still apply when true.
+        public static readonly bool EnableGM = true;
+
         private static bool invincible, unlimitedMarks, panelOpen, jumpedLevel;
         private SimulationWorld world;
         private Health health;
         private LevelState state;
         private bool resourcesEdited;
         private bool cheatUsedThisRoom;
-        public static bool IsAvailable => Application.isPlaying && (Application.isEditor || Debug.isDebugBuild);
+        public static bool IsAvailable => EnableGM && Application.isPlaying && (Application.isEditor || Debug.isDebugBuild);
         public bool IsBound => state != null && world != null && world.OwnsPhysics;
         public bool Invincible => invincible;
         public bool UnlimitedMarks => unlimitedMarks;

@@ -51,3 +51,9 @@ crashlytics-build.properties
 
 # Keep project documentation local; it is not published with the game repository.
 docs/
+
+# Local Codex snapshots and Unity bridge output.
+/.codex/
+/Polarity/Assets/Codely/
+/Polarity/Assets/Codely.meta
+*~
