@@ -15,7 +15,7 @@ namespace Polarity.Debugging
     {
         // Code-only master switch. Set false before distributing a build.
         // Editor/development-build restrictions still apply when true.
-        public static readonly bool EnableGM = false;
+        public static readonly bool EnableGM = true;
 
         private static bool invincible, unlimitedMarks, panelOpen, jumpedLevel;
         private SimulationWorld world;
